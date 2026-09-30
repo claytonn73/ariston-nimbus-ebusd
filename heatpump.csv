@@ -1,0 +1,107 @@
+############################################################################################
+####                             HEATPUMP RELATED MESSAGES                              ####
+#### address 1e: slave                                                                  ####
+############################################################################################
+
+r,heatpump,config_version,config_version_counter,,1e,2000,d140,,,ignore_1;version
+
+r,heatpump,last_error_info,last_error_info,,1e,2002,0400,,,error_code,,,7 first bits,zone,,BI0:7,,,,,,IGN:2,,,Date: YY/MM/DD,year,,UCH,,,,month,,UCH,,,,day,,UCH,,,,time,,HTM,,
+# Use the above as issued by system
+r,ignored,last_error,Heatpump Last Error - TBC,,1e,2001,c54b,,,error_code
+
+# Menu - HP Diagnostic 4 Menu
+r,heatpump,safety_thermostat,Safety Thermostat,,1e,2001,0316,,,open_closed
+r,heatpump,flow_switch,Flow Switch,,1e,2001,0c45,,,open_closed
+r,heatpump,shutoff_protection,Shutoff Protection,,1e,2001,1045,,,onoff
+r,heatpump,compressor_state,statistics,,1e,2001,1145,,,onoff
+r,heatpump,preheater_state,statistics,,1e,2001,1245,,,onoff
+r,heatpump,fourway_valve_state,statistics,,1e,2001,1345,,,valve_heat_cool
+r,heatpump,fan1_state,Fan 1 State,,1e,2001,1445,,,onoff
+# Enable if second fan is present on system
+r,ignored,fan2_state,statistics,,1e,2001,1545,,,onoff
+r,heatpump,base_pan_heater_state,statistics,,1e,2001,1645,,,onoff
+r,heatpump,compressor_preheating,Electric Heater 1,,1e,2001,1c23,,,onoff
+r,heatpump,electric_heater,statistics,,1e,2001,1c45,,,onoff
+r,heatpump,tdm_flow_sensor_type,Flow Sensor Type,,1e,2001,df2a,,,flow_sensor
+
+r1,heatpump,operation_stats,Heatpump running statistics,,1e,2000,40d147d140d8,,,ignore_1;hours:running_hours;hours:defrost_hours;count:ignition_cycles
+# Ignore individual information in favour of combined read above
+r,ignored,heatpump_ignition_cycles,Heatpump Ignition Cycles,,1e,2001,40d8,,,count
+r,ignored,heatpump_running_hours,Heatpump Running Hours,,1e,2001,40d1,,,hours
+r,ignored,heatpump_defrost_hours,Heatpump Defrost Hours,,1e,2001,47d1,,,hours
+
+# Doesnt seem to be issued any more
+r,ignored,power_consumption_2,statistics,,1e,2000,63477c4f,,,ignore_1;temperature:temp_6347;watts:power
+
+r9,heatpump,power_rating,statistics,,1e,2001,6947,,,kw
+
+r5,heatpump,pressure_info,Reads of evaporator and condenser pressue,,1e,2000,6c4f6d4f,,,ignore_1;pressure:evaporator_pressure;pressure:condensor_pressure
+# Individual temperature readings - unused in favour of consolidated reads
+r,ignored,evaporator_pressure,evaporator pressure,,1e,2001,6c4f,,,pressure
+r,ignored,condenser_pressure,condenser pressure,,1e,2001,6d4f,,,pressure
+
+r1,heatpump,fan1_speed,Fan 1 Speed,,1e,2001,6e4f,,,rpm
+r,ignored,fan2_speed,Fan 2 Speed,,1e,2001,6f4f,,,rpm
+
+# Heatpump temperatures not needed
+r,ignored,hp_condenser_outlet_temperature,Condensor Outlet Temperature,,1e,2001,7117,,,temperature
+r,ignored,hp_suction_temperature,Suction Temperature,,1e,2001,7217,,,temperature
+r,ignored,hp_discharge_temperature,Discharge Temperature,,1e,2001,7317,,,temperature
+r,ignored,teo_temperature,TEO Temperature,,1e,2001,7417,,,temperature
+
+r1,heatpump,outside_air_temperature,Heatpump External Temperature,,1e,2001,7810,,,temperature
+r,ignored,hp_evaporator_temperature,Evaporator Temperature,,1e,2001,7910,,,temperature
+
+# Performed every 10 minutes by the system but add additional reads
+r1,heatpump,water_flow,Regular read of flow rate and temps,,1e,2000,761077106e13,,,ignore_1;temperature:flow_temperature;temperature:return_temperature;flow_rate:flow_rate
+# Ignore the individual reads in favour of the above
+r,ignored,flowmeter,statistics,,1e,2001,6e13,,,flow_rate 
+r,ignored,hp_flow_temperature,Flow Temperature,,1e,2001,7610,,,temperature
+r,ignored,hp_return_temperature,Return Temperature,,1e,2001,7710,,,temperature
+
+# Issued every 8 minutes so use it for discharge_temp and compressor_frequency
+
+r1,heatpump,operating_info,statistics,,1e,2000,7317ca46cb46,,,ignore_1;temperature:discharge_temp;heatpump_status:heatpump_status;frequency:compressor_frequency
+# Read every 8 minutes by the system but also read more frequently by ebus
+r5,heatpump,read_temp,Regular read of heatpump temps,,1e,2000,791071177217,,,ignore_1;temperature:evaporator_temperature;temperature:condenser_outlet_temperature;temperature:suction_temperature
+
+r,ignored,read_temp_2,statistics,,1e,2000,7610771079107117,,,ignore_1;temperature:hp_water_flow_temperature;temperature:hp_water_return_temperature;temperature:hp_evaporator_temperature;temperature:hp_condensor_outlet_temperature
+
+# Not sure they are read by the system but seems to have been at some point
+r,ignored,read_temp_3,Regular read of heatpump temps,,1e,2000,781079107417,,,ignore_1;temperature:outside_air_temperature;temperature:hp_evaporator_temperature;temperature:teo_temperature
+r,ignored,read_temp_4,statistics,,1e,2000,72177317ca466247,,,ignore_1;temperature:hp_suction_temperature;temperature:hp_discharge_temperature;heatpump_status:status;temperature:temp_6247
+
+# Heatpump delta T setpoint settings and limits
+r,heatpump,delta_t_setpoint,HP delta T setpoint,,1e,2000,7b2b,,,ignore_1;temperature:setting
+w,heatpump,delta_t_setpoint,HP delta T setpoint,,1e,2020,7b2b,,,temperature:setting
+r9,heatpump,delta_t_setpoint_limits,HP delta T setpoint limits,,1e,2001,7b2b,,,temperature_min_max
+
+# Issued every 8 minutes by the system so use this for power consumption and expansion valve
+r1,heatpump,power_consumption,statistics,,1e,2000,704f7c4f,,,ignore_1;expansion_valve:expansion_valve;watts:power_consumption
+# Alternative individual reads for power consumption and expansion valve
+r,ignored,power_consumption,statistics,,1e,2001,7c4f,,,watts
+r,ignored,expansion_valve,Expansion Valve State in Steps,,1e,2001,704f,,,expansion_valve
+# Enable second expansion valve if present on system
+r,ignored,expansion_valve_2,Expansion Valve 2 State in Steps,,1e,2001,714f,,,expansion_valve
+
+r5,heatpump,compressor_modulation,statistics,,1e,2001,c446,,,percent
+r5,heatpump,compressor_frequency,statistics,,1e,2001,cb46,,,frequency
+
+# Regular status read every 10 seconds - also has version counter which is ignored
+r,heatpump,heatpump_status,Heatpump Status and version counter,,1e,2000,d140ca46,,,ignore_2;heatpump_status
+# Heatpump status - not needed due to regular reads above
+r,ignored,heatpump_status,Heatpump status ,,1e,2000,ca46,,,ignore_1;heatpump_status
+
+# Pump Modulation Settings and Limits
+r,heatpump,pump_min_modulation,HP pump min PWM,,1e,2000,d22c,,,ignore_1;percent:setting
+w,heatpump,pump_min_modulation,HP pump min PWM,,1e,2020,d22c,,,percent:setting
+r9,heatpump,pump_min_modulation_limits,HP pump min PWM limits,,1e,2001,d22c,,,percent_min_max
+
+r,heatpump,pump_max_modulation,HP pump max PWM,,1e,2000,d32c,,,ignore_1;percent:setting
+w,heatpump,pump_max_modulation,HP pump max PWM,,1e,2020,d32c,,,percent:setting
+r9,heatpump,pump_max_modulation_limits,HP pump max PWM limits,,1e,2001,d32c,,,percent_min_max
+
+# Doesnt seem to be issued any more
+r,ignored,heatpump_query,statistics,,1e,2000,7c4fcb46,,,ignore_1;watts:power_consumption;frequency:compressor_frequency
+# Issued every 15 mins so use for error code and teo temp
+r5,heatpump,heatpump_query_error,statistics,,1e,2000,7417c54b,,,ignore_1;temperature:teo_temperature;error_code:last_error_info

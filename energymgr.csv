@@ -1,0 +1,612 @@
+############################################################################################
+####                             ENERGY MANAGER RELATED MESSAGES                        ####
+#### address 13: master #12                                                             ####
+#### address 18: slave #12                                                              ####
+############################################################################################
+
+r,energymgr,config_version,config_version_counter,,18,2000,d140,,,ignore_1;version
+
+r,energymgr,last_error_info,last_error,,18,2002,0400,,s,error_code,,,7 first bits,zone,s,BI0:7,,,,,s,IGN:2,,,Date: YY/MM/DD,year,s,UCH,,,,month,s,UCH,,,,day,s,UCH,,,,time,s,HTM,,
+
+r,energymgr,odu_type,Outdoor Unit Type,,18,2001,ce8d,,,odu_type
+r,energymgr,idu_type,Indoor Unit Type,,18,2001,d18d,,,idu_type
+
+r,energymgr,silent_mode,silent mode,,18,2001,0320,,,onoff
+w,energymgr,silent_mode,silent mode,,18,2020,0320,,,onoff
+
+r,energymgr,silent_mode_start_time,start time,,18,2000,692b,,,ignore_1;hhmm
+w,energymgr,silent_mode_start_time,start time,,18,2020,692b,,,hhmm
+r,energymgr,silent_mode_start_time_limits,start time,,18,2001,692b,,,hhmm_min_max
+
+r,energymgr,silent_mode_end_time,end time,,18,2000,6a2b,,,ignore_1;hhmm
+w,energymgr,silent_mode_end_time,end time,,10,2020,6a2b,,,hhmm
+r,energymgr,silent_mode_end_time_limits,end time,,18,2001,6a2b,,,hhmm_min_max
+
+r,energymgr,pump_operation,Pump Operation Mode,,18,2001,c32a,,,low_high_modulating
+w,energymgr,pump_operation,Pump Operation Mode,,18,2020,c32a,,,low_high_modulating
+
+r,energymgr,antifreeze_circulator_speed,Antifreeze HP circulator Control,,18,2001,c58f,,,low_med_high
+w,energymgr,antifreeze_circulator_speed,Antifreeze HP circulator Control,,18,2020,c58f,,,low_med_high
+
+r,energymgr,hv_input_1,HV Input 1,,18,2001,c92a,,,hv_input_1
+w,energymgr,hv_input_1,HV Input 1,,18,2020,c92a,,,hv_input_1
+
+r,energymgr,hv_input_2,HV Input 2,,18,2001,cb2a,,,hv_input_2
+w,energymgr,hv_input_2,HV Input 2,,18,2020,cb2a,,,hv_input_2
+
+r,energymgr,aux_input_1,Aux Input 1,,18,2001,d42a,,,aux_input
+w,energymgr,aux_input_1,Aux Input 1,,18,2020,d42a,,,aux_input
+
+r,energymgr,aux_input_2,Aux Input 2 - Default Safety Thermostat,,18,2001,dd8d,,,aux_input
+w,energymgr,aux_input_2,Aux Input 2 - Default Safety Thermostat,,18,2020,dd8d,,,aux_input
+
+r,energymgr,aux_output_1,Aux 1 Output,,18,2001,cc2a,,,aux_output
+w,energymgr,aux_output_1,Aux 1 Output,,18,2020,cc2a,,,aux_output
+
+r,energymgr,aux_output_2,Aux Output 2,,18,2001,d32a,,,aux_output
+w,energymgr,aux_output_2,Aux Output 2,,18,2020,d32a,,,aux_output
+
+r,energymgr,aux_output_3,Aux Output 3,,18,2001,db8d,,,aux_output
+w,energymgr,aux_output_3,Aux Output 3,,18,2020,db8d,,,aux_output
+
+r,energymgr,aux_output_4,Aux Output 4,,18,2001,dc8d,,,aux_output
+w,energymgr,aux_output_4,Aux Output 4,,18,2020,dc8d,,,aux_output
+
+r,energymgr,humidity_input,Humidity Input Zone,,18,2001,cd2f,,,humidity_input
+w,energymgr,humidity_input,Humidity Input Zone,,18,2020,cd2f,,,humidity_input
+
+r,energymgr,aux_p2_circulator,Aux P2 Circulator,,18,2001,cf2c,,,aux_p2_circulator
+w,energymgr,aux_p2_circulator,Aux P2 Circulator,,18,2020,cf2c,,,aux_p2_circulator
+
+r,energymgr,protech_anode,Protech Anode - not present,,18,2001,0d23,,,onoff
+w,energymgr,protech_anode,Protech Anode - not present,,18,2020,0d23,,,onoff
+
+r,energymgr,system_flow_t_selection,,,18,2001,1688,,,system_flow_temp_selection
+w,energymgr,system_flow_t_selection,,,18,2020,1688,,,system_flow_temp_selection
+
+r,energymgr,tank_management,statistics,,18,2001,d58d,,,tank_management
+w,energymgr,tank_management,statistics,,18,2020,d58d,,,tank_management
+
+r,energymgr,tank_solar_integration,Tank solar integration,,18,2001,1188,,,onoff
+w,energymgr,tank_solar_integration,Tank solar integration,,18,2020,1188,,,onoff
+
+r,energymgr,opentherm_gateway,Opentherm Gateway Activation,,18,2001,008f,,,onoff
+w,energymgr,opentherm_gateway,Opentherm Gateway Activation,,18,2020,008f,,,onoff
+
+r,energymgr,exogel_kit_activation,Exogel Kit Activation,,18,2001,1f88,,,onoff
+w,energymgr,exogel_kit_activation,Exogel Kit Activation,,18,2020,1f88,,,onoff
+
+r,energymgr,heat_blocking_device,Heat Blocking Device,,18,2001,c38f,,,lockout_type
+w,energymgr,heat_blocking_device,Heat Blocking Device,,18,2020,c38f,,,lockout_type
+
+r1,energymgr,aux_input_1_status,AUX Input 1 state - for PV,,18,2001,1e11,,,onoff
+r,energymgr,aux_input_2_status,AUX Input 2 state - bridged,,18,2001,1f11,,,onoff
+r,energymgr,hv_input_1_status,HV Input 1 State - not used,,18,2001,1c11,,,onoff
+r,energymgr,hv_input_2_status,HV Input 2 State - not used,,18,2001,1d11,,,onoff
+r1,energymgr,aux_output_1_status,AUX Output 1 state - for DHW boost,,18,2001,1803,,,onoff
+r,energymgr,aux_output_2_status,AUX Output 2 state - not used,,18,2001,1A03,,,onoff
+
+r,energymgr,room_thermostat_1,,,18,2001,011f,,,onoff
+r,energymgr,room_thermostat_2,,,18,2001,021f,,,onoff
+
+r,energymgr,input_states,statistics,,18,2000,1d11d4f7,,,ignore_1;onoff:hv_input_1_state;hydraulic_diagnostic:hydraulic_diagnostic
+r,energymgr,external_pump,statistics,,18,2001,c700,,,ignore_1;onoff
+
+r,energymgr,main_pump,Main Pump State,,18,2000,c200,,,onoff
+
+r,energymgr,diverter_valve,Diverter Valve Control,,18,2001,0601,,,valve_dhw_heat
+r,energymgr,diverter_valve_cooling,Diverter Valve COOLING,,18,2001,0701,,,valve_heat_cool
+
+r,energymgr,anode_output,If Installed,,18,2001,1903,,,onoff
+
+r,energymgr,hybrid_mode,statistics,,18,2001,c628,,,hybrid_mode
+w,energymgr,hybrid_mode,statistics,,18,2020,c628,,,hybrid_mode
+
+r,energymgr,hybrid_logic,statistics,,18,2001,ce28,,,hybrid_logic
+w,energymgr,hybrid_logic,statistics,,18,2020,ce28,,,hybrid_logic
+
+r,energymgr,hydraulic_scheme,Hydraulic scheme diagnostic,,18,2000,dc28,,,hydraulic_scheme
+w,energymgr,hydraulic_scheme,Hydraulic scheme diagnostic,,18,2020,dc28,,,hydraulic_scheme
+
+r,energymgr,hydraulic_scheme_diagnostic,,,18,2001,d4f7,,,hydraulic_diagnostic
+
+# This command is is issued every 10 seconds so the best way to get the energymgr status
+r,energymgr,energymgr_status,Energy Manager Status,,18,2000,c94bd1404bfd4cfd,,,ignore_1;energymgr_status:status;percent:value_d140;longminutes:value_4bfd;longminutes:value_4cfd
+# This command is issued less frequently so not as good to use for uptodate status
+r,ignored,energymgr_status_2,Energy Manager Status,,18,2000,c94b,,,ignore_1;energymgr_status
+# This command is issued when using the panel
+r,ignoed,energymgr_status_3,Energy Manager Status,,18,2001,c94b,,,energymgr_status
+
+r,energymgr,hp_disable_ext_temp_threshold,statistics,,18,2001,7226,,,temperature:setting
+w,energymgr,hp_disable_ext_temp_threshold,statistics,,18,2020,7226,,,temperature:setting
+
+r,energymgr,hp_disable_out_temp_dhw,statistics,,18,2001,638f,,,temperature:setting
+w,energymgr,hp_disable_out_temp_dhw,statistics,,18,2020,638f,,,temperature:setting
+
+r,energymgr,ch_aux_heat_activation,DHW status,,18,2001,1488,,,aux_heat_activation
+w,energymgr,ch_aux_heat_activation,DHW status,,18,2020,1488,,,aux_heat_activation
+
+r,energymgr,heating_mode,statistics,,18,2001,c728,,,eco_mode
+w,energymgr,heating_mode,statistics,,18,2020,c728,,,eco_mode
+
+r,energymgr,heat_lwt_offset,Heating LWT Offset,,18,2000,7d2b,,,ignore_1;temperature:setting
+w,energymgr,heat_lwt_offset,Heating LWT Offset,,18,2020,7d2b,,,temperature:setting
+r,energymgr,heat_lwt_offset_limits,Heating LWT Offset,,18,2001,7d2b,,,temperature_min_max
+
+r,energymgr,pump_antiblock,Pump Antiblock,,18,2001,1823,,,onoff
+w,energymgr,pump_antiblock,Pump Antiblock,,18,2020,1823,,,onoff
+
+r,energymgr,flow_temperature,statistics,,18,2001,74fd,,,temperature
+
+#Menu - Hybrid System - Energy Tariffs - Read and Write Commands
+r,energymgr,electric_cost,statistics,,18,2000,652b,,,ignore_1;cost
+w,energymgr,electric_cost,statistics,,18,2020,652b,,,cost
+
+r,energymgr,pv_electric_cost,statistics,,18,2000,662b,,,ignore_1;cost
+w,energymgr,pv_electric_cost,statistics,,18,2020,662b,,,cost
+
+r,energymgr,heatpump_calculated_cost,statistics,,18,2000,6c47,,s,ignore_1;cost
+
+b,energymgr,holiday_status,holiday status,,fe,2071,,,,holiday_status:status;hhmm:end_time;date:end_date
+w,energymgr,holiday_status,holiday status,,fe,2071,,,,holiday_status:status;hhmm:end_time;date:end_date
+
+
+#Menu - Hybrid System StatisticsMore actions
+r,energymgr,heatpump_running_hours,Heatpump Running Hours,,18,2000,40d1,,,ignore_1;hours
+r,energymgr,heatpump_and_boiler_operating_hours,Heatpump and Boiler Combined Operating Hours,,18,2000,4ed1,,,ignore_1;hours
+r,energymgr,heatpump_heating_op_hours,Heatpump Heating Operating Hours,,18,2000,55d1,,,ignore_1;hours
+r,energymgr,heatpump_dhw_op_hours,Heatpump DHW Operating Hours,,18,2000,56d1,,,ignore_1;hours
+
+r,energymgr,thermoregulation,statistics,,fe,2001,0520
+b,energymgr,thermoregulation,statistics,13,fe,200e,0520,,,onoff
+w,energymgr,thermoregulation,statistics,,fe,2010,0520,,,onoff
+
+
+r,energymgr,ext_temp_correct,External Temperature Correction,,fe,2000,7426
+b,energymgr,ext_temp_correct,External Temperature Correction,13,fe,200f,7426,,,temperature:setting
+w,energymgr,ext_temp_correct,External Temperature Correction,,fe,2010,7426,,,temperature:setting
+r,energymgr,ext_temp_correct_limits,External Temperature Correction,,fe,2001,7426
+b,energymgr,ext_temp_correct_limits,External Temperature Correction,13,fe,200e,7426,,,temperature_min_max
+
+# Issued regularly on the system
+r1,energymgr,external_temp,External Sensor Temperature,,fe,2000,7647
+b,energymgr,external_temp,External Sensor Temperature,13,fe,200f,7647,,,temperature:reading
+# b,energymgr,external_temp_2010,statistics,13,fe,2010,7647,,,temperature:reading;ignore_3;percent:bcast_d194;ignore_3;percent:bcast_d294
+
+
+
+r,ignored,z1_setpoint_temperature,unknown,,fe,2001,6197
+b,ignored,z1_setpoint_temperature_limits,unknown,,fe,200e,6197,,,temperature_min_max
+
+
+############################################################################################
+####                     CENTRAL HEATING SETTINGS AND MESSAGES                          ####
+############################################################################################
+
+r,energymgr,heating_status,Heating Status,,fe,2001,0120
+b,energymgr,heating_status,Heating Status,13,fe,200e,0120,,,onoff
+w,energymgr,heating_status,Heating Status,,fe,2010,0120,,,onoff
+
+# b,energymgr,heating_status,Heating Status,,fe,200f,0120,,,onoff:setting - multiple values possible
+
+r,energymgr,heating_controller,unknown,,fe,2001,d579
+b,energymgr,heating_controller,unknown,,fe,200e,d579,,,heating_controller
+
+r,energymgr,ch_pump_overrun,statistics,,18,2000,d727,,,ignore_1;minutes
+w,energymgr,ch_pump_overrun,statistics,,18,2020,d727,,,minutes
+r,energymgr,ch_pump_overrun_limits,statistics,,18,2001,d727,,,minutes_min_max
+
+r,energymgr,ch_release_integral,statistics,,18,2000,6f8c,,,ignore_1;integral:setting
+w,energymgr,ch_release_integral,statistics,,18,2010,6f8c,,,integral
+r,energymgr,ch_release_integral_limits,statistics,,18,2001,6f8c,,,integral_min_max
+
+r,energymgr,ch_reset_integral,statistics,,18,2000,708c,,,ignore_1;integral:setting
+w,energymgr,ch_reset_integral,statistics,,18,2020,708c,,,integral
+r,energymgr,ch_reset_integral_limits,statistics,,18,2001,708c,,,integral_min_max
+
+r,energymgr,ch_pump_prerun,statistics,,18,2000,d527,,,ignore_1;minutes
+w,energymgr,ch_pump_prerun,statistics,,18,2020,d527,,,minutes
+r,energymgr,ch_pump_prerun_limits,statistics,,18,2001,d527,,,minutes_min_max
+
+r,energymgr,ch_new_attempt_time,statistics,,18,2000,d627,,s,ignore_1;minutes
+w,energymgr,ch_new_attempt_time,statistics,,18,2020,d627,,,minutes
+r,energymgr,ch_new_attempt_time_limits,statistics,,18,2001,d627,,,minutes_min_max
+
+r,energymgr,ch_delay_time,statistics,,18,2000,da8d,,s,ignore_1;minutes:setting
+w,energymgr,ch_delay_time,statistics,,18,2020,da8d,,m,minutes:setting
+r,energymgr,ch_delay_time_limits,statistics,,18,2001,da8d,,,minutes_min_max
+
+r,energymgr,ch_boost_time,,,fe,2000,602b
+b,energymgr,ch_boost_time,,,fe,200f,602b,,,ignore_1;seconds
+w,energymgr,ch_boost_time,,,fe,2010,602b,,,seconds
+r,energymgr,ch_boost_time_limits,,,fe,2001,602b
+b,energymgr,ch_boost_time_limits,,,fe,200e,602b,,,seconds_min_max
+
+b,energymgr,ch_return_temperature,statistics,13,fe,2010,769e,,,temperature:reading
+
+r,energymgr,ch_flow_temperature,,,18,2001,6310,,,temperature_min_max
+
+r,energymgr,lwt_setpoint,Flow Setpoint,,fe,2000,6047
+b,energymgr,lwt_setpoint,Flow Setpoint,13,fe,200f,6047,,,temperature:setting
+
+b,energymgr,lwt_setpoint_plus,Flow Setpoint Limits,13,fe,2010,6047,,,temperature:setting;ignore_3;temperature:temp_6197;ignore_3;temperature:temp_6297
+
+r,energymgr,floor_drying_days_remaining,,,18,2001,c846,,,days_min_max
+r,energymgr,floor_drying_cycle,Floor Drying Cycle,,18,2001,de28,,,floor_drying_cycle
+
+r,energymgr,floor_drying_temp,Floor Drying Temperature,,18,2000,7c2b,,,ignore_1;temperature:setting
+w,energymgr,floor_drying_temp,Floor Drying Temperature,,18,2020,7c2b,,,temperature:setting
+r,energymgr,floor_drying_temp_limits,Floor Drying Temperature,,18,2001,7c2b,,,temperature_min_max
+
+
+############################################################################################
+####                             COOLING SETTINGS AND MESSAGES                          ####
+############################################################################################
+
+r,ignored,cooling_activation,,,fe,2001,1023
+b,ignored,cooling_activation,,13,fe,200e,1023,,,onoff
+
+r,ignored,cooling_status,Cooling Status,,fe,2001,0f23
+b,ignored,cooling_status,Cooling Status,13,fe,200e,0f23,,,onoff
+w,ignored,cooling_status,Cooling Status,,fe,2010,0f23,,,onoff
+
+r,ignored,cooling_humidity_control_threshold,Z1 Heating Room Temp Influence,,18,2000,cc8f,,,ignore_1;percent:setting
+w,ignored,cooling_humidity_control_threshold,Z1 Heating Room Temp Influence,,18,2020,cc8f,,,percent:setting
+r,ignored,cooling_humidity_control_threshold_limits,Z1 Heating Room Temp Influence,,18,2001,cc8f,,,percent_min_max
+
+r,ignored,cooling_humidity_control_hysterisis,Z1 Heating Room Temp Influence,,18,2000,cd8f,,,ignore_1;percent:setting
+w,ignored,cooling_humidity_control_hysterisis,Z1 Heating Room Temp Influence,,18,2020,cd8f,,,percent:setting
+r,ignored,cooling_humidity_control_hysterisis_limits,Z1 Heating Room Temp Influence,,18,2001,cd8f,,,percent_min_max
+
+r,ignored,cooling_offset_temperature,,,18,2000,7f2b,,,ignore_1;temperature
+w,ignored,cooling_offset_temperature,,,18,2020,7f2b,,,temperature
+r,ignored,cooling_offset_temperature_limits,,,18,2001,7f2b,,,temperature_min_max
+
+b,ignored,cooling_temps,statistics,,fe,2020,6a75,,,temperature:z1_cool_temp;ignore_2;temperature:z2_cool_temp;ignore_2;temperature:z3_cool_temp;ignore_2;temperature:cooling_setpoint_temp
+b,ignored,cool_slope,statistics,,fe,2020,7577,,,ignore_4;slope:z1;ignore_2;slope:z2;ignore_2;slope:z3
+
+r,ignored,heatpump_cooling_op_hours,Heatpump Cooling Operating Hours,,18,2000,54d1,,,ignore_1;hours
+
+############################################################################################
+####                             DHw SETTINGS AND MESSAGES                              ####
+############################################################################################
+
+r,energymgr,dhw_status,DHW status,,fe,2001,0220
+b,energymgr,dhw_status,DHW status,13,fe,200e,0220,,,onoff
+w,energymgr,dhw_status,DHW status,,fe,2010,0220,,,onoff
+
+r,energymgr,dhw_aux_heat_activation,DHW status,,18,2001,1588,,,aux_heat_activation
+w,energymgr,dhw_aux_heat_activation,DHW status,,18,2010,1588,,,aux_heat_activation
+
+r,energymgr,dhw_tank_heater,DHW Tank Electric Heater,,18,2001,d12f,,,tank_heater
+w,energymgr,dhw_tank_heater,DHW Tank Electric Heater,,18,2020,d12f,,,tank_heater
+
+r,energymgr,dhw_operation_mode,DHW Operation Mode,,18,2001,d08d,,,dhw_mode
+w,energymgr,dhw_operation_mode,DHW Operation Mode,,18,2029,d08d,,,dhw_mode
+
+r,energymgr,dhw_scheduling,DHW Scheduling Mode,,fe,2001,c028
+b,energymgr,dhw_scheduling,DHW Scheduling Mode,13,fe,200e,c028,,,control_mode
+w,energymgr,dhw_scheduling,DHW Scheduling Mode,,fe,2010,c028,,,control_mode
+
+r,energymgr,dhw_thermal_cleanse,DHW Thermal Cleansing Function,,fe,2001,0b20
+b,energymgr,dhw_thermal_cleanse,DHW Thermal Cleansing Function,13,fe,200e,0b20,,,onoff
+w,energymgr,dhw_thermal_cleanse,DHW Thermal Cleansing Function,,fe,2010,0b20,,,onoff
+
+r,energymgr,dhw_temperature,statistics,,18,2000,7747,,,ignore_1;temperature:reading
+# Ignore other reads which have DHW temperature
+r,ignored,dhw_temperature_7017,statistics,,18,2000,7017,,,ignore_1;temperature:reading
+r,energymgr,dhw_storage_temperature,,,18,2001,7017,,,temperature_min_max
+r,ignored,dhw_stor_temp_1,statistics,,18,2000,62137017,,,ignore_1;temperature:value_6213;temperature:dhw_store_temp
+
+r,energymgr,dhw_reduced_temp,DHW Reduced Temperature,,fe,2000,6226
+b,energymgr,dhw_reduced_temp,DHW Reduced Temperature,13,fe,200f,6226,,,temperature:setting
+w,energymgr,dhw_reduced_temp,DHW Reduced Temperature,,fe,2010,6226,,,temperature:setting
+r,energymgr,dhw_reduced_temp_limits,DHW Reduced Temperature Limits,,fe,2001,6226
+b,energymgr,dhw_reduced_temp_limits,DHW Reduced Temperature Limits,13,fe,200e,6226,,,temperature_min_max
+
+r,energymgr,dhw_comfort_temp,HW Comfort Temperature,,fe,2000,6126
+b,energymgr,dhw_comfort_temp,DHW Comfort Temperature,13,fe,200f,6126,,,temperature:setting
+w,energymgr,dhw_comfort_temp,DHW Comfort Temperature,,fe,2010,6126,,,temperature:setting
+r,energymgr,dhw_comfort_temp_limits,DHW Comfort Temperature Limits,,fe,2001,6126
+b,energymgr,dhw_comfort_temp_limits,DHW Comfort Temperature Limits,13,fe,200e,6126,,,temperature_min_max
+
+r5,energymgr,dhw_current_target_temp,DHW Current Target Temp,,fe,2000,6147
+b,energymgr,dhw_current_target_temp,DHW Current Target Temp,13,fe,200f,6147,,,temperature:setting
+# Ignore other reads which have current target temperature
+b,ignored,dhw_current_target_temp_plus,DHW Current Target Temp,13,fe,2010,6147,,,temperature:setting;ignore_3;onoff:dhw_status
+
+r,energymgr,dhw_thermal_cleanse_temp,Thermal Cleanse Temperature,,fe,2000,7d26
+b,energymgr,dhw_thermal_cleanse_temp,Thermal Cleanse Temperature,13,fe,200f,7d26,,,temperature:setting
+w,energymgr,dhw_thermal_cleanse_temp,Thermal Cleanse Temperature,,fe,2010,7d26,,,temperature:setting
+r,energymgr,dhw_thermal_cleanse_temp_limits,Thermal Cleanse Temperature,,fe,2001,7d26
+b,energymgr,dhw_thermal_cleanse_temp_limits,Thermal Cleanse Temperature,13,fe,200e,7d26,,,temperature_min_max
+
+r,energymgr,dhw_thermal_cleanse_freq,Thermal Cleanse Frequency,,fe,2000,712b
+b,energymgr,dhw_thermal_cleanse_freq,Thermal Cleanse Frequency,13,fe,200f,712b,,,longminutes:setting
+w,energymgr,dhw_thermal_cleanse_freq,Thermal Cleanse Frequency,13,fe,2010,712b,,,longminutes:setting
+r,energymgr,dhw_thermal_cleanse_freq_limits,Thermal Cleanse Frequency,,fe,2001,712b
+b,energymgr,dhw_thermal_cleanse_freq_limits,Thermal Cleanse Frequency,13,fe,200e,712b,,,longminutes_min_max
+
+r,energymgr,dhw_thermal_cleanse_target_time,Thermal Cleanse Start Time,,fe,2000,d92a
+b,energymgr,dhw_thermal_cleanse_target_time,Thermal Cleanse Start Time,13,fe,200f,d92a,,,hrs:setting
+w,energymgr,dhw_thermal_cleanse_target_time,Thermal Cleanse Start Time,13,fe,2010,d92a,,,hrs:setting
+r,energymgr,dhw_thermal_cleanse_target_time_limits,Thermal Cleanse Start Time,,fe,2001,d92a
+b,energymgr,dhw_thermal_cleanse_target_time_limits,Thermal Cleanse Start Time,13,fe,200e,d92a,,,hrs_min_max
+
+r,energymgr,dhw_thermal_cleanse_start_time,unknown,,fe,2000,7e2b
+b,energymgr,dhw_thermal_cleanse_start_time,unknown,13,fe,200f,7e2b,,,hhmm
+w,energymgr,dhw_thermal_cleanse_start_time,unknown,,fe,2010,7e2b,,,hhmm
+r,energymgr,dhw_thermal_cleanse_start_time_limits,unknown,,fe,2001,7e2b
+b,energymgr,dhw_thermal_cleanse_start_time_limits,unknown,13,fe,200e,7e2b,,,hhmm_min_max
+
+r,energymgr,dhw_thermal_cleanse_max_duration,Max Duration Antilegionella,,fe,2000,ca2a
+b,energymgr,dhw_thermal_cleanse_max_duration,Max Duration Antilegionella,13,fe,200f,ca2a,,,hrs:setting
+w,energymgr,dhw_thermal_cleanse_max_duration,Max Duration Antilegionella,,fe,2010,ca2a,,,hrs:setting
+r,energymgr,dhw_thermal_cleanse_max_duration_limits,Max Duration Antilegionella,,fe,2001,ca2a
+b,energymgr,dhw_thermal_cleanse_max_duration_limits,Max Duration Antilegionella,,fe,200e,ca2a,,,hrs_min_max
+
+w,energymgr,dhw_pv_delta_t_setp,statistics,,18,2020,762d,,,temperature:setting
+r,energymgr,dhw_pv_delta_t_setp,statistics,,18,2000,762d,,,ignore_1;temperature:setting
+r,energymgr,dhw_pv_delta_t_setp_limits,statistics,,18,2001,762d,,,temperature_min_max
+
+r,energymgr,dhw_release_integral,statistics,,18,2000,772e,,,ignore_1;integral:setting
+w,energymgr,dhw_release_integral,statistics,,18,2020,772e,,,integral:setting
+r,energymgr,dhw_release_integral_limits,statistics,,18,2001,772e,,,integral_min_max
+
+r,energymgr,dhw_delay_time,statistics,,18,2000,7f26,,,ignore_1;seconds:setting
+w,energymgr,dhw_delay_time,statistics,,18,2020,7f26,,,seconds:setting
+r,energymgr,dhw_delay_time_limits,statistics,,18,2001,7f26,,,seconds_min_max
+
+w,energymgr,dhw_max_hp_charging_time,statistics,,18,2020,d327,,,minutes:setting
+r,energymgr,dhw_max_hp_charging_time,statistics,,18,2000,d327,,,ignore_1;minutes:setting
+r,energymgr,dhw_max_hp_charging_time_limits,statistics,,18,2001,d327,,,minutes_min_max
+
+r,energymgr,dhw_high_priority_threshold,statistics,,18,2000,678c,,,ignore_1;temperature:setting
+w,energymgr,dhw_high_priority_threshold,statistics,,18,2020,678c,,,temperature:setting
+r,energymgr,dhw_high_priority_threshold_limits,statistics,,18,2001,678c,,,temperature_min_max
+
+
+############################################################################################
+####                             ZONE 1 SETTINS AND MESSAGES                            ####
+############################################################################################
+
+r,energymgr,z1_humidity,statistics,31,fe,2000,c9c1
+b,energymgr,z1_humidity,statistics,13,fe,200f,c9c1,,,percent:reading
+b,energymgr,z1_humidity_bcast,statistics,13,fe,2010,c9c1,,,percent:reading
+
+r,energymgr,z1_heat_temp_range,Z1 Heating Temp Range,,fe,2001,0081
+b,energymgr,z1_heat_temp_range,Z1 Heating Temp Range,,fe,200e,0081,,,low_high
+w,energymgr,z1_heat_temp_range,Z1 Heating Temp Range,,fe,2010,0081,,,low_high
+
+r,energymgr,z1_heat_therm_type,Z1 Heating Thermoreg Type,,fe,2001,c079
+b,energymgr,z1_heat_therm_type,Z1 Heating Thermoreg Type,13,fe,200e,c079,,,heat_thermoreg_types
+w,energymgr,z1_heat_therm_type,Z1 Heating Thermoreg Type,,fe,2010,c079,,,heat_thermoreg_types
+
+r,energymgr,z1_heat_request_mode,Z1 Heating Request Mode,,fe,2000,ce79
+b,energymgr,z1_heat_request_mode,Z1 Heating Request Mode,13,fe,200f,ce79,,,heat_request_mode
+w,energymgr,z1_heat_request_mode,Z1 Heating Request Mode,,fe,2010,ce79,,,heat_request_mode
+
+# LWT Maximum settings and limits
+r,energymgr,z1_lwt_max,lwt maximum temperature,,fe,2000,6071
+b,energymgr,z1_lwt_max,lwt maximum temperature,,fe,200f,6071,,,temperature:setting
+w,energymgr,z1_lwt_max,lwt maximum temperature,,fe,2010,6071,,,temperature:setting
+r,energymgr,z1_lwt_max_limits,lwt maximum temperature,,fe,2001,6071
+b,energymgr,z1_lwt_max_limits,lwt maximum temperature,13,fe,200e,6071,,,temperature_min_max
+
+# LWT Minimum settings and limits
+r,energymgr,z1_lwt_min,lwt minimum temperature,,fe,2000,6171
+b,energymgr,z1_lwt_min,lwt minimum temperature,,fe,200f,6171,,,temperature:setting
+w,energymgr,z1_lwt_min,lwt minimum temperature,,fe,2010,6171,,,temperature:setting
+r,energymgr,z1_lwt_min_limits,lwt minimum temperature,,fe,2001,6171
+b,energymgr,z1_lwt_min_limits,lwt minimum temperature,13,fe,200e,6171,,,temperature_min_max
+
+r,energymgr,z1_offset,Flow Temp Offset,,fe,2000,6471
+b,energymgr,z1_offset,Flow Temp Offset,13,fe,200f,6471,,,temperature:setting
+w,energymgr,z1_offset,Flow Temp Offset,,fe,2010,6471,,,temperature:setting
+r,energymgr,z1_offset_limits,Flow Temp Offset Limits,,fe,2001,6471
+b,energymgr,z1_offset_limits,Flow Temp Offset Limits,13,fe,200e,6471,,,temperature_min_max
+
+b,energymgr,z1_lwt_settings,Settings Broadcast,,fe,2020,6071,,,temperature:lwt_max;ignore_2;temperature:lwt_min;ignore_2;temperature:lwt_offset
+
+r,energymgr,z1_slope,heat slope,,fe,2000,6a71
+b,energymgr,z1_slope,heat slope,13,fe,200f,6a71,,,slope
+w,energymgr,z1_slope,heat slope,,fe,2010,6a71,,,slope
+r,energymgr,z1_slope_limits,heat slope,,fe,2001,6a71
+b,energymgr,z1_slope_limits,heat slope,13,fe,200e,6a71,,,slope_min_max
+
+b,energymgr,heat_slope_3,statistics,13,fe,2020,6971,,,slope:value_6971;ignore_2;slope:z1_slope;ignore_2;slope:value_6b71
+
+r,energymgr,z1_room_influence,Z1 Heating Room Temp Influence,,fe,2000,c279
+w,energymgr,z1_room_influence,Z1 Heating Room Temp Influence,,fe,2010,c279,,,percent:setting
+b,energymgr,z1_room_influence,Z1 Heating Room Temp Influence,13,fe,200f,c279,,,percent:setting
+r,energymgr,z1_room_influence_limits,Z1 Heating Room Temp Influence,,fe,2001,c279
+b,energymgr,z1_room_influence_limits,Z1 Heating Room Temp Influence,13,fe,200e,c279,,,percent_min_max
+
+r,energymgr,z1_winter_mode,Winter mode state,,fe,2000,0781
+w,energymgr,z1_winter_mode,Winter mode state,,fe,2010,0781,,,onoff
+b,energymgr,z1_winter_mode,Winter mode state,13,fe,200e,0781,,,onoff
+
+r,energymgr,z1_winter_mode_temp,statistics,,fe,2000,7971
+w,energymgr,z1_winter_mode_temp,statistics,,fe,2010,7971,,,temperature:setting
+b,energymgr,z1_winter_mode_temp,statistics,13,fe,200f,7971,,,temperature:setting
+r,energymgr,z1_winter_mode_temp_limits,statistics,,fe,2001,7971
+b,energymgr,z1_winter_mode_temp_limits,statistics,13,fe,200e,7971,,,temperature_min_max
+
+b,energymgr,z1_winter_mode_bcast,statistics,,fe,2020,7971,,,temperature:winter_mode_temp;ignore_2;longminutes:winter_mode_delay;ignore_2;onoff:winter_mode_active
+
+r,energymgr,z1_winter_mode_delay,statistics,,fe,2000,7a71
+w,energymgr,z1_winter_mode_delay,statistics,,fe,2010,7a71,,,longminutes:setting
+b,energymgr,z1_winter_mode_delay,statistics,13,fe,200f,7a71,,,longminutes:setting
+r,energymgr,z1_winter_mode_delay_limits,statistics,,fe,2001,7a71
+b,energymgr,z1_winter_mode_delay_limits,statistics,13,fe,200e,7a71,,,longminutes_min_max
+
+# Not used with a time based schedule
+r,ignored,z1_day_temp,Z1 Day Temp,,fe,2000,6271
+b,ignored,z1_day_temp,Z1 Day Temp,13,fe,200f,6271,,,temperature:setting
+w,ignored,z1_day_temp,Z1 Day Temp,,fe,2010,6271,,,temperature:setting
+r,ignored,z1_day_temp_limits,Z1 Day Temp Limits,,fe,2001,6271
+b,ignored,z1_day_temp_limits,Z1 Day Temp Limits,13,fe,200e,6271,,,temperature_min_max
+
+# Not used with a time based schedule
+r,ignored,z1_night_temp,Z1 Night Temp,,fe,2000,6371
+b,ignored,z1_night_temp,Z1 Night Temp,13,fe,200f,6371,,,temperature:setting
+w,ignored,z1_night_temp,Z1 Night Temp,,fe,2010,6371,,,temperature:setting
+r,ignored,z1_night_temp_limits,Z1 Night Temp Limits,,fe,2001,6371
+b,ignored,z1_night_temp_limits,statistics,13,fe,200e,6371,,,temperature_min_max
+
+# LWT Fixed Flow setpoint and limits - only used with fixed flow temperature
+r,ignored,z1_fixed_flow_setpoint,statistics,,fe,2000,6571
+b,ignored,z1_fixed_flow_setpoint,statistics,13,fe,200f,6571,,,temperature:setting
+w,ignored,z1_fixed_flow_setpoint,statistics,13,fe,2010,6571,,,temperature:setting
+r,ignored,z1_fixed_flow_setpoint_limits,statistics,,fe,2001,6571
+b,ignored,z1_fixed_flow_setpoint_limits,statistics,13,fe,200e,6571,,,temperature_min_max
+
+r,energymgr,z1_frost_temp,Z1 Frost Temp,,fe,2000,6426
+b,energymgr,z1_frost_temp,Z1 Frost Temp,13,fe,200f,6426,,,temperature:setting
+w,energymgr,z1_frost_temp,Z1 Frost Temp,,fe,2010,6426,,,temperature:setting
+r,energymgr,z1_frost_temp_limits,Z1 Frost Temp Limits,,fe,2001,6426
+b,energymgr,z1_frost_temp_limits,Z1 Frost Temp Limits,13,fe,200e,6426,,,temperature_min_max
+
+b,energymgr,z1_temp_bcast_1,Settings Broadcast,,fe,2020,6426,,,temperature:frost_temp;ignore_2;room_influence:z1_room_influence;ignore_2;temperature:day_temp
+b,energymgr,z1_temp_bcast_2,Settings Broadcast,,fe,2020,6371,,,temperature:night_temp;ignore_2;room_influence:z2_room_influence;ignore_2;temperature:temp_6272
+
+# More irregular room temperature broadcast but can be read by ebusd
+r,energymgr,z1_room_temp,statistics,,fe,2000,7118
+b,energymgr,z1_room_temp,statistics,70,fe,200f,7118,,,temperature:reading
+# Regular 2 minute room temperature broadcast
+b,energymgr,z1_room_temp_bcast,statistics,70,fe,2010,7118,,,temperature:reading
+
+r,energymgr,z1_room_setpoint,statistics,,fe,2000,6996
+b,energymgr,z1_room_setpoint,statistics,13,fe,200f,6996,,,temperature:setting
+
+# From the user panel
+r,ignored,z1_heat_request_panel,Provides Z1 Heat Request,,fe,2001,0191
+# Issued every 25 seconds and provides the Z1 Heat Request Information
+r,ignored,z1_heat_request_long,Provides Z1 Heat Request,,fe,2000,0191029103910491
+# Use the z1 only response as the rest is not relevant
+# Issued every 5 minutes 
+r,energymgr,z1_heat_request,Provides Z1 Heat Request,,fe,2000,0191
+b,energymgr,z1_heat_request,Provides Z1 Heat Request,,fe,200f,0191,,,onoff
+# b,energymgr,zone_heat_request_1,Provides Z1 Heat Request,,fe,200f,0191,,,onoff:z1_heat_request;ignore_3;onoff:z2_heat_request;ignore_3;onoff:z3_heat_request;ignore_3;onoff:z4_heat_request
+# Issued every 25 seconds and provides the Z1 Room Setpoint Information
+r,energymgr,zone_heat_request_2,Provides Z1 Room Setpoint,13,fe,2000,059106916996
+b,energymgr,zone_heat_request_2,Provides Z1 Room Setpoint,13,fe,200f,0591,,,onoff:z5_heat_request;ignore_3;onoff:z6_heat_request;ignore_3;temperature:z1_room_setpoint
+
+r,energymgr,zone_setpoints1,Continues read of setpoint info,13,fe,2000,6a966b966c96
+b,energymgr,zone_setpoints1,Continues read of setpoint info,13,fe,200f,6a96,,,temperature:z2_room_setpoint;ignore_3;temperature:z3_room_setpoint;ignore_3;temperature:z4_room_setpoint
+
+r,energymgr,zone_setpoints2,Continues read of setpoint info,13,fe,2000,6d966e96
+b,energymgr,zone_setpoints2,Continues read of setpoint info,13,fe,200f,6d96,,,temperature:z5_room_setpoint;ignore_3;temperature:z6_room_setpoint
+
+# Not Issued very often
+# b,energymgr,zone_heat_bcast,statistics,13,fe,2010,0191,,,onoff:z1_heat_request;ignore_3;onoff:z2_heat_request;ignore_3;onoff:z3_heat_request;ignore_3;onoff:z4_heat_request
+
+b,energymgr,heat_request_mode,statistics,,fe,2020,cb7f00ce79,,,heat_request_mode:z1_heat_request_mode;ignore_2;heat_request_mode:z2_heat_request_mode;ignore_2;heat_request_mode:z3_heat_request_mode
+b,energymgr,heat_temp_range,statistics,13,fe,2020,0081,,,low_high:z1_heat_range;ignore_2;low_high:z2_heat_range;ignore_2;low_high:z3_heat_range
+
+b,energymgr,setpoint_temps,statistics,13,fe,2010,6996,,,temperature:z1_room_setpoint;ignore_2;temperature:z2_room_setpoint;ignore_2;temperature:z3_room_setpoint
+
+b,energymgr,night_temp_settings,statistics,13,fe,2020,6277,,,temperature:Param_6277_UIN;ignore_2;temperature:z1_night_temp;ignore_2;temperature:z2_night_temp;ignore_2;temperature:z3_night_temp
+b,energymgr,day_temp_settings,statistics,13,fe,2020,6176,,,temperature:Param_6176_UIN;ignore_2;temperature:Param_6177_UIN;ignore_2;temperature:z1_day_temp
+
+############################################################################################
+####                             OTHER ZONES MESSAGES                                   ####
+############################################################################################
+
+r,ignored,z2_winter_mode_active,statistics,,fe,2000,0782
+w,ignored,z2_winter_mode_active,statistics,,fe,2010,0782,,,onoff
+b,ignored,z2_winter_mode_active,statistics,13,fe,200e,0782,,,onoff
+
+r,ignored,z3_winter_mode_active,statistics,,fe,2000,0783
+w,ignored,z3_winter_mode_active,statistics,,fe,2010,0783,,,onoff
+b,ignored,z3_winter_mode_active,statistics,13,fe,200e,0783,,,onoff
+
+r,ignored,z2_room_influence_limits,Z1 Heating Room Temp Influence,,fe,2001,c27a
+b,ignored,z2_room_influence_limits,Z1 Heating Room Temp Influence,13,fe,200e,c27a,,,percent_min_max
+
+
+r,ignored,z2_heat_therm_type,Z2 Heating Thermoreg Type,,fe,2001,c07a
+b,ignored,z2_heat_therm_type,Z2 Heating Thermoreg Type,13,fe,200e,c07a,,,heat_thermoreg_types
+w,ignored,z2_heat_therm_type,Z2 Heating Thermoreg Type,,fe,2010,c07a,,,heat_thermoreg_types
+
+r,ignored,z3_heat_therm_type,Z3 Heating Thermoreg Type,,fe,2001,c07c
+b,ignored,z3_heat_therm_type,Z3 Heating Thermoreg Type,13,fe,200e,c07c,,,heat_thermoreg_types
+w,ignored,z3__heat_therm_type,Z3 Heating Thermoreg Type,,fe,2010,c07c,,,heat_thermoreg_types
+
+b,ignored,z2_max_temp,statistics,13,fe,200e,682e,,,temperature_min_max
+r,ignored,z3_max_temp,statistics,,fe,2001,692e
+b,ignored,z3_max_temp,statistics,13,fe,200e,692e,,,temperature_min_max
+b,ignored,z2_comfort_temp,statistics,13,fe,200e,6272,,,temperature_min_max
+b,ignored,z2_reduced_temp,statistics,13,fe,200e,6372,,,temperature_min_max
+b,ignored,z3_comfort_temp,statistics,13,fe,200e,6273,,,temperature_min_max
+b,ignored,z3_reduced_temp,statistics,13,fe,200e,6373,,,temperature_min_max
+b,ignored,z4_comfort_temp,statistics,13,fe,200e,6274,,,temperature_min_max
+b,ignored,z4_reduced_temp,statistics,13,fe,200e,6374,,,temperature_min_max
+b,ignored,z5_comfort_temp,statistics,13,fe,200e,6275,,,temperature_min_max
+b,ignored,z5_reduced_temp,statistics,13,fe,200e,6375,,,temperature_min_max
+r,ignored,z6_comfort_temp,statistics,,fe,2001,6276
+b,ignored,z6_comfort_temp,statistics,13,fe,200e,6276,,,temperature_min_max
+r,ignored,z6_reduced_temp,statistics,,fe,2001,6376
+b,ignored,z6_reduced_temp,statistics,13,fe,200e,6376,,,temperature_min_max
+
+r,ignored,z6_room_setpoint,statistics,,fe,2000,6e96
+b,ignored,z6_room_setpoint,statistics,13,fe,200f,6e96,,,temperature
+
+
+r,ignored,zone_setpoints3,statistics,13,fe,2000,069169966a96
+b,ignored,zone_setpoints3,statistics,13,fe,200f,0691,,,onoff:z6_heat_request;ignore_3;temperature:z1_room_setpoint;ignore_3;temperature:z2_room_setpoint
+
+r,ignored,zone_setpoints4,statistics,13,fe,2000,6b966c966d96
+b,ignored,zone_setpoints4,statistics,13,fe,200f,6b96,,,temperature:z3_room_setpoint;ignore_3;temperature:z4_room_setpoint;ignore_3;temperature:z5_room_setpoint
+r,ignored,zone_setpoints5,statistics,13,fe,2000,6c966d966e96
+b,ignored,zone_setpoints5,statistics,13,fe,200f,6c96,,,temperature:z4_room_setpoint;ignore_3;temperature:z5_room_setpoint;ignore_3;temperature:z6_room_setpoint
+
+# Not issued often and not useful in single zone system
+r,ignored,zone_heat_request_3,statistics,13,fe,2000,0291039104910591
+b,ignored,zone_heat_request_3,statistics,13,fe,200f,0291,,,onoff:z2_heat_request;ignore_3;onoff:z3_heat_request;ignore_3;onoff:z4_heat_request;ignore_3;onoff:z5_heat_request
+
+############################################################################################
+####                             BOILER MESSAGES                                        ####
+############################################################################################
+
+r,ignored,gas_electric_min_cost_ratio,statistics,,18,2000,cc28,,,ignore_1;cost_ratio:gas_electric_min_cost_ratio
+r,ignored,gas_electric_max_cost_ratio,statistics,,18,2000,cb28,,,ignore_1;cost_ratio:gas_electric_max_cost_ratio
+r,ignored,gas_electric_energy_ratio,statistics,,18,2000,682b,,,ignore_1;energy_ratio:gas_electric_energy_ratio
+r,ignored,gas_cost,statistics,,18,2000,642b,,,ignore_1;cost
+w,ignored,gas_cost,statistics,,fe,2010,642b,,,cost
+
+r,ignored,boiler_disable_threshold,statistics,,18,2000,7126,,,ignore_1;temperature:setting
+w,ignored,boiler_disable_threshold,statistics,,18,2010,7126,,,temperature:setting
+r,ignored,boiler_disable_threshold_limits,,,18,2001,7126,,,temperature_min_max
+
+r,ignored,ext_boiler_heat_efficiency,statistics,,18,2000,782d,,,ignore_1;percent
+r,ignored,ext_boiler_dhw_efficiency,statistics,,18,2000,762e,,,ignore_1;percent
+
+r,ignored,boiler_calculated_cost,statistics,,18,2000,7147,,,ignore_1;cost
+
+############################################################################################
+####                             MANUAL MODE   MESSAGES                                 ####
+############################################################################################
+
+r,energymgr,manual_mode_1,,,18,2001,00f3,,,onoff
+r,energymgr,manual_mode_hp_circulator_control,,,18,2001,cf2a,,,off_low_high
+r,energymgr,manual_mode_diverter_valve_cooling,,,18,2001,02f3,,,onoff
+r,energymgr,manual_mode_auxiliary_circulator,,,18,2001,03f3,,,onoff
+r,energymgr,manual_mode_all_aux_output_contact,,,18,2001,0cf4,,,onoff
+r,energymgr,manual_mode_anode_output,,,18,2001,0df4,,,onoff
+
+r,energymgr,manual_mode_2,,,18,2001,01f3,,,onoff
+r,energymgr,manual_mode_hp_heating_on,,,18,2001,07f3,,,onoff
+r,energymgr,manual_mode_tank_heater,,,18,2001,03f5,,,onoff
+r,energymgr,manual_mode_force_hp_cool,,,18,2001,0ef4,,,onoff
+
+############################################################################################
+####                        ENERGY CALCULATION MESSAGES                                 ####
+############################################################################################
+
+r,ignored,pulse_value_number,,,18,2001,4b8e,,,longminutes_min_max
+r,ignored,pulse_value_factor,,,18,2001,d58e,,,pulse_value_factor
+r,ignored,pulse_measuring_type,,,18,2001,d68e,,,pulse_measuring_type
+r,ignored,pulse_unit,,,18,2001,d08e,,,pulse_unit
+r,ignored,electric_heater_efficiency,,,18,2001,d88e,,,percent_min_max
+r,ignored,heater_nominal_power,,,18,2001,d28e,,,kwshort_min_max

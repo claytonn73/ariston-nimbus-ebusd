@@ -1,0 +1,17 @@
+############################################################################################
+####                             SYSTEM RELATED MESSAGES                                ####
+############################################################################################
+
+b,broadcast,cast_date,Cast Date,,fe,2070,,,,hhmm:time;date:date
+b,broadcast,ebus_reset,Reset ebus,,fe,2034,,,,onoff:ebust_reset
+b,broadcast,hp_serial_number,HPSerial,13,fe,2031,,value,,STR:12
+b,broadcast,gw_serial_number,GWSerial,70,fe,2031,,value,,STR:12
+b,broadcast,sensys_serial_number,SystemSerial,7f,fe,2031,,value,,STR:12
+r,sensys,other_sw_version,RC-SW-Ver,,75,2002,000000,value,,HEX:14
+r,sensys,gateway_sw_version,RC-SW-Ver,,84,2002,000000,value,,HEX:16
+r,sensys,energymgr_sw_version,Energymgr-SW-Ver,,18,2002,000000,value,,HEX:16
+r,sensys,heatpump_sw_version,Heatpump-SW-Ver,,1e,2002,000000,value,,HEX:16
+
+
+
+
