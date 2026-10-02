@@ -1,0 +1,18 @@
+############################################################################################
+####                             BOILER MESSAGES                                        ####
+############################################################################################
+
+r,ignored,gas_electric_min_cost_ratio,statistics,,18,2000,cc28,,,ignore_1;cost_ratio:gas_electric_min_cost_ratio
+r,ignored,gas_electric_max_cost_ratio,statistics,,18,2000,cb28,,,ignore_1;cost_ratio:gas_electric_max_cost_ratio
+r,ignored,gas_electric_energy_ratio,statistics,,18,2000,682b,,,ignore_1;energy_ratio:gas_electric_energy_ratio
+r,ignored,gas_cost,statistics,,18,2000,642b,,,ignore_1;cost
+w,ignored,gas_cost,statistics,,fe,2010,642b,,,cost
+
+r,ignored,boiler_disable_threshold,statistics,,18,2000,7126,,,ignore_1;temperature:setting
+w,ignored,boiler_disable_threshold,statistics,,18,2010,7126,,,temperature:setting
+r,ignored,boiler_disable_threshold_limits,,,18,2001,7126,,,temperature_min_max
+
+r,ignored,ext_boiler_heat_efficiency,statistics,,18,2000,782d,,,ignore_1;percent
+r,ignored,ext_boiler_dhw_efficiency,statistics,,18,2000,762e,,,ignore_1;percent
+
+r,ignored,boiler_calculated_cost,statistics,,18,2000,7147,,,ignore_1;cost

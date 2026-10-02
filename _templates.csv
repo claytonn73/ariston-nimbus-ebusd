@@ -59,7 +59,7 @@ temperature_min_max,temperature:setting;temperature:minimum;temperature:maximum,
 pressure:reading,U2L,10,bar,pressure
 frequency,U1L,,Hz,frequency
 
-count,u2l,,count
+count,U2L,,count
 
 energy_ratio,U2L,,,
 cost_ratio,U1L,,,
@@ -93,7 +93,7 @@ heat_mode:setting,BCD,0=green;1=standard,,
 hydraulic_scheme:setting,BCD,0=nothing;1=boiler;2=boiler_buffer
 holiday_status:setting,BCD,0=home;3=away,,
 hybrid_mode:setting,BCD,0=auto;1=boiler_only;2=hp_only,,
-hybrid_logic:setting,BCD,0=maxsaving;1=maxeco,,
+hybrid_logic:setting,BCD,0=max_saving;1=max_eco,,
 cool_temp_range:setting,BCD,0=fan_coil;1=underfloor_heating,,
 heat_request_mode:setting,BCD,0=standard;1=no_time_program;2=forced,,
 
@@ -104,7 +104,7 @@ energymgr_status:state,UCH,0=standby;1=antifreeze_cycle;2=heating_cycle;3=heatin
 heater_status:setting,BCD,0=off;1=on;2=integration;3=lockout,,
 
 heat_thermoreg_types:setting,UCH,0=fixed_temp;1=basic_on_off;2=room_temp_only;3=outdoor_temp_only;4=outdoor_and_room,,
-cool_thermoreg_types:setting,UCH,0=on_off;1=fixed_temp;2=room_emp,,
+cool_thermoreg_types:setting,UCH,0=on_off;1=fixed_temp;2=room_temp,,
 
 buffer_status:setting,UCH,0=absent;1=disabled;2=off;3=charged;4=charge_request;5=antifreeze_cycle;6=antifrost;7=buffer_high_probe_error;8=buffer_overtemperature;9=electric_charge_request;10=photovoltaic_charge_request,,
 buffer_setpoint_mode:setting,BCD,0=fixed;1=variable,,

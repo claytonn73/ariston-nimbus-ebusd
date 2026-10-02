@@ -1,0 +1,198 @@
+############################################################################################
+####                             ZONE 1 SETTINS AND MESSAGES                            ####
+############################################################################################
+
+r,energymgr,z1_heat_temp_range,Z1 Heating Temp Range,,fe,2001,0081
+b,energymgr,z1_heat_temp_range,Z1 Heating Temp Range,,fe,200e,0081,,,low_high
+w,energymgr,z1_heat_temp_range,Z1 Heating Temp Range,,fe,2010,0081,,,low_high
+
+r,energymgr,z1_heat_therm_type,Z1 Heating Thermoreg Type,,fe,2001,c079
+b,energymgr,z1_heat_therm_type,Z1 Heating Thermoreg Type,13,fe,200e,c079,,,heat_thermoreg_types
+w,energymgr,z1_heat_therm_type,Z1 Heating Thermoreg Type,,fe,2010,c079,,,heat_thermoreg_types
+
+r,energymgr,z1_heat_request_mode,Z1 Heating Request Mode,,fe,2000,ce79
+b,energymgr,z1_heat_request_mode,Z1 Heating Request Mode,13,fe,200f,ce79,,,heat_request_mode
+w,energymgr,z1_heat_request_mode,Z1 Heating Request Mode,,fe,2010,ce79,,,heat_request_mode
+
+# LWT Maximum settings and limits
+r,energymgr,z1_lwt_max,lwt maximum temperature,,fe,2000,6071
+b,energymgr,z1_lwt_max,lwt maximum temperature,,fe,200f,6071,,,temperature:setting
+w,energymgr,z1_lwt_max,lwt maximum temperature,,fe,2010,6071,,,temperature:setting
+r,energymgr,z1_lwt_max_limits,lwt maximum temperature,,fe,2001,6071
+b,energymgr,z1_lwt_max_limits,lwt maximum temperature,13,fe,200e,6071,,,temperature_min_max
+
+# LWT Minimum settings and limits
+r,energymgr,z1_lwt_min,lwt minimum temperature,,fe,2000,6171
+b,energymgr,z1_lwt_min,lwt minimum temperature,,fe,200f,6171,,,temperature:setting
+w,energymgr,z1_lwt_min,lwt minimum temperature,,fe,2010,6171,,,temperature:setting
+r,energymgr,z1_lwt_min_limits,lwt minimum temperature,,fe,2001,6171
+b,energymgr,z1_lwt_min_limits,lwt minimum temperature,13,fe,200e,6171,,,temperature_min_max
+
+r,energymgr,z1_offset,Flow Temp Offset,,fe,2000,6471
+b,energymgr,z1_offset,Flow Temp Offset,13,fe,200f,6471,,,temperature:setting
+w,energymgr,z1_offset,Flow Temp Offset,,fe,2010,6471,,,temperature:setting
+r,energymgr,z1_offset_limits,Flow Temp Offset Limits,,fe,2001,6471
+b,energymgr,z1_offset_limits,Flow Temp Offset Limits,13,fe,200e,6471,,,temperature_min_max
+
+b,energymgr,z1_lwt_settings,Settings Broadcast,,fe,2020,6071,,,temperature:lwt_max;ignore_2;temperature:lwt_min;ignore_2;temperature:lwt_offset
+
+r,energymgr,z1_slope,heat slope,,fe,2000,6a71
+b,energymgr,z1_slope,heat slope,13,fe,200f,6a71,,,slope
+w,energymgr,z1_slope,heat slope,,fe,2010,6a71,,,slope
+r,energymgr,z1_slope_limits,heat slope,,fe,2001,6a71
+b,energymgr,z1_slope_limits,heat slope,13,fe,200e,6a71,,,slope_min_max
+
+b,energymgr,heat_slope_3,statistics,13,fe,2020,6971,,,slope:value_6971;ignore_2;slope:z1_slope;ignore_2;slope:value_6b71
+
+r,energymgr,z1_room_influence,Z1 Heating Room Temp Influence,,fe,2000,c279
+w,energymgr,z1_room_influence,Z1 Heating Room Temp Influence,,fe,2010,c279,,,percent:setting
+b,energymgr,z1_room_influence,Z1 Heating Room Temp Influence,13,fe,200f,c279,,,percent:setting
+r,energymgr,z1_room_influence_limits,Z1 Heating Room Temp Influence,,fe,2001,c279
+b,energymgr,z1_room_influence_limits,Z1 Heating Room Temp Influence,13,fe,200e,c279,,,percent_min_max
+
+r,energymgr,z1_winter_mode,Winter mode state,,fe,2000,0781
+w,energymgr,z1_winter_mode,Winter mode state,,fe,2010,0781,,,onoff
+b,energymgr,z1_winter_mode,Winter mode state,13,fe,200e,0781,,,onoff
+
+r,energymgr,z1_winter_mode_temp,statistics,,fe,2000,7971
+w,energymgr,z1_winter_mode_temp,statistics,,fe,2010,7971,,,temperature:setting
+b,energymgr,z1_winter_mode_temp,statistics,13,fe,200f,7971,,,temperature:setting
+r,energymgr,z1_winter_mode_temp_limits,statistics,,fe,2001,7971
+b,energymgr,z1_winter_mode_temp_limits,statistics,13,fe,200e,7971,,,temperature_min_max
+
+b,energymgr,z1_winter_mode_bcast,statistics,,fe,2020,7971,,,temperature:winter_mode_temp;ignore_2;longminutes:winter_mode_delay;ignore_2;onoff:winter_mode_active
+
+r,energymgr,z1_winter_mode_delay,statistics,,fe,2000,7a71
+w,energymgr,z1_winter_mode_delay,statistics,,fe,2010,7a71,,,longminutes:setting
+b,energymgr,z1_winter_mode_delay,statistics,13,fe,200f,7a71,,,longminutes:setting
+r,energymgr,z1_winter_mode_delay_limits,statistics,,fe,2001,7a71
+b,energymgr,z1_winter_mode_delay_limits,statistics,13,fe,200e,7a71,,,longminutes_min_max
+
+# Not used with a time based schedule
+r,ignored,z1_day_temp,Z1 Day Temp,,fe,2000,6271
+b,ignored,z1_day_temp,Z1 Day Temp,13,fe,200f,6271,,,temperature:setting
+w,ignored,z1_day_temp,Z1 Day Temp,,fe,2010,6271,,,temperature:setting
+r,ignored,z1_day_temp_limits,Z1 Day Temp Limits,,fe,2001,6271
+b,ignored,z1_day_temp_limits,Z1 Day Temp Limits,13,fe,200e,6271,,,temperature_min_max
+
+# Not used with a time based schedule
+r,ignored,z1_night_temp,Z1 Night Temp,,fe,2000,6371
+b,ignored,z1_night_temp,Z1 Night Temp,13,fe,200f,6371,,,temperature:setting
+w,ignored,z1_night_temp,Z1 Night Temp,,fe,2010,6371,,,temperature:setting
+r,ignored,z1_night_temp_limits,Z1 Night Temp Limits,,fe,2001,6371
+b,ignored,z1_night_temp_limits,statistics,13,fe,200e,6371,,,temperature_min_max
+
+# LWT Fixed Flow setpoint and limits - only used with fixed flow temperature
+r,ignored,z1_fixed_flow_setpoint,statistics,,fe,2000,6571
+b,ignored,z1_fixed_flow_setpoint,statistics,13,fe,200f,6571,,,temperature:setting
+w,ignored,z1_fixed_flow_setpoint,statistics,13,fe,2010,6571,,,temperature:setting
+r,ignored,z1_fixed_flow_setpoint_limits,statistics,,fe,2001,6571
+b,ignored,z1_fixed_flow_setpoint_limits,statistics,13,fe,200e,6571,,,temperature_min_max
+
+r,energymgr,z1_frost_temp,Z1 Frost Temp,,fe,2000,6426
+b,energymgr,z1_frost_temp,Z1 Frost Temp,13,fe,200f,6426,,,temperature:setting
+w,energymgr,z1_frost_temp,Z1 Frost Temp,,fe,2010,6426,,,temperature:setting
+r,energymgr,z1_frost_temp_limits,Z1 Frost Temp Limits,,fe,2001,6426
+b,energymgr,z1_frost_temp_limits,Z1 Frost Temp Limits,13,fe,200e,6426,,,temperature_min_max
+
+b,energymgr,z1_temp_bcast_1,Settings Broadcast,,fe,2020,6426,,,temperature:frost_temp;ignore_2;room_influence:z1_room_influence;ignore_2;temperature:day_temp
+b,energymgr,z1_temp_bcast_2,Settings Broadcast,,fe,2020,6371,,,temperature:night_temp;ignore_2;room_influence:z2_room_influence;ignore_2;temperature:temp_6272
+
+# More irregular room temperature broadcast but can be read by ebusd
+r,energymgr,z1_room_temp,statistics,,fe,2000,7118
+b,energymgr,z1_room_temp,statistics,70,fe,200f,7118,,,temperature:reading
+# Regular 2 minute room temperature broadcast
+b,energymgr,z1_room_temp_bcast,statistics,70,fe,2010,7118,,,temperature:reading
+
+r,energymgr,z1_room_setpoint,statistics,,fe,2000,6996
+b,energymgr,z1_room_setpoint,statistics,13,fe,200f,6996,,,temperature:setting
+
+r,energymgr,z1_humidity,statistics,31,fe,2000,c9c1
+b,energymgr,z1_humidity,statistics,13,fe,200f,c9c1,,,percent:reading
+b,energymgr,z1_humidity_bcast,statistics,13,fe,2010,c9c1,,,percent:reading
+
+# From the user panel
+r,ignored,z1_heat_request_panel,Provides Z1 Heat Request,,fe,2001,0191
+# Issued every 25 seconds and provides the Z1 Heat Request Information
+r,ignored,z1_heat_request_long,Provides Z1 Heat Request,,fe,2000,0191029103910491
+# Use the z1 only response as the rest is not relevant
+# Issued every 5 minutes 
+r,energymgr,z1_heat_request,Provides Z1 Heat Request,,fe,2000,0191
+b,energymgr,z1_heat_request,Provides Z1 Heat Request,,fe,200f,0191,,,onoff
+# b,energymgr,zone_heat_request_1,Provides Z1 Heat Request,,fe,200f,0191,,,onoff:z1_heat_request;ignore_3;onoff:z2_heat_request;ignore_3;onoff:z3_heat_request;ignore_3;onoff:z4_heat_request
+# Issued every 25 seconds and provides the Z1 Room Setpoint Information
+r,energymgr,zone_heat_request_2,Provides Z1 Room Setpoint,13,fe,2000,059106916996
+b,energymgr,zone_heat_request_2,Provides Z1 Room Setpoint,13,fe,200f,0591,,,onoff:z5_heat_request;ignore_3;onoff:z6_heat_request;ignore_3;temperature:z1_room_setpoint
+
+r,energymgr,zone_setpoints1,Continues read of setpoint info,13,fe,2000,6a966b966c96
+b,energymgr,zone_setpoints1,Continues read of setpoint info,13,fe,200f,6a96,,,temperature:z2_room_setpoint;ignore_3;temperature:z3_room_setpoint;ignore_3;temperature:z4_room_setpoint
+
+r,energymgr,zone_setpoints2,Continues read of setpoint info,13,fe,2000,6d966e96
+b,energymgr,zone_setpoints2,Continues read of setpoint info,13,fe,200f,6d96,,,temperature:z5_room_setpoint;ignore_3;temperature:z6_room_setpoint
+
+# Not Issued very often
+# b,energymgr,zone_heat_bcast,statistics,13,fe,2010,0191,,,onoff:z1_heat_request;ignore_3;onoff:z2_heat_request;ignore_3;onoff:z3_heat_request;ignore_3;onoff:z4_heat_request
+
+b,energymgr,heat_request_mode,statistics,,fe,2020,cb7f00ce79,,,heat_request_mode:z1_heat_request_mode;ignore_2;heat_request_mode:z2_heat_request_mode;ignore_2;heat_request_mode:z3_heat_request_mode
+b,energymgr,heat_temp_range,statistics,13,fe,2020,0081,,,low_high:z1_heat_range;ignore_2;low_high:z2_heat_range;ignore_2;low_high:z3_heat_range
+
+b,energymgr,setpoint_temps,statistics,13,fe,2010,6996,,,temperature:z1_room_setpoint;ignore_2;temperature:z2_room_setpoint;ignore_2;temperature:z3_room_setpoint
+
+b,energymgr,night_temp_settings,statistics,13,fe,2020,6277,,,temperature:Param_6277_UIN;ignore_2;temperature:z1_night_temp;ignore_2;temperature:z2_night_temp;ignore_2;temperature:z3_night_temp
+b,energymgr,day_temp_settings,statistics,13,fe,2020,6176,,,temperature:Param_6176_UIN;ignore_2;temperature:Param_6177_UIN;ignore_2;temperature:z1_day_temp
+
+############################################################################################
+####                             OTHER ZONES MESSAGES                                   ####
+############################################################################################
+
+r,ignored,z2_winter_mode_active,statistics,,fe,2000,0782
+w,ignored,z2_winter_mode_active,statistics,,fe,2010,0782,,,onoff
+b,ignored,z2_winter_mode_active,statistics,13,fe,200e,0782,,,onoff
+
+r,ignored,z3_winter_mode_active,statistics,,fe,2000,0783
+w,ignored,z3_winter_mode_active,statistics,,fe,2010,0783,,,onoff
+b,ignored,z3_winter_mode_active,statistics,13,fe,200e,0783,,,onoff
+
+r,ignored,z2_room_influence_limits,Z1 Heating Room Temp Influence,,fe,2001,c27a
+b,ignored,z2_room_influence_limits,Z1 Heating Room Temp Influence,13,fe,200e,c27a,,,percent_min_max
+
+
+r,ignored,z2_heat_therm_type,Z2 Heating Thermoreg Type,,fe,2001,c07a
+b,ignored,z2_heat_therm_type,Z2 Heating Thermoreg Type,13,fe,200e,c07a,,,heat_thermoreg_types
+w,ignored,z2_heat_therm_type,Z2 Heating Thermoreg Type,,fe,2010,c07a,,,heat_thermoreg_types
+
+r,ignored,z3_heat_therm_type,Z3 Heating Thermoreg Type,,fe,2001,c07c
+b,ignored,z3_heat_therm_type,Z3 Heating Thermoreg Type,13,fe,200e,c07c,,,heat_thermoreg_types
+w,ignored,z3__heat_therm_type,Z3 Heating Thermoreg Type,,fe,2010,c07c,,,heat_thermoreg_types
+
+b,ignored,z2_max_temp,statistics,13,fe,200e,682e,,,temperature_min_max
+r,ignored,z3_max_temp,statistics,,fe,2001,692e
+b,ignored,z3_max_temp,statistics,13,fe,200e,692e,,,temperature_min_max
+b,ignored,z2_comfort_temp,statistics,13,fe,200e,6272,,,temperature_min_max
+b,ignored,z2_reduced_temp,statistics,13,fe,200e,6372,,,temperature_min_max
+b,ignored,z3_comfort_temp,statistics,13,fe,200e,6273,,,temperature_min_max
+b,ignored,z3_reduced_temp,statistics,13,fe,200e,6373,,,temperature_min_max
+b,ignored,z4_comfort_temp,statistics,13,fe,200e,6274,,,temperature_min_max
+b,ignored,z4_reduced_temp,statistics,13,fe,200e,6374,,,temperature_min_max
+b,ignored,z5_comfort_temp,statistics,13,fe,200e,6275,,,temperature_min_max
+b,ignored,z5_reduced_temp,statistics,13,fe,200e,6375,,,temperature_min_max
+r,ignored,z6_comfort_temp,statistics,,fe,2001,6276
+b,ignored,z6_comfort_temp,statistics,13,fe,200e,6276,,,temperature_min_max
+r,ignored,z6_reduced_temp,statistics,,fe,2001,6376
+b,ignored,z6_reduced_temp,statistics,13,fe,200e,6376,,,temperature_min_max
+
+r,ignored,z6_room_setpoint,statistics,,fe,2000,6e96
+b,ignored,z6_room_setpoint,statistics,13,fe,200f,6e96,,,temperature
+
+
+r,ignored,zone_setpoints3,statistics,13,fe,2000,069169966a96
+b,ignored,zone_setpoints3,statistics,13,fe,200f,0691,,,onoff:z6_heat_request;ignore_3;temperature:z1_room_setpoint;ignore_3;temperature:z2_room_setpoint
+
+r,ignored,zone_setpoints4,statistics,13,fe,2000,6b966c966d96
+b,ignored,zone_setpoints4,statistics,13,fe,200f,6b96,,,temperature:z3_room_setpoint;ignore_3;temperature:z4_room_setpoint;ignore_3;temperature:z5_room_setpoint
+r,ignored,zone_setpoints5,statistics,13,fe,2000,6c966d966e96
+b,ignored,zone_setpoints5,statistics,13,fe,200f,6c96,,,temperature:z4_room_setpoint;ignore_3;temperature:z5_room_setpoint;ignore_3;temperature:z6_room_setpoint
+
+# Not issued often and not useful in single zone system
+r,ignored,zone_heat_request_3,statistics,13,fe,2000,0291039104910591
+b,ignored,zone_heat_request_3,statistics,13,fe,200f,0291,,,onoff:z2_heat_request;ignore_3;onoff:z3_heat_request;ignore_3;onoff:z4_heat_request;ignore_3;onoff:z5_heat_request
