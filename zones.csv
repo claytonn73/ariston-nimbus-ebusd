@@ -113,12 +113,17 @@ b,zones,z1_humidity_bcast,statistics,13,fe,2010,c9c1,,,percent:reading
 
 # From the user panel
 r,ignored,z1_heat_request_panel,Provides Z1 Heat Request,,fe,2001,0191
+b,ignored,z1_heat_request_panel,Provides Z1 Heat Request,,fe,200e,0191,,,onoff
 # Issued every 25 seconds and provides the Z1 Heat Request Information
 r,ignored,z1_heat_request_long,Provides Z1 Heat Request,,fe,2000,0191029103910491
 # Use the z1 only response as the rest is not relevant
 # Issued every 5 minutes 
 r,zones,z1_heat_request,Provides Z1 Heat Request,,fe,2000,0191
 b,zones,z1_heat_request,Provides Z1 Heat Request,,fe,200f,0191,,,onoff
+# Query from panel
+
+
+
 # b,zones,zone_heat_request_1,Provides Z1 Heat Request,,fe,200f,0191,,,onoff:z1_heat_request;ignore_3;onoff:z2_heat_request;ignore_3;onoff:z3_heat_request;ignore_3;onoff:z4_heat_request
 # Issued every 25 seconds and provides the Z1 Room Setpoint Information
 r,zones,zone_heat_request_2,Provides Z1 Room Setpoint,13,fe,2000,059106916996
@@ -144,6 +149,8 @@ b,zones,setpoint_temps,statistics,13,fe,2010,6996,,,temperature:z1_room_setpoint
 b,zones,night_temp_settings,statistics,13,fe,2020,6277,,,temperature:Param_6277_UIN;ignore_2;temperature:z1_night_temp;ignore_2;temperature:z2_night_temp;ignore_2;temperature:z3_night_temp
 b,zones,day_temp_settings,statistics,13,fe,2020,6176,,,temperature:Param_6176_UIN;ignore_2;temperature:Param_6177_UIN;ignore_2;temperature:z1_day_temp
 
+r,zones,z1_name,unknown,,fe,2001,d479
+b,zones,z1_name,unknown,,fe,200e,d479,,,zone_name
 
 ############################################################################################
 ####                             ZONE 2 SETTINS AND MESSAGES                            ####
@@ -228,14 +235,13 @@ w,ignored,z2_heat_therm_type,Z2 Heating Thermoreg Type,,fe,2010,c07a,,,heat_ther
 
 r,ignored,z3_winter_mode_active,statistics,,fe,2000,0783
 w,ignored,z3_winter_mode_active,statistics,,fe,2010,0783,,,onoff
-b,ignored,z3_winter_mode_active,statistics,13,fe,200e,0783,,,onoff
+r,ignored,z3_winter_mode_active_panel,statistics,,fe,2001,0783
+b,ignored,z3_winter_mode_active_panel,statistics,13,fe,200e,0783,,,onoff
 
 r,ignored,z3_heat_therm_type,Z3 Heating Thermoreg Type,,fe,2001,c07c
 b,ignored,z3_heat_therm_type,Z3 Heating Thermoreg Type,13,fe,200e,c07c,,,heat_thermoreg_types
 w,ignored,z3__heat_therm_type,Z3 Heating Thermoreg Type,,fe,2010,c07c,,,heat_thermoreg_types
 
-r,ignored,z3_max_temp,statistics,,fe,2001,692e
-b,ignored,z3_max_temp,statistics,13,fe,200e,692e,,,temperature_min_max
 
 r,ignored,z3_day_temp,Z3 Day Temp,,18,2000,6273,,,ignore_1;temperature
 b,ignored,z3_day_temp,Z3 Day Temp,,fe,200f,6273,,,temperature

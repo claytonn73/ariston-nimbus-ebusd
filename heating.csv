@@ -51,3 +51,20 @@ r,heating,floor_drying_temp,Floor Drying Temperature,,18,2000,7c2b,,,ignore_1;te
 w,heating,floor_drying_temp,Floor Drying Temperature,,18,2020,7c2b,,,temperature:setting
 r,heating,floor_drying_temp_limits,Floor Drying Temperature,,18,2001,7c2b,,,temperature_min_max
 
+############################################################################################
+####                     BUFFER SETTINGS AND MESSAGES                                   ####
+############################################################################################
+
+
+r,ignored,buffer_control_mode,unknown,,fe,2001,d62c
+b,ignored,buffer_control_mode,unknown,,fe,200e,d62c,,,control_mode
+
+r,ignored,buffer_charge_mode,unknown,,fe,2001,d12c
+b,ignored,buffer_charge_mode,unknown,,fe,200e,d12c,,,buffer_charge_mode
+
+r,ignored,buffer_reduced_temperature_limits,unknown,,fe,2001,68ef
+b,ignored,buffer_reduced_temperature_limits,unknown,,fe,200e,68ef,,,temperature_min_max
+
+r,ignored,buffer_comfort_temperature_limits,statistics,,fe,2001,692e
+b,ignored,buffer_comfort_temperature_limits,statistics,13,fe,200e,692e,,,temperature_min_max
+
