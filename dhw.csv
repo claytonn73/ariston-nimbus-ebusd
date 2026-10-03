@@ -10,13 +10,13 @@ b,dhw,status,DHW status,13,fe,200e,0220,,,onoff
 w,dhw,status,DHW status,,fe,2010,0220,,,onoff
 
 r,dhw,aux_heat_activation,DHW Auxiliary Heat Activation,,18,2001,1588,,,aux_heat_activation
-w,dhw,aux_heat_activation,DHW Auxiliary Heat Activation,,18,2010,1588,,,aux_heat_activation
+w,dhw,aux_heat_activation,DHW Auxiliary Heat Activation,,18,2020,1588,,,aux_heat_activation
 
 r,dhw,tank_heater,DHW Tank Electric Heater,,18,2001,d12f,,,tank_heater
 w,dhw,tank_heater,DHW Tank Electric Heater,,18,2020,d12f,,,tank_heater
 
 r,dhw,operation_mode,DHW Operation Mode,,18,2001,d08d,,,dhw_mode
-w,dhw,operation_mode,DHW Operation Mode,,18,2029,d08d,,,dhw_mode
+w,dhw,operation_mode,DHW Operation Mode,,18,2020,d08d,,,dhw_mode
 
 r,dhw,scheduling,DHW Scheduling Mode,,fe,2001,c028
 b,dhw,scheduling,DHW Scheduling Mode,13,fe,200e,c028,,,control_mode

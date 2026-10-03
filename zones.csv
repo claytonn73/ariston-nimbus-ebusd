@@ -96,7 +96,7 @@ b,zones,z1_heat_request_mode,Z1 Heating Request Mode,13,fe,200f,ce79,,,heat_requ
 w,zones,z1_heat_request_mode,Z1 Heating Request Mode,,fe,2010,ce79,,,heat_request_mode
 
 b,zones,z1_temp_bcast_1,Settings Broadcast,,fe,2020,6426,,,temperature:frost_temp;ignore_2;room_influence:z1_room_influence;ignore_2;temperature:day_temp
-b,zones,z1_temp_bcast_2,Settings Broadcast,,fe,2020,6371,,,temperature:night_temp;ignore_2;room_influence:z2_room_influence;ignore_2;temperature:temp_6272
+b,zones,z1_temp_bcast_2,Settings Broadcast,,fe,2020,6371,,,temperature:night_temp;ignore_2;room_influence:z2_room_influence;ignore_2;temperature:z2_day_temp
 
 # More irregular room temperature broadcast but can be read by ebusd
 r,zones,z1_room_temp,statistics,,fe,2000,7118
@@ -116,14 +116,11 @@ r,ignored,z1_heat_request_panel,Provides Z1 Heat Request,,fe,2001,0191
 b,ignored,z1_heat_request_panel,Provides Z1 Heat Request,,fe,200e,0191,,,onoff
 # Issued every 25 seconds and provides the Z1 Heat Request Information
 r,ignored,z1_heat_request_long,Provides Z1 Heat Request,,fe,2000,0191029103910491
-# Use the z1 only response as the rest is not relevant
+
 # Issued every 5 minutes 
 r,zones,z1_heat_request,Provides Z1 Heat Request,,fe,2000,0191
 b,zones,z1_heat_request,Provides Z1 Heat Request,,fe,200f,0191,,,onoff
-# Query from panel
-
-
-
+# Use the z1 only response as the rest is not relevant
 # b,zones,zone_heat_request_1,Provides Z1 Heat Request,,fe,200f,0191,,,onoff:z1_heat_request;ignore_3;onoff:z2_heat_request;ignore_3;onoff:z3_heat_request;ignore_3;onoff:z4_heat_request
 # Issued every 25 seconds and provides the Z1 Room Setpoint Information
 r,zones,zone_heat_request_2,Provides Z1 Room Setpoint,13,fe,2000,059106916996
@@ -132,11 +129,11 @@ b,zones,zone_heat_request_2,Provides Z1 Room Setpoint,13,fe,200f,0591,,,onoff:z5
 r,ignored,z1_setpoint_temperature,Z1 Setpoint Temperature,,fe,2001,6197
 b,ignored,z1_setpoint_temperature_limits,unknown,,fe,200e,6197,,,temperature_min_max
 
-r,zones,zone_setpoints1,Continues read of setpoint info,13,fe,2000,6a966b966c96
-b,zones,zone_setpoints1,Continues read of setpoint info,13,fe,200f,6a96,,,temperature:z2_room_setpoint;ignore_3;temperature:z3_room_setpoint;ignore_3;temperature:z4_room_setpoint
+r,ignored,zone_setpoints1,Continues read of setpoint info,13,fe,2000,6a966b966c96
+b,ignored,zone_setpoints1,Continues read of setpoint info,13,fe,200f,6a96,,,temperature:z2_room_setpoint;ignore_3;temperature:z3_room_setpoint;ignore_3;temperature:z4_room_setpoint
 
-r,zones,zone_setpoints2,Continues read of setpoint info,13,fe,2000,6d966e96
-b,zones,zone_setpoints2,Continues read of setpoint info,13,fe,200f,6d96,,,temperature:z5_room_setpoint;ignore_3;temperature:z6_room_setpoint
+r,ignored,zone_setpoints2,Continues read of setpoint info,13,fe,2000,6d966e96
+b,ignored,zone_setpoints2,Continues read of setpoint info,13,fe,200f,6d96,,,temperature:z5_room_setpoint;ignore_3;temperature:z6_room_setpoint
 
 # Not Issued very often
 # b,zones,zone_heat_bcast,statistics,13,fe,2010,0191,,,onoff:z1_heat_request;ignore_3;onoff:z2_heat_request;ignore_3;onoff:z3_heat_request;ignore_3;onoff:z4_heat_request

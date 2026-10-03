@@ -55,7 +55,6 @@ r,heating,floor_drying_temp_limits,Floor Drying Temperature,,18,2001,7c2b,,,temp
 ####                     BUFFER SETTINGS AND MESSAGES                                   ####
 ############################################################################################
 
-
 r,ignored,buffer_control_mode,unknown,,fe,2001,d62c
 b,ignored,buffer_control_mode,unknown,,fe,200e,d62c,,,control_mode
 
