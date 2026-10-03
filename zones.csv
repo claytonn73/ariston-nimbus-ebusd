@@ -146,8 +146,8 @@ b,zones,setpoint_temps,statistics,13,fe,2010,6996,,,temperature:z1_room_setpoint
 b,zones,night_temp_settings,statistics,13,fe,2020,6277,,,temperature:Param_6277_UIN;ignore_2;temperature:z1_night_temp;ignore_2;temperature:z2_night_temp;ignore_2;temperature:z3_night_temp
 b,zones,day_temp_settings,statistics,13,fe,2020,6176,,,temperature:Param_6176_UIN;ignore_2;temperature:Param_6177_UIN;ignore_2;temperature:z1_day_temp
 
-r,zones,z1_name,unknown,,fe,2001,d479
-b,zones,z1_name,unknown,,fe,200e,d479,,,zone_name
+r,zones,z1_name,Zone 1 Name Setting,,fe,2001,d479
+b,zones,z1_name,Zone 1 Name Setting,,fe,200e,d479,,,zone_name
 
 ############################################################################################
 ####                             ZONE 2 SETTINS AND MESSAGES                            ####

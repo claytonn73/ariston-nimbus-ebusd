@@ -1,10 +1,15 @@
 ############################################################################################
 ####                     CENTRAL HEATING SETTINGS AND MESSAGES                          ####
+#### address 13: master #12                                                             ####
+#### address 18: slave #12                                                              ####
 ############################################################################################
 
 r,heating,status,Heating Status,,fe,2001,0120
 b,heating,status,Heating Status,13,fe,200e,0120,,,onoff
-w,heating,status,Heating Status,,fe,2010,0120,,,onoff
+w,heating,status,Heating Status,70,fe,2020,0120,,,onoff
+b,ignored,status_bcast,Heating Status,13,fe,2010,0120,,,onoff
+
+b,ignored,heating_status_bcast,Heating Status Broadcast,13,fe,2020,0120,,,onoff:heating_status;ignore_2;percent:unknown_d02a;ignore_2;percent:unknown_d12a
 
 # b,heating,status,Heating Status,,fe,200f,0120,,,onoff:setting - multiple values possible
 
@@ -17,13 +22,13 @@ w,heating,eco_comfort,statistics,,18,2020,c728,,,eco_mode
 r,heating,lwt_setpoint,Flow Setpoint,,fe,2000,6047
 b,heating,lwt_setpoint,Flow Setpoint,13,fe,200f,6047,,,temperature:setting
 
-b,heating,lwt_setpoint_plus,Flow Setpoint Limits,13,fe,2010,6047,,,temperature:setting;ignore_3;temperature:temp_6197;ignore_3;temperature:temp_6297
+b,heating,lwt_setpoint_plus,Flow Setpoint,13,fe,2010,6047,,,temperature:setting;ignore_3;temperature:temp_6197;ignore_3;temperature:temp_6297
 
-r,heating,aux_heat_activation,DHW status,,18,2001,1488,,,aux_heat_activation
-w,heating,aux_heat_activation,DHW status,,18,2020,1488,,,aux_heat_activation
+r,heating,aux_heat_activation,Auxiliary Heat Activation Mode,,18,2001,1488,,,aux_heat_activation
+w,heating,aux_heat_activation,Auxiliary Heat Activation Mode,,18,2020,1488,,,aux_heat_activation
 
 r,heating,release_integral,statistics,,18,2000,6f8c,,,ignore_1;integral:setting
-w,heating,release_integral,statistics,,18,2010,6f8c,,,integral
+w,heating,release_integral,statistics,,18,2020,6f8c,,,integral
 r,heating,release_integral_limits,statistics,,18,2001,6f8c,,,integral_min_max
 
 r,heating,reset_integral,statistics,,18,2000,708c,,,ignore_1;integral:setting
@@ -55,15 +60,41 @@ r,heating,floor_drying_temp_limits,Floor Drying Temperature,,18,2001,7c2b,,,temp
 ####                     BUFFER SETTINGS AND MESSAGES                                   ####
 ############################################################################################
 
-r,ignored,buffer_control_mode,unknown,,fe,2001,d62c
-b,ignored,buffer_control_mode,unknown,,fe,200e,d62c,,,control_mode
+r,ignored,buffer_activation,Buffer Activation,,fe,2001,1b23
+b,ignored,buffer_activation,Buffer Activation,13,fe,200e,1b23,,,onoff
+w,ignored,buffer_activation,Buffer Activation,70,fe,2020,1b23,,,onoff
+b,ignored,buffer_activation_bcast,Buffer Activation,13,fe,2010,1b23,,,onoff
 
-r,ignored,buffer_charge_mode,unknown,,fe,2001,d12c
-b,ignored,buffer_charge_mode,unknown,,fe,200e,d12c,,,buffer_charge_mode
+r,ignored,buffer_setpoint_mode,Buffer Setpoint Mode,,fe,2001,1f23
+b,ignored,buffer_setpoint_mode,Buffer Setpoint Mode,13,fe,200e,1f23,,,buffer_setpoint_mode
+w,ignored,buffer_setpoint_mode,Buffer Setpoint Mode,70,fe,2020,1f23,,,buffer_setpoint_mode
+b,ignored,buffer_setpoint_mode_bcast,Buffer Setpoint Mode,13,fe,2010,1f23,,,buffer_setpoint_mode
 
-r,ignored,buffer_reduced_temperature_limits,unknown,,fe,2001,68ef
-b,ignored,buffer_reduced_temperature_limits,unknown,,fe,200e,68ef,,,temperature_min_max
+r,ignored,buffer_control_mode,Buffer Control Mode,,fe,2001,d62c
+b,ignored,buffer_control_mode,Buffer Control Mode,13,fe,200e,d62c,,,control_mode
+w,ignored,buffer_control_mode,Buffer Control Mode,70,fe,2020,d62c,,,control_mode
+b,ignored,buffer_control_mode_bcast,Buffer Control Mode,13,fe,2010,d62c,,,control_mode
 
-r,ignored,buffer_comfort_temperature_limits,statistics,,fe,2001,692e
-b,ignored,buffer_comfort_temperature_limits,statistics,13,fe,200e,692e,,,temperature_min_max
+r,ignored,buffer_charge_mode,Buffer Charge Mode,,fe,2001,d12c
+b,ignored,buffer_charge_mode,Buffer Charge Mode,13,fe,200e,d12c,,,buffer_charge_mode
+w,ignored,buffer_charge_mode,Buffer Charge Mode,70,fe,2020,d12c,,,buffer_charge_mode
+b,ignored,buffer_charge_mode_bcast,Buffer Charge Mode,13,fe,2010,d12c,,,buffer_charge_mode
+
+r,ignored,buffer_reduced_temperature,Buffer Reduced Temperature Limits,,fe,2000,6e8f
+b,ignored,buffer_reduced_temperature,Buffer Reduced Temperature Limits,13,fe,200f,6e8f,,,temperature:setting
+w,ignored,buffer_reduced_temperature,Buffer Reduced Temperature Limits,70,fe,2020,6e8f,,,temperature:setting
+r,ignored,buffer_reduced_temperature_limits,Buffer Reduced Temperature Limits,,fe,2001,6e8f
+b,ignored,buffer_reduced_temperature_limits,Buffer Reduced Temperature Limits,13,fe,200e,6e8f,,,temperature_min_max
+b,ignored,buffer_reduced_temperature_bcast,Buffer Reduced Temperature Limits,13,fe,2010,6e8f,,,temperature
+
+r,ignored,buffer_comfort_temperature,Buffer Comfort Temperature,,fe,2000,692e
+b,ignored,buffer_comfort_temperature,Buffer Comfort Temperature,13,fe,200f,692e,,,temperature:setting
+w,ignored,buffer_comfort_temperature,Buffer Comfort Temperature,70,fe,2020,692e,,,temperature:setting
+r,ignored,buffer_comfort_temperature_limits,Buffer Comfort Temperature Limits,,fe,2001,692e
+b,ignored,buffer_comfort_temperature_limits,Buffer Comfort Temperature Limits,13,fe,200e,692e,,,temperature_min_max
+b,ignored,buffer_comfort_temperature_bcast,Buffer Comfort Temperature Limits,13,fe,2010,692e,,,temperature
+
+b,ignored,buffer_mode_bcast,Buffer Mode Broadcast,13,fe,2020,1b23,,,onoff:buffer_activation;ignore_2;buffer_setpoint_mode;ignore_2;percent:unknown_1888
+b,ignored,buffer_temperature_bcast_1,Buffer Temperature Broadcast,13,fe,2020,6e8f,,,temperature:buffer_reduced_temp;ignore_2;temperature:unknown_6d8f;ignore_2;buffer_charge_mode:buffer_charge_mode
+b,ignored,buffer_temperature_bcast_2,Buffer Temperature Broadcast,13,fe,2020,672e,,,temperature:unknown_672e;ignore_2;temperature:unknown_682e;ignore_2;temperature:buffer_comfort_temp
 

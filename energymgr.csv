@@ -33,9 +33,11 @@ w,energymgr,holiday_status,holiday status,,fe,2071,,,,holiday_status:status;hhmm
 
 r,energymgr,hv_input_1,HV Input 1,,18,2001,c92a,,,hv_input_1
 w,energymgr,hv_input_1,HV Input 1,,18,2020,c92a,,,hv_input_1
+b,energymgr,hv_input_1,HV Input 1,13,18,2010,c92a,,,hv_input_1
 
 r,energymgr,hv_input_2,HV Input 2,,18,2001,cb2a,,,hv_input_2
 w,energymgr,hv_input_2,HV Input 2,,18,2020,cb2a,,,hv_input_2
+b,energymgr,hv_input_2,HV Input 2,13,18,2010,cb2a,,,hv_input_2
 
 r,energymgr,aux_input_1,Aux Input 1,,18,2001,d42a,,,aux_input
 w,energymgr,aux_input_1,Aux Input 1,,18,2020,d42a,,,aux_input

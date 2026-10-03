@@ -29,7 +29,7 @@ r,ignored,internet_weather_temp,internet weather temeperature,,84,2001,7617,,,te
 b,gateway,internet_weather,weather information,7f,fe,2010,7617,,,temperature;ignore_3;weather
 
 # Regularly performed reads 
-r,ignored,read_information_1,read information,,84,2000,cc4bd140c89ccc9a,,,ignore_1;wifi_state:wifi_state;version:version_counter;sw_update_status:sw_update_status;minutes:value_cc9a
-r,ignored,read_information_2,read information,,84,2000,c0f2c5f014210921,,,ignore_1;minutes:value_c0f2;minutes:value_c5f0;onoff:ntp_switch;onoff:wifi_switch
-r,ignored,read_information_3,read information,,84,2000,c0f2c5f0,,,ignore_1;minutes:value_c0f2;minutes:value_c5f0
-r,ignored,read_information_4,read information,,84,2000,d140c89ccc9a,,,ignore_1;version:version_counter;sw_update_status:sw_update_status;minutes:value_cc9a
+r,ignored,read_information_1,read information,70,84,2000,cc4bd140c89ccc9a,,,ignore_1;wifi_state:wifi_state;version:version_counter;sw_update_status:sw_update_status;minutes:value_cc9a
+r,ignored,read_information_2,read information,70,84,2000,c0f2c5f014210921,,,ignore_1;minutes:value_c0f2;minutes:value_c5f0;onoff:ntp_switch;onoff:wifi_switch
+r,ignored,read_information_3,read information,70,84,2000,c0f2c5f0,,,ignore_1;minutes:value_c0f2;minutes:value_c5f0
+r,ignored,read_information_4,read information,70,84,2000,d140c89ccc9a,,,ignore_1;version:version_counter;sw_update_status:sw_update_status;minutes:value_cc9a
