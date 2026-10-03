@@ -1,0 +1,53 @@
+############################################################################################
+####                     CENTRAL HEATING SETTINGS AND MESSAGES                          ####
+############################################################################################
+
+r,heating,status,Heating Status,,fe,2001,0120
+b,heating,status,Heating Status,13,fe,200e,0120,,,onoff
+w,heating,status,Heating Status,,fe,2010,0120,,,onoff
+
+# b,heating,status,Heating Status,,fe,200f,0120,,,onoff:setting - multiple values possible
+
+r,heating,controller,unknown,,fe,2001,d579
+b,heating,controller,unknown,,fe,200e,d579,,,heating_controller
+
+r,heating,eco_comfort,statistics,,18,2001,c728,,,eco_mode
+w,heating,eco_comfort,statistics,,18,2020,c728,,,eco_mode
+
+r,heating,lwt_setpoint,Flow Setpoint,,fe,2000,6047
+b,heating,lwt_setpoint,Flow Setpoint,13,fe,200f,6047,,,temperature:setting
+
+b,heating,lwt_setpoint_plus,Flow Setpoint Limits,13,fe,2010,6047,,,temperature:setting;ignore_3;temperature:temp_6197;ignore_3;temperature:temp_6297
+
+r,heating,aux_heat_activation,DHW status,,18,2001,1488,,,aux_heat_activation
+w,heating,aux_heat_activation,DHW status,,18,2020,1488,,,aux_heat_activation
+
+r,heating,release_integral,statistics,,18,2000,6f8c,,,ignore_1;integral:setting
+w,heating,release_integral,statistics,,18,2010,6f8c,,,integral
+r,heating,release_integral_limits,statistics,,18,2001,6f8c,,,integral_min_max
+
+r,heating,reset_integral,statistics,,18,2000,708c,,,ignore_1;integral:setting
+w,heating,reset_integral,statistics,,18,2020,708c,,,integral
+r,heating,reset_integral_limits,statistics,,18,2001,708c,,,integral_min_max
+
+r,heating,delay_time,statistics,,18,2000,da8d,,s,ignore_1;minutes:setting
+w,heating,delay_time,statistics,,18,2020,da8d,,m,minutes:setting
+r,heating,delay_time_limits,statistics,,18,2001,da8d,,,minutes_min_max
+
+r,heating,boost_time,,,fe,2000,602b
+b,heating,boost_time,,,fe,200f,602b,,,ignore_1;seconds
+w,heating,boost_time,,,fe,2010,602b,,,seconds
+r,heating,boost_time_limits,,,fe,2001,602b
+b,heating,boost_time_limits,,,fe,200e,602b,,,seconds_min_max
+
+r,heating,external_temperature_disable_threshold,External Temperature to Disable heating,,18,2000,7226,,,ignore_1;temperature:setting
+w,heating,external_temperature_disable_threshold,External Temperature to Disable heating,,18,2020,7226,,,temperature:setting
+r,heating,external_temperature_disable_threshold_limits,External Temperature to Disable heating,,18,2001,7226,,,temperature_min_max
+
+r,heating,floor_drying_days_remaining,,,18,2001,c846,,,days_min_max
+r,heating,floor_drying_cycle,Floor Drying Cycle,,18,2001,de28,,,floor_drying_cycle
+
+r,heating,floor_drying_temp,Floor Drying Temperature,,18,2000,7c2b,,,ignore_1;temperature:setting
+w,heating,floor_drying_temp,Floor Drying Temperature,,18,2020,7c2b,,,temperature:setting
+r,heating,floor_drying_temp_limits,Floor Drying Temperature,,18,2001,7c2b,,,temperature_min_max
+

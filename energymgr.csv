@@ -1,5 +1,5 @@
 ############################################################################################
-####                             ENERGY MANAGER RELATED MESSAGES                        ####
+####                             ENERGY MANAGER BASE SETTINGS and MESSAGES              ####
 #### address 13: master #12                                                             ####
 #### address 18: slave #12                                                              ####
 ############################################################################################
@@ -8,25 +8,28 @@ r,energymgr,config_version,config_version_counter,,18,2000,d140,,,ignore_1;versi
 
 r,energymgr,last_error_info,last_error,,18,2002,0400,,s,error_code,,,7 first bits,zone,s,BI0:7,,,,,s,IGN:2,,,Date: YY/MM/DD,year,s,UCH,,,,month,s,UCH,,,,day,s,UCH,,,,time,s,HTM,,
 
+############################################################################################
+# Basic Parameters - made read only to avoid accidental changes.                           #
+############################################################################################
+
 r,energymgr,odu_type,Outdoor Unit Type,,18,2001,ce8d,,,odu_type
+
 r,energymgr,idu_type,Indoor Unit Type,,18,2001,d18d,,,idu_type
+w,ignored,idu_type,Indoor Unit Type,,18,2020,d18d,,,idu_type
 
-r,energymgr,silent_mode,silent mode,,18,2001,0320,,,onoff
-w,energymgr,silent_mode,silent mode,,18,2020,0320,,,onoff
+r,energymgr,tank_management,statistics,,18,2001,d58d,,,tank_management
+w,ignored,tank_management,statistics,,18,2020,d58d,,,tank_management
 
-r,energymgr,silent_mode_start_time,start time,,18,2000,692b,,,ignore_1;hhmm
-w,energymgr,silent_mode_start_time,start time,,18,2020,692b,,,hhmm
-r,energymgr,silent_mode_start_time_limits,start time,,18,2001,692b,,,hhmm_min_max
+r,energymgr,thermoregulation,statistics,,fe,2001,0520
+b,energymgr,thermoregulation,statistics,13,fe,200e,0520,,,onoff
+w,ignored,thermoregulation,statistics,,fe,2010,0520,,,onoff
 
-r,energymgr,silent_mode_end_time,end time,,18,2000,6a2b,,,ignore_1;hhmm
-w,energymgr,silent_mode_end_time,end time,,10,2020,6a2b,,,hhmm
-r,energymgr,silent_mode_end_time_limits,end time,,18,2001,6a2b,,,hhmm_min_max
+############################################################################################
+# Input Configuration - 
+############################################################################################
 
-r,energymgr,pump_operation,Pump Operation Mode,,18,2001,c32a,,,low_high_modulating
-w,energymgr,pump_operation,Pump Operation Mode,,18,2020,c32a,,,low_high_modulating
-
-r,energymgr,antifreeze_circulator_speed,Antifreeze HP circulator Control,,18,2001,c58f,,,low_med_high
-w,energymgr,antifreeze_circulator_speed,Antifreeze HP circulator Control,,18,2020,c58f,,,low_med_high
+b,energymgr,holiday_status,holiday status,,fe,2071,,,,holiday_status:status;hhmm:end_time;date:end_date
+w,energymgr,holiday_status,holiday status,,fe,2071,,,,holiday_status:status;hhmm:end_time;date:end_date
 
 r,energymgr,hv_input_1,HV Input 1,,18,2001,c92a,,,hv_input_1
 w,energymgr,hv_input_1,HV Input 1,,18,2020,c92a,,,hv_input_1
@@ -40,6 +43,20 @@ w,energymgr,aux_input_1,Aux Input 1,,18,2020,d42a,,,aux_input
 r,energymgr,aux_input_2,Aux Input 2 - Default Safety Thermostat,,18,2001,dd8d,,,aux_input
 w,energymgr,aux_input_2,Aux Input 2 - Default Safety Thermostat,,18,2020,dd8d,,,aux_input
 
+r,energymgr,heat_blocking_device,Heat Blocking Device,,18,2001,c38f,,,lockout_type
+w,energymgr,heat_blocking_device,Heat Blocking Device,,18,2020,c38f,,,lockout_type
+
+r,energymgr,system_flow_t_selection,,,18,2001,1688,,,system_flow_temp_selection
+w,energymgr,system_flow_t_selection,,,18,2020,1688,,,system_flow_temp_selection
+
+r,energymgr,humidity_input,Humidity Input Zone,,18,2001,cd2f,,,humidity_input
+w,energymgr,humidity_input,Humidity Input Zone,,18,2020,cd2f,,,humidity_input
+
+
+############################################################################################
+# Output Configuration - 
+############################################################################################
+
 r,energymgr,aux_output_1,Aux 1 Output,,18,2001,cc2a,,,aux_output
 w,energymgr,aux_output_1,Aux 1 Output,,18,2020,cc2a,,,aux_output
 
@@ -52,20 +69,72 @@ w,energymgr,aux_output_3,Aux Output 3,,18,2020,db8d,,,aux_output
 r,energymgr,aux_output_4,Aux Output 4,,18,2001,dc8d,,,aux_output
 w,energymgr,aux_output_4,Aux Output 4,,18,2020,dc8d,,,aux_output
 
-r,energymgr,humidity_input,Humidity Input Zone,,18,2001,cd2f,,,humidity_input
-w,energymgr,humidity_input,Humidity Input Zone,,18,2020,cd2f,,,humidity_input
-
 r,energymgr,aux_p2_circulator,Aux P2 Circulator,,18,2001,cf2c,,,aux_p2_circulator
 w,energymgr,aux_p2_circulator,Aux P2 Circulator,,18,2020,cf2c,,,aux_p2_circulator
 
 r,energymgr,protech_anode,Protech Anode - not present,,18,2001,0d23,,,onoff
 w,energymgr,protech_anode,Protech Anode - not present,,18,2020,0d23,,,onoff
 
-r,energymgr,system_flow_t_selection,,,18,2001,1688,,,system_flow_temp_selection
-w,energymgr,system_flow_t_selection,,,18,2020,1688,,,system_flow_temp_selection
+############################################################################################
+# Water Circulation - 
+############################################################################################
 
-r,energymgr,tank_management,statistics,,18,2001,d58d,,,tank_management
-w,energymgr,tank_management,statistics,,18,2020,d58d,,,tank_management
+r,energymgr,pump_operation,Pump Operation Mode,,18,2001,c32a,,,low_high_modulating
+w,energymgr,pump_operation,Pump Operation Mode,,18,2020,c32a,,,low_high_modulating
+
+r,energymgr,antifreeze_circulator_speed,Antifreeze HP circulator Control,,18,2001,c58f,,,low_med_high
+w,energymgr,antifreeze_circulator_speed,Antifreeze HP circulator Control,,18,2020,c58f,,,low_med_high
+
+r,energymgr,pump_overrun,statistics,,18,2000,d727,,,ignore_1;minutes
+w,energymgr,pump_overrun,statistics,,18,2020,d727,,,minutes
+r,energymgr,pump_overrun_limits,statistics,,18,2001,d727,,,minutes_min_max
+
+r,energymgr,pump_prerun,statistics,,18,2000,d527,,,ignore_1;minutes
+w,energymgr,pump_prerun,statistics,,18,2020,d527,,,minutes
+r,energymgr,pump_prerun_limits,statistics,,18,2001,d527,,,minutes_min_max
+
+r,energymgr,new_attempt_time,statistics,,18,2000,d627,,s,ignore_1;minutes
+w,energymgr,new_attempt_time,statistics,,18,2020,d627,,,minutes
+r,energymgr,new_attempt_time_limits,statistics,,18,2001,d627,,,minutes_min_max
+
+############################################################################################
+# Energy Manager diagnostics
+############################################################################################
+
+# This command is is issued every 10 seconds so the best way to get the energymgr status
+r,energymgr,energymgr_status,Energy Manager Status,,18,2000,c94bd1404bfd4cfd,,,ignore_1;energymgr_status:status;percent:value_d140;longminutes:value_4bfd;longminutes:value_4cfd
+# This command is issued less frequently so not as good to use for uptodate status
+r,ignored,energymgr_status_2,Energy Manager Status,,18,2000,c94b,,,ignore_1;energymgr_status
+# This command is issued when using the panel
+r,ignoed,energymgr_status_3,Energy Manager Status,,18,2001,c94b,,,energymgr_status
+
+r,energymgr,hydraulic_scheme_diagnostic,,,18,2001,d4f7,,,hydraulic_diagnostic
+
+r1,energymgr,aux_input_1_status,AUX Input 1 state - for PV,,18,2001,1e11,,,onoff
+r,energymgr,aux_input_2_status,AUX Input 2 state - bridged,,18,2001,1f11,,,onoff
+
+r,energymgr,hv_input_1_status,HV Input 1 State - not used,,18,2001,1c11,,,onoff
+r,energymgr,hv_input_2_status,HV Input 2 State - not used,,18,2001,1d11,,,onoff
+
+r,energymgr,room_thermostat_1,,,18,2001,011f,,,onoff
+r,energymgr,room_thermostat_2,,,18,2001,021f,,,onoff
+
+r1,energymgr,aux_output_1_status,AUX Output 1 state - for DHW boost,,18,2001,1803,,,onoff
+r,energymgr,aux_output_2_status,AUX Output 2 state - not used,,18,2001,1A03,,,onoff
+
+r,energymgr,diverter_valve,Diverter Valve Control,,18,2001,0601,,,valve_dhw_heat
+r,energymgr,diverter_valve_cooling,Diverter Valve COOLING,,18,2001,0701,,,valve_heat_cool
+
+r,energymgr,anode_output,If Installed,,18,2001,1903,,,onoff
+
+r,energymgr,input_states,statistics,,18,2000,1d11d4f7,,,ignore_1;onoff:hv_input_1_state;hydraulic_diagnostic:hydraulic_diagnostic
+r,energymgr,external_pump,statistics,,18,2001,c700,,,ignore_1;onoff
+
+r,energymgr,main_pump,Main Pump State,,18,2000,c200,,,onoff
+
+############################################################################################
+# System Integration
+############################################################################################
 
 r,energymgr,tank_solar_integration,Tank solar integration,,18,2001,1188,,,onoff
 w,energymgr,tank_solar_integration,Tank solar integration,,18,2020,1188,,,onoff
@@ -76,29 +145,6 @@ w,energymgr,opentherm_gateway,Opentherm Gateway Activation,,18,2020,008f,,,onoff
 r,energymgr,exogel_kit_activation,Exogel Kit Activation,,18,2001,1f88,,,onoff
 w,energymgr,exogel_kit_activation,Exogel Kit Activation,,18,2020,1f88,,,onoff
 
-r,energymgr,heat_blocking_device,Heat Blocking Device,,18,2001,c38f,,,lockout_type
-w,energymgr,heat_blocking_device,Heat Blocking Device,,18,2020,c38f,,,lockout_type
-
-r1,energymgr,aux_input_1_status,AUX Input 1 state - for PV,,18,2001,1e11,,,onoff
-r,energymgr,aux_input_2_status,AUX Input 2 state - bridged,,18,2001,1f11,,,onoff
-r,energymgr,hv_input_1_status,HV Input 1 State - not used,,18,2001,1c11,,,onoff
-r,energymgr,hv_input_2_status,HV Input 2 State - not used,,18,2001,1d11,,,onoff
-r1,energymgr,aux_output_1_status,AUX Output 1 state - for DHW boost,,18,2001,1803,,,onoff
-r,energymgr,aux_output_2_status,AUX Output 2 state - not used,,18,2001,1A03,,,onoff
-
-r,energymgr,room_thermostat_1,,,18,2001,011f,,,onoff
-r,energymgr,room_thermostat_2,,,18,2001,021f,,,onoff
-
-r,energymgr,input_states,statistics,,18,2000,1d11d4f7,,,ignore_1;onoff:hv_input_1_state;hydraulic_diagnostic:hydraulic_diagnostic
-r,energymgr,external_pump,statistics,,18,2001,c700,,,ignore_1;onoff
-
-r,energymgr,main_pump,Main Pump State,,18,2000,c200,,,onoff
-
-r,energymgr,diverter_valve,Diverter Valve Control,,18,2001,0601,,,valve_dhw_heat
-r,energymgr,diverter_valve_cooling,Diverter Valve COOLING,,18,2001,0701,,,valve_heat_cool
-
-r,energymgr,anode_output,If Installed,,18,2001,1903,,,onoff
-
 r,energymgr,hybrid_mode,statistics,,18,2001,c628,,,hybrid_mode
 w,energymgr,hybrid_mode,statistics,,18,2020,c628,,,hybrid_mode
 
@@ -108,59 +154,15 @@ w,energymgr,hybrid_logic,statistics,,18,2020,ce28,,,hybrid_logic
 r,energymgr,hydraulic_scheme,Hydraulic scheme diagnostic,,18,2000,dc28,,,hydraulic_scheme
 w,energymgr,hydraulic_scheme,Hydraulic scheme diagnostic,,18,2020,dc28,,,hydraulic_scheme
 
-r,energymgr,hydraulic_scheme_diagnostic,,,18,2001,d4f7,,,hydraulic_diagnostic
-
-# This command is is issued every 10 seconds so the best way to get the energymgr status
-r,energymgr,energymgr_status,Energy Manager Status,,18,2000,c94bd1404bfd4cfd,,,ignore_1;energymgr_status:status;percent:value_d140;longminutes:value_4bfd;longminutes:value_4cfd
-# This command is issued less frequently so not as good to use for uptodate status
-r,ignored,energymgr_status_2,Energy Manager Status,,18,2000,c94b,,,ignore_1;energymgr_status
-# This command is issued when using the panel
-r,ignoed,energymgr_status_3,Energy Manager Status,,18,2001,c94b,,,energymgr_status
-
-r,energymgr,hp_disable_ext_temp_threshold,statistics,,18,2001,7226,,,temperature:setting
-w,energymgr,hp_disable_ext_temp_threshold,statistics,,18,2020,7226,,,temperature:setting
-
-r,energymgr,hp_disable_out_temp_dhw,statistics,,18,2001,638f,,,temperature:setting
-w,energymgr,hp_disable_out_temp_dhw,statistics,,18,2020,638f,,,temperature:setting
-
-r,energymgr,ch_aux_heat_activation,DHW status,,18,2001,1488,,,aux_heat_activation
-w,energymgr,ch_aux_heat_activation,DHW status,,18,2020,1488,,,aux_heat_activation
-
-r,energymgr,heating_mode,statistics,,18,2001,c728,,,eco_mode
-w,energymgr,heating_mode,statistics,,18,2020,c728,,,eco_mode
-
 r,energymgr,heat_lwt_offset,Heating LWT Offset,,18,2000,7d2b,,,ignore_1;temperature:setting
 w,energymgr,heat_lwt_offset,Heating LWT Offset,,18,2020,7d2b,,,temperature:setting
 r,energymgr,heat_lwt_offset_limits,Heating LWT Offset,,18,2001,7d2b,,,temperature_min_max
 
-r,energymgr,pump_antiblock,Pump Antiblock,,18,2001,1823,,,onoff
-w,energymgr,pump_antiblock,Pump Antiblock,,18,2020,1823,,,onoff
-
 r,energymgr,flow_temperature,statistics,,18,2001,74fd,,,temperature
 
-#Menu - Hybrid System - Energy Tariffs - Read and Write Commands
-r,energymgr,electric_cost,statistics,,18,2000,652b,,,ignore_1;cost
-w,energymgr,electric_cost,statistics,,18,2020,652b,,,cost
+b,energymgr,return_temperature,statistics,13,fe,2010,769e,,,temperature:reading
 
-r,energymgr,pv_electric_cost,statistics,,18,2000,662b,,,ignore_1;cost
-w,energymgr,pv_electric_cost,statistics,,18,2020,662b,,,cost
-
-r,energymgr,heatpump_calculated_cost,statistics,,18,2000,6c47,,s,ignore_1;cost
-
-b,energymgr,holiday_status,holiday status,,fe,2071,,,,holiday_status:status;hhmm:end_time;date:end_date
-w,energymgr,holiday_status,holiday status,,fe,2071,,,,holiday_status:status;hhmm:end_time;date:end_date
-
-
-#Menu - Hybrid System StatisticsMore actions
-r,energymgr,heatpump_running_hours,Heatpump Running Hours,,18,2000,40d1,,,ignore_1;hours
-r,energymgr,heatpump_and_boiler_operating_hours,Heatpump and Boiler Combined Operating Hours,,18,2000,4ed1,,,ignore_1;hours
-r,energymgr,heatpump_heating_op_hours,Heatpump Heating Operating Hours,,18,2000,55d1,,,ignore_1;hours
-r,energymgr,heatpump_dhw_op_hours,Heatpump DHW Operating Hours,,18,2000,56d1,,,ignore_1;hours
-
-r,energymgr,thermoregulation,statistics,,fe,2001,0520
-b,energymgr,thermoregulation,statistics,13,fe,200e,0520,,,onoff
-w,energymgr,thermoregulation,statistics,,fe,2010,0520,,,onoff
-
+r,energymgr,flow_temperature_2,,,18,2001,6310,,,temperature_min_max
 
 r,energymgr,ext_temp_correct,External Temperature Correction,,fe,2000,7426
 b,energymgr,ext_temp_correct,External Temperature Correction,13,fe,200f,7426,,,temperature:setting
@@ -174,71 +176,43 @@ b,energymgr,external_temp,External Sensor Temperature,13,fe,200f,7647,,,temperat
 # b,energymgr,external_temp_2010,statistics,13,fe,2010,7647,,,temperature:reading;ignore_3;percent:bcast_d194;ignore_3;percent:bcast_d294
 
 
+#Menu - Hybrid System - Energy Tariffs - Read and Write Commands
+r,energymgr,electric_cost,statistics,,18,2000,652b,,,ignore_1;cost
+w,energymgr,electric_cost,statistics,,18,2020,652b,,,cost
 
-r,ignored,z1_setpoint_temperature,unknown,,fe,2001,6197
-b,ignored,z1_setpoint_temperature_limits,unknown,,fe,200e,6197,,,temperature_min_max
+r,energymgr,pv_electric_cost,statistics,,18,2000,662b,,,ignore_1;cost
+w,energymgr,pv_electric_cost,statistics,,18,2020,662b,,,cost
+
+r,energymgr,heatpump_calculated_cost,statistics,,18,2000,6c47,,s,ignore_1;cost
 
 
 ############################################################################################
-####                     CENTRAL HEATING SETTINGS AND MESSAGES                          ####
+#Menu - Hybrid System Statistics
 ############################################################################################
 
-r,energymgr,heating_status,Heating Status,,fe,2001,0120
-b,energymgr,heating_status,Heating Status,13,fe,200e,0120,,,onoff
-w,energymgr,heating_status,Heating Status,,fe,2010,0120,,,onoff
+r,energymgr,heatpump_running_hours,Heatpump Running Hours,,18,2000,40d1,,,ignore_1;hours
+r,energymgr,heatpump_and_boiler_operating_hours,Heatpump and Boiler Combined Operating Hours,,18,2000,4ed1,,,ignore_1;hours
+r,energymgr,heatpump_heating_op_hours,Heatpump Heating Operating Hours,,18,2000,55d1,,,ignore_1;hours
+r,energymgr,heatpump_dhw_op_hours,Heatpump DHW Operating Hours,,18,2000,56d1,,,ignore_1;hours
 
-# b,energymgr,heating_status,Heating Status,,fe,200f,0120,,,onoff:setting - multiple values possible
+############################################################################################
+# Tests ands Utilities
+############################################################################################
 
-r,energymgr,heating_controller,unknown,,fe,2001,d579
-b,energymgr,heating_controller,unknown,,fe,200e,d579,,,heating_controller
-
-r,energymgr,ch_pump_overrun,statistics,,18,2000,d727,,,ignore_1;minutes
-w,energymgr,ch_pump_overrun,statistics,,18,2020,d727,,,minutes
-r,energymgr,ch_pump_overrun_limits,statistics,,18,2001,d727,,,minutes_min_max
-
-r,energymgr,ch_release_integral,statistics,,18,2000,6f8c,,,ignore_1;integral:setting
-w,energymgr,ch_release_integral,statistics,,18,2010,6f8c,,,integral
-r,energymgr,ch_release_integral_limits,statistics,,18,2001,6f8c,,,integral_min_max
-
-r,energymgr,ch_reset_integral,statistics,,18,2000,708c,,,ignore_1;integral:setting
-w,energymgr,ch_reset_integral,statistics,,18,2020,708c,,,integral
-r,energymgr,ch_reset_integral_limits,statistics,,18,2001,708c,,,integral_min_max
-
-r,energymgr,ch_pump_prerun,statistics,,18,2000,d527,,,ignore_1;minutes
-w,energymgr,ch_pump_prerun,statistics,,18,2020,d527,,,minutes
-r,energymgr,ch_pump_prerun_limits,statistics,,18,2001,d527,,,minutes_min_max
-
-r,energymgr,ch_new_attempt_time,statistics,,18,2000,d627,,s,ignore_1;minutes
-w,energymgr,ch_new_attempt_time,statistics,,18,2020,d627,,,minutes
-r,energymgr,ch_new_attempt_time_limits,statistics,,18,2001,d627,,,minutes_min_max
-
-r,energymgr,ch_delay_time,statistics,,18,2000,da8d,,s,ignore_1;minutes:setting
-w,energymgr,ch_delay_time,statistics,,18,2020,da8d,,m,minutes:setting
-r,energymgr,ch_delay_time_limits,statistics,,18,2001,da8d,,,minutes_min_max
-
-r,energymgr,ch_boost_time,,,fe,2000,602b
-b,energymgr,ch_boost_time,,,fe,200f,602b,,,ignore_1;seconds
-w,energymgr,ch_boost_time,,,fe,2010,602b,,,seconds
-r,energymgr,ch_boost_time_limits,,,fe,2001,602b
-b,energymgr,ch_boost_time_limits,,,fe,200e,602b,,,seconds_min_max
-
-b,energymgr,ch_return_temperature,statistics,13,fe,2010,769e,,,temperature:reading
-
-r,energymgr,ch_flow_temperature,,,18,2001,6310,,,temperature_min_max
-
-r,energymgr,lwt_setpoint,Flow Setpoint,,fe,2000,6047
-b,energymgr,lwt_setpoint,Flow Setpoint,13,fe,200f,6047,,,temperature:setting
-
-b,energymgr,lwt_setpoint_plus,Flow Setpoint Limits,13,fe,2010,6047,,,temperature:setting;ignore_3;temperature:temp_6197;ignore_3;temperature:temp_6297
-
-r,energymgr,floor_drying_days_remaining,,,18,2001,c846,,,days_min_max
-r,energymgr,floor_drying_cycle,Floor Drying Cycle,,18,2001,de28,,,floor_drying_cycle
-
-r,energymgr,floor_drying_temp,Floor Drying Temperature,,18,2000,7c2b,,,ignore_1;temperature:setting
-w,energymgr,floor_drying_temp,Floor Drying Temperature,,18,2020,7c2b,,,temperature:setting
-r,energymgr,floor_drying_temp_limits,Floor Drying Temperature,,18,2001,7c2b,,,temperature_min_max
+r,energymgr,pump_antiblock,Pump Antiblock,,18,2001,1823,,,onoff
+w,energymgr,pump_antiblock,Pump Antiblock,,18,2020,1823,,,onoff
 
 
+r,energymgr,silent_mode,silent mode,,18,2001,0320,,,onoff
+w,energymgr,silent_mode,silent mode,,18,2020,0320,,,onoff
+
+r,energymgr,silent_mode_start_time,start time,,18,2000,692b,,,ignore_1;hhmm
+w,energymgr,silent_mode_start_time,start time,,18,2020,692b,,,hhmm
+r,energymgr,silent_mode_start_time_limits,start time,,18,2001,692b,,,hhmm_min_max
+
+r,energymgr,silent_mode_end_time,end time,,18,2000,6a2b,,,ignore_1;hhmm
+w,energymgr,silent_mode_end_time,end time,,10,2020,6a2b,,,hhmm
+r,energymgr,silent_mode_end_time_limits,end time,,18,2001,6a2b,,,hhmm_min_max
 
 
 ############################################################################################
