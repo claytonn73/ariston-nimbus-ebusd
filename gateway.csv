@@ -16,7 +16,8 @@ r,gateway,internet_weather_switch,Internet Weather switch,,84,2001,0488,,,onoff
 w,gateway,internet_weather_switch,Internet Weather switch,,84,2020,0488,,,onoff
 
 r,gateway,wifi_status,WiFi status,,84,2001,cc4b,,,wifi_state
-# Read wifi signal on an occasional status
+
+# Read wifi signal on an occasional basis
 r5,gateway,wifi_signal,WiFi signal strength,,84,2001,c3f0,,,percent
 
 r,gateway,activation_state,activation state,,84,2001,c4f0,,,activation_state

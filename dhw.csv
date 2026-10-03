@@ -7,13 +7,16 @@
 # Switch to enable or disable DHW processing
 r,dhw,status,status,,fe,2001,0220
 b,dhw,status,status,13,fe,200e,0220,,,onoff
-w,dhw,status,status,,fe,2010,0220,,,onoff
+w,dhw,status,status,70,fe,2020,0220,,,onoff
+b,ignored,dhw_status_bcast,DHW Status,13,fe,2010,0220,,,onoff
 
 r,dhw,aux_heat_activation,Auxiliary Heat Activation,,18,2001,1588,,,aux_heat_activation
 w,dhw,aux_heat_activation,Auxiliary Heat Activation,,18,2020,1588,,,aux_heat_activation
+b,dhw,aux_heat_activation,Auxiliary Heat Activation,13,18,2010,1588,,m,aux_heat_activation
 
 r,dhw,tank_heater,Tank Electric Heater,,18,2001,d12f,,,tank_heater
 w,dhw,tank_heater,Tank Electric Heater,,18,2020,d12f,,,tank_heater
+b,dhw,tank_heater,Tank Electric Heater,13,18,2010,d12f,,m,tank_heater
 
 r,dhw,operation_mode,Operation Mode,,18,2001,d08d,,,dhw_mode
 w,dhw,operation_mode,Operation Mode,,18,2020,d08d,,,dhw_mode

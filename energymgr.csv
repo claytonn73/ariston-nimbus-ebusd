@@ -22,7 +22,7 @@ w,ignored,tank_management,statistics,,18,2020,d58d,,,tank_management
 
 r,energymgr,thermoregulation,statistics,,fe,2001,0520
 b,energymgr,thermoregulation,statistics,13,fe,200e,0520,,,onoff
-w,ignored,thermoregulation,statistics,,fe,2010,0520,,,onoff
+w,ignored,thermoregulation,statistics,,fe,2020,0520,,,onoff
 
 ############################################################################################
 # Input Configuration - 
@@ -33,49 +33,61 @@ w,energymgr,holiday_status,holiday status,,fe,2071,,,,holiday_status:status;hhmm
 
 r,energymgr,hv_input_1,HV Input 1,,18,2001,c92a,,,hv_input_1
 w,energymgr,hv_input_1,HV Input 1,,18,2020,c92a,,,hv_input_1
-b,energymgr,hv_input_1,HV Input 1,13,18,2010,c92a,,,hv_input_1
+b,energymgr,hv_input_1,HV Input 1,13,18,2010,c92a,,m,hv_input_1
 
 r,energymgr,hv_input_2,HV Input 2,,18,2001,cb2a,,,hv_input_2
 w,energymgr,hv_input_2,HV Input 2,,18,2020,cb2a,,,hv_input_2
-b,energymgr,hv_input_2,HV Input 2,13,18,2010,cb2a,,,hv_input_2
+b,energymgr,hv_input_2,HV Input 2,13,18,2010,cb2a,,m,hv_input_2
 
 r,energymgr,aux_input_1,Aux Input 1,,18,2001,d42a,,,aux_input
 w,energymgr,aux_input_1,Aux Input 1,,18,2020,d42a,,,aux_input
+b,energymgr,aux_input_1,Aux Input 1,13,18,2010,d42a,,m,aux_input
 
 r,energymgr,aux_input_2,Aux Input 2 - Default Safety Thermostat,,18,2001,dd8d,,,aux_input
 w,energymgr,aux_input_2,Aux Input 2 - Default Safety Thermostat,,18,2020,dd8d,,,aux_input
+b,energymgr,aux_input_2,Aux Input 2 - Default Safety Thermostat,13,18,2010,dd8d,,m,aux_input
 
 r,energymgr,heat_blocking_device,Heat Blocking Device,,18,2001,c38f,,,lockout_type
 w,energymgr,heat_blocking_device,Heat Blocking Device,,18,2020,c38f,,,lockout_type
+b,energymgr,heat_blocking_device,Heat Blocking Device,13,18,2010,c38f,,m,lockout_type
 
 r,energymgr,system_flow_t_selection,,,18,2001,1688,,,system_flow_temp_selection
 w,energymgr,system_flow_t_selection,,,18,2020,1688,,,system_flow_temp_selection
+b,energymgr,system_flow_t_selection,,13,18,2010,1688,,m,system_flow_temp_selection
 
 r,energymgr,humidity_input,Humidity Input Zone,,18,2001,cd2f,,,humidity_input
 w,energymgr,humidity_input,Humidity Input Zone,,18,2020,cd2f,,,humidity_input
+b,energymgr,humidity_input,Humidity Input Zone,13,18,2010,cd2f,,m,humidity_input
 
 
 ############################################################################################
 # Output Configuration - 
 ############################################################################################
 
+
 r,energymgr,aux_output_1,Aux 1 Output,,18,2001,cc2a,,,aux_output
 w,energymgr,aux_output_1,Aux 1 Output,,18,2020,cc2a,,,aux_output
+b,energymgr,aux_output_1,Aux 1 Output,13,18,2010,cc2a,,m,aux_output
 
 r,energymgr,aux_output_2,Aux Output 2,,18,2001,d32a,,,aux_output
 w,energymgr,aux_output_2,Aux Output 2,,18,2020,d32a,,,aux_output
+b,energymgr,aux_output_2,Aux Output 2,13,18,2010,d32a,,m,aux_output
 
 r,energymgr,aux_output_3,Aux Output 3,,18,2001,db8d,,,aux_output
 w,energymgr,aux_output_3,Aux Output 3,,18,2020,db8d,,,aux_output
+b,energymgr,aux_output_3,Aux Output 3,13,18,2010,db8d,,m,aux_output
 
 r,energymgr,aux_output_4,Aux Output 4,,18,2001,dc8d,,,aux_output
 w,energymgr,aux_output_4,Aux Output 4,,18,2020,dc8d,,,aux_output
+b,energymgr,aux_output_4,Aux Output 4,13,18,2010,dc8d,,m,aux_output
 
 r,energymgr,aux_p2_circulator,Aux P2 Circulator,,18,2001,cf2c,,,aux_p2_circulator
 w,energymgr,aux_p2_circulator,Aux P2 Circulator,,18,2020,cf2c,,,aux_p2_circulator
+b,energymgr,aux_p2_circulator,Aux P2 Circulator,13,18,2010,cf2c,,m,aux_p2_circulator
 
 r,energymgr,protech_anode,Protech Anode - not present,,18,2001,0d23,,,onoff
 w,energymgr,protech_anode,Protech Anode - not present,,18,2020,0d23,,,onoff
+b,energymgr,protech_anode,Protech Anode - not present,13,18,2010,0d23,,m,onoff
 
 ############################################################################################
 # Water Circulation - 
@@ -83,20 +95,25 @@ w,energymgr,protech_anode,Protech Anode - not present,,18,2020,0d23,,,onoff
 
 r,energymgr,pump_operation,Pump Operation Mode,,18,2001,c32a,,,low_high_modulating
 w,energymgr,pump_operation,Pump Operation Mode,,18,2020,c32a,,,low_high_modulating
+b,energymgr,pump_operation,Pump Operation Mode,13,18,2010,c32a,,m,low_high_modulating
 
 r,energymgr,antifreeze_circulator_speed,Antifreeze HP circulator Control,,18,2001,c58f,,,low_med_high
 w,energymgr,antifreeze_circulator_speed,Antifreeze HP circulator Control,,18,2020,c58f,,,low_med_high
+b,energymgr,antifreeze_circulator_speed,Antifreeze HP circulator Control,13,18,2010,c58f,,m,low_med_high
 
 r,energymgr,pump_overrun,statistics,,18,2000,d727,,,ignore_1;minutes
 w,energymgr,pump_overrun,statistics,,18,2020,d727,,,minutes
+b,energymgr,pump_overrun,statistics,13,18,2010,d727,,m,minutes
 r,energymgr,pump_overrun_limits,statistics,,18,2001,d727,,,minutes_min_max
 
 r,energymgr,pump_prerun,statistics,,18,2000,d527,,,ignore_1;minutes
 w,energymgr,pump_prerun,statistics,,18,2020,d527,,,minutes
+b,energymgr,pump_prerun,statistics,13,18,2010,d527,,m,minutes
 r,energymgr,pump_prerun_limits,statistics,,18,2001,d527,,,minutes_min_max
 
 r,energymgr,new_attempt_time,statistics,,18,2000,d627,,s,ignore_1;minutes
 w,energymgr,new_attempt_time,statistics,,18,2020,d627,,,minutes
+b,energymgr,new_attempt_time,statistics,13,18,2010,d627,,m,minutes
 r,energymgr,new_attempt_time_limits,statistics,,18,2001,d627,,,minutes_min_max
 
 ############################################################################################
@@ -140,24 +157,31 @@ r,energymgr,main_pump,Main Pump State,,18,2000,c200,,,onoff
 
 r,energymgr,tank_solar_integration,Tank solar integration,,18,2001,1188,,,onoff
 w,energymgr,tank_solar_integration,Tank solar integration,,18,2020,1188,,,onoff
+b,energymgr,tank_solar_integration,Tank solar integration,13,18,2010,1188,,m,onoff
 
 r,energymgr,opentherm_gateway,Opentherm Gateway Activation,,18,2001,008f,,,onoff
 w,energymgr,opentherm_gateway,Opentherm Gateway Activation,,18,2020,008f,,,onoff
+b,energymgr,opentherm_gateway,Opentherm Gateway Activation,13,18,2010,008f,,m,onoff
 
 r,energymgr,exogel_kit_activation,Exogel Kit Activation,,18,2001,1f88,,,onoff
 w,energymgr,exogel_kit_activation,Exogel Kit Activation,,18,2020,1f88,,,onoff
+b,energymgr,exogel_kit_activation,Exogel Kit Activation,13,18,2010,1f88,,m,onoff
 
 r,energymgr,hybrid_mode,statistics,,18,2001,c628,,,hybrid_mode
 w,energymgr,hybrid_mode,statistics,,18,2020,c628,,,hybrid_mode
+b,energymgr,hybrid_mode,statistics,13,18,2010,c628,,m,hybrid_mode
 
 r,energymgr,hybrid_logic,statistics,,18,2001,ce28,,,hybrid_logic
 w,energymgr,hybrid_logic,statistics,,18,2020,ce28,,,hybrid_logic
+b,energymgr,hybrid_logic,statistics,13,18,2010,ce28,,m,hybrid_logic
 
 r,energymgr,hydraulic_scheme,Hydraulic scheme diagnostic,,18,2000,dc28,,,hydraulic_scheme
 w,energymgr,hydraulic_scheme,Hydraulic scheme diagnostic,,18,2020,dc28,,,hydraulic_scheme
+b,energymgr,hydraulic_scheme,Hydraulic scheme diagnostic,13,18,2010,dc28,,m,hydraulic_scheme
 
 r,energymgr,heat_lwt_offset,Heating LWT Offset,,18,2000,7d2b,,,ignore_1;temperature:setting
 w,energymgr,heat_lwt_offset,Heating LWT Offset,,18,2020,7d2b,,,temperature:setting
+b,energymgr,heat_lwt_offset,Heating LWT Offset,13,18,2010,7d2b,,m,temperature:setting
 r,energymgr,heat_lwt_offset_limits,Heating LWT Offset,,18,2001,7d2b,,,temperature_min_max
 
 r,energymgr,flow_temperature,statistics,,18,2001,74fd,,,temperature
@@ -168,9 +192,10 @@ r,energymgr,flow_temperature_2,,,18,2001,6310,,,temperature_min_max
 
 r,energymgr,ext_temp_correct,External Temperature Correction,,fe,2000,7426
 b,energymgr,ext_temp_correct,External Temperature Correction,13,fe,200f,7426,,,temperature:setting
-w,energymgr,ext_temp_correct,External Temperature Correction,,fe,2010,7426,,,temperature:setting
+w,energymgr,ext_temp_correct,External Temperature Correction,70,fe,2020,7426,,,temperature:setting
 r,energymgr,ext_temp_correct_limits,External Temperature Correction,,fe,2001,7426
 b,energymgr,ext_temp_correct_limits,External Temperature Correction,13,fe,200e,7426,,,temperature_min_max
+b,ignored,ext_temp_correct_bcast,External Temperature Correction,13,fe,2010,7426,,,temperature:setting
 
 # Issued regularly on the system
 r1,energymgr,external_temp,External Sensor Temperature,,fe,2000,7647
@@ -203,17 +228,20 @@ r,energymgr,heatpump_dhw_op_hours,Heatpump DHW Operating Hours,,18,2000,56d1,,,i
 
 r,energymgr,pump_antiblock,Pump Antiblock,,18,2001,1823,,,onoff
 w,energymgr,pump_antiblock,Pump Antiblock,,18,2020,1823,,,onoff
-
+b,energymgr,pump_antiblock,Pump Antiblock,13,18,2010,1823,,m,onoff
 
 r,energymgr,silent_mode,silent mode,,18,2001,0320,,,onoff
 w,energymgr,silent_mode,silent mode,,18,2020,0320,,,onoff
+b,energymgr,silent_mode,silent mode,13,18,2010,0320,,m,onoff
 
 r,energymgr,silent_mode_start_time,start time,,18,2000,692b,,,ignore_1;hhmm
 w,energymgr,silent_mode_start_time,start time,,18,2020,692b,,,hhmm
+b,energymgr,silent_mode_start_time,start time,13,18,2010,692b,,m,ignore_1;hhmm
 r,energymgr,silent_mode_start_time_limits,start time,,18,2001,692b,,,hhmm_min_max
 
 r,energymgr,silent_mode_end_time,end time,,18,2000,6a2b,,,ignore_1;hhmm
-w,energymgr,silent_mode_end_time,end time,,10,2020,6a2b,,,hhmm
+w,energymgr,silent_mode_end_time,end time,,18,2020,6a2b,,,hhmm
+b,energymgr,silent_mode_end_time,end time,13,18,2010,6a2b,,m,ignore_1;hhmm
 r,energymgr,silent_mode_end_time_limits,end time,,18,2001,6a2b,,,hhmm_min_max
 
 
