@@ -40,5 +40,44 @@ A standard template style can be used for the 2000 and 2001 query responses both
     r,dhw,thermal_cleanse_temp_limits,Thermal Cleanse Temperature,,fe,2001,7d26
     b,dhw,thermal_cleanse_temp_limits,Thermal Cleanse Temperature,13,fe,200e,7d26,,,temperature_min_max
 
+# Write Commands and Modes
+
+There are two different write modes used by the system. The first is a direct write to a particular slave entity to update the entity. The second is a broadcast write that is picked up by the relevant entity.
+
+When a direct write is issued with a 2020 command that changes a value there is then a subsequent echoed 2010 response that can be interpreted as a passive read of the master to update the value 
+    
+    31 18 2020 03 1823 01 / 00 
+    13 18 2010 03 1823 01 / 00 
+
+when a broadcast write is issued using a 2020 command that changes a value then there is also a subsequent echoed 2010 broadcast. This cannot be associated with the same name as the write as the name would conflict with the broadcast read entity. 
+
+    31 fe 2020 03 0120 00 
+    13 fe 2010 04 0120 00 00 
+
+# Combined definition for reads and writes
+
+For an entity that uses the direct read method the following provides a complete definition for the messages seen on the bus
+
+    r,energymgr,hv_input_2,HV Input 2,,18,2001,cb2a,,,hv_input_2
+    w,energymgr,hv_input_2,HV Input 2,,18,2020,cb2a,,,hv_input_2
+    b,energymgr,hv_input_2,HV Input 2,13,18,2010,cb2a,,m,hv_input_2
+
+For an entity that uses the broadcast read method the following provides a complete definition for the messages seen on the bus. The 2010 entry can be ignored by home assistant as it cannot be grouped with the same entity
+
+    r,heating,status,Heating Status,,fe,2001,0120
+    b,heating,status,Heating Status,13,fe,200e,0120,,,onoff
+    w,heating,status,Heating Status,70,fe,2020,0120,,,onoff
+    b,ignored,status_bcast,Heating Status,13,fe,2010,0120,,,onoff
+
+For an entity where we also woould like to obtain the minimum and maximum values that are allowed by the system the base entity should use a 2000 read and 200f read response with the 2001/200e pair used for the _limits entity. The 2010 entry can also be defined but again ignored by Home Assistant.
+
+    r,energymgr,ext_temp_correct,External Temperature Correction,,fe,2000,7426
+    b,energymgr,ext_temp_correct,External Temperature Correction,13,fe,200f,7426,,,temperature:setting
+    w,energymgr,ext_temp_correct,External Temperature Correction,70,fe,2020,7426,,,temperature:setting
+    r,energymgr,ext_temp_correct_limits,External Temperature Correction,,fe,2001,7426
+    b,energymgr,ext_temp_correct_limits,External Temperature Correction,13,fe,200e,7426,,,temperature_min_max
+    b,ignored,ext_temp_correct_bcast,External Temperature Correction,13,fe,2010,7426,,,temperature:setting
+
+
 # Disclaimer
 All information posted is merely for educational and informational purposes. It is not intended as a substitute for professional advice. Should you decide to act upon any information on this website, you do so at your own risk. While the information on this website has been verified to the best of our abilities, I cannot guarantee that there are no mistakes or errors. You may use this library with the understanding that doing so is AT YOUR OWN RISK. No warranty, express or implied, is made with regards to the fitness or safety of this code for any purpose. If you use this library to query or change settings of your products you understand that it is possible to cause damages I reserve the right to change this policy at any given time.
