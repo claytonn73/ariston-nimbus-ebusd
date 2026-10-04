@@ -1,0 +1,62 @@
+
+############################################################################################
+####                     BUFFER SETTINGS AND MESSAGES                                   ####
+############################################################################################
+
+r,buffer,buffer_status,unknown,,fe,2000,ccf7
+b,buffer,buffer_status,unknown,,fe,200f,ccf7,,,ignore_1;buffer_status
+r,buffer,buffer_status_panel,unknown,,fe,2001,ccf7
+
+r,buffer,buffer_activation,Buffer Activation,,fe,2001,1b23
+b,buffer,buffer_activation,Buffer Activation,13,fe,200e,1b23,,,onoff
+w,buffer,buffer_activation,Buffer Activation,70,fe,2020,1b23,,,onoff
+b,buffer,buffer_activation_bcast,Buffer Activation,13,fe,2010,1b23,,,onoff
+
+r,buffer,buffer_setpoint_mode,Buffer Setpoint Mode,,fe,2001,1f23
+b,buffer,buffer_setpoint_mode,Buffer Setpoint Mode,13,fe,200e,1f23,,,buffer_setpoint_mode
+w,buffer,buffer_setpoint_mode,Buffer Setpoint Mode,70,fe,2020,1f23,,,buffer_setpoint_mode
+b,buffer,buffer_setpoint_mode_bcast,Buffer Setpoint Mode,13,fe,2010,1f23,,,buffer_setpoint_mode
+
+r,buffer,buffer_control_mode,Buffer Control Mode,,fe,2001,d62c
+b,buffer,buffer_control_mode,Buffer Control Mode,13,fe,200e,d62c,,,control_mode
+w,buffer,buffer_control_mode,Buffer Control Mode,70,fe,2020,d62c,,,control_mode
+b,buffer,buffer_control_mode_bcast,Buffer Control Mode,13,fe,2010,d62c,,,control_mode
+
+r,buffer,buffer_charge_mode,Buffer Charge Mode,,fe,2001,d12c
+b,buffer,buffer_charge_mode,Buffer Charge Mode,13,fe,200e,d12c,,,buffer_charge_mode
+w,buffer,buffer_charge_mode,Buffer Charge Mode,70,fe,2020,d12c,,,buffer_charge_mode
+b,buffer,buffer_charge_mode_bcast,Buffer Charge Mode,13,fe,2010,d12c,,,buffer_charge_mode
+
+r,buffer,buffer_reduced_temperature,Buffer Reduced Temperature Limits,,fe,2000,6e8f
+b,buffer,buffer_reduced_temperature,Buffer Reduced Temperature Limits,13,fe,200f,6e8f,,,temperature:setting
+w,buffer,buffer_reduced_temperature,Buffer Reduced Temperature Limits,70,fe,2020,6e8f,,,temperature:setting
+r,buffer,buffer_reduced_temperature_limits,Buffer Reduced Temperature Limits,,fe,2001,6e8f
+b,buffer,buffer_reduced_temperature_limits,Buffer Reduced Temperature Limits,13,fe,200e,6e8f,,,temperature_min_max
+b,buffer,buffer_reduced_temperature_bcast,Buffer Reduced Temperature Limits,13,fe,2010,6e8f,,,temperature
+
+r,buffer,buffer_comfort_temperature,Buffer Comfort Temperature,,fe,2000,692e
+b,buffer,buffer_comfort_temperature,Buffer Comfort Temperature,13,fe,200f,692e,,,temperature:setting
+w,buffer,buffer_comfort_temperature,Buffer Comfort Temperature,70,fe,2020,692e,,,temperature:setting
+r,buffer,buffer_comfort_temperature_limits,Buffer Comfort Temperature Limits,,fe,2001,692e
+b,buffer,buffer_comfort_temperature_limits,Buffer Comfort Temperature Limits,13,fe,200e,692e,,,temperature_min_max
+b,buffer,buffer_comfort_temperature_bcast,Buffer Comfort Temperature Limits,13,fe,2010,692e,,,temperature
+
+b,buffer,buffer_mode_bcast,Buffer Mode Broadcast,13,fe,2020,1b23,,,onoff:buffer_activation;ignore_2;buffer_setpoint_mode;ignore_2;percent:unknown_1888
+b,buffer,buffer_temperature_bcast_1,Buffer Temperature Broadcast,13,fe,2020,6e8f,,,temperature:buffer_reduced_temp;ignore_2;temperature:unknown_6d8f;ignore_2;buffer_charge_mode:buffer_charge_mode
+b,buffer,buffer_temperature_bcast_2,Buffer Temperature Broadcast,13,fe,2020,672e,,,temperature:unknown_672e;ignore_2;temperature:unknown_682e;ignore_2;temperature:buffer_comfort_temp
+
+r,buffer,buffer_setpoint_hysterisis_limits,buffer setpoint hysteresis limits,,fe,2001,672e
+b,buffer,buffer_setpoint_hysterisis_limits,buffer setpoint hysteresis limits,,fe,200e,672e,,,temperature_min_max
+
+r,buffer,buffer_high_temperature_sensor_limits,buffer high temperature sensor,,fe,2001,759e
+b,buffer,buffer_high_temperature_sensor_limits,buffer high temperature sensor,,fe,200e,759e,,,temperature_min_max
+
+r,buffer,buffer_low_temperature_sensor_limits,buffer low temperature sensor,,fe,2001,769e
+b,buffer,buffer_low_temperature_sensor_limits,buffer low temperature sensor,,fe,200e,769e,,,temperature_min_max
+
+r,buffer,buffer_charge_hours_heating,unknown 1,,18,2001,5ad1,,,hours_min_max
+r,buffer,buffer_charge_hours_cooling,unknown 1,,18,2001,5bd1,,,hours_min_max
+r,buffer,buffer_integration_scheme,unknown,,fe,2001,d28d
+b,buffer,buffer_integration_scheme,unknown,,fe,200e,d28d,,,buffer_integration
+r,buffer,buffer_solar_integration,unknown,,fe,2001,1888
+b,buffer,buffer_solar_integration,unknown,,fe,200e,1888,,,onoff
