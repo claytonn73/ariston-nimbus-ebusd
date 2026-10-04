@@ -56,7 +56,7 @@ when a broadcast write is issued using a 2020 command that changes a value then 
 
 # Combined definition for reads and writes
 
-For an entity that uses the direct read method the following provides a complete definition for the messages seen on the bus
+For an entity that uses the direct read method the following provides a complete definition for the messages seen on the bus. Not all entities provide the broadcast 2010 response to a change.
 
     r,energymgr,hv_input_2,HV Input 2,,18,2001,cb2a,,,hv_input_2
     w,energymgr,hv_input_2,HV Input 2,,18,2020,cb2a,,,hv_input_2
@@ -78,6 +78,15 @@ For an entity where we also woould like to obtain the minimum and maximum values
     b,energymgr,ext_temp_correct_limits,External Temperature Correction,13,fe,200e,7426,,,temperature_min_max
     b,ignored,ext_temp_correct_bcast,External Temperature Correction,13,fe,2010,7426,,,temperature:setting
 
+# Performing regular queries
+
+There are a number of entities for which it would be highly desirable to get regular updates but which are not present on the bus with the normal operation of the system. Given the use by the system of multiple entity queries it seems obvious to follow a similar pattern to efficiently obtain multiple responses with a single command. An example of this is show below for the flow and return temperatures and flow rate of the heatpump.
+
+    r1,heatpump,water_flow,Regular read of flow rate and temps,,1e,2000,761077106e13,,,ignore_1;temperature:flow_temperature;temperature:return_temperature;flow_rate:flow_rate
+
+# System behaviour notes
+
+The automatic winter mode is a useful feature to enable and disable heating based on an external temperature threshold. However it does not use the defined threshold directly to perform the enable/disable of heating. If temperature drops 1C below the defined threshold the heating will be enabled and if the temperature rises 1C above the defined threshold the heating will be disabled. In this way it avoids repetitive enabling and disabling of heating but it does mean that setting the value correctly for the house is important. It is definitely possible to use 0.5C steps for this value. On my system I have set the associated winter mode delay to 0 minutes as with the behaviour above it does not seem sensible to wait for an extended period once the higher or lower threshold is reached.
 
 # Disclaimer
 All information posted is merely for educational and informational purposes. It is not intended as a substitute for professional advice. Should you decide to act upon any information on this website, you do so at your own risk. While the information on this website has been verified to the best of our abilities, I cannot guarantee that there are no mistakes or errors. You may use this library with the understanding that doing so is AT YOUR OWN RISK. No warranty, express or implied, is made with regards to the fitness or safety of this code for any purpose. If you use this library to query or change settings of your products you understand that it is possible to cause damages I reserve the right to change this policy at any given time.
