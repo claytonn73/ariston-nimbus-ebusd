@@ -173,7 +173,6 @@ pulse_unit:setting,UCH,0=nothing;1=kWh;2=m3,,
 pulse_value_factor:setting,UCH,0=div1000;1=div100;2=div10;3=1;4=x10;5=x100;6=x1000
 pulse_measuring_type:setting,UCH,0=only_hp;1=hp_plus_electric_heater
 
-zone_name,UCH,0=zone_number;1=home;2=fred
-
+zone_name,UCH,0=zone_number;1=home;2=living_room;3=sleeping_area;4=bedroom;5=bedroom_2;6=bedroom_3;7=bedroom_4;8=bedroom_5;9=bedroom_6;10=childreans_room;11=childreans_room_2;12=childreans_room_3;13=childreans_room_4;14=cellar;15=attic;16=entrance;17=kitchen;18=sitting_room;19=studio;20=corridor
 # Unlike most values the weather is a BCD value not UCH
 weather:state,BCD,1=sunny;2=light_clouds;3=cloudy;4=rain;5=heavy_rain;6=sleet;7=snow;81=clear_night;82=light_clouds_night;83=cloudy_night;84=rain_night;85=heavy_rain_night;86=sleet_night;87=snow_night,
