@@ -187,6 +187,7 @@ b,energymgr,heat_lwt_offset,Heating LWT Offset,13,18,2010,7d2b,,m,temperature:se
 r,energymgr,heat_lwt_offset_limits,Heating LWT Offset,,18,2001,7d2b,,,temperature_min_max
 
 r,energymgr,flow_temperature,statistics,,18,2001,74fd,,,temperature
+r,ignored,flow_temperature_2000,,,18,2000,74fd,,,ignore_1;temperature
 
 b,energymgr,return_temperature,statistics,13,fe,2010,769e,,,temperature:reading
 

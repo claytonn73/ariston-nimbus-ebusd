@@ -109,8 +109,6 @@ r,ignored,heatpump_query,statistics,,1e,2000,7c4fcb46,,,ignore_1;watts:power_con
 # Issued every 15 mins so use for error code and teo temp
 r5,heatpump,heatpump_query_error,statistics,,1e,2000,7417c54b,,,ignore_1;temperature:teo_temperature;error_code:last_error_info
 
-
-
 r,ignored,manual_mode_compressor_frequency,Unknown Value with Limits,,1e,2001,6029,,,frequency_min_max
 r,ignored,manual_mode_fan1_speed,Unknown Value with Limits,,1e,2001,6129,,,rpm_min_max
 r,ignored,manual_mode_fan2_speed,Unknown Value with Limits,,1e,2001,7b29,,,rpm_min_max

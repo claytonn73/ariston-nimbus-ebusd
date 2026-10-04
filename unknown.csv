@@ -63,6 +63,7 @@ b,ignored,unknown_6b24_limits,unknown,,fe,200e,6b24,,,temperature_min_max
 r,ignored,unknown_0990,unknown,,fe,2000,0990
 b,ignored,unknown_0990,unknown,,fe,200f,0990,,,percent
 w,ignored,unknown_0990,unknown,,fe,2010,0990,,,percent
+b,ignored,unknown_0990_bcast,unknown,,fe,2020,0990,,,percent
 
 b,ignored,unknown_0a90,unknown,,fe,2020,0a90,,,percent
 b,ignored,unknown_0b90,unknown,,fe,2020,0b90,,,percent
@@ -90,6 +91,7 @@ b,ignored,broadcast_cff9,unknown,,fe,2010,cff9,,,percent:value_cff9;ignore_3;per
 b,ignored,broadcast_489d,unknown,,fe,2010,489d,,,temperature:temp_489d
 b,ignored,broadcast_d394,unknown,,fe,2010,d394,,,percent:temp_d394;ignore_3;percent:temp_d494;ignore_3;percent:temp_d594;ignore_3;percent:temp_d694
 b,ignored,broadcast_d3f9,unknown,,fe,2010,d3f9,,,percent:percent_d3f9
+b,ignored,broadcast_6297,unknown,,fe,2010,6297,,,temperature:temperature_6297
 
 
 b,ignored,broadcast_7271,unknown,,fe,2020,7271,,,temperature:temp_7271;ignore_2;temperature:temp_7371;ignore_2;temperature:temp_7471
@@ -99,9 +101,9 @@ b,ignored,broadcast_7574,unknown,,fe,2020,7574,,,temperature:temp_7574;ignore_2;
 b,ignored,broadcast_4ffd,unknown,,fe,2020,4ffd,,,temperature:temp_4ffd;ignore_2;longminutes:temp_50fd;ignore_2;onoff:onoff_c7f8;ignore_2;onoff:onoff_c8f8
 b,ignored,broadcast_c07c,unknown,,fe,2020,c07c,,,thermoregulation:thermoregulation;ignore_2;percent:percent_c27cignore_2;percent:percent_c97c;ignore_2;percent:percent_0084
 
-b,ignored,broadcast_7072,unknown,,fe,2020,7072,,,temperature:temp_7072;ignore_2;temperature:temp_7172;ignore_2;temperature:temp_7272
+b,ignored,broadcast_7072,unknown,,fe,2020,7072,,,temperature:z2_cooling_setpoint_temp;ignore_2;temperature:z2_cooling_water_max_temp;ignore_2;temperature:temp_7272
 
-b,ignored,broadcast_6073,unknown,,fe,2020,6073,,,temperature:temp_6073;ignore_2;temperature:temp_6173;ignore_2;temperature:temp_6473
+b,ignored,broadcast_6073,unknown,,fe,2020,6073,,,temperature:z3_heater_water_max_tem;ignore_2;temperature:z3_heater_water_min_temp;ignore_2;temperature:temp_6473
 b,ignored,broadcast_6573,unknown,,fe,2020,6573,,,temperature:temp_6573;ignore_2;temperature:temp_6673;ignore_2;temperature:temp_6773
 
 r,ignored,unknown_554f_limits,Unknown Value with Limits,,1e,2001,554f,,,temperature_min_max
@@ -135,7 +137,7 @@ r,ignored,unknown_4dfd,unknown,,18,2000,4dfd,,,ignore_1;longminutes
 r,energymgr,unknown_s2l_658e,,,18,2001,658e,,,longminutes_min_max
 r,ignored,unknown_uch_d8f8,,,18,2001,d8f8,,,minutes_min_max
 r,ignored,unknown_uch_d4f7_nolim,,,18,2000,d4f7,,,minutes
-r,ignored,unknown_u2l_74fd,,,18,2000,74fd,,,longminutes
+
 
 r,ignored,unknown_switch_1403,,,18,2001,1403,,,onoff
 r,ignored,unknown_switch_1503,,,18,2001,1503,,,onoff
