@@ -3,7 +3,7 @@
 ############################################################################################
 
 # Regular count of on the bus
-b,ignored,ign2073,,7f,fe,2073,,ign,m,HEX:9
+# b,ignored,ign2073,,7f,fe,2073,,ign,m,HEX:9
 
 # 2051 command is related to DHW time program messages, parsed only to remove from ebusd logs 
 # the related "errors" of unknown messages; the protocol has been decoded, see  
@@ -11,16 +11,16 @@ b,ignored,ign2073,,7f,fe,2073,,ign,m,HEX:9
 # I won't try to implement it here because the default Ariston brand mobile app is already doing
 # a fairly decent job to do schedule programming
 
-b,ignored,ign4,QQfe2051XXXXX,,fe,2051,,ign,m,IGN:14
+# b,ignored,ign4,QQfe2051XXXXX,,fe,2051,,ign,m,IGN:14
 
 # 2050 command is PROBABLY related to HEATING/COOLING time program messages, parsed here only to 
 # remove from ebusd logs the related "errors" of unknown messages; 
 # I won't try to decode/implement it here because the default Ariston brand mobile app is already doing
 # a fairly decent job to do schedule programming
-b,ignored,ign5,QQfe2050XXXXX,,fe,2050,,string,,HEX:*
+# b,ignored,ign5,QQfe2050XXXXX,,fe,2050,,string,,HEX:*
 
 
-b,broadcast,cast_date,Cast Date,,fe,2070,,,,hhmm:time;date:date
+b,broadcast,cast_date,Cast Date,,fe,2070,,,,hhmm:time;fulldate:date
 b,broadcast,ebus_reset,Reset ebus,,fe,2034,,,,onoff:ebust_reset
 b,broadcast,hp_serial_number,HPSerial,13,fe,2031,,value,,STR:12
 b,broadcast,gw_serial_number,GWSerial,70,fe,2031,,value,,STR:12

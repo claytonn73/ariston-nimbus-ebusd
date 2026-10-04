@@ -8,7 +8,7 @@
 r,dhw,status,status,,fe,2001,0220
 b,dhw,status,status,13,fe,200e,0220,,,onoff
 w,dhw,status,status,70,fe,2020,0220,,,onoff
-b,ignored,dhw_status_bcast,DHW Status,13,fe,2010,0220,,,onoff
+b,ignored,dhw_status,DHW Status,13,fe,2010,0220,,,onoff
 
 r,dhw,aux_heat_activation,Auxiliary Heat Activation,,18,2001,1588,,,aux_heat_activation
 w,dhw,aux_heat_activation,Auxiliary Heat Activation,,18,2020,1588,,,aux_heat_activation
@@ -23,11 +23,11 @@ w,dhw,operation_mode,Operation Mode,,18,2020,d08d,,,dhw_mode
 
 r,dhw,scheduling,Scheduling Mode,,fe,2001,c028
 b,dhw,scheduling,Scheduling Mode,13,fe,200e,c028,,,control_mode
-w,dhw,scheduling,Scheduling Mode,,fe,2010,c028,,,control_mode
+w,dhw,scheduling,Scheduling Mode,70,fe,2020,c028,,,control_mode
 
 r,dhw,thermal_cleanse,Thermal Cleansing Function,,fe,2001,0b20
 b,dhw,thermal_cleanse,Thermal Cleansing Function,13,fe,200e,0b20,,,onoff
-w,dhw,thermal_cleanse,Thermal Cleansing Function,,fe,2010,0b20,,,onoff
+w,dhw,thermal_cleanse,Thermal Cleansing Function,,fe,2020,0b20,,,onoff
 
 # DHW storage temperature information - performed regularly by the system
 r,dhw,storage_temperature,Current Storage Temperature,,18,2000,7747,,,ignore_1;temperature:reading
@@ -39,13 +39,13 @@ r,ignored,storage_temperature_3,Current Storage Temperature,,18,2000,62137017,,,
 # Setting and limits for DHW reduced temperature and comfort temperature
 r,dhw,reduced_temp,Reduced Temperature,,fe,2000,6226
 b,dhw,reduced_temp,Reduced Temperature,13,fe,200f,6226,,,temperature:setting
-w,dhw,reduced_temp,Reduced Temperature,,fe,2010,6226,,,temperature:setting
+w,dhw,reduced_temp,Reduced Temperature,70,fe,2020,6226,,,temperature:setting
 r,dhw,reduced_temp_limits,Reduced Temperature Limits,,fe,2001,6226
 b,dhw,reduced_temp_limits,Reduced Temperature Limits,13,fe,200e,6226,,,temperature_min_max
 
 r,dhw,comfort_temp,Comfort Temperature,,fe,2000,6126
 b,dhw,comfort_temp,Comfort Temperature,13,fe,200f,6126,,,temperature:setting
-w,dhw,comfort_temp,Comfort Temperature,,fe,2010,6126,,,temperature:setting
+w,dhw,comfort_temp,Comfort Temperature,70,fe,2020,6126,,,temperature:setting
 r,dhw,comfort_temp_limits,Comfort Temperature Limits,,fe,2001,6126
 b,dhw,comfort_temp_limits,Comfort Temperature Limits,13,fe,200e,6126,,,temperature_min_max
 
@@ -82,30 +82,30 @@ r,dhw,external_temperature_disable_threshold_limits,External Temperature to Disa
 # Thermal cleanse settings and limits
 r,dhw,thermal_cleanse_temp,Thermal Cleanse Temperature,,fe,2000,7d26
 b,dhw,thermal_cleanse_temp,Thermal Cleanse Temperature,13,fe,200f,7d26,,,temperature:setting
-w,dhw,thermal_cleanse_temp,Thermal Cleanse Temperature,,fe,2010,7d26,,,temperature:setting
+w,dhw,thermal_cleanse_temp,Thermal Cleanse Temperature,70,fe,2020,7d26,,,temperature:setting
 r,dhw,thermal_cleanse_temp_limits,Thermal Cleanse Temperature Limits,,fe,2001,7d26
 b,dhw,thermal_cleanse_temp_limits,Thermal Cleanse Temperature Limits,13,fe,200e,7d26,,,temperature_min_max
 
 r,dhw,thermal_cleanse_freq,Thermal Cleanse Frequency,,fe,2000,712b
 b,dhw,thermal_cleanse_freq,Thermal Cleanse Frequency,13,fe,200f,712b,,,longminutes:setting
-w,dhw,thermal_cleanse_freq,Thermal Cleanse Frequency,,fe,2010,712b,,,longminutes:setting
+w,dhw,thermal_cleanse_freq,Thermal Cleanse Frequency,70,fe,2020,712b,,,longminutes:setting
 r,dhw,thermal_cleanse_freq_limits,Thermal Cleanse Frequency Limits,,fe,2001,712b
 b,dhw,thermal_cleanse_freq_limits,Thermal Cleanse Frequency Limits,13,fe,200e,712b,,,longminutes_min_max
 
 r,dhw,thermal_cleanse_target_time,Thermal Cleanse Target Time,,fe,2000,d92a
 b,dhw,thermal_cleanse_target_time,Thermal Cleanse Target Time,13,fe,200f,d92a,,,hrs:setting
-w,dhw,thermal_cleanse_target_time,Thermal Cleanse Target Time,,fe,2010,d92a,,,hrs:setting
+w,dhw,thermal_cleanse_target_time,Thermal Cleanse Target Time,70,fe,2020,d92a,,,hrs:setting
 r,dhw,thermal_cleanse_target_time_limits,Thermal Cleanse Target Time Limits,,fe,2001,d92a
 b,dhw,thermal_cleanse_target_time_limits,Thermal Cleanse Target Time Limits,13,fe,200e,d92a,,,hrs_min_max
 
 r,dhw,thermal_cleanse_start_time,Thermal Cleanse Start Time,,fe,2000,7e2b
 b,dhw,thermal_cleanse_start_time,Thermal Cleanse Start Time,13,fe,200f,7e2b,,,hhmm
-w,dhw,thermal_cleanse_start_time,Thermal Cleanse Start Time,,fe,2010,7e2b,,,hhmm
+w,dhw,thermal_cleanse_start_time,Thermal Cleanse Start Time,70,fe,2020,7e2b,,,hhmm
 r,dhw,thermal_cleanse_start_time_limits,Thermal Cleanse Start Time Limits,,fe,2001,7e2b
 b,dhw,thermal_cleanse_start_time_limits,Thermal Cleanse Start Time Limits,13,fe,200e,7e2b,,,hhmm_min_max
 
 r,dhw,thermal_cleanse_max_duration,Max Duration Thermal Cleanse,,fe,2000,ca2a
 b,dhw,thermal_cleanse_max_duration,Max Duration Thermal Cleanse,13,fe,200f,ca2a,,,hrs:setting
-w,dhw,thermal_cleanse_max_duration,Max Duration Thermal Cleanse,,fe,2010,ca2a,,,hrs:setting
+w,dhw,thermal_cleanse_max_duration,Max Duration Thermal Cleanse,70,fe,2020,ca2a,,,hrs:setting
 r,dhw,thermal_cleanse_max_duration_limits,Max Duration Thermal Cleanse Limits,,fe,2001,ca2a
 b,dhw,thermal_cleanse_max_duration_limits,Max Duration Thermal Cleanse Limits,13,fe,200e,ca2a,,,hrs_min_max

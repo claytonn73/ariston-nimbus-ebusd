@@ -6,8 +6,6 @@
 
 r,ignored,unknown_79c0,unknown,,fe,2000,79c0
 b,ignored,unknown_79c0,unknown,,fe,200f,79c0,,,ignore_1;temperature
-r,ignored,unknown_ccf7,unknown,,fe,2000,ccf7
-b,ignored,unknown_ccf7,unknown,,fe,200f,ccf7,,,ignore_1;percent
 r,ignored,unknown_4078,unknown,,fe,2000,4078
 b,ignored,unknown_4078,unknown,,fe,200f,4078,,,ignore_1;percent
 r,ignored,unknown_4ffd,unknown,,fe,2000,4ffd
@@ -18,28 +16,18 @@ b,ignored,unknown_56e9,unknown,,fe,200f,56e9,,,ignore_1;temperature
 
 r,ignored,unknown_6397_limits,unknown,,fe,2001,6397
 b,ignored,unknown_6397_limits,unknown,,fe,200e,6397,,,temperature_min_max
-r,ignored,unknown_7118_limits,unknown,,fe,2001,7118
-b,ignored,unknown_7118_limits,unknown,,fe,200e,7118,,,temperature_min_max
 r,ignored,unknown_7318_limits,unknown,,fe,2001,7318
 b,ignored,unknown_7318_limits,unknown,,fe,200e,7318,,,temperature_min_max
-r,ignored,unknown_6375_limits,unknown,,fe,2001,6375
-b,ignored,unknown_6375_limits,unknown,,fe,200e,6375,,,temperature_min_max
 r,ignored,unknown_6573_limits,unknown,,fe,2001,6573
 b,ignored,unknown_6573_limits,unknown,,fe,200e,6573,,,temperature_min_max
-r,ignored,unknown_672e_limits,unknown,,fe,2001,672e
-b,ignored,unknown_672e_limits,unknown,,fe,200e,672e,,,temperature_min_max
 r,ignored,unknown_6824_limits,unknown,,fe,2001,6824
 b,ignored,unknown_6824_limits,unknown,,fe,200e,6824,,,temperature_min_max
-r,ignored,unknown_6996_limits,unknown,,fe,2001,6996
-b,ignored,unknown_6996_limits,unknown,,fe,200e,6996,,,temperature_min_max
+
 r,ignored,unknown_6a2e_limits,unknown,,fe,2001,6a2e
 b,ignored,unknown_6a2e_limits,unknown,,fe,200e,6a2e,,,temperature_min_max
 r,ignored,unknown_6b96_limits,unknown,,fe,2001,6b96
 b,ignored,unknown_6b96_limits,unknown,,fe,200e,6b96,,,temperature_min_max
-r,ignored,unknown_759e_limits,unknown,,fe,2001,759e
-b,ignored,unknown_759e_limits,unknown,,fe,200e,759e,,,temperature_min_max
-r,ignored,unknown_769e_limits,unknown,,fe,2001,769e
-b,ignored,unknown_769e_limits,unknown,,fe,200e,769e,,,temperature_min_max
+
 r,ignored,unknown_7973_limits,unknown,,fe,2001,7973
 b,ignored,unknown_7973_limits,unknown,,fe,200e,7973,,,temperature_min_max
 r,ignored,unknown_7a73_limits,unknown,,fe,2001,7a73
@@ -50,36 +38,27 @@ r,ignored,unknown_c679_limits,unknown,,fe,2001,c679
 b,ignored,unknown_c679_limits,unknown,,fe,200e,c679,,,percent_min_max
 r,ignored,unknown_c67a_limits,unknown,,fe,2001,c67a
 b,ignored,unknown_c67a_limits,unknown,,fe,200e,c67a,,,percent_min_max
-r,ignored,unknown_ce79_limits,unknown,,fe,2001,ce79
-b,ignored,unknown_ce79_limits,unknown,,fe,200e,ce79,,,percent_min_max
+
 r,ignored,unknown_c67d_limits,unknown,,fe,2001,c67d
 b,ignored,unknown_c67d_limits,unknown,,fe,200e,c67d,,,percent_min_max
 r,ignored,unknown_c67e_limits,unknown,,fe,2001,c67e
 b,ignored,unknown_c67e_limits,unknown,,fe,200e,c67e,,,percent_min_max
 r,ignored,unknown_c67c_limits,unknown,,fe,2001,c67c
 b,ignored,unknown_c67c_limits,unknown,,fe,200e,c67c,,,percent_min_max
-r,ignored,unknown_c9c1_limits,unknown,,fe,2001,c9c1
-b,ignored,unknown_c9c1_limits,unknown,,fe,200e,c9c1,,,percent_min_max
 r,ignored,unknown_0391_limits,unknown,,fe,2001,0391
 b,ignored,unknown_0391_limits,unknown,,fe,200e,0391,,,percent_min_max
-r,ignored,unknown_1888_limits,unknown,,fe,2001,1888
-b,ignored,unknown_1888_limits,unknown,,fe,200e,1888,,,percent_min_max
 r,ignored,unknown_c67b_limits,unknown,,fe,2001,c67b
 b,ignored,unknown_c67b_limits,unknown,,fe,200e,c67b,,,percent_min_max
 r,ignored,unknown_cbc1_limits,unknown,,fe,2001,cbc1
 b,ignored,unknown_cbc1_limits,unknown,,fe,200e,cbc1,,,percent_min_max
-r,ignored,unknown_ccf7_limits,unknown,,fe,2001,ccf7
-b,ignored,unknown_ccf7_limits,unknown,,fe,200e,ccf7,,,percent_min_max
-r,ignored,unknown_d28d_limits,unknown,,fe,2001,d28d
-b,ignored,unknown_d28d_limits,unknown,,fe,200e,d28d,,,percent_min_max
 r,ignored,unknown_d57b_limits,unknown,,fe,2001,d57b
 b,ignored,unknown_d57b_limits,unknown,,fe,200e,d57b,,,percent_min_max
 
+r,ignored,unknown_6a24_limits,unknown,,fe,2001,6a24
+b,ignored,unknown_6a24_limits,unknown,,fe,200e,6a24,,,temperature_min_max
+r,ignored,unknown_6b24_limits,unknown,,fe,2001,6b24
+b,ignored,unknown_6b24_limits,unknown,,fe,200e,6b24,,,temperature_min_max
 
-r,ignored,unknown_switch_db89,unknown,,fe,2001,db89
-b,ignored,unknown_switch_db89,unknown,,fe,200e,db89,,,onoff
-r,ignored,unknown_0881_limits,unknown,,fe,2001,0881
-b,ignored,unknown_0881_limits,unknown,,fe,200e,0881,,,percent_min_max
 
 r,ignored,unknown_0990,unknown,,fe,2000,0990
 b,ignored,unknown_0990,unknown,,fe,200f,0990,,,percent
@@ -95,8 +74,6 @@ r,ignored,unknown_hours_1,unknown 1,,18,2000,51d1,,,ignore_1;hours
 r,ignored,unknown_hours_2,unknown 2,,18,2000,52d1,,,ignore_1;hours
 r,ignored,unknown_hours_3,unknown 3,,18,2000,53d1,,,ignore_1;hours
 
-r,ignored,unknown_5ad1,unknown 1,,18,2001,5ad1,,,temperature_min_max
-r,ignored,unknown_5bd1,unknown 1,,18,2001,5bd1,,,temperature_min_max
 
 r,ignored,unknown_c200,unknown 1,,18,2001,c200,,,percent_min_max
 r,ignored,unknown_ca46,unknown 1,,18,2001,ca46,,,percent_min_max
@@ -112,6 +89,8 @@ b,ignored,unknown_c5f8,,,fe,200f,c5f8,,,percent:percent_c5f8;ignore_3;percent:pe
 b,ignored,broadcast_cff9,unknown,,fe,2010,cff9,,,percent:value_cff9;ignore_3;percent:value_ddf2
 b,ignored,broadcast_489d,unknown,,fe,2010,489d,,,temperature:temp_489d
 b,ignored,broadcast_d394,unknown,,fe,2010,d394,,,percent:temp_d394;ignore_3;percent:temp_d494;ignore_3;percent:temp_d594;ignore_3;percent:temp_d694
+b,ignored,broadcast_d3f9,unknown,,fe,2010,d3f9,,,percent:percent_d3f9
+
 
 b,ignored,broadcast_7271,unknown,,fe,2020,7271,,,temperature:temp_7271;ignore_2;temperature:temp_7371;ignore_2;temperature:temp_7471
 b,ignored,broadcast_7976,unknown,,fe,2020,7976,,,temperature:temp_7976;ignore_2;temperature:temp_7a76;ignore_2;onoff:onoff_e790
@@ -130,14 +109,27 @@ r,ignored,unknown_d84b_limits,Unknown Value with Limits,,1e,2001,d84b,,,percent_
 r,ignored,unknown_d94b_limits,Unknown Value with Limits,,1e,2001,d94b,,,percent_min_max
 r,ignored,unknown_d93d_limits,Unknown Value with Limits,,1e,2001,d93d,,,percent_min_max
 r,ignored,unknown_da3d_limits,Unknown Value with Limits,,1e,2001,da3d,,,percent_min_max
+r,ignored,unknown_cb9c_panel,unknown value with limits,,1e,2000,cb9c,,,ignore_1;percent
 r,ignored,unknown_cb9c_limits,unknown value with limits,,1e,2001,cb9c,,,percent_min_max
 r,ignored,unknown_c0f2_limits,unknown value with limits,,1e,2001,c0f2,,,percent_min_max
 r,ignored,unknown_c0f2,unknown value ,,1e,2000,c0f2,,,percent
 
 r,ignored,unknown_s2l_c0f2,,,18,2000,c0f2,,,percent
 r,ignored,unknown_7547,unknown,,18,2000,7547,,,ignore_1;longminutes
-r,ignored,unknown_4dfd7547,unknown,,18,2000,4dfd7547,,,ignore_1;longminutes;longminutes
+r,ignored,unknown_4dfd7547,unknown,,18,2000,4dfd7547,,,ignore_1;temperature;temperature
+r,ignored,unknown_46d947d9,unknown,,18,2000,46d947d9,,,ignore_1;temperature;temperature
+r,ignored,unknown_48d949d9,unknown,,18,2000,48d949d9,,,ignore_1;temperature;temperature
+r,ignored,unknown_4ada4bda,unknown,,18,2000,4ada4bda,,,ignore_1;temperature;temperature
+r,ignored,unknown_4cda4dda,unknown,,18,2000,4cda4dda,,,ignore_1;temperature;temperature
+r,ignored,unknown_4eda4fda,unknown,,18,2000,4eda4fda,,,ignore_1;temperature;temperature
+r,ignored,unknown_50da51da,unknown,,18,2000,50da51da,,,ignore_1;temperature;temperature
+r,ignored,unknown_52d953d9,unknown,,18,2000,52d953d9,,,ignore_1;temperature;temperature
+r,ignored,unknown_54d955d9,unknown,,18,2000,54d955d9,,,ignore_1;temperature;temperature
+r,ignored,unknown_56d957d9,unknown,,18,2000,56d957d9,,,ignore_1;temperature;temperature
+r,ignored,unknown_5cd95dd9,unknown,,18,2000,5cd95dd9,,,ignore_1;temperature;temperature
+r,ignored,unknown_40d841d8,unknown,,1e,2000,40d841d8,,,ignore_1;temperature;temperature
 
+r,ignored,unknown_1521d58dcc2ad32a,unknown,,18,2000,1521d58dcc2ad32a,,,ignore_1;percent;percent;percent;percent
 r,ignored,unknown_d1404bfd4cfd4dfd,unknown,,18,2000,d1404bfd4cfd4dfd,,,ignore_1;percent;longminutes;longminutes;longminutes
 r,ignored,unknown_4dfd,unknown,,18,2000,4dfd,,,ignore_1;longminutes
 r,energymgr,unknown_s2l_658e,,,18,2001,658e,,,longminutes_min_max
@@ -149,10 +141,10 @@ r,ignored,unknown_switch_1403,,,18,2001,1403,,,onoff
 r,ignored,unknown_switch_1503,,,18,2001,1503,,,onoff
 r,ignored,unknown_switch_1603,,,18,2001,1603,,,onoff
 r,ignored,unknown_switch_1703,,,18,2001,1703,,,onoff
+
 r,ignored,unknown_switch_c328,,,18,2001,c328,,,onoff
 r,ignored,unknown_switch_c201,,,18,2001,c201,,,onoff
 r,ignored,unknown_switch_d48d,,,18,2001,d48d,,,onoff
 
 r,ignored,unknown_thermostat_maybe,,,18,2001,1b11,,,onoff
 r,ignored,unknow_safety_thermostat_maybe,Safety Thermostat,,18,2001,1a11,,,onoff
-

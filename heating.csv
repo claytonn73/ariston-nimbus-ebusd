@@ -7,9 +7,9 @@
 r,heating,status,Heating Status,,fe,2001,0120
 b,heating,status,Heating Status,13,fe,200e,0120,,,onoff
 w,heating,status,Heating Status,70,fe,2020,0120,,,onoff
-b,ignored,status_bcast,Heating Status,13,fe,2010,0120,,,onoff
+b,ignored,heating_status_bcast,Heating Status,13,fe,2010,0120,,,onoff
 
-b,ignored,heating_status_bcast,Heating Status Broadcast,13,fe,2020,0120,,,onoff:heating_status;ignore_2;percent:unknown_d02a;ignore_2;percent:unknown_d12a
+b,ignored,heating_status_bcast_2020,Heating Status Broadcast,13,fe,2020,0120,,,onoff:heating_status;ignore_2;percent:unknown_d02a;ignore_2;percent:unknown_d12a
 
 # b,heating,status,Heating Status,,fe,200f,0120,,,onoff:setting - multiple values possible
 
@@ -19,11 +19,12 @@ w,heating,controller,unknown,70,fe,2020,d579,,,heating_controller
 
 r,heating,eco_comfort,statistics,,18,2001,c728,,,eco_mode
 w,heating,eco_comfort,statistics,,18,2020,c728,,,eco_mode
+b,heating,eco_comfort,statistics,13,18,2010,c728,,m,eco_mode
 
 r,heating,lwt_setpoint,Flow Setpoint,,fe,2000,6047
 b,heating,lwt_setpoint,Flow Setpoint,13,fe,200f,6047,,,temperature:setting
 
-b,heating,lwt_setpoint_plus,Flow Setpoint,13,fe,2010,6047,,,temperature:setting;ignore_3;temperature:temp_6197;ignore_3;temperature:temp_6297
+b,ignored,lwt_setpoint_plus,Flow Setpoint,13,fe,2010,6047,,,temperature:lwt_setpoint;ignore_3;temperature:z1_flow_setpoint;ignore_3;temperature:z1_room_temp
 
 r,heating,aux_heat_activation,Auxiliary Heat Activation Mode,,18,2001,1488,,,aux_heat_activation
 w,heating,aux_heat_activation,Auxiliary Heat Activation Mode,,18,2020,1488,,,aux_heat_activation
@@ -36,8 +37,9 @@ r,heating,reset_integral,statistics,,18,2000,708c,,,ignore_1;integral:setting
 w,heating,reset_integral,statistics,,18,2020,708c,,,integral
 r,heating,reset_integral_limits,statistics,,18,2001,708c,,,integral_min_max
 
-r,heating,delay_time,statistics,,18,2000,da8d,,s,ignore_1;minutes:setting
-w,heating,delay_time,statistics,,18,2020,da8d,,m,minutes:setting
+r,heating,delay_time,statistics,,18,2000,da8d,,,ignore_1;minutes:setting
+w,heating,delay_time,statistics,,18,2020,da8d,,,minutes:setting
+b,heating,delay_time,statistics,,18,2010,da8d,,m,minutes:setting
 r,heating,delay_time_limits,statistics,,18,2001,da8d,,,minutes_min_max
 
 r,heating,boost_time,,,fe,2000,602b
@@ -60,6 +62,10 @@ r,heating,floor_drying_temp_limits,Floor Drying Temperature,,18,2001,7c2b,,,temp
 ############################################################################################
 ####                     BUFFER SETTINGS AND MESSAGES                                   ####
 ############################################################################################
+
+r,ignored,buffer_status,unknown,,fe,2000,ccf7
+b,ignored,buffer_status,unknown,,fe,200f,ccf7,,,ignore_1;buffer_status
+r,ignored,buffer_status_panel,unknown,,fe,2001,ccf7
 
 r,ignored,buffer_activation,Buffer Activation,,fe,2001,1b23
 b,ignored,buffer_activation,Buffer Activation,13,fe,200e,1b23,,,onoff
@@ -99,3 +105,18 @@ b,ignored,buffer_mode_bcast,Buffer Mode Broadcast,13,fe,2020,1b23,,,onoff:buffer
 b,ignored,buffer_temperature_bcast_1,Buffer Temperature Broadcast,13,fe,2020,6e8f,,,temperature:buffer_reduced_temp;ignore_2;temperature:unknown_6d8f;ignore_2;buffer_charge_mode:buffer_charge_mode
 b,ignored,buffer_temperature_bcast_2,Buffer Temperature Broadcast,13,fe,2020,672e,,,temperature:unknown_672e;ignore_2;temperature:unknown_682e;ignore_2;temperature:buffer_comfort_temp
 
+r,ignored,buffer_setpoint_hysterisis_limits,buffer setpoint hysteresis limits,,fe,2001,672e
+b,ignored,buffer_setpoint_hysterisis_limits,buffer setpoint hysteresis limits,,fe,200e,672e,,,temperature_min_max
+
+r,ignored,buffer_high_temperature_sensor_limits,buffer high temperature sensor,,fe,2001,759e
+b,ignored,buffer_high_temperature_sensor_limits,buffer high temperature sensor,,fe,200e,759e,,,temperature_min_max
+
+r,ignored,buffer_low_temperature_sensor_limits,buffer low temperature sensor,,fe,2001,769e
+b,ignored,buffer_low_temperature_sensor_limits,buffer low temperature sensor,,fe,200e,769e,,,temperature_min_max
+
+r,ignored,buffer_charge_hours_heating,unknown 1,,18,2001,5ad1,,,hours_min_max
+r,ignored,buffer_charge_hours_cooling,unknown 1,,18,2001,5bd1,,,hours_min_max
+r,ignored,buffer_integration_scheme,unknown,,fe,2001,d28d
+b,ignored,buffer_integration_scheme,unknown,,fe,200e,d28d,,,buffer_integration
+r,ignored,buffer_solar_integration,unknown,,fe,2001,1888
+b,ignored,buffer_solar_integration,unknown,,fe,200e,1888,,,onoff

@@ -18,3 +18,4 @@ r,ignored,ext_boiler_heat_efficiency,External Boiler Heat Efficiency,,18,2000,78
 r,ignored,ext_boiler_dhw_efficiency,External Boiler DHW Efficiency,,18,2000,762e,,,ignore_1;percent
 
 r,ignored,boiler_calculated_cost,Boiler Calculated Cost,,18,2000,7147,,,ignore_1;cost
+

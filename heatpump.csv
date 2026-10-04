@@ -28,12 +28,13 @@ r1,heatpump,operation_stats,Heatpump running statistics,,1e,2000,40d147d140d8,,,
 # Ignore individual information in favour of combined read above
 r,ignored,heatpump_ignition_cycles,Heatpump Ignition Cycles,,1e,2001,40d8,,,count
 r,ignored,heatpump_running_hours,Heatpump Running Hours,,1e,2001,40d1,,,hours
-r,ignored,heatpump_defrost_hours,Heatpump Defrost Hours,,1e,2001,47d1,,,hours
+r,ignored,heatpump_defrost_hours,Heatpump Defrost Hours,,1e,2000,47d1,,,ignore_1;hours
 
 # Doesnt seem to be issued any more
 r,ignored,power_consumption_2,statistics,,1e,2000,63477c4f,,,ignore_1;temperature:temp_6347;watts:power
 
-r9,heatpump,power_rating,statistics,,1e,2001,6947,,,kw
+r,heatpump,power_rating_panel,statistics,,1e,2000,6947,,,ignore_1;kw
+r,heatpump,power_rating,statistics,,1e,2001,6947,,,kw
 
 r5,heatpump,pressure_info,Reads of evaporator and condenser pressue,,1e,2000,6c4f6d4f,,,ignore_1;pressure:evaporator_pressure;pressure:condensor_pressure
 # Individual temperature readings - unused in favour of consolidated reads
@@ -51,6 +52,7 @@ r,ignored,teo_temperature,TEO Temperature,,1e,2001,7417,,,temperature
 
 r1,heatpump,outside_air_temperature,Heatpump External Temperature,,1e,2001,7810,,,temperature
 r,ignored,hp_evaporator_temperature,Evaporator Temperature,,1e,2001,7910,,,temperature
+r,ignored,outside_air_temperature_panel,Heatpump External Temperature,,1e,2000,7810,,,ignore_1;temperature
 
 # Performed every 10 minutes by the system but add additional reads
 r1,heatpump,water_flow,Regular read of flow rate and temps,,1e,2000,761077106e13,,,ignore_1;temperature:flow_temperature;temperature:return_temperature;flow_rate:flow_rate
@@ -84,13 +86,14 @@ r,ignored,expansion_valve,Expansion Valve State in Steps,,1e,2001,704f,,,expansi
 # Enable second expansion valve if present on system
 r,ignored,expansion_valve_2,Expansion Valve 2 State in Steps,,1e,2001,714f,,,expansion_valve
 
-r5,heatpump,compressor_modulation,statistics,,1e,2001,c446,,,percent
+r,heatpump,compressor_modulation,statistics,,1e,2001,c446,,,percent
 r5,heatpump,compressor_frequency,statistics,,1e,2001,cb46,,,frequency
 
 # Regular status read every 10 seconds - also has version counter which is ignored
 r,heatpump,heatpump_status,Heatpump Status and version counter,,1e,2000,d140ca46,,,ignore_2;heatpump_status
 # Heatpump status - not needed due to regular reads above
 r,ignored,heatpump_status,Heatpump status ,,1e,2000,ca46,,,ignore_1;heatpump_status
+r,ignored,heatpump_status_panel,Heatpump status ,,1e,2001,ca46,,,heatpump_status
 
 # Pump Modulation Settings and Limits
 r,heatpump,pump_min_modulation,HP pump min PWM,,1e,2000,d22c,,,ignore_1;percent:setting

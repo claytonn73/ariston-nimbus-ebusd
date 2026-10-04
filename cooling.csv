@@ -7,7 +7,9 @@
 
 r,cooling,status,Cooling Status,,fe,2001,0f23
 b,cooling,status,Cooling Status,13,fe,200e,0f23,,,onoff
-w,cooling,status,Cooling Status,,fe,2010,0f23,,,onoff
+w,cooling,status,Cooling Status,,fe,2020,0f23,,,onoff
+
+b,ignored,cooling_status,Cooling Status,13,fe,2010,0f23,,,onoff;ignore_3;temperature:z1_day_temp;ignore_3;temperature:z1_night_temp
 
 r,cooling,activation,Cooling Activation,,fe,2001,1023
 b,cooling,activation,Cooling Activation,13,fe,200e,1023,,,onoff
@@ -19,6 +21,14 @@ r,cooling,humidity_control_threshold_limits,Cooling Humidity Control Threshold L
 r,cooling,humidity_control_hysterisis,Cooling Humidity Control Hysteresis,,18,2000,cd8f,,,ignore_1;percent:setting
 w,cooling,humidity_control_hysterisis,Cooling Humidity Control Hysteresis,,18,2020,cd8f,,,percent:setting
 r,cooling,humidity_control_hysterisis_limits,Cooling Humidity Control Hysteresis Limits,,18,2001,cd8f,,,percent_min_max
+
+r,cooling,humidity_alarm_limit,Cooling Humidity Alarm Limit,,18,2000,da7b,,,ignore_1;percent:setting
+w,cooling,humidity_alarm_limit,Cooling Humidity Alarm Limit,,18,2020,da7b,,,percent:setting
+r,cooling,humidity_alarm_limit_limits,Cooling Humidity Alarm Limit Limits,,18,2001,da7b,,,percent_min_max
+
+r,cooling,humidity_alarm_hysterisis,Cooling Humidity Alarm Hysteresis,,18,2000,db7b,,,ignore_1;percent:setting
+w,cooling,humidity_alarm_hysterisis,Cooling Humidity Alarm Hysteresis,,18,2020,db7b,,,percent:setting
+r,cooling,humidity_alarm_hysterisis_limits,Cooling Humidity Alarm Hysteresis Limits,,18,2001,db7b,,,percent_min_max
 
 r,cooling,offset_temperature,Cooling Offset Temperature,,18,2000,7f2b,,,ignore_1;temperature
 w,cooling,offset_temperature,Cooling Offset Temperature,,18,2020,7f2b,,,temperature

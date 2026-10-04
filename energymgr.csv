@@ -134,6 +134,7 @@ r,energymgr,aux_input_2_status,AUX Input 2 state - bridged,,18,2001,1f11,,,onoff
 
 r,energymgr,hv_input_1_status,HV Input 1 State - not used,,18,2001,1c11,,,onoff
 r,energymgr,hv_input_2_status,HV Input 2 State - not used,,18,2001,1d11,,,onoff
+r,ignored,hv_input_2_status_panel,HV Input 2 State - not used,,18,2000,1d11,,,ignore_1;onoff
 
 r,energymgr,room_thermostat_1,,,18,2001,011f,,,onoff
 r,energymgr,room_thermostat_2,,,18,2001,021f,,,onoff
@@ -145,6 +146,7 @@ r,energymgr,diverter_valve,Diverter Valve Control,,18,2001,0601,,,valve_dhw_heat
 r,energymgr,diverter_valve_cooling,Diverter Valve COOLING,,18,2001,0701,,,valve_heat_cool
 
 r,energymgr,anode_output,If Installed,,18,2001,1903,,,onoff
+r,ignored,anode_output_panel,If Installed,,18,2000,1903,,,ignore_1;onoff
 
 r,energymgr,input_states,statistics,,18,2000,1d11d4f7,,,ignore_1;onoff:hv_input_1_state;hydraulic_diagnostic:hydraulic_diagnostic
 r,energymgr,external_pump,statistics,,18,2001,c700,,,ignore_1;onoff
@@ -200,7 +202,8 @@ b,ignored,ext_temp_correct_bcast,External Temperature Correction,13,fe,2010,7426
 # Issued regularly on the system
 r1,energymgr,external_temp,External Sensor Temperature,,fe,2000,7647
 b,energymgr,external_temp,External Sensor Temperature,13,fe,200f,7647,,,temperature:reading
-# b,energymgr,external_temp_2010,statistics,13,fe,2010,7647,,,temperature:reading;ignore_3;percent:bcast_d194;ignore_3;percent:bcast_d294
+b,ignored,external_temp_bcast,External Sensor Temperature,13,fe,2010,7647,,,temperature:reading
+b,ignored,external_temp_bcast_alt,External Sensor Temperature,13,fe,2010,6f17,,,temperature:reading
 
 
 #Menu - Hybrid System - Energy Tariffs - Read and Write Commands
@@ -210,7 +213,8 @@ w,energymgr,electric_cost,statistics,,18,2020,652b,,,cost
 r,energymgr,pv_electric_cost,statistics,,18,2000,662b,,,ignore_1;cost
 w,energymgr,pv_electric_cost,statistics,,18,2020,662b,,,cost
 
-r,energymgr,heatpump_calculated_cost,statistics,,18,2000,6c47,,s,ignore_1;cost
+r,energymgr,heatpump_calculated_cost,Heatpump Current Calculated Cost,,18,2000,6c47,,,ignore_1;cost
+r,energymgr,heatpump_estimated_cost,Heatpump Current Estimated Cost,,18,2000,6d47,,,ignore_1;cost
 
 
 ############################################################################################
@@ -255,6 +259,7 @@ r,energymgr,manual_mode_diverter_valve_cooling,,,18,2001,02f3,,,onoff
 r,energymgr,manual_mode_auxiliary_circulator,,,18,2001,03f3,,,onoff
 r,energymgr,manual_mode_all_aux_output_contact,,,18,2001,0cf4,,,onoff
 r,energymgr,manual_mode_anode_output,,,18,2001,0df4,,,onoff
+
 
 r,energymgr,manual_mode_2,,,18,2001,01f3,,,onoff
 r,energymgr,manual_mode_hp_heating_on,,,18,2001,07f3,,,onoff
