@@ -27,6 +27,14 @@ b,buffer,buffer_charge_mode,Buffer Charge Mode,13,fe,200e,d12c,,,buffer_charge_m
 w,buffer,buffer_charge_mode,Buffer Charge Mode,70,fe,2020,d12c,,,buffer_charge_mode
 b,buffer,buffer_charge_mode_bcast,Buffer Charge Mode,13,fe,2010,d12c,,,buffer_charge_mode
 
+r,buffer,buffer_integration_scheme,unknown,,fe,2001,d28d
+b,buffer,buffer_integration_scheme,unknown,13,fe,200e,d28d,,,buffer_integration
+w,buffer,buffer_integration_scheme,unknown,70,fe,2020,d28d,,,buffer_integration
+
+r,buffer,buffer_solar_integration,unknown,,fe,2001,1888
+b,buffer,buffer_solar_integration,unknown,13,fe,200e,1888,,,onoff
+w,buffer,buffer_solar_integration,unknown,70,fe,2020,1888,,,onoff
+
 r,buffer,buffer_reduced_temperature,Buffer Reduced Temperature Limits,,fe,2000,6e8f
 b,buffer,buffer_reduced_temperature,Buffer Reduced Temperature Limits,13,fe,200f,6e8f,,,temperature:setting
 w,buffer,buffer_reduced_temperature,Buffer Reduced Temperature Limits,70,fe,2020,6e8f,,,temperature:setting
@@ -41,22 +49,21 @@ r,buffer,buffer_comfort_temperature_limits,Buffer Comfort Temperature Limits,,fe
 b,buffer,buffer_comfort_temperature_limits,Buffer Comfort Temperature Limits,13,fe,200e,692e,,,temperature_min_max
 b,buffer,buffer_comfort_temperature_bcast,Buffer Comfort Temperature Limits,13,fe,2010,692e,,,temperature
 
+r,buffer,buffer_setpoint_hysterisis,Buffer Setpoint Hysteresis,,fe,2000,672e
+b,buffer,buffer_setpoint_hysterisis,Buffer Setpoint Hysteresis,13,fe,200f,672e,,,temperature:setting
+w,buffer,buffer_setpoint_hysterisis,Buffer Setpoint Hysteresis,70,fe,2020,672e
+r,buffer,buffer_setpoint_hysterisis_limits,Buffer Setpoint Hysteresis Limits,,fe,2001,672e
+b,buffer,buffer_setpoint_hysterisis_limits,Buffer Setpoint Hysteresis Limits,13,fe,200e,672e,,,temperature_min_max
+
+r,buffer,buffer_high_temperature_sensor,buffer high temperature sensor,,fe,2000,759e
+b,buffer,buffer_high_temperature_sensor,buffer high temperature sensor,13,fe,200f,759e,,,temperature:reading
+
+r,buffer,buffer_low_temperature_sensor,buffer low temperature sensor,,fe,2000,769e
+b,buffer,buffer_low_temperature_sensor,buffer low temperature sensor,13,fe,200f,769e,,,temperature:setting
+
+r,buffer,buffer_charge_hours_heating,Buffer Charge Hours Heating,,18,2000,5ad1,,,ignore_1;hours
+r,buffer,buffer_charge_hours_cooling,Buffer Charge Hours Cooling,,18,2000,5bd1,,,ignore_1;hours
+
 b,buffer,buffer_mode_bcast,Buffer Mode Broadcast,13,fe,2020,1b23,,,onoff:buffer_activation;ignore_2;buffer_setpoint_mode;ignore_2;percent:unknown_1888
 b,buffer,buffer_temperature_bcast_1,Buffer Temperature Broadcast,13,fe,2020,6e8f,,,temperature:buffer_reduced_temp;ignore_2;temperature:unknown_6d8f;ignore_2;buffer_charge_mode:buffer_charge_mode
 b,buffer,buffer_temperature_bcast_2,Buffer Temperature Broadcast,13,fe,2020,672e,,,temperature:unknown_672e;ignore_2;temperature:unknown_682e;ignore_2;temperature:buffer_comfort_temp
-
-r,buffer,buffer_setpoint_hysterisis_limits,buffer setpoint hysteresis limits,,fe,2001,672e
-b,buffer,buffer_setpoint_hysterisis_limits,buffer setpoint hysteresis limits,,fe,200e,672e,,,temperature_min_max
-
-r,buffer,buffer_high_temperature_sensor_limits,buffer high temperature sensor,,fe,2001,759e
-b,buffer,buffer_high_temperature_sensor_limits,buffer high temperature sensor,,fe,200e,759e,,,temperature_min_max
-
-r,buffer,buffer_low_temperature_sensor_limits,buffer low temperature sensor,,fe,2001,769e
-b,buffer,buffer_low_temperature_sensor_limits,buffer low temperature sensor,,fe,200e,769e,,,temperature_min_max
-
-r,buffer,buffer_charge_hours_heating,unknown 1,,18,2001,5ad1,,,hours_min_max
-r,buffer,buffer_charge_hours_cooling,unknown 1,,18,2001,5bd1,,,hours_min_max
-r,buffer,buffer_integration_scheme,unknown,,fe,2001,d28d
-b,buffer,buffer_integration_scheme,unknown,,fe,200e,d28d,,,buffer_integration
-r,buffer,buffer_solar_integration,unknown,,fe,2001,1888
-b,buffer,buffer_solar_integration,unknown,,fe,200e,1888,,,onoff

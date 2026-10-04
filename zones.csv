@@ -3,25 +3,25 @@
 ############################################################################################
 
 # Comfort temperature and limits used with a two setpoint schedule
-r,ignored,z1_comfort_temp,Z1 Day Temp,,fe,2000,6271
-b,ignored,z1_comfort_temp,Z1 Day Temp,13,fe,200f,6271,,,temperature:setting
-w,ignored,z1_comfort_temp,Z1 Day Temp,70,fe,2020,6271,,,temperature:setting
-r,ignored,z1_comfort_temp_limits,Z1 Day Temp Limits,,fe,2001,6271
-b,ignored,z1_comfort_temp_limits,Z1 Day Temp Limits,13,fe,200e,6271,,,temperature_min_max
+r,zones,z1_comfort_temp,Z1 Day Temp,,fe,2000,6271
+b,zones,z1_comfort_temp,Z1 Day Temp,13,fe,200f,6271,,,temperature:setting
+w,zones,z1_comfort_temp,Z1 Day Temp,70,fe,2020,6271,,,temperature:setting
+r,zones,z1_comfort_temp_limits,Z1 Day Temp Limits,,fe,2001,6271
+b,zones,z1_comfort_temp_limits,Z1 Day Temp Limits,13,fe,200e,6271,,,temperature_min_max
 
 # Reduced temperature and limits used with a two setpoint schedule
-r,ignored,z1_reduced_temp,Z1 Night Temp,,fe,2000,6371
-b,ignored,z1_reduced_temp,Z1 Night Temp,13,fe,200f,6371,,,temperature:setting
-w,ignored,z1_reduced_temp,Z1 Night Temp,70,fe,2020,6371,,,temperature:setting
-r,ignored,z1_reduced_temp_limits,Z1 Night Temp Limits,,fe,2001,6371
-b,ignored,z1_reduced_temp_limits,statistics,13,fe,200e,6371,,,temperature_min_max
+r,zones,z1_reduced_temp,Z1 Night Temp,,fe,2000,6371
+b,zones,z1_reduced_temp,Z1 Night Temp,13,fe,200f,6371,,,temperature:setting
+w,zones,z1_reduced_temp,Z1 Night Temp,70,fe,2020,6371,,,temperature:setting
+r,zones,z1_reduced_temp_limits,Z1 Night Temp Limits,,fe,2001,6371
+b,zones,z1_reduced_temp_limits,statistics,13,fe,200e,6371,,,temperature_min_max
 
 # LWT Fixed Flow setpoint and limits - only used with fixed flow temperature
-r,ignored,z1_fixed_flow_setpoint,statistics,,fe,2000,6571
-b,ignored,z1_fixed_flow_setpoint,statistics,13,fe,200f,6571,,,temperature:setting
-w,ignored,z1_fixed_flow_setpoint,statistics,70,fe,2020,6571,,,temperature:setting
-r,ignored,z1_fixed_flow_setpoint_limits,statistics,,fe,2001,6571
-b,ignored,z1_fixed_flow_setpoint_limits,statistics,13,fe,200e,6571,,,temperature_min_max
+r,zones,z1_fixed_flow_setpoint,statistics,,fe,2000,6571
+b,zones,z1_fixed_flow_setpoint,statistics,13,fe,200f,6571,,,temperature:setting
+w,zones,z1_fixed_flow_setpoint,statistics,70,fe,2020,6571,,,temperature:setting
+r,zones,z1_fixed_flow_setpoint_limits,statistics,,fe,2001,6571
+b,zones,z1_fixed_flow_setpoint_limits,statistics,13,fe,200e,6571,,,temperature_min_max
 
 r,zones,z1_frost_temp,Z1 Frost Temp,,fe,2000,6426
 b,zones,z1_frost_temp,Z1 Frost Temp,13,fe,200f,6426,,,temperature:setting
