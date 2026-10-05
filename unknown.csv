@@ -47,8 +47,6 @@ b,unknown,unknown_cbc1_limits,unknown,,fe,200e,cbc1,,,percent_min_max
 r,unknown,unknown_d57b_limits,unknown,,fe,2001,d57b
 b,unknown,unknown_d57b_limits,unknown,,fe,200e,d57b,,,percent_min_max
 
-r,unknown,external_pump_not,statistics,,18,2001,c700,,,percent_min_max
-r,unknown,main_pump_not,Main Pump State,,18,2001,c200,,,percent_min_max
 
 r,unknown,unknown_0990,unknown,,fe,2000,0990
 b,unknown,unknown_0990,unknown,,fe,200f,0990,,,percent
@@ -122,7 +120,7 @@ r,unknown,unknown_1521d58dcc2ad32a,unknown,,18,2000,1521d58dcc2ad32a,,,ignore_1;
 r,unknown,unknown_d1404bfd4cfd4dfd,unknown,,18,2000,d1404bfd4cfd4dfd,,,ignore_1;percent;longminutes;longminutes;longminutes
 r,unknown,unknown_4dfd,unknown,,18,2000,4dfd,,,ignore_1;longminutes
 r,energymgr,unknown_s2l_658e,,,18,2001,658e,,,longminutes_min_max
-r,unknown,unknown_uch_d8f8,,,18,2001,d8f8,,,minutes_min_max
+
 r,unknown,unknown_uch_d4f7_nolim,,,18,2000,d4f7,,,minutes
 
 r,unknown,unknown_switch_1403,,,18,2001,1403,,,onoff
