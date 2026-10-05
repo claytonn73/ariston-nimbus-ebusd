@@ -219,11 +219,11 @@ w,zone1,building_size,Z1 Building Size,,fe,2020,d279,,,building_size
 b,zone1,building_size,Z1 Building Size,,fe,200e,d279,,,building_size
 
 # Climatic Zone (4.7.4)
-#r,zone1,climatic_zone,Z1 Climatic Zone,,fe,2000,7c8e
-#b,zone1,climatic_zone,Z1 Climatic Zone,,fe,200f,7c8e,,,temperature:setting
-#w,zone1,climatic_zone,Z1 Climatic Zone,,fe,2020,7c8e,,,temperature:setting
-#r,zone1,climatic_zone_limits,Z1 Climatic Zone Limits,,fe,2001,7c8e
-#b,zone1,climatic_zone_limits,Z1 Climatic Zone Limts,,fe,200e,7c8e,,,temperature_min_max
+r,zone1,climatic_zone,Z1 Climatic Zone,,fe,2000,7c8e
+b,zone1,climatic_zone,Z1 Climatic Zone,,fe,200f,7c8e,,,temperature:setting
+w,zone1,climatic_zone,Z1 Climatic Zone,,fe,2020,7c8e,,,temperature:setting
+r,zone1,climatic_zone_limits,Z1 Climatic Zone Limits,,fe,2001,7c8e
+b,zone1,climatic_zone_limits,Z1 Climatic Zone Limts,,fe,200e,7c8e,,,temperature_min_max
 
 # Auto Slope Adaptation (4.7.5)
 r,zone1,slope_adaptation,Z1 Slope Adaptation,,fe,2001,0981

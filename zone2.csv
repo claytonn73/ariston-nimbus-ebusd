@@ -110,9 +110,6 @@ r,zone2,lwt_min_limits,lwt minimum temperature,,fe,2001,6172
 b,zone2,lwt_min_limits,lwt minimum temperature,13,fe,200e,6172,,,temperature_min_max
 
 # Thermoregulation logic (4.2.7) - seems to be single switch on zone1
-#r,zone2,thermo_logic,unknown,,fe,2001,db8a
-#b,zone2,thermo_logic,unknown,,fe,200e,db8a,,,thermoregulation_logic
-#w,zone2,thermo_logic,unknown,,fe,2020,db8a,,,thermoregulation_logic
 
 # Quick night setback (4.2.8)
 r,zone2,quick_night_setback,unknown,,fe,2001,0882
@@ -213,12 +210,7 @@ r,zone2,building_size,Z2 Building Size,,fe,2001,d27a
 w,zone2,building_size,Z2 Building Size,,fe,2020,d27a,,,room_influence
 b,zone2,building_size,Z2 Building Size,,fe,200e,d27a,,,room_influence
 
-# Climatic Zone (4.7.4)
-r,zone2,climatic_zone,Z2 Climatic Zone,,fe,2000,7c8e
-b,zone2,climatic_zone,Z2 Climatic Zone,,fe,200f,7c8e,,,temperature:setting
-w,zone2,climatic_zone,Z2 Climatic Zone,,fe,2020,7c8e,,,temperature:setting
-r,zone2,climatic_zone_limits,Z2 Climatic Zone Limits,,fe,2001,7c8e
-b,zone2,climatic_zone_limits,Z2 Climatic Zone Limts,,fe,200e,7c8e,,,temperature_min_max
+# Climatic Zone (4.7.4) - Likely common with zone 1
 
 # Auto Slope Adaptation (4.7.5)
 r,zone2,slope_adaptation,Z2 Slope Adaptation,,fe,2001,0982

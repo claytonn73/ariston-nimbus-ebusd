@@ -73,9 +73,10 @@ b,heating,lwt_setpoint,Flow Setpoint,13,fe,200f,6047,,,temperature:setting
 b,ignored,lwt_setpoint_plus,Flow Setpoint,13,fe,2010,6047,,,temperature:lwt_setpoint;ignore_3;temperature:z1_flow_setpoint;ignore_3;temperature:z1_room_temp
 
 # CH flow temperature (1.16.3) 
-r,energymgr,flow_temperature,statistics,,18,2001,74fd,,,temperature
+r,heating,flow_temperature,statistics,,18,2001,74fd,,,temperature
 r,ignored,flow_temperature_2000,,,18,2000,74fd,,,ignore_1;temperature
-
+#reads max value on system
+r,ignored,ch_flow_temperature,,,18,2001,6310,,,temperature
 
 
 

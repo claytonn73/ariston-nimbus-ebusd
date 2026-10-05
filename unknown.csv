@@ -60,8 +60,7 @@ r,unknown,unknown_hours_1,unknown 1,,18,2000,51d1,,,ignore_1;hours
 r,unknown,unknown_hours_2,unknown 2,,18,2000,52d1,,,ignore_1;hours
 r,unknown,unknown_hours_3,unknown 3,,18,2000,53d1,,,ignore_1;hours
 
-#reads max value on system
-r,unknown,unknown_6310,,,18,2001,6310,,,temperature_min_max 
+
 
 r,unknown,unknown_d346,unknown,,fe,2000,d346
 b,unknown,unknown_d346,unknown,,fe,200f,d346,,,percent
