@@ -1,7 +1,8 @@
 ############################################################################################
-####                             ENERGY MANAGER BASE SETTINGS and MESSAGES              ####
-#### address 13: master #12                                                             ####
-#### address 18: slave #12                                                              ####
+####                             ENERGY MANAGER BASE SETTINGS and MESSAGES             
+#### address 13: master #12                                                             
+#### address 18: slave #12                                                             
+#### address 70: master #4   
 ############################################################################################
 
 r,energymgr,config_version,config_version_counter,,18,2000,d140,,,ignore_1;version
@@ -57,6 +58,9 @@ b,energymgr,aux_input_2,Aux Input 2 - Default Safety Thermostat,13,18,2010,dd8d,
 r,energymgr,heat_blocking_device,Heat Blocking Device,,18,2001,c38f,,,lockout_type
 w,energymgr,heat_blocking_device,Heat Blocking Device,,18,2020,c38f,,,lockout_type
 b,energymgr,heat_blocking_device,Heat Blocking Device,13,18,2010,c38f,,m,lockout_type
+
+# CH Press Detection Device (1.1.7)
+# Not Defined
 
 # System temperature probe selection (1.1.8)
 r,energymgr,system_flow_t_selection,,,18,2001,1688,,,system_flow_temp_selection
@@ -148,111 +152,6 @@ r,energymgr,antifreeze_circulator_speed,Antifreeze HP circulator Control,,18,200
 w,energymgr,antifreeze_circulator_speed,Antifreeze HP circulator Control,,18,2020,c58f,,,low_med_high
 b,energymgr,antifreeze_circulator_speed,Antifreeze HP circulator Control,13,18,2010,c58f,,m,low_med_high
 
-# Exogel kit activation (1.12.9)
-r,energymgr,exogel_kit_activation,Exogel Kit Activation,,18,2001,1f88,,,onoff
-w,energymgr,exogel_kit_activation,Exogel Kit Activation,,18,2020,1f88,,,onoff
-b,energymgr,exogel_kit_activation,Exogel Kit Activation,13,18,2010,1f88,,m,onoff
-
-############################################################################################
-# Energy Manager diagnostics
-############################################################################################
-
-# Energy Manager status (1.16.0)
-# This command is issued when using the panel
-r,ignoed,energymgr_status_3,Energy Manager Status,,18,2001,c94b,,,energymgr_status
-# This command is is issued every 10 seconds so the best way to get the energymgr status
-r,energymgr,energymgr_status,Energy Manager Status,,18,2000,c94bd1404bfd4cfd,,,ignore_1;energymgr_status:status;percent:value_d140;longminutes:value_4bfd;longminutes:value_4cfd
-# This command is issued less frequently so not as good to use for uptodate status
-r,ignored,energymgr_status_2,Energy Manager Status,,18,2000,c94b,,,ignore_1;energymgr_status
-
-# Hydraulic scheme diagnostic (1.16.1)
-r,energymgr,hydraulic_scheme_diagnostic,,,18,2001,d4f7,,,hydraulic_diagnostic
-
-#Current Status of Room Thermostat 1 (1.17.0)
-r,energymgr,room_thermostat_1,,,18,2001,011f,,,onoff
-
-#Current Status of Room Thermostat 2 (1.17.1)
-r,energymgr,room_thermostat_2,,,18,2001,021f,,,onoff
-
-# Current Status of AUX Input 1 (1.17.2)
-r1,energymgr,aux_input_1_status,AUX Input 1 state - for PV,,18,2001,1e11,,,onoff
-
-# Current Status of AUX Input 2 (1.17.3)
-r,energymgr,aux_input_2_status,AUX Input 2 state - bridged,,18,2001,1f11,,,onoff
-
-# Current Status of HV Input 1 (1.17.4)
-r,energymgr,hv_input_1_status,HV Input 1 State - not used,,18,2001,1c11,,,onoff
-
-# Current Status of HV Input 2 (1.17.5)
-r,energymgr,hv_input_2_status,HV Input 2 State - not used,,18,2001,1d11,,,onoff
-r,ignored,hv_input_2_status_panel,HV Input 2 State - not used,,18,2000,1d11,,,ignore_1;onoff
-
-# Current state of the DHW/heating diverter valve (1.18.3)
-r,energymgr,diverter_valve,Diverter Valve Control,,18,2001,0601,,,valve_dhw_heat
-
-# Current state of the heating/cooling diverter valve (1.18.4)
-r,energymgr,diverter_valve_cooling,Diverter Valve COOLING,,18,2001,0701,,,valve_heat_cool
-
-# Current Status of AUX Output 1 (1.18.8)
-r1,energymgr,aux_output_1_status,AUX Output 1 state - for DHW boost,,18,2001,1803,,,onoff
-
-# Current Status of AUX Output 2 (1.18.9)
-r,energymgr,aux_output_2_status,AUX Output 2 state - not used,,18,2001,1A03,,,onoff
-
-r,energymgr,anode_output,If Installed,,18,2001,1903,,,onoff
-r,ignored,anode_output_panel,If Installed,,18,2000,1903,,,ignore_1;onoff
-
-############################################################################################
-# System Integration
-############################################################################################
-
-# Activates the Opentherm gateway (1.20.3)
-r,energymgr,opentherm_gateway,Opentherm Gateway Activation,,18,2001,008f,,,onoff
-w,energymgr,opentherm_gateway,Opentherm Gateway Activation,,18,2020,008f,,,onoff
-b,energymgr,opentherm_gateway,Opentherm Gateway Activation,13,18,2010,008f,,m,onoff
-
-# Issued regularly on the system
-r1,energymgr,external_temp,External Sensor Temperature,,fe,2000,7647
-b,energymgr,external_temp,External Sensor Temperature,13,fe,200f,7647,,,temperature:reading
-b,ignored,external_temp_bcast,External Sensor Temperature,13,fe,2010,7647,,,temperature:reading
-b,ignored,external_temp_bcast_alt,External Sensor Temperature,13,fe,2010,6f17,,,temperature:reading
-
-############################################################################################
-#Menu - ENERGY MANAGER STATISTICS
-############################################################################################
-
-# Heating running hours (h/10) (1.14.1)
-r,energymgr,heatpump_heating_op_hours,Heatpump Heating Operating Hours,,18,2000,55d1,,,ignore_1;hours
-
-# DHW running hours (h/10) (1.14.2)
-r,energymgr,heatpump_dhw_op_hours,Heatpump DHW Operating Hours,,18,2000,56d1,,,ignore_1;hours
-
-############################################################################################
-# Tests ands Utilities
-############################################################################################
-
-# Activates the anti-lock function of the primary circulation pump. (1.12.1)
-r,energymgr,pump_antiblock,Pump Antiblock,,18,2001,1823,,,onoff
-w,energymgr,pump_antiblock,Pump Antiblock,,18,2020,1823,,,onoff
-b,energymgr,pump_antiblock,Pump Antiblock,13,18,2010,1823,,m,onoff
-
-# Quiet Mode activation (1.12.2)
-r,energymgr,silent_mode,silent mode,,18,2001,0320,,,onoff
-w,energymgr,silent_mode,silent mode,,18,2020,0320,,,onoff
-b,energymgr,silent_mode,silent mode,13,18,2010,0320,,m,onoff
-
-# Quiet mode start time (1.12.3)
-r,energymgr,silent_mode_start_time,start time,,18,2000,692b,,,ignore_1;hhmm
-w,energymgr,silent_mode_start_time,start time,,18,2020,692b,,,hhmm
-b,energymgr,silent_mode_start_time,start time,13,18,2010,692b,,m,ignore_1;hhmm
-r,energymgr,silent_mode_start_time_limits,start time,,18,2001,692b,,,hhmm_min_max
-
-# Quiet mode end time (1.12.4)
-r,energymgr,silent_mode_end_time,end time,,18,2000,6a2b,,,ignore_1;hhmm
-w,energymgr,silent_mode_end_time,end time,,18,2020,6a2b,,,hhmm
-b,energymgr,silent_mode_end_time,end time,13,18,2010,6a2b,,m,ignore_1;hhmm
-r,energymgr,silent_mode_end_time_limits,end time,,18,2001,6a2b,,,hhmm_min_max
-
 ############################################################################################
 ####                             MANUAL MODE   MESSAGES                                 ####
 ############################################################################################
@@ -289,6 +188,118 @@ r,energymgr,manual_mode_force_hp_cool,,,18,2001,0ef4,,,onoff
 
 # Activates the heating element immersed in the calorifier in DHW mode (1.11.6)
 r,energymgr,manual_mode_tank_heater,,,18,2001,03f5,,,onoff
+
+
+############################################################################################
+# Test and Utilities - 
+############################################################################################
+
+# Activates the anti-lock function of the primary circulation pump. (1.12.1)
+r,energymgr,pump_antiblock,Pump Antiblock,,18,2001,1823,,,onoff
+w,energymgr,pump_antiblock,Pump Antiblock,,18,2020,1823,,,onoff
+b,energymgr,pump_antiblock,Pump Antiblock,13,18,2010,1823,,m,onoff
+
+# Quiet Mode activation (1.12.2)
+r,energymgr,silent_mode,silent mode,,18,2001,0320,,,onoff
+w,energymgr,silent_mode,silent mode,,18,2020,0320,,,onoff
+b,energymgr,silent_mode,silent mode,13,18,2010,0320,,m,onoff
+
+# Quiet mode start time (1.12.3)
+r,energymgr,silent_mode_start_time,start time,,18,2000,692b,,,ignore_1;hhmm
+w,energymgr,silent_mode_start_time,start time,,18,2020,692b,,,hhmm
+b,energymgr,silent_mode_start_time,start time,13,18,2010,692b,,m,ignore_1;hhmm
+r,energymgr,silent_mode_start_time_limits,start time,,18,2001,692b,,,hhmm_min_max
+
+# Quiet mode end time (1.12.4)
+r,energymgr,silent_mode_end_time,end time,,18,2000,6a2b,,,ignore_1;hhmm
+w,energymgr,silent_mode_end_time,end time,,18,2020,6a2b,,,hhmm
+b,energymgr,silent_mode_end_time,end time,13,18,2010,6a2b,,m,ignore_1;hhmm
+r,energymgr,silent_mode_end_time_limits,end time,,18,2001,6a2b,,,hhmm_min_max
+
+# Exogel kit activation (1.12.9)
+r,energymgr,exogel_kit_activation,Exogel Kit Activation,,18,2001,1f88,,,onoff
+w,energymgr,exogel_kit_activation,Exogel Kit Activation,,18,2020,1f88,,,onoff
+b,energymgr,exogel_kit_activation,Exogel Kit Activation,13,18,2010,1f88,,m,onoff
+
+############################################################################################
+#Menu - ENERGY MANAGER STATISTICS
+############################################################################################
+
+# Heating running hours (h/10) (1.14.1)
+r,energymgr,heatpump_heating_op_hours,Heatpump Heating Operating Hours,,18,2000,55d1,,,ignore_1;hours
+
+# DHW running hours (h/10) (1.14.2)
+r,energymgr,heatpump_dhw_op_hours,Heatpump DHW Operating Hours,,18,2000,56d1,,,ignore_1;hours
+
+############################################################################################
+# Energy Manager diagnostics
+############################################################################################
+
+# Energy Manager status (1.16.0)
+# This command is issued when using the panel
+r,ignoed,energymgr_status_3,Energy Manager Status,,18,2001,c94b,,,energymgr_status
+# This command is is issued every 10 seconds so the best way to get the energymgr status
+r,energymgr,energymgr_status,Energy Manager Status,,18,2000,c94bd1404bfd4cfd,,,ignore_1;energymgr_status:status;percent:value_d140;longminutes:value_4bfd;longminutes:value_4cfd
+# This command is issued less frequently so not as good to use for uptodate status
+r,ignored,energymgr_status_2,Energy Manager Status,,18,2000,c94b,,,ignore_1;energymgr_status
+
+# Hydraulic scheme diagnostic (1.16.1)
+r,energymgr,hydraulic_scheme_diagnostic,,,18,2001,d4f7,,,hydraulic_diagnostic
+
+#Current Status of Room Thermostat 1 (1.17.0)
+r,energymgr,room_thermostat_1,,,18,2001,011f,,,onoff
+
+#Current Status of Room Thermostat 2 (1.17.1)
+r,energymgr,room_thermostat_2,,,18,2001,021f,,,onoff
+
+# Current Status of AUX Input 1 (1.17.2)
+r1,energymgr,aux_input_1_status,AUX Input 1 state - for PV,,18,2001,1e11,,,onoff
+
+# Current Status of AUX Input 2 (1.17.3)
+r,energymgr,aux_input_2_status,AUX Input 2 state - bridged,,18,2001,1f11,,,onoff
+
+# Current Status of HV Input 1 (1.17.4)
+r,energymgr,hv_input_1_status,HV Input 1 State - not used,,18,2001,1c11,,,onoff
+
+# Current Status of HV Input 2 (1.17.5)
+r,energymgr,hv_input_2_status,HV Input 2 State - not used,,18,2001,1d11,,,onoff
+r,ignored,hv_input_2_status_panel,HV Input 2 State - not used,,18,2000,1d11,,,ignore_1;onoff
+
+# Main circulator status (1.18.0)
+
+# Tank Electric Heater (1.18.1)
+
+# HC Pump 2 (1.18.2)
+
+# Current state of the DHW/heating diverter valve (1.18.3)
+r,energymgr,diverter_valve,Diverter Valve Control,,18,2001,0601,,,valve_dhw_heat
+
+# Current state of the heating/cooling diverter valve (1.18.4)
+r,energymgr,diverter_valve_cooling,Diverter Valve COOLING,,18,2001,0701,,,valve_heat_cool
+
+# Current Status of AUX Output 1 (1.18.8)
+r1,energymgr,aux_output_1_status,AUX Output 1 state - for DHW boost,,18,2001,1803,,,onoff
+
+# Current Status of AUX Output 2 (1.18.9)
+r,energymgr,aux_output_2_status,AUX Output 2 state - not used,,18,2001,1A03,,,onoff
+
+r,energymgr,anode_output,If Installed,,18,2001,1903,,,onoff
+r,ignored,anode_output_panel,If Installed,,18,2000,1903,,,ignore_1;onoff
+
+############################################################################################
+# System Integration
+############################################################################################
+
+# Activates the Opentherm gateway (1.20.3)
+r,energymgr,opentherm_gateway,Opentherm Gateway Activation,,18,2001,008f,,,onoff
+w,energymgr,opentherm_gateway,Opentherm Gateway Activation,,18,2020,008f,,,onoff
+b,energymgr,opentherm_gateway,Opentherm Gateway Activation,13,18,2010,008f,,m,onoff
+
+# Issued regularly on the system
+r1,energymgr,external_temp,External Sensor Temperature,,fe,2000,7647
+b,energymgr,external_temp,External Sensor Temperature,13,fe,200f,7647,,,temperature:reading
+b,ignored,external_temp_bcast,External Sensor Temperature,13,fe,2010,7647,,,temperature:reading
+b,ignored,external_temp_bcast_alt,External Sensor Temperature,13,fe,2010,6f17,,,temperature:reading
 
 ############################################################################################
 ####                        ENERGY CALCULATION MESSAGES                                 ####
@@ -338,3 +349,5 @@ r,energymgr,heatpump_estimated_cost,Heatpump Current Estimated Cost,,18,2000,6d4
 ############################################################################################
 
 r,energymgr,input_states,statistics,,18,2000,1d11d4f7,,,ignore_1;onoff:hv_input_1_state;hydraulic_diagnostic:hydraulic_diagnostic
+
+#b,energymgr,return_temperature,statistics,13,fe,2010,769e,,,temperature:reading - buffer low temperature sensor

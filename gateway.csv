@@ -1,7 +1,8 @@
 ############################################################################################
-####                             WIFI GATEWAY RELATED MESSAGES                          ####
-#### address 7f: master #24                                                             ####
-#### address 84: slave #24                                                              ####
+####                             WIFI GATEWAY RELATED MESSAGES                          
+#### address 7f: master #24                                                             
+#### address 84: slave #24                                                              
+#### address 70: master #4
 ############################################################################################
 
 r,gateway,config_version,config_change_counter,,84,2001,d140,,,version

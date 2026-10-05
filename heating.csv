@@ -38,6 +38,11 @@ r,heating,reset_integral,statistics,,18,2000,708c,,,ignore_1;integral:setting
 w,heating,reset_integral,statistics,,18,2020,708c,,,integral
 r,heating,reset_integral_limits,statistics,,18,2001,708c,,,integral_min_max
 
+# Text for HP disabling (1.5.3)
+r,heating,external_temperature_disable_threshold,External Temperature to Disable heating,,18,2000,7226,,,ignore_1;temperature:setting
+w,heating,external_temperature_disable_threshold,External Temperature to Disable heating,,18,2020,7226,,,temperature:setting
+r,heating,external_temperature_disable_threshold_limits,External Temperature to Disable heating,,18,2001,7226,,,temperature_min_max
+
 # Boost Time (1.7.1)
 r,heating,boost_time,,,fe,2000,602b
 b,heating,boost_time,,13,fe,200f,602b,,,ignore_1;seconds
@@ -50,11 +55,6 @@ r,heating,flowt_hp_offset,Heating LWT Offset,,18,2000,7d2b,,,ignore_1;temperatur
 w,heating,flowt_hp_offset,Heating LWT Offset,,18,2020,7d2b,,,temperature:setting
 b,heating,flowt_hp_offset,Heating LWT Offset,13,18,2010,7d2b,,m,temperature:setting
 r,heating,flowt_hp_offset_limits,Heating LWT Offset,,18,2001,7d2b,,,temperature_min_max
-
-# Text for HP disabling (1.5.3)
-r,heating,external_temperature_disable_threshold,External Temperature to Disable heating,,18,2000,7226,,,ignore_1;temperature:setting
-w,heating,external_temperature_disable_threshold,External Temperature to Disable heating,,18,2020,7226,,,temperature:setting
-r,heating,external_temperature_disable_threshold_limits,External Temperature to Disable heating,,18,2001,7226,,,temperature_min_max
 
 # Floor drying cycle (1.12.4)
 r,heating,floor_drying_cycle,Floor Drying Cycle,,18,2001,de28,,,floor_drying_cycle
@@ -75,5 +75,7 @@ b,ignored,lwt_setpoint_plus,Flow Setpoint,13,fe,2010,6047,,,temperature:lwt_setp
 # CH flow temperature (1.16.3) 
 r,energymgr,flow_temperature,statistics,,18,2001,74fd,,,temperature
 r,ignored,flow_temperature_2000,,,18,2000,74fd,,,ignore_1;temperature
-r,energymgr,flow_temperature_2,,,18,2001,6310,,,temperature_min_max
+
+
+
 

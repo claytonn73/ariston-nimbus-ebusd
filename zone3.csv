@@ -1,0 +1,75 @@
+############################################################################################
+####                             ZONE 3 SETTINS AND MESSAGES                            
+#### address 13: master #12                                                             
+#### address 18: slave #12                                                             
+#### address 70: master #4  
+############################################################################################
+
+# Zone 3 settings not investigated to any great degree as not present on system
+
+r,ignored,z3_winter_mode_active,statistics,,fe,2000,0783
+w,ignored,z3_winter_mode_active,statistics,70,fe,2020,0783,,,onoff
+r,ignored,z3_winter_mode_active_panel,statistics,,fe,2001,0783
+b,ignored,z3_winter_mode_active_panel,statistics,13,fe,200e,0783,,,onoff
+
+r,ignored,z3_heat_therm_type,Z3 Heating Thermoreg Type,,fe,2001,c07c
+b,ignored,z3_heat_therm_type,Z3 Heating Thermoreg Type,13,fe,200e,c07c,,,heat_thermoreg_types
+w,ignored,z3__heat_therm_type,Z3 Heating Thermoreg Type,70,fe,2020,c07c,,,heat_thermoreg_types
+
+
+r,ignored,z3_comfort_temp,Z3 Comfort Temp,,18,2000,6273,,,ignore_1;temperature
+b,ignored,z3_comfort_temp,Z3 Comfort Temp,,fe,200f,6273,,,temperature
+w,ignored,z3_comfort_temp,,,fe,2020,6273,,,temperature
+r,ignored,z3_comfort_temp_limits,statistics,13,fe,2001,6273
+b,ignored,z3_comfort_temp_limits,statistics,13,fe,200e,6273,,,temperature_min_max
+
+r,ignored,z3_reduced_temp,Z3 Night Temp,,18,2000,6373,,,ignore_1;temperature
+b,ignored,z3_reduced_temp,Z3 Night Temp,,fe,200f,6373,,,temperature
+w,ignored,z3_reduced_temp,Z3 Night Temp,,fe,2020,6373,,,temperature
+r,ignored,z3_reduced_temp_limits,statistics,13,fe,2001,6373
+b,ignored,z3_reduced_temp_limits,statistics,13,fe,200e,6373,,,temperature_min_max
+
+#Z3 Settings (if present)
+#Z3 Setpoint
+r,ignored,z3_heat_setpoint_temp_set,Z3 Heat Set Temp,,18,2000,6573,,,ignore_1;temperature
+w,ignored,z3_heat_setpoint_temp_set,Z3 Heat Set Temp,,fe,2020,6573,,,temperature
+#Z3 Summer Winter Changeover
+
+r,ignored,z3_summer_winter_temp_thresh,Z3 Summer Winter Threshold Temp,,18,2000,7973,,,ignore_1;temperature
+r,ignored,z3_summer_winter_switch_delay_time,Z3 Summer Winter Switch Delay Time,,18,2000,7A73,,,ignore_1;longminutes:setting
+#Z3 Heating Settings
+r,ignored,z3_heat_temp_range,Z3 Heating Temp Range,,18,2000,0083,,,ignore_1;low_high
+w,ignored,z3_heat_temp_range,Z3 Heating Temp Range,,fe,2020,0083,,,low_high
+r,ignored,z3_heat_therm_type_selection,Z3 Heating Thermoreg Type Selection,,18,2000,c07b,,,ignore_1;heat_thermoreg_types
+w,ignored,z3_heat_therm_type_selection,Z3 Heating Thermoreg Type Selection,,fe,2020,C07b,,,heat_thermoreg_types
+r,ignored,z3_heat_slope,Z3 Heat Thermoreg Slope,,18,2000,6a73,,,ignore_1;slope
+w,ignored,z3_heat_slope,Z3 Heat Thermoreg Slope,,fe,2020,6a73,,,slope
+r,ignored,z3_heat_offset,Z3 Heat Thermoreg Offset,,18,2000,6473,,s,IGN:1,,,,,,SCH,10
+b,ignored,z3_heat_offset_bcast,Z3 Heating Offset,13,fe,200e,6473,,,temperature
+w,ignored,z3_heat_offset,Z3 Heat Thermoreg Offset,,fe,2020,6473,,s,SCH,10
+r,ignored,z3_heat_room_temp_infl,Z3 Heating Room Temp Influence,,18,2000,c27b,,s,IGN:1,,,,,,UCH
+w,ignored,z3_heat_room_temp_infl,Z3 Heating Room Temp Influence,,fe,2020,c27b,,s,UCH
+r,ignored,z3_heat_water_max_temp,Z3 Heating Max Water Temp,,18,2000,6073,,,ignore_1;temperature
+w,ignored,z3_heat_water_max_temp,Z3 Heating Max Water Temp,,fe,2020,6073,,,temperature
+r,ignored,z3_heat_water_min_temp,Z3 Heating Min Water Temp,,18,2000,6173,,,ignore_1;temperature
+w,ignored,z3_heat_water_min_temp,Z3 Heating Min Water Temp,,fe,2020,6173,,,temperature
+r,ignored,z3_heat_request_mode,Z3 Heating Request Mode,,18,2000,ce7b,,,ignore_1;heat_request_mode
+w,ignored,z3_heat_request_mode,Z3 Heating Request Mode,,fe,2020,ce7b,,,heat_request_mode
+#Z3 Diagnostics
+r,ignored,z3_room_temp,Z3 Room Temp,,18,2000,7318,,,ignore_1;temperature
+b,ignored,z3_room_temp,Z3 Room Temp,,fe,2020,7318,,,temperature
+r,ignored,z3_setpoint_temp,Z3 Current Setpoint,,18,2000,6b96,,,ignore_1;temperature
+b,ignored,z3_setpoint_temp,Z3 Current Setpoint,,fe,200f,6B96,,,temperature
+r,ignored,z3_heat_request,Z3 Heating Request,,18,2000,0391,,,ignore_1;onoff
+#Z3 Cooling Settings
+r,ignored,z3_cool_setpoint_temp_set,Z3 Cooling Forced Setpoint Temp,,18,2000,7073,,,ignore_1;temperature
+b,ignored,z3_cool_setpoint_temp_set,Z3 Cooling Forced Setpoint Temp,,fe,200f,7073,,,temperature:z3_cool_setpoint_temp
+w,ignored,z3_cool_setpoint_temp_set,Z3 Cooling Forced Setpoint Temp,,fe,2020,7073,,,temperature
+r,ignored,z3_cool_temp_range,Z3 cooling Temp Range,,18,2000,0683,,,ignore_1;cool_temp_range
+w,ignored,z3_cool_temp_range,Z3 cooling Temp Range,,fe,2020,0683,,s,BCD
+r,ignored,z3_cool_therm_type_selection,Z3 Cooling Thermoreg Type Selection,,18,2000,cb7b,,,ignore_1;cool_thermoreg_types
+w,ignored,z3_cool_therm_type_selection,Z3 Cooling Thermoreg Type Selection,,fe,2020,cb7b,,,cool_thermoreg_types
+r,ignored,z3_cool_slope,Z3 Cool Thermoreg Slope,,18,2000,7673,,,ignore_1;slope
+r,ignored,z3_cool_offset,Z3 Cool Thermoreg Offset,,18,2000,7573,,s,IGN:1,,,,,,SCH,10
+r,ignored,z3_cool_water_max_temp,Z3 Cooling Max Water Temp,,18,2000,7173,,,ignore_1;temperature
+r,ignored,z3_cool_water_min_temp,Z3 Cooling Min Water Temp,,18,2000,7373,,,ignore_1;temperature

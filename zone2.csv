@@ -1,0 +1,80 @@
+############################################################################################
+####                             ZONE 2 SETTINS AND MESSAGES                            
+#### address 13: master #12                                                             
+#### address 18: slave #12                                                             
+#### address 70: master #4  
+############################################################################################
+
+# Zone 2 settings not investigated to any great degree as not present on system
+
+r,ignored,z2_heat_temp_range,Z2 Heating Temp Range,,18,2000,0082,,,ignore_1;low_high
+w,ignored,z2_heat_temp_range,Z2 Heating Temp Range,,fe,2020,0082,,s,BCD
+
+#r,ignored,z2_heat_therm_type_selection,Z2 Heating Thermoreg Type Selection,,18,2000,c07a,,,ignore_1;heat_thermoreg_types
+#w,ignored,z2_heat_therm_type_selection,Z2 Heating Thermoreg Type Selection,,fe,2020,c07a,,,heat_thermoreg_types
+
+r,ignored,z2_comfort_temp,Z2 Comfort Temp,,fe,2000,6272
+b,ignored,z2_comfort_temp,Z2 Comfort Temp,,fe,200f,6272,,,temperature
+w,ignored,z2_comfort_temp,2 Comfort Temp,,fe,2020,6272,,,temperature
+r,ignored,z2_comfort_temp_limits,Z2 Comfort Temp,,fe,2001,6272
+b,ignored,z2_comfort_temp_limits,Z2 Comfort Temp,13,fe,200e,6272,,,temperature_min_max
+
+r,ignored,z2_reduced_temp,Z2 Night Temp,,fe,2000,6372
+b,ignored,z2_reduced_temp,Z2 Night Temp,,fe,200f,6372,,,temperature
+w,ignored,z2_reduced_temp,Z2 Night Temp,,fe,2020,6372,,,temperature
+r,ignored,z2_reduced_temp_limits,Z2 Night Temp,,fe,2001,6372
+b,ignored,z2_reduced_temp_limits,Z2 Night Temp,13,fe,200e,6372,,,temperature_min_max
+
+#Z2 Settings (if present)
+#Z2 Setpoint
+r,ignored,z2_heat_setpoint_temp_set,Z2 Heat Set Temp,,18,2000,6572,,,ignore_1;temperature
+w,ignored,z2_heat_setpoint_temp_set,Z2 Heat Set Temp,,fe,2020,6572,,,temperature
+#Z2 Heating Settings
+r,ignored,z2_heat_slope,Z2 Heat Thermoreg Slope,,18,2000,6a72,,,ignore_1;slope
+w,ignored,z2_heat_slope,Z2 Heat Thermoreg Slope,,fe,2020,6a72,,,slope
+r,ignored,z2_heat_offset,Z2 Heat Thermoreg Offset,,18,2000,6472,,s,IGN:1,,,,,,SCH,10
+b,ignored,z2_heat_offset,Z2 Heating Offset,13,fe,200e,6472,,,temperature
+w,ignored,z2_heat_offset,Z2 Heat Thermoreg Offset,,fe,2020,6472,,s,SCH,10
+r,ignored,z2_heat_room_temp_infl,Z2 Heating Room Temp Influence,,18,2000,c27a,,s,IGN:1,,,,,,UCH
+w,ignored,z2_heat_room_temp_infl,Z2 Heating Room Temp Influence,,fe,2020,c27a,,s,UCH
+r,ignored,z2_heat_water_max_temp,Z2 Heating Max Water Temp,,18,2000,6072,,,ignore_1;temperature
+w,ignored,z2_heat_water_max_temp,Z2 Heating Max Water Temp,,fe,2020,6072,,,temperature
+r,ignored,z2_heat_water_min_temp,Z2 Heating Min Water Temp,,18,2000,6172,,,ignore_1;temperature
+w,ignored,z2_heat_water_min_temp,Z2 Heating Min Water Temp,,fe,2020,6172,,,temperature
+r,ignored,z2_heat_request_mode,Z2 Heating Request Mode,,18,2000,ce7a,,,ignore_1;heat_request_mode
+w,ignored,z2_heat_request_mode,Z2 Heating Request Mode,,fe,2020,ce7a,,,heat_request_mode
+#Z2 Diagnostic
+r,ignored,z2_room_temp,Z2 Room Temp,,18,2000,7218,,,ignore_1;temperature
+b,ignored,z2_room_temp,Z2 Room Temp,,fe,2020,7218,,,temperature,,,,,,,,,,,,,,,,,,,,,,
+r,ignored,z2_setpoint_temp,Z2 Current Setpoint,,18,2000,6a96,,,ignore_1;temperature
+b,ignored,z2_setpoint_temp,Z2 Current Setpoint,,fe,200f,6A96,,,temperature,,,,,,,,,,,,,,,,,,,,,,
+r,ignored,z2_heat_request,Z2 Heating Request,,18,2000,0291,,,ignore_1;onoff
+
+#Z2 Cooling Settings
+r,ignored,z2_cool_setpoint_temp_set,Z2 Cooling Forced Setpoint Temp,,18,2000,7072,,,ignore_1;temperature 
+b,ignored,z2_cool_setpoint_temp_set,Z2 Cooling Forced Setpoint Temp,,fe,200f,7072,,,temperature:z2_cool_setpoint_temp
+w,ignored,z2_cool_setpoint_temp_set,Z2 Cooling Set Temp,,fe,2020,7072,,,temperature
+r,ignored,z2_cool_temp_range,Z2 cooling Temp Range,,18,2000,0682,,,ignore_1;cool_temp_range
+w,ignored,z2_cool_temp_range,Z2 cooling Temp Range,,fe,2020,0682,,,cool_temp_range
+r,ignored,z2_cool_therm_type_selection,Z2 Cooling Thermoreg Type Selection,,18,2000,CB7a,,,ignore_1;cool_thermoreg_types
+w,ignored,z2_cool_therm_type_selection,Z2 Cooling Thermoreg Type Selection,,fe,2020,CB7a,,,cool_thermoreg_types
+r,ignored,z2_cool_slope,Z2 Cool Thermoreg Slope,,18,2000,7672,,,ignore_1;slope
+r,ignored,z2_cool_offset,Z2 Cool Thermoreg Offset,,18,2000,7572,,s,IGN:1,,,,,,SCH,10
+r,ignored,z2_cool_water_max_temp,Z2 Cooling Max Water Temp,,18,2000,7172,,,ignore_1;temperature
+r,ignored,z2_cool_water_min_temp,Z2 Cooling Min Water Temp,,18,2000,7372,,,ignore_1;temperature
+
+r,ignored,z2_winter_mode_active,statistics,,fe,2000,0782
+w,ignored,z2_winter_mode_active,statistics,70,fe,2020,0782,,,onoff
+b,ignored,z2_winter_mode_active,statistics,13,fe,200e,0782,,,onoff
+
+#Z2 Summer Winter Changeover
+
+r,ignored,z2_summer_winter_temp_thresh,Z2 Summer Winter Threshold Temp,,18,2000,7972,,,ignore_1;temperature
+r,ignored,z2_summer_winter_switch_delay_time,Z2 Summer Winter Switch Delay Time,,18,2000,7A72,,,ignore_1;longminutes:setting
+
+r,ignored,z2_room_influence_limits,Z1 Heating Room Temp Influence,,fe,2001,c27a
+b,ignored,z2_room_influence_limits,Z1 Heating Room Temp Influence,13,fe,200e,c27a,,,percent_min_max
+
+r,ignored,z2_heat_therm_type,Z2 Heating Thermoreg Type,,fe,2001,c07a
+b,ignored,z2_heat_therm_type,Z2 Heating Thermoreg Type,13,fe,200e,c07a,,,heat_thermoreg_types
+w,ignored,z2_heat_therm_type,Z2 Heating Thermoreg Type,70,fe,2020,c07a,,,heat_thermoreg_types

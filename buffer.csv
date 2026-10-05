@@ -1,6 +1,14 @@
 
 ############################################################################################
 ####                     BUFFER SETTINGS AND MESSAGES                                   ####
+#### address 13: master #12                                                             ####
+#### address 18: slave #12                                                              ####
+############################################################################################
+
+# Buffer settings validated to a degree from panel but buffer not present on system
+
+############################################################################################
+# Buffer
 ############################################################################################
 
 # Buffer activation (20.0.0)
@@ -39,7 +47,11 @@ b,buffer,buffer_comfort_temperature_cooling_limits,Buffer Reduced Temperature Li
 b,buffer,buffer_comfort_temperature_cooling_bcast,Buffer Reduced Temperature Limits,13,fe,2010,6d8f,,,temperature
 
 # SG Ready Buffer setpoint (20.0.5)
-# 40°C[20 - 70]°C (
+r,buffer,sg_ready_buffer_setpoint,Buffer Reduced Temperature Limits,,fe,2000,682e
+b,buffer,sg_ready_buffer_setpoint,Buffer Reduced Temperature Limits,,fe,200f,682e,,,temperature:setting
+w,buffer,sg_ready_buffer_setpoint,Buffer Reduced Temperature Limits,,fe,2020,682e,,,temperature:setting
+r,buffer,sg_ready_buffer_setpoint_limits,Buffer Reduced Temperature Limits,,fe,2001,682e
+b,buffer,sg_ready_buffer_setpoint_limits,statistics,13,fe,200e,682e,,,temperature_min_max
 
 # Offset PV integration setpoint (20.0.6)
 # 0°C[0 - 20]°C
@@ -53,17 +65,19 @@ b,buffer,buffer_setpoint_mode_bcast,Buffer Setpoint Mode,13,fe,2010,1f23,,,buffe
 # Buffer hysteresis cooling (20.0.8)
 # 5°C [0 - 20]°C
 
+############################################################################################
+# Buffer Diagnostics
+############################################################################################
+
 # Low sensor temperature (20.1.0)
 r,buffer,buffer_low_temperature_sensor,buffer low temperature sensor,,fe,2001,769e
-b,buffer,buffer_low_temperature_sensor,buffer low temperature sensor,13,fe,200e,769e,,,ignore_1;temperature:reading
+b,buffer,buffer_low_temperature_sensor,buffer low temperature sensor,13,fe,200e,769e,,,temperature:reading
 bw,buffer,buffer_low_temperature_sensor_bcast,buffer high temperature sensor,13,fe,2010,769e,,m,temperature:reading
 
 # High sensor temperature (20.1.2)
 r,buffer,buffer_high_temperature_sensor,buffer high temperature sensor,,fe,2001,759e
-b,buffer,buffer_high_temperature_sensor,buffer high temperature sensor,13,fe,200e,759e,,,ignore_1;temperature:reading
+b,buffer,buffer_high_temperature_sensor,buffer high temperature sensor,13,fe,200e,759e,,,temperature:reading
 b,buffer,buffer_high_temperature_sensor_bcast,buffer high temperature sensor,13,fe,2010,759e,,m,temperature:reading
-
-# b,energymgr,return_temperature,statistics,13,fe,2010,769e,,,temperature:reading
 
 # Buffer charge request (20.1.3)
 # 0 = OFF ¦ 1 = ON
@@ -73,11 +87,19 @@ r,buffer,buffer_status,unknown,,fe,2000,ccf7
 b,buffer,buffer_status,unknown,,fe,200f,ccf7,,,ignore_1;buffer_status
 r,buffer,buffer_status_panel,unknown,,fe,2001,ccf7
 
+############################################################################################
+# Statistics
+############################################################################################
+
 # Buffer charge hours Heating (/10) (20.2.2)
 r,buffer,buffer_charge_hours_heating,Buffer Charge Hours Heating,,18,2000,5ad1,,,ignore_1;hours
 
 # Buffer charge hours Cooling (/10) (20.2.3)
 r,buffer,buffer_charge_hours_cooling,Buffer Charge Hours Cooling,,18,2000,5bd1,,,ignore_1;hours
+
+############################################################################################
+# Time program
+############################################################################################
 
 # Control mode (20.3.0)
 r,buffer,buffer_control_mode,Buffer Control Mode,,fe,2001,d62c
@@ -95,6 +117,10 @@ b,buffer,buffer_reduced_temperature_bcast,Buffer Reduced Temperature Limits,13,f
 
 # Reduced Setpoint cooling (20.3.2)
 # 23°C [18 - 23]°C
+
+############################################################################################
+# System Settings
+############################################################################################
 
 # Buffer integration scheme (20.4.0)
 r,buffer,buffer_integration_scheme,unknown,,fe,2001,d28d
@@ -141,6 +167,6 @@ r,buffer,cooling_switch_off_offset_limits,Buffer Reduced Temperature Limits,,fe,
 b,buffer,cooling_switch_off_offset_limits,Buffer Reduced Temperature Limits,13,fe,200e,6b24,,,temperature_min_max
 b,buffer,cooling_switch_off_offset_bcast,Buffer Reduced Temperature Limits,13,fe,2010,6b24,,,temperature
 
-b,buffer,buffer_mode_bcast,Buffer Mode Broadcast,13,fe,2020,1b23,,,onoff:buffer_activation;ignore_2;buffer_setpoint_mode;ignore_2;percent:unknown_1888
+b,buffer,buffer_mode_bcast,Buffer Mode Broadcast,13,fe,2020,1b23,,,onoff:buffer_activation;ignore_2;buffer_setpoint_mode;ignore_2;onoff:buffer_solar_integration
 b,buffer,buffer_temperature_bcast_1,Buffer Temperature Broadcast,13,fe,2020,6e8f,,,temperature:buffer_reduced_temp;ignore_2;temperature:buffer_comfort_temperature_cooling;ignore_2;buffer_charge_mode:buffer_charge_mode
-b,buffer,buffer_temperature_bcast_2,Buffer Temperature Broadcast,13,fe,2020,672e,,,temperature:unknown_672e;ignore_2;temperature:unknown_682e;ignore_2;temperature:buffer_comfort_temp
+b,buffer,buffer_temperature_bcast_2,Buffer Temperature Broadcast,13,fe,2020,672e,,,temperature:buffer_setpoint_hysterisis;ignore_2;temperature:unknown_682e;ignore_2;temperature:buffer_comfort_temp

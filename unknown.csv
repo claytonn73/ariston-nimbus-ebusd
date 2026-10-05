@@ -47,8 +47,8 @@ b,unknown,unknown_cbc1_limits,unknown,,fe,200e,cbc1,,,percent_min_max
 r,unknown,unknown_d57b_limits,unknown,,fe,2001,d57b
 b,unknown,unknown_d57b_limits,unknown,,fe,200e,d57b,,,percent_min_max
 
-r,unknown,external_pump_not,statistics,,18,2001,c700,,,ignore_1;percent_min_max
-r,unknown,main_pump_not,Main Pump State,,18,2001,c200,,,ignore_1;percent_min_max
+r,unknown,external_pump_not,statistics,,18,2001,c700,,,percent_min_max
+r,unknown,main_pump_not,Main Pump State,,18,2001,c200,,,percent_min_max
 
 r,unknown,unknown_0990,unknown,,fe,2000,0990
 b,unknown,unknown_0990,unknown,,fe,200f,0990,,,percent
@@ -65,9 +65,8 @@ r,unknown,unknown_hours_1,unknown 1,,18,2000,51d1,,,ignore_1;hours
 r,unknown,unknown_hours_2,unknown 2,,18,2000,52d1,,,ignore_1;hours
 r,unknown,unknown_hours_3,unknown 3,,18,2000,53d1,,,ignore_1;hours
 
-r,unknown,unknown_ca46,unknown 1,,18,2001,ca46,,,percent_min_max
-r,unknown,unknown_0488,unknown 1,,18,2000,0488,,,ignore_1;percent
-r,unknown,unknown_c19a,unknown 1,,18,2001,c19a,,,percent_min_max
+#reads max value on system
+r,unknown,unknown_6310,,,18,2001,6310,,,temperature_min_max 
 
 r,unknown,unknown_d346,unknown,,fe,2000,d346
 b,unknown,unknown_d346,unknown,,fe,200f,d346,,,percent
@@ -132,7 +131,7 @@ r,unknown,unknown_switch_1603,,,18,2001,1603,,,onoff
 r,unknown,unknown_switch_1703,,,18,2001,1703,,,onoff
 
 r,unknown,unknown_switch_c328,,,18,2001,c328,,,onoff
-r,unknown,unknown_switch_c201,,,18,2001,c201,,,onoff
+
 r,unknown,unknown_switch_d48d,,,18,2001,d48d,,,onoff
 
 r,unknown,unknown_thermostat_maybe,,,18,2001,1b11,,,onoff
