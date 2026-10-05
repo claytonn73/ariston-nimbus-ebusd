@@ -141,6 +141,7 @@ r,zone1,room_temp,statistics,,fe,2000,7118
 b,zone1,room_temp,statistics,70,fe,200f,7118,,,temperature:reading
 # Regular 2 minute room temperature broadcast
 b,zone1,room_temp_bcast,statistics,70,fe,2010,7118,,,temperature:reading
+# Room temp information from the panel
 r,ignored,z1_room_temp_panel,Z1 Room Temperature Limits,,fe,2001,7118
 b,ignored,z1_room_temp_panel,Z1 Room Temperature Limits,,fe,200e,7118,,,temperature
 
@@ -149,37 +150,85 @@ r,zone1,room_setpoint,statistics,,fe,2000,6996
 b,zone1,room_setpoint,statistics,13,fe,200f,6996,,,temperature:setting
 r,ignored,z1_room_setpoint_panel,Z1 Room Setpoint Limits,,fe,2001,6996
 b,ignored,z1_room_setpoint_panel,Z1 Room Setpoint Limits,,fe,200e,6996,,,temperature
+# Issued every 25 seconds and provides the Z1 Room Setpoint Information
+r,zone1,room_setpoint_query,Provides Z1 Room Setpoint,13,fe,2000,059106916996
+b,zone1,room_setpoint_query,Provides Z1 Room Setpoint,13,fe,200f,0591,,,onoff:z5_heat_request;ignore_3;onoff:z6_heat_request;ignore_3;temperature:z1_room_setpoint
 
 # Flow temperature (4.3.2) and return temperature (4.3.3) are only visible with the Zone Module
 
-# Heat Request Z1 (4.3.2)  (4.3.4 in manual)
+# Heat Request Z1 (4.3.4)
+# Issued every 25 seconds and provides the Z1 Heat Request Information
+r,ignored,z1_heat_request_long,Provides Z1 Heat Request,,fe,2000,0191029103910491
+# Issued every 5 minutes plus includes the response from above
+r,zone1,heat_request,Provides Z1 Heat Request,,fe,2000,0191
+b,zone1,heat_request,Provides Z1 Heat Request,,fe,200f,0191,,,onoff
+# Use the z1 only response above as the rest is not relevant
+# b,zone1,zone_heat_request_1,Provides Z1 Heat Request,,fe,200f,0191,,,onoff:z1_heat_request;ignore_3;onoff:z2_heat_request;ignore_3;onoff:z3_heat_request;ignore_3;onoff:z4_heat_request
 # From the user panel
 r,ignored,z1_heat_request_panel,Provides Z1 Heat Request,,fe,2001,0191
 b,ignored,z1_heat_request_panel,Provides Z1 Heat Request,,fe,200e,0191,,,onoff
-# Issued every 25 seconds and provides the Z1 Heat Request Information
-r,ignored,z1_heat_request_long,Provides Z1 Heat Request,,fe,2000,0191029103910491
-
-# Issued every 5 minutes 
-r,zone1,heat_request,Provides Z1 Heat Request,,fe,2000,0191
-b,zone1,heat_request,Provides Z1 Heat Request,,fe,200f,0191,,,onoff
-# Use the z1 only response as the rest is not relevant
-# b,zone1,zone_heat_request_1,Provides Z1 Heat Request,,fe,200f,0191,,,onoff:z1_heat_request;ignore_3;onoff:z2_heat_request;ignore_3;onoff:z3_heat_request;ignore_3;onoff:z4_heat_request
-# Issued every 25 seconds and provides the Z1 Room Setpoint Information
-r,zone1,zone_heat_request_2,Provides Z1 Room Setpoint,13,fe,2000,059106916996
-b,zone1,zone_heat_request_2,Provides Z1 Room Setpoint,13,fe,200f,0591,,,onoff:z5_heat_request;ignore_3;onoff:z6_heat_request;ignore_3;temperature:z1_room_setpoint
+# broadcast by the system
+b,zone1,heat_request_bcast,statistics,70,fe,2010,0191,,,onoff
 
 # Pump status (4.3.5) is only visible with the Zone Module
 
-# Relative Humidity (4.3.3) (4.3.7 in manual)
+# Relative Humidity (4.3.7)
 r,zone1,humidity,statistics,31,fe,2000,c9c1
 b,zone1,humidity,statistics,13,fe,200f,c9c1,,,percent:reading
 b,zone1,humidity_bcast,statistics,13,fe,2010,c9c1,,,percent:reading
 r,ignored,z1_relative_humidity,unknown,,fe,2001,c9c1
 b,ignored,z1_relative_humidity,unknown,,fe,200e,c9c1,,,percent:reading
 
-# Zone Flow temperature setpoint (4.3.4) (4.3.8 in manual)
+# Zone Flow temperature setpoint (4.3.8)
 r,zone1,flow_setpoint_temperature,Z1 Flow Setpoint Temperature,,fe,2001,6197
 b,zone1,flow_setpoint_temperature,Z1 Flow Setpoint Temperature,,fe,200e,6197,,,temperature:setting
+
+############################################################################################
+# Cooling
+############################################################################################
+
+# T Set Cool (5.5.0)
+r,ignored,cooling_fixed_flow_setpoint,statistics,,fe,2000,7071
+b,ignored,cooling_fixed_flow_setpoint,statistics,13,fe,200f,7071,,,temperature:setting
+w,ignored,cooling_fixed_flow_setpoint,statistics,70,fe,2020,7071,,,temperature:setting
+r,ignored,cooling_fixed_flow_setpoint_limits,statistics,,fe,2001,7071
+b,ignored,cooling_fixed_flow_setpoint_limits,statistics,13,fe,200e,7071,,,temperature_min_max
+
+# Cooling Temp Range (5.5.1)
+r,ignored,cooling_temp_range,Z2 Heating Temp Range,,fe,2001,0681
+b,ignored,cooling_temp_range,Z2 Heating Temp Range,,fe,200e,0681,,,low_high
+w,ignored,cooling_temp_range,Z2 Heating Temp Range,,fe,2020,0681,,,low_high
+
+# Cooling Thermoregulation (5.5.2)
+r,ignored,cooling_therm_type,Z1 Heating Thermoreg Type,,fe,2001,cb79
+b,ignored,coooling_therm_type,Z1 Heating Thermoreg Type,13,fe,200e,cb79,,,cool_thermoreg_types
+w,ignored,coooling_therm_type,Z1 Heating Thermoreg Type,13,fe,2020,cb79,,,cool_thermoreg_types
+
+# Cooling Slope (5.5.3)
+r,ignored,cooling_slope,heat slope,,fe,2000,7671
+b,ignored,cooling_slope,heat slope,13,fe,200f,7671,,,slope
+w,ignored,cooling_slope,heat slope,13,fe,2020,7671,,,slope
+
+# Cooling Offset (5.5.4)
+r,ignored,cooling_offset,Flow Temp Offset,,fe,2000,7571
+b,ignored,cooling_offset,Flow Temp Offset,13,fe,200f,7571,,,temperature:setting
+w,ignored,cooling_offset,Flow Temp Offset,70,fe,2020,7571,,,temperature:setting
+r,ignored,cooling_offset_limits,Flow Temp Offset Limits,,fe,2001,7571
+b,ignored,cooling_offset_limits,Flow Temp Offset Limits,13,fe,200e,7571,,,temperature_min_max
+
+# Cooling max setpoint (5.5.5)
+r,ignored,cooling_lwt_max,lwt maximum temperature,,fe,2000,7171
+b,ignored,cooling_lwt_max,lwt maximum temperature,,fe,200f,7171,,,temperature:setting
+w,ignored,cooling_lwt_max,lwt maximum temperature,70,fe,2020,7171,,,temperature:setting
+r,ignored,cooling_lwt_max_limits,lwt maximum temperature,,fe,2001,7171
+b,ignored,cooling_lwt_max_limits,lwt maximum temperature,13,fe,200e,7171,,,temperature_min_max
+
+# Cooling min setpoint (5.5.6)
+r,ignored,cooling_lwt_min,lwt minimum temperature,,fe,2000,7371
+b,ignored,cooling_lwt_min,lwt minimum temperature,,fe,200f,7371,,,temperature:setting
+w,ignored,cooling_lwt_min,lwt minimum temperature,70,fe,2020,7371,,,temperature:setting
+r,ignored,cooling_lwt_min_limits,lwt minimum temperature,,fe,2001,7371
+b,ignored,cooling_lwt_min_limits,lwt minimum temperature,13,fe,200e,7371,,,temperature_min_max
 
 ############################################################################################
 # Zone Module Settings - only visible with the Zone Module
@@ -261,22 +310,22 @@ b,ignored,z1_humidity_control_hysterisis_hysterisis_limits,Cooling Humidity Alar
 # Broadcast and other Messages
 ############################################################################################
 
-b,zone1,heat_slope_3,statistics,13,fe,2020,6971,,,slope:value_6971;ignore_2;slope:z1_slope;ignore_2;slope:value_6b71
-b,zone1,lwt_settings,Settings Broadcast,,fe,2020,6071,,,temperature:lwt_max;ignore_2;temperature:lwt_min;ignore_2;temperature:lwt_offset
-b,zone1,temp_bcast_1,Settings Broadcast,13,fe,2020,6426,,,temperature:frost_temp;ignore_2;room_influence:z1_room_influence;ignore_2;temperature:day_temp
-b,zone1,temp_bcast_2,Settings Broadcast,13,fe,2020,6371,,,temperature:night_temp;ignore_2;room_influence:z2_room_influence;ignore_2;temperature:z2_comfort_temp
+b,ignored,heat_slope_3,statistics,13,fe,2020,6971,,,slope:value_6971;ignore_2;slope:z1_slope;ignore_2;slope:value_6b71
+b,ignored,lwt_settings,Settings Broadcast,13,fe,2020,6071,,,temperature:lwt_max;ignore_2;temperature:lwt_min;ignore_2;temperature:lwt_offset
+b,ignored,temp_bcast_1,Settings Broadcast,13,fe,2020,6426,,,temperature:frost_temp;ignore_2;room_influence:z1_room_influence;ignore_2;temperature:day_temp
+b,ignored,temp_bcast_2,Settings Broadcast,13,fe,2020,6371,,,temperature:night_temp;ignore_2;room_influence:z2_room_influence;ignore_2;temperature:z2_comfort_temp
 r,ignored,zone_setpoints1,Continues read of setpoint info,13,fe,2000,6a966b966c96
 #b,ignored,zone_setpoints1,Continues read of setpoint info,13,fe,200f,6a96,,,temperature:z2_room_setpoint;ignore_3;temperature:z3_room_setpoint;ignore_3;temperature:z4_room_setpoint
 r,ignored,zone_setpoints2,Continues read of setpoint info,13,fe,2000,6d966e96
 b,ignored,zone_setpoints2,Continues read of setpoint info,13,fe,200f,6d96,,,temperature:z5_room_setpoint;ignore_3;temperature:z6_room_setpoint
-b,zone1,setpoint_temps,statistics,13,fe,2010,6996,,,temperature:z1_room_setpoint;ignore_2;temperature:z2_room_setpoint;ignore_2;temperature:z3_room_setpoint
-b,zone1,night_temp_settings,statistics,13,fe,2020,6277,,,temperature:Param_6277_UIN;ignore_2;temperature:z1_reduced_temp;ignore_2;temperature:z2_reduced_temp;ignore_2;temperature:z3_reduced_temp
-b,zone1,day_temp_settings,statistics,13,fe,2020,6176,,,temperature:Param_6176_UIN;ignore_2;temperature:Param_6177_UIN;ignore_2;temperature:z1_comfort_temp
+b,ignored,setpoint_temps,statistics,13,fe,2010,6996,,,temperature:z1_room_setpoint;ignore_2;temperature:z2_room_setpoint;ignore_2;temperature:z3_room_setpoint
+b,ignored,night_temp_settings,statistics,13,fe,2020,6277,,,temperature:Param_6277_UIN;ignore_2;temperature:z1_reduced_temp;ignore_2;temperature:z2_reduced_temp;ignore_2;temperature:z3_reduced_temp
+b,ignored,day_temp_settings,statistics,13,fe,2020,6176,,,temperature:Param_6176_UIN;ignore_2;temperature:Param_6177_UIN;ignore_2;temperature:z1_comfort_temp
 
 # Not Issued very often
-# b,zone1,zone_heat_bcast,statistics,13,fe,2010,0191,,,onoff:z1_heat_request;ignore_3;onoff:z2_heat_request;ignore_3;onoff:z3_heat_request;ignore_3;onoff:z4_heat_request
-# b,zone1,heat_request_mode,statistics,13,fe,2020,cb7f00ce79,,,heat_request_mode:z1_heat_request_mode;ignore_2;heat_request_mode:z2_heat_request_mode;ignore_2;heat_request_mode:z3_heat_request_mode
-# b,zone1,heat_temp_range,statistics,13,fe,2020,0081,,,low_high:z1_heat_range;ignore_2;low_high:z2_heat_range;ignore_2;low_high:z3_heat_range
+# b,ignored,zone_heat_bcast,statistics,13,fe,2010,0191,,,onoff:z1_heat_request;ignore_3;onoff:z2_heat_request;ignore_3;onoff:z3_heat_request;ignore_3;onoff:z4_heat_request
+# b,ignored,heat_request_mode,statistics,13,fe,2020,cb7f00ce79,,,heat_request_mode:z1_heat_request_mode;ignore_2;heat_request_mode:z2_heat_request_mode;ignore_2;heat_request_mode:z3_heat_request_mode
+# b,ignored,heat_temp_range,statistics,13,fe,2020,0081,,,low_high:z1_heat_range;ignore_2;low_high:z2_heat_range;ignore_2;low_high:z3_heat_range
 
 r,ignored,zone_setpoints3,statistics,13,fe,2000,069169966a96
 b,ignored,zone_setpoints3,statistics,13,fe,200f,0691,,,onoff:z6_heat_request;ignore_3;temperature:z1_room_setpoint;ignore_3;temperature:z2_room_setpoint
