@@ -13,6 +13,10 @@ b,dhw,status,status,13,fe,200e,0220,,,onoff
 w,dhw,status,status,70,fe,2020,0220,,,onoff
 b,ignored,dhw_status,DHW Status,13,fe,2010,0220,,,onoff
 
+# The current target temperature based on the current mode (reduced or comfort) and the current time of day.
+r5,dhw,current_target_temp,Current Target Temp,,fe,2000,6147
+b,dhw,current_target_temp,Current Target Temp,13,fe,200f,6147,,,temperature:setting
+
 # Defines the activation of the auxiliary heat source for DHW heating - either to assist or only on failure of the heat pump (1.4.0)
 r,dhw,aux_heat_activation,Auxiliary Heat Activation,,18,2001,1588,,,aux_heat_activation
 w,dhw,aux_heat_activation,Auxiliary Heat Activation,,18,2020,1588,,,aux_heat_activation

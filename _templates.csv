@@ -155,7 +155,8 @@ low_high_modulating:speed,UCH,0=low;1=high;2=modulating,,
 off_low_high:speed,UCH,0=off;1=low;2=high,,
 
 room_influence:setting,UCH,0=off;1=less;2=medium;3=more,,
-
+building_isolation_level:setting,UCH,0=poor;1=average;2=good
+building_size:setting,UCH,0=small;1=average;2=large
 control_mode:setting,UCH,0=disabled;1=time_based;2=always_active,,
 dhw_mode:setting,UCH,0=standard;1=green;2=hc_hp;3=hc_hp_40,,
 
