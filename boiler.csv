@@ -19,3 +19,13 @@ r,ignored,ext_boiler_dhw_efficiency,External Boiler DHW Efficiency,,18,2000,762e
 
 r,ignored,boiler_calculated_cost,Boiler Calculated Cost,,18,2000,7147,,,ignore_1;cost
 
+r,ignored,heatpump_and_boiler_operating_hours,Heatpump and Boiler Combined Operating Hours,,18,2000,4ed1,,,ignore_1;hours
+
+r,ignored,hybrid_mode,statistics,,18,2001,c628,,,hybrid_mode
+w,ignored,hybrid_mode,statistics,,18,2020,c628,,,hybrid_mode
+b,ignored,hybrid_mode,statistics,13,18,2010,c628,,m,hybrid_mode
+
+r,ignored,hybrid_logic,statistics,,18,2001,ce28,,,hybrid_logic
+w,ignored,hybrid_logic,statistics,,18,2020,ce28,,,hybrid_logic
+b,ignored,hybrid_logic,statistics,13,18,2010,ce28,,m,hybrid_logic
+

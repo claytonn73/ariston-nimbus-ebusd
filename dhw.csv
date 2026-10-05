@@ -36,13 +36,6 @@ r,dhw,thermal_cleanse,Thermal Cleansing Function,,fe,2001,0b20
 b,dhw,thermal_cleanse,Thermal Cleansing Function,13,fe,200e,0b20,,,onoff
 w,dhw,thermal_cleanse,Thermal Cleansing Function,,fe,2020,0b20,,,onoff
 
-# DHW storage temperature information - performed regularly by the system
-r,dhw,storage_temperature,Current Storage Temperature,,18,2000,7747,,,ignore_1;temperature:reading
-# Ignore other reads which have DHW temperature
-r,ignored,storage_temperature_2,Current Storage Temperature,,18,2001,7017,,,temperature:reading
-r,ignored,storage_temperature_4,Current Storage Temperature,,18,2000,7017,,,ignore_1;temperature:reading
-r,ignored,storage_temperature_3,Current Storage Temperature,,18,2000,62137017,,,ignore_1;temperature:value_6213;temperature:dhw_store_temp
-
 # Setting and limits for DHW comfort temperature (1.9.0)
 r,dhw,comfort_temp,Comfort Temperature,,fe,2000,6126
 b,dhw,comfort_temp,Comfort Temperature,13,fe,200f,6126,,,temperature:setting
@@ -62,10 +55,6 @@ r5,dhw,current_target_temp,Current Target Temp,,fe,2000,6147
 b,dhw,current_target_temp,Current Target Temp,13,fe,200f,6147,,,temperature:setting
 # Ignore other reads which have current target temperature
 b,ignored,current_target_temp_plus,Current Target Temp,13,fe,2010,6147,,,temperature:setting;ignore_3;onoff:dhw_status
-
-r,dhw,pv_delta_temperature,Delta temperature for PV Integration,,18,2000,762d,,,ignore_1;temperature:setting
-w,dhw,pv_delta_temperature,Delta temperature for PV Integration,,18,2020,762d,,,temperature:setting
-r,dhw,pv_delta_temperature_limits,Delta temperature for PV Integration Limits,,18,2001,762d,,,temperature_min_max
 
 # Time required for starting the calculation of the DHW integration with the auxiliary sources or with the heating elements (1.4.2)
 r,dhw,delay_time,Delay Time,,18,2000,7f26,,,ignore_1;seconds:setting
@@ -105,6 +94,24 @@ b,dhw,thermal_cleanse_start_time,Thermal Cleanse Start Time,13,fe,200f,7e2b,,,hh
 w,dhw,thermal_cleanse_start_time,Thermal Cleanse Start Time,70,fe,2020,7e2b,,,hhmm
 r,dhw,thermal_cleanse_start_time_limits,Thermal Cleanse Start Time Limits,,fe,2001,7e2b
 b,dhw,thermal_cleanse_start_time_limits,Thermal Cleanse Start Time Limits,13,fe,200e,7e2b,,,hhmm_min_max
+
+# DHW storage temperature (1.16.5)
+# performed regularly by the system
+r,dhw,storage_temperature,Current Storage Temperature,,18,2000,7747,,,ignore_1;temperature:reading
+# Ignore other reads which have DHW temperature
+r,ignored,storage_temperature_2,Current Storage Temperature,,18,2001,7017,,,temperature:reading
+r,ignored,storage_temperature_4,Current Storage Temperature,,18,2000,7017,,,ignore_1;temperature:reading
+r,ignored,storage_temperature_3,Current Storage Temperature,,18,2000,62137017,,,ignore_1;temperature:value_6213;temperature:dhw_store_temp
+
+# PV offset DHW setpoint temperature (1.20.0)
+r,dhw,pv_delta_temperature,Delta temperature for PV Integration,,18,2000,762d,,,ignore_1;temperature:setting
+w,dhw,pv_delta_temperature,Delta temperature for PV Integration,,18,2020,762d,,,temperature:setting
+r,dhw,pv_delta_temperature_limits,Delta temperature for PV Integration Limits,,18,2001,762d,,,temperature_min_max
+
+# Activates integration of the solar heating system. In this case the high sensor of the solar heating tank is used as a DHW tank sensor (1.20.2)
+r,dhw,tank_solar_integration,Tank solar integration,,18,2001,1188,,,onoff
+w,dhw,tank_solar_integration,Tank solar integration,,18,2020,1188,,,onoff
+b,dhw,tank_solar_integration,Tank solar integration,13,18,2010,1188,,m,onoff
 
 # Defines the setpoint of thermal cleanse cycle. (1.23.0)
 r,dhw,thermal_cleanse_temp,Thermal Cleanse Temperature,,fe,2000,7d26
