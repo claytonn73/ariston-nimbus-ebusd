@@ -10,9 +10,11 @@ The ebsud message definitions are overconfigured compared to what is used in Hom
 
 Templates are used extensively for the message definitions to provide common definitions for repeated types and to enable chained template definitions to be used for messages with multiple variables.
 
+Write definitions are available for many messages but in order to avoid providing too much opportunity for mistakes in home assistant the write messages are moved to the "ignored" circuit definition which means the home assistant entity is read only. If it is desired to re-enable the write capability then simply changing the circuit will enable Home Assistant to be used for updates.
+
 A perform-reads python script is provided to enable forced reads of the entire configuration or individual circuits.
 
-# Query Commands and Modes 
+## Query Commands and Modes
 
 There are two main query commands issued by the system. The 2000 query response has a format where the first byte is ignored and then the response to the query is provided. The 2001 query does not have an ignored byte but it provides the value and then a minimum and maximum range for the value. Sometimes this is a specific system limit and other times it is simply the maximum range of allowed by the numeric type. Examples of the 2000 and 2001 direct queries are shown below
 
@@ -26,9 +28,12 @@ There are two different query modes used by the system. There seems to be no exp
     7f fe 2001 02 6126 
     13 fe 200e 08 6126 5802 5e01 8a02 
 
-A standard template style can be used for the 2000 and 2001 query responses both for direct and indirect modes as shown in the example below. The template here uses the 2001 response only for the minimum and maximum values to avoid replicating the information in the 2000 response 
+## ebusd template usage
+
+A standard template style can be used for the 2000 and 2001 query responses both for direct and indirect modes as shown in the example below. The template here uses the 2001 response only for the minimum and maximum values to avoid replicating the information in the 2000 response
 
     ignore_1,IGN:1,,,,
+    ignore_2,IGN:2,,,,
     temperature,S2L,10,°C,temperature
     temperature_min_max,ignore_2;temperature:minimum;temperature:maximum,,,
     
@@ -40,12 +45,19 @@ A standard template style can be used for the 2000 and 2001 query responses both
     r,dhw,thermal_cleanse_temp_limits,Thermal Cleanse Temperature,,fe,2001,7d26
     b,dhw,thermal_cleanse_temp_limits,Thermal Cleanse Temperature,13,fe,200e,7d26,,,temperature_min_max
 
-# Write Commands and Modes
+This results in the following messages being produces
+
+    dhw pv_delta_temperature = setting=10.0
+    dhw pv_delta_temperature_limits = minimum=0.0;maximum=20.0
+    dhw thermal_cleanse_temp = setting=60.0
+    dhw thermal_cleanse_temp_limits = minimum=60.0;maximum=70.0
+
+## Write Commands and Modes
 
 There are two different write modes used by the system. The first is a direct write to a particular slave entity to update the entity. The second is a broadcast write that is picked up by the relevant entity.
 
 When a direct write is issued with a 2020 command that changes a value there is then a subsequent echoed 2010 response that can be interpreted as a passive read of the master to update the value 
-    
+
     31 18 2020 03 1823 01 / 00 
     13 18 2010 03 1823 01 / 00 
 
@@ -54,7 +66,7 @@ when a broadcast write is issued using a 2020 command that changes a value then 
     31 fe 2020 03 0120 00 
     13 fe 2010 04 0120 00 00 
 
-# Combined definition for reads and writes
+## Combined definition for reads and writes
 
 For an entity that uses the direct read method the following provides a complete definition for the messages seen on the bus. Not all entities provide the broadcast 2010 response to a change.
 
@@ -78,13 +90,52 @@ For an entity where we also woould like to obtain the minimum and maximum values
     b,energymgr,ext_temp_correct_limits,External Temperature Correction,13,fe,200e,7426,,,temperature_min_max
     b,ignored,ext_temp_correct_bcast,External Temperature Correction,13,fe,2010,7426,,,temperature:setting
 
-# Performing regular queries
+## Performing regular queries
 
 There are a number of entities for which it would be highly desirable to get regular updates but which are not present on the bus with the normal operation of the system. Given the use by the system of multiple entity queries it seems obvious to follow a similar pattern to efficiently obtain multiple responses with a single command. An example of this is show below for the flow and return temperatures and flow rate of the heatpump.
 
     r1,heatpump,water_flow,Regular read of flow rate and temps,,1e,2000,761077106e13,,,ignore_1;temperature:flow_temperature;temperature:return_temperature;flow_rate:flow_rate
 
-# Home Assistant Integration 
+## MQTT integration with Home Assistant
+
+Given the use of the historical CSV files for the Ariston ebusd configuration there are some changes to the default mqtt-hassio.cfg configuration provided in the ebusd github.
+
+### filter-non-circuit
+
+The first change is something that was very helpful when creating the configuration to allow for a large amount of messages to be defined but not to pass them through to Home Assistant. The ignored and unkown circuit definitions can be used to define messages in ebusd but avoid these being sent through to home assistant.  In the example below also circuits that are not relevant to the configuration can be excluded while still leaving the messages in ebusd.
+
+filter-non-circuit = scan|ignored|unknown|cooling|boiler|buffer|zone2|zone3
+
+### steps, min and max with csv file
+
+When number entities are created it can also be necessary to modify the default minimum and maximum and step values for the entry. A key example of this is temperature entities which can be negative as well as positive and for which a steps value of 0.5 might make more sense. It is possible to override these in the configuration.yaml but having a better default can help.
+
+In order to do this the following changes were made to the mqtt-hassio.cfg file. The example below will set a steps value of 0.5 and a -100 to 100 minimum and maximum for the temperature number entities in Home Assistant.
+
+    '# Added step_value, min_value, and max_value for number entities to be passed to HA
+    type_switch-names = type_topic,type_class,type_state,type_sub,step_value,min_value,max_value
+
+    '# Also add the relevant step,minimum,maximum values to these definitions
+    type_switch-w-number =
+        number,temperature,,,0.5,-100,100 = temp|,°C$
+
+    '# HA integration: optional variable with the minimum numeric value using min_value from above
+    min_number ?= ,
+    "min":%min_value
+
+    '# HA integration: optional variable with the maximum numeric value using max_value from above
+    max_number ?= ,
+    "max":%max_value
+
+    HA integration: optional variable with the numeric step value using step_value from above
+    step_number ?= ,
+    "step":%step_value
+
+    '# Add the min_number, max_number and step_number entries to the command topic definition
+    type_part-number = ,
+    "command_topic":"%topic/set"%min_number%max_number%step_number%unit_of_measurement%state_class%type_class_number
+
+## Home Assistant Integration
 
 The definitions above result in entity IDs in Home Assistant like the example below for the Thermal Cleanse Temperature messages.
 
@@ -92,11 +143,11 @@ The definitions above result in entity IDs in Home Assistant like the example be
     sensor.heating_ebusd_dhw_thermal_cleanse_temp_limits_maximum
     sensor.heating_ebusd_dhw_thermal_cleanse_temp_limits_minimum
 
-These values can be used to create a protected slider and display in Home Assistant using the system generated value for the minimum and maximum 
+These values can be used to create a protected slider and display in Home Assistant using the system generated value for the minimum and maximum
 
 <img width="388" height="217" alt="image" src="https://github.com/user-attachments/assets/61b9d525-110d-49be-8dd7-57e2fdee2d01" />
 
-This particular example uses the config-template-card and big-slider-card but there are other options available 
+This particular example uses the config-template-card and big-slider-card but there are other options available
     
     type: custom:config-template-card
     variables:
@@ -116,9 +167,9 @@ This particular example uses the config-template-card and big-slider-card but th
       min: ${parseFloat(MinVal)}
       max: ${parseFloat(MaxVal)}
 
-# System behaviour notes
+## System behaviour notes
 
 The automatic winter mode is a useful feature to enable and disable heating based on an external temperature threshold. However it does not use the defined threshold directly to perform the enable/disable of heating. If temperature drops 1C below the defined threshold the heating will be enabled and if the temperature rises 1C above the defined threshold the heating will be disabled. In this way it avoids repetitive enabling and disabling of heating but it does mean that setting the value correctly for the house is important. It is definitely possible to use 0.5C steps for this value. On my system I have set the associated winter mode delay to 0 minutes as with the behaviour above it does not seem sensible to wait for an extended period once the higher or lower threshold is reached.
 
-# Disclaimer
+## Disclaimer
 All information posted is merely for educational and informational purposes. It is not intended as a substitute for professional advice. Should you decide to act upon any information on this website, you do so at your own risk. While the information on this website has been verified to the best of our abilities, I cannot guarantee that there are no mistakes or errors. You may use this library with the understanding that doing so is AT YOUR OWN RISK. No warranty, express or implied, is made with regards to the fitness or safety of this code for any purpose. If you use this library to query or change settings of your products you understand that it is possible to cause damages I reserve the right to change this policy at any given time.
