@@ -26,11 +26,11 @@ There are two different query modes used by the system. There seems to be no exp
     7f fe 2001 02 6126 
     13 fe 200e 08 6126 5802 5e01 8a02 
 
-A standard template style can be used for the 2000 and 2001 query responses both for direct and indirect modes as shown in the example below
+A standard template style can be used for the 2000 and 2001 query responses both for direct and indirect modes as shown in the example below. The template here uses the 2001 response only for the minimum and maximum values to avoid replicating the information in the 2000 response 
 
     ignore_1,IGN:1,,,,
     temperature,S2L,10,°C,temperature
-    temperature_min_max,temperature:setting;temperature:minimum;temperature:maximum,,,
+    temperature_min_max,ignore_2;temperature:minimum;temperature:maximum,,,
     
     r,dhw,pv_delta_temperature,Delta temperature for PV Integration,,18,2000,762d,,,ignore_1;temperature:setting
     r,dhw,pv_delta_temperature_limits,Delta temperature for PV Integration,,18,2001,762d,,,temperature_min_max
@@ -83,6 +83,38 @@ For an entity where we also woould like to obtain the minimum and maximum values
 There are a number of entities for which it would be highly desirable to get regular updates but which are not present on the bus with the normal operation of the system. Given the use by the system of multiple entity queries it seems obvious to follow a similar pattern to efficiently obtain multiple responses with a single command. An example of this is show below for the flow and return temperatures and flow rate of the heatpump.
 
     r1,heatpump,water_flow,Regular read of flow rate and temps,,1e,2000,761077106e13,,,ignore_1;temperature:flow_temperature;temperature:return_temperature;flow_rate:flow_rate
+
+# Home Assistant Integration 
+
+The definitions above result in entity IDs in Home Assistant like the example below for the Thermal Cleanse Temperature messages.
+
+    number.heating_ebusd_dhw_thermal_cleanse_temp
+    sensor.heating_ebusd_dhw_thermal_cleanse_temp_limits_maximum
+    sensor.heating_ebusd_dhw_thermal_cleanse_temp_limits_minimum
+
+These values can be used to create a protected slider and display in Home Assistant using the system generated value for the minimum and maximum 
+
+<img width="388" height="217" alt="image" src="https://github.com/user-attachments/assets/61b9d525-110d-49be-8dd7-57e2fdee2d01" />
+
+This particular example uses the config-template-card and big-slider-card but there are other options available 
+    
+    type: custom:config-template-card
+    variables:
+      MinVal: states['sensor.heating_ebusd_dhw_thermal_cleanse_temp_limits_minimum'].state
+      MaxVal: states['sensor.heating_ebusd_dhw_thermal_cleanse_temp_limits_maximum'].state
+    entities:
+      - number.heating_ebusd_dhw_thermal_cleanse_temp
+      - sensor.heating_ebusd_dhw_thermal_cleanse_temp_limits_minimum
+      - sensor.heating_ebusd_dhw_thermal_cleanse_temp_limits_maximum
+    card:
+      type: custom:big-slider-card
+      entity: number.heating_ebusd_dhw_thermal_cleanse_temp
+      show_percentage: true
+      name: DHW Thermal Cleanse Temperature
+      attribute: temperature
+      color: green
+      min: ${parseFloat(MinVal)}
+      max: ${parseFloat(MaxVal)}
 
 # System behaviour notes
 
