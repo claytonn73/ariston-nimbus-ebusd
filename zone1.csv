@@ -70,9 +70,10 @@ b,zone1,winter_mode_delay_limits,statistics,13,fe,200e,7a71,,,longminutes_min_ma
 ############################################################################################
 
 # Zone 1 water flow temperature range (4.2.0)
+# Update in Home Asistant disabled as is installation parameter
 r,zone1,heat_temp_range,Z1 Heating Temp Range,,fe,2001,0081
 b,zone1,heat_temp_range,Z1 Heating Temp Range,,fe,200e,0081,,,low_high
-w,zone1,heat_temp_range,Z1 Heating Temp Range,70,fe,2020,0081,,,low_high
+w,ignored,heat_temp_range,Z1 Heating Temp Range,70,fe,2020,0081,,,low_high
 
 # Zone 1 thermoregulation type (4.2.1)
 r,zone1,heat_therm_type,Z1 Heating Thermoreg Type,,fe,2001,c079
@@ -115,9 +116,10 @@ r,zone1,lwt_min_limits,lwt minimum temperature,,fe,2001,6171
 b,zone1,lwt_min_limits,lwt minimum temperature,13,fe,200e,6171,,,temperature_min_max
 
 # Thermoregulation logic (4.2.7)  - seems to be single switch on zone1
+# Update in Home Asistant disabled as not using smart mode
 r,zone1,thermo_logic,unknown,,fe,2001,db89
 b,zone1,thermo_logic,unknown,,fe,200e,db89,,,thermoregulation_logic
-w,zone1,thermo_logic,unknown,,fe,2020,db89,,,thermoregulation_logic
+w,ignored,thermo_logic,unknown,,fe,2020,db89,,,thermoregulation_logic
 
 # Quick night setback (4.2.8)
 r,zone1,quick_night_setback,unknown,,fe,2001,0881
@@ -185,6 +187,7 @@ b,zone1,flow_setpoint_temperature,Z1 Flow Setpoint Temperature,,fe,200e,6197,,,t
 
 ############################################################################################
 # Cooling
+# Z1 Cooling messages set to ignored as not relevant to my system
 ############################################################################################
 
 # T Set Cool (5.5.0)
@@ -245,48 +248,50 @@ b,ignored,cooling_lwt_min_limits,lwt minimum temperature,13,fe,200e,7371,,,tempe
 
 ############################################################################################
 # Zone Regulation Parameters
+# All set to ignored as only relevant to smart setting on 4.2.7 which I do not use
 ############################################################################################
 
 # Heating Type (4.7.0)
-r,zone1,heating_type,Z1 Heating Type,,fe,2001,d079
-w,zone1,heating_type,Z1 Heating Type,,fe,2020,d079,,,heating_type
-b,zone1,heating_type,Z1 Heating Type,,fe,200e,d079,,,heating_type
+r,ignored,heating_type,Z1 Heating Type,,fe,2001,d079
+w,ignored,heating_type,Z1 Heating Type,,fe,2020,d079,,,heating_type
+b,ignored,heating_type,Z1 Heating Type,,fe,200e,d079,,,heating_type
 
 # Room Influence (4.7.1)
-r,zone1,room_influence,Z1 Room Influence,,fe,2001,d379
-w,zone1,room_influence,Z1 Room Influence,,fe,2020,d379,,,room_influence
-b,zone1,room_influence,Z1 Room Influence,,fe,200e,d379,,,room_influence
+r,ignored,room_influence,Z1 Room Influence,,fe,2001,d379
+w,ignored,room_influence,Z1 Room Influence,,fe,2020,d379,,,room_influence
+b,ignored,room_influence,Z1 Room Influence,,fe,200e,d379,,,room_influence
 
 # Building Isolation Level (4.7.2)
-r,zone1,building_isolation_level,Z1 Building Isolation Level,,fe,2001,d179
-w,zone1,building_isolation_level,Z1 Building Isolation Level,,fe,2020,d179,,,building_isolation_level
-b,zone1,building_isolation_level,Z1 Building Isolation Level,,fe,200e,d179,,,building_isolation_level
+r,ignored,building_isolation_level,Z1 Building Isolation Level,,fe,2001,d179
+w,ignored,building_isolation_level,Z1 Building Isolation Level,,fe,2020,d179,,,building_isolation_level
+b,ignored,building_isolation_level,Z1 Building Isolation Level,,fe,200e,d179,,,building_isolation_level
 
 # Building Size (4.7.3) 
-r,zone1,building_size,Z1 Building Size,,fe,2001,d279
-w,zone1,building_size,Z1 Building Size,,fe,2020,d279,,,building_size
-b,zone1,building_size,Z1 Building Size,,fe,200e,d279,,,building_size
+r,ignored,building_size,Z1 Building Size,,fe,2001,d279
+w,ignored,building_size,Z1 Building Size,,fe,2020,d279,,,building_size
+b,ignored,building_size,Z1 Building Size,,fe,200e,d279,,,building_size
 
 # Climatic Zone (4.7.4)
-r,zone1,climatic_zone,Z1 Climatic Zone,,fe,2000,7c8e
-b,zone1,climatic_zone,Z1 Climatic Zone,,fe,200f,7c8e,,,temperature:setting
-w,zone1,climatic_zone,Z1 Climatic Zone,,fe,2020,7c8e,,,temperature:setting
-r,zone1,climatic_zone_limits,Z1 Climatic Zone Limits,,fe,2001,7c8e
-b,zone1,climatic_zone_limits,Z1 Climatic Zone Limts,,fe,200e,7c8e,,,temperature_min_max
+r,ignored,climatic_zone,Z1 Climatic Zone,,fe,2000,7c8e
+b,ignored,climatic_zone,Z1 Climatic Zone,,fe,200f,7c8e,,,temperature:setting
+w,ignored,climatic_zone,Z1 Climatic Zone,,fe,2020,7c8e,,,temperature:setting
+r,ignored,climatic_zone_limits,Z1 Climatic Zone Limits,,fe,2001,7c8e
+b,ignored,climatic_zone_limits,Z1 Climatic Zone Limts,,fe,200e,7c8e,,,temperature_min_max
 
 # Auto Slope Adaptation (4.7.5)
-r,zone1,slope_adaptation,Z1 Slope Adaptation,,fe,2001,0981
-w,zone1,slope_adaptation,Z1 Slope Adaptation,,fe,2020,0981,,,onoff
-b,zone1,slope_adaptation,Z1 Slope Adaptation,,fe,200e,0981,,,onoff
+r,ignored,slope_adaptation,Z1 Slope Adaptation,,fe,2001,0981
+w,ignored,slope_adaptation,Z1 Slope Adaptation,,fe,2020,0981,,,onoff
+b,ignored,slope_adaptation,Z1 Slope Adaptation,,fe,200e,0981,,,onoff
 
 ############################################################################################
 # Advanced Settings
 ############################################################################################
 
 # Z1 Heating controller (4.8.3)
+# Update in Home Asistant disabled as is installation parameter 
 r,zone1,heating_controller,unknown,,fe,2001,d579
 b,zone1,heating_controller,unknown,,fe,200e,d579,,,heating_controller
-w,zone1,heating_controller,unknown,70,fe,2020,d579,,,heating_controller
+w,ignored,heating_controller,unknown,70,fe,2020,d579,,,heating_controller
 
 # Z1 Cooling controller (4.8.4)
 

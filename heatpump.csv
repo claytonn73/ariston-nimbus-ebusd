@@ -10,10 +10,14 @@ r,heatpump,config_version,config_version_counter,,1e,2000,d140,,,ignore_1;versio
 ############################################################################################
 
 # TDM Flow Sensor Type (13.1.0)
+# Update in Home Asistant disabled as is installation parameter
 r,heatpump,tdm_flow_sensor_type,Flow Sensor Type,,1e,2001,df2a,,,flow_sensor
+w,ignored,tdm_flow_sensor_type,Flow Sensor Type,,1e,2020,df2a,,,flow_sensor
 
 # HP Electric Heater Config (13.2.1)
+# Update in Home Asistant disabled as not relevant in my system
 r,heatpump,electric_heater,Electric Heater 1,,1e,2001,1c23,,,onoff
+w,ignored,electric_heater,Electric Heater 1,,1e,2020,1c23,,,onoff
 
 ############################################################################################
 # Water Circulation

@@ -34,13 +34,15 @@ w,ignored,thermoregulation,statistics,,fe,2020,0520,,,onoff
 ############################################################################################
 
 # Defines the setting for HV Input 1 (1.1.0)
+# Update in Home Asistant disabled as not relevant in my system
 r,energymgr,hv_input_1,HV Input 1,,18,2001,c92a,,,hv_input_1
-w,energymgr,hv_input_1,HV Input 1,,18,2020,c92a,,,hv_input_1
+w,ignored,hv_input_1,HV Input 1,,18,2020,c92a,,,hv_input_1
 b,energymgr,hv_input_1,HV Input 1,13,18,2010,c92a,,m,hv_input_1
 
 # Defines the setting for HV Input 2 (1.1.1)
+# Update in Home Asistant disabled as not relevant in my system
 r,energymgr,hv_input_2,HV Input 2,,18,2001,cb2a,,,hv_input_2
-w,energymgr,hv_input_2,HV Input 2,,18,2020,cb2a,,,hv_input_2
+w,ignored,hv_input_2,HV Input 2,,18,2020,cb2a,,,hv_input_2
 b,energymgr,hv_input_2,HV Input 2,13,18,2010,cb2a,,m,hv_input_2
 
 # Defines the setting for AUX Input 1 (1.1.3)
@@ -50,13 +52,15 @@ w,energymgr,aux_input_1,Aux Input 1,,18,2020,d42a,,,aux_input
 b,energymgr,aux_input_1,Aux Input 1,13,18,2010,d42a,,m,aux_input
 
 # Defines the setting for AUX Input 2 (1.1.4)
+# Update in Home Asistant disabled as not relevant in my system
 r,energymgr,aux_input_2,Aux Input 2 - Default Safety Thermostat,,18,2001,dd8d,,,aux_input
-w,energymgr,aux_input_2,Aux Input 2 - Default Safety Thermostat,,18,2020,dd8d,,,aux_input
+w,ignored,aux_input_2,Aux Input 2 - Default Safety Thermostat,,18,2020,dd8d,,,aux_input
 b,energymgr,aux_input_2,Aux Input 2 - Default Safety Thermostat,13,18,2010,dd8d,,m,aux_input
 
 # Energy provider blocking functionality (1.1.5)
+# Update in Home Asistant disabled as not relevant in my system
 r,energymgr,heat_blocking_device,Heat Blocking Device,,18,2001,c38f,,,lockout_type
-w,energymgr,heat_blocking_device,Heat Blocking Device,,18,2020,c38f,,,lockout_type
+w,ignored,heat_blocking_device,Heat Blocking Device,,18,2020,c38f,,,lockout_type
 b,energymgr,heat_blocking_device,Heat Blocking Device,13,18,2010,c38f,,m,lockout_type
 
 # CH Press Detection Device (1.1.7)
@@ -68,8 +72,9 @@ w,energymgr,system_flow_t_selection,,,18,2020,1688,,,system_flow_temp_selection
 b,energymgr,system_flow_t_selection,,13,18,2010,1688,,m,system_flow_temp_selection
 
 # Hunidity input zone selection (1.1.9)
+# Update in Home Asistant disabled as only single zone available
 r,energymgr,humidity_input,Humidity Input Zone,,18,2001,cd2f,,,humidity_input
-w,energymgr,humidity_input,Humidity Input Zone,,18,2020,cd2f,,,humidity_input
+w,ignored,humidity_input,Humidity Input Zone,,18,2020,cd2f,,,humidity_input
 b,energymgr,humidity_input,Humidity Input Zone,13,18,2010,cd2f,,m,humidity_input
 
 
@@ -84,28 +89,33 @@ w,energymgr,aux_output_1,Aux 1 Output,,18,2020,cc2a,,,aux_output
 b,energymgr,aux_output_1,Aux 1 Output,13,18,2010,cc2a,,m,aux_output
 
 # Defines the setting for AUX Output 2 (1.2.1) 
+# Update in Home Asistant disabled as not relevant in my system
 r,energymgr,aux_output_2,Aux Output 2,,18,2001,d32a,,,aux_output
-w,energymgr,aux_output_2,Aux Output 2,,18,2020,d32a,,,aux_output
+w,ignored,aux_output_2,Aux Output 2,,18,2020,d32a,,,aux_output
 b,energymgr,aux_output_2,Aux Output 2,13,18,2010,d32a,,m,aux_output
 
 # Defines the setting for AUX Output 3 (1.2.2) 
+# Update in Home Asistant disabled as not relevant in my system
 r,energymgr,aux_output_3,Aux Output 3,,18,2001,db8d,,,aux_output
-w,energymgr,aux_output_3,Aux Output 3,,18,2020,db8d,,,aux_output
+w,ignored,aux_output_3,Aux Output 3,,18,2020,db8d,,,aux_output
 b,energymgr,aux_output_3,Aux Output 3,13,18,2010,db8d,,m,aux_output
 
 # Defines the setting for AUX Output 4 (1.2.3) 
+# Update in Home Asistant disabled as not relevant in my system
 r,energymgr,aux_output_4,Aux Output 4,,18,2001,dc8d,,,aux_output
-w,energymgr,aux_output_4,Aux Output 4,,18,2020,dc8d,,,aux_output
+w,ignored,aux_output_4,Aux Output 4,,18,2020,dc8d,,,aux_output
 b,energymgr,aux_output_4,Aux Output 4,13,18,2010,dc8d,,m,aux_output
 
 # Defines the use of the AUX P2 Curculator (1.2.5)
+# Update in Home Asistant disabled as not relevant in my system
 r,energymgr,aux_p2_circulator,Aux P2 Circulator,,18,2001,cf2c,,,aux_p2_circulator
-w,energymgr,aux_p2_circulator,Aux P2 Circulator,,18,2020,cf2c,,,aux_p2_circulator
+w,ignored,aux_p2_circulator,Aux P2 Circulator,,18,2020,cf2c,,,aux_p2_circulator
 b,energymgr,aux_p2_circulator,Aux P2 Circulator,13,18,2010,cf2c,,m,aux_p2_circulator
 
 # Indicates the presence of the impressed-current anode on the DHW tank. (1.2.6)
+# Update in Home Asistant disabled as not relevant in my system
 r,energymgr,protech_anode,Protech Anode - not present,,18,2001,0d23,,,onoff
-w,energymgr,protech_anode,Protech Anode - not present,,18,2020,0d23,,,onoff
+w,ignored,protech_anode,Protech Anode - not present,,18,2020,0d23,,,onoff
 b,energymgr,protech_anode,Protech Anode - not present,13,18,2010,0d23,,m,onoff
 
 ############################################################################################
@@ -193,8 +203,9 @@ r,energymgr,manual_mode_tank_heater,,,18,2001,03f5,,,onoff
 ############################################################################################
 
 # Activates the anti-lock function of the primary circulation pump. (1.12.1)
+# Update in Home Asistant disabled as is installation parameter
 r,energymgr,pump_antiblock,Pump Antiblock,,18,2001,1823,,,onoff
-w,energymgr,pump_antiblock,Pump Antiblock,,18,2020,1823,,,onoff
+w,ignored,pump_antiblock,Pump Antiblock,,18,2020,1823,,,onoff
 b,energymgr,pump_antiblock,Pump Antiblock,13,18,2010,1823,,m,onoff
 
 # Quiet Mode activation (1.12.2)
@@ -215,8 +226,9 @@ b,energymgr,silent_mode_end_time,end time,13,18,2010,6a2b,,m,ignore_1;hhmm
 r,energymgr,silent_mode_end_time_limits,end time,,18,2001,6a2b,,,hhmm_min_max
 
 # Exogel kit activation (1.12.9)
+# Update in Home Asistant disabled as is installation parameter
 r,energymgr,exogel_kit_activation,Exogel Kit Activation,,18,2001,1f88,,,onoff
-w,energymgr,exogel_kit_activation,Exogel Kit Activation,,18,2020,1f88,,,onoff
+w,ignored,exogel_kit_activation,Exogel Kit Activation,,18,2020,1f88,,,onoff
 b,energymgr,exogel_kit_activation,Exogel Kit Activation,13,18,2010,1f88,,m,onoff
 
 ############################################################################################
@@ -292,8 +304,9 @@ r,ignored,anode_output_panel,If Installed,,18,2000,1903,,,ignore_1;onoff
 ############################################################################################
 
 # Activates the Opentherm gateway (1.20.3)
+# Update in Home Asistant disabled as not relevant on my system
 r,energymgr,opentherm_gateway,Opentherm Gateway Activation,,18,2001,008f,,,onoff
-w,energymgr,opentherm_gateway,Opentherm Gateway Activation,,18,2020,008f,,,onoff
+w,ignored,opentherm_gateway,Opentherm Gateway Activation,,18,2020,008f,,,onoff
 b,energymgr,opentherm_gateway,Opentherm Gateway Activation,13,18,2010,008f,,m,onoff
 
 # Issued regularly on the system

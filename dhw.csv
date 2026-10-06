@@ -33,11 +33,13 @@ w,dhw,release_integral,Release Integral,,18,2020,772e,,,integral:setting
 r,dhw,release_integral_limits,Release Integral Limits,,18,2001,772e,,,integral_min_max
 
 # Selection of the operating logic of the integration heating element immersed in the DHW calorifier (1.4.4)
+# Update in Home Asistant disabled as element not present in system
 r,dhw,tank_heater,Tank Electric Heater,,18,2001,d12f,,,tank_heater
-w,dhw,tank_heater,Tank Electric Heater,,18,2020,d12f,,,tank_heater
+w,ignored,tank_heater,Tank Electric Heater,,18,2020,d12f,,,tank_heater
 b,dhw,tank_heater,Tank Electric Heater,13,18,2010,d12f,,m,tank_heater
 
 # Defines the DHW calorifier temperature below which both the heat pump and the heating element switch on together (1.4.6)
+# Only used if 1.4.4 (tank electric heater) is set to 3 - need to validate if the AUX output is also activated
 r,dhw,high_priority_threshold,Temperature Threshold for High Priority DHW,,18,2000,678c,,,ignore_1;temperature:setting
 w,dhw,high_priority_threshold,Temperature Threshold for High Priority DHW,,18,2020,678c,,,temperature:setting
 r,dhw,high_priority_threshold_limits,Temperature Threshold for High Priority DHW Limits,,18,2001,678c,,,temperature_min_max
@@ -67,10 +69,12 @@ b,dhw,scheduling,Scheduling Mode,13,fe,200e,c028,,,control_mode
 w,dhw,scheduling,Scheduling Mode,70,fe,2020,c028,,,control_mode
 
 # Defines the DHW operation mode enabling differnt scheduling for DHW heating (1.9.3)
+# Update in Home Asistant disabled as setting not relevant in system
 r,dhw,operation_mode,Operation Mode,,18,2001,d08d,,,dhw_mode
-w,dhw,operation_mode,Operation Mode,,18,2020,d08d,,,dhw_mode
+w,ignored,operation_mode,Operation Mode,,18,2020,d08d,,,dhw_mode
 
-# Defines the filling time carried out only with the heat pump after which the auxiliary integration sources are switched on when there is no sensor in the calorifier (1.9.5)
+# Defines the maximum time for HP only DHW teating after which the auxiliary integration is switched on (1.9.5)
+# Only relevant if 1.0.2 (tank management) is set to 2
 r,dhw,max_hp_charging_time,Max HP Charging Time,,18,2000,d327,,,ignore_1;minutes:setting
 w,dhw,max_hp_charging_time,Max HP Charging Time,,18,2020,d327,,,minutes:setting
 r,dhw,max_hp_charging_time_limits,Max HP Charging Time Limits,,18,2001,d327,,,minutes_min_max
@@ -108,8 +112,9 @@ w,dhw,pv_delta_temperature,Delta temperature for PV Integration,,18,2020,762d,,,
 r,dhw,pv_delta_temperature_limits,Delta temperature for PV Integration Limits,,18,2001,762d,,,temperature_min_max
 
 # Activates integration of the solar heating system. In this case the high sensor of the solar heating tank is used as a DHW tank sensor (1.20.2)
+# Update in Home Asistant disabled as element not present in system
 r,dhw,tank_solar_integration,Tank solar integration,,18,2001,1188,,,onoff
-w,dhw,tank_solar_integration,Tank solar integration,,18,2020,1188,,,onoff
+w,ignored,tank_solar_integration,Tank solar integration,,18,2020,1188,,,onoff
 b,dhw,tank_solar_integration,Tank solar integration,13,18,2010,1188,,m,onoff
 
 # Defines the setpoint of thermal cleanse cycle. (1.23.0)
