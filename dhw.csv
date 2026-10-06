@@ -45,8 +45,9 @@ w,dhw,high_priority_threshold,Temperature Threshold for High Priority DHW,,18,20
 r,dhw,high_priority_threshold_limits,Temperature Threshold for High Priority DHW Limits,,18,2001,678c,,,temperature_min_max
 
 # The system excludes the heat pump in domestic hot water mode if the outdoor temperature is below the set value (1.5.4)
+# Update in Home Asistant disabled as element not relevant in my system
 r,dhw,external_temperature_disable_threshold,External Temperature to Disable DHW,,18,2000,638f,,,ignore_1;temperature:setting
-w,dhw,external_temperature_disable_threshold,External Temperature to Disable DHW,,18,2020,638f,,,temperature:setting
+w,ignored,external_temperature_disable_threshold_dhw,External Temperature to Disable DHW,,18,2020,638f,,,temperature:setting
 r,dhw,external_temperature_disable_threshold_limits,External Temperature to Disable DHW Limits,,18,2001,638f,,,temperature_min_max
 
 # Setting and limits for DHW comfort temperature (1.9.0)

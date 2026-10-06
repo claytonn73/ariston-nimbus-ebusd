@@ -153,8 +153,9 @@ b,zone1,room_setpoint,statistics,13,fe,200f,6996,,,temperature:setting
 r,ignored,z1_room_setpoint_panel,Z1 Room Setpoint Limits,,fe,2001,6996
 b,ignored,z1_room_setpoint_panel,Z1 Room Setpoint Limits,,fe,200e,6996,,,temperature
 # Issued every 25 seconds and provides the Z1 Room Setpoint Information
-r,zone1,room_setpoint_query,Provides Z1 Room Setpoint,13,fe,2000,059106916996
-b,zone1,room_setpoint_query,Provides Z1 Room Setpoint,13,fe,200f,0591,,,onoff:z5_heat_request;ignore_3;onoff:z6_heat_request;ignore_3;temperature:z1_room_setpoint
+r,zone1,room_setpoint_bcast,Provides Z1 Room Setpoint,13,fe,2000,059106916996
+#b,zone1,room_setpoint_bcast,Provides Z1 Room Setpoint,13,fe,200f,0591,,,onoff:z5_heat_request;ignore_3;onoff:z6_heat_request;ignore_3;temperature:z1_room_setpoint
+#b,zone1,room_setpoint_bcast,Provides Z1 Room Setpoint,13,fe,200f,0591,,,ignore_1;ignore_3;ignore_1;ignore_3;temperature:z1_room_setpoint
 
 # Flow temperature (4.3.2) and return temperature (4.3.3) are only visible with the Zone Module
 

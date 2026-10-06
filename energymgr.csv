@@ -67,8 +67,9 @@ b,energymgr,heat_blocking_device,Heat Blocking Device,13,18,2010,c38f,,m,lockout
 # Not Defined
 
 # System temperature probe selection (1.1.8)
+# Update in Home Asistant disabled as is installation parameter
 r,energymgr,system_flow_t_selection,,,18,2001,1688,,,system_flow_temp_selection
-w,energymgr,system_flow_t_selection,,,18,2020,1688,,,system_flow_temp_selection
+w,ignored,system_flow_t_selection,,,18,2020,1688,,,system_flow_temp_selection
 b,energymgr,system_flow_t_selection,,13,18,2010,1688,,m,system_flow_temp_selection
 
 # Hunidity input zone selection (1.1.9)
@@ -136,20 +137,23 @@ b,ignored,ext_temp_correct_bcast,External Temperature Correction,13,fe,2010,7426
 ############################################################################################
 
 # Defines the pre-circulation time of the primary circulation pump to detect the presence of flow in the heating circuit. (1.6.0)
+# Update in Home Asistant disabled as is installation parameter
 r,energymgr,pump_prerun,statistics,,18,2000,d527,,,ignore_1;minutes
-w,energymgr,pump_prerun,statistics,,18,2020,d527,,,minutes
+w,ignored,pump_prerun,statistics,,18,2020,d527,,,minutes
 b,energymgr,pump_prerun,statistics,13,18,2010,d527,,m,minutes
 r,energymgr,pump_prerun_limits,statistics,,18,2001,d527,,,minutes_min_max
 
 # Defines the pre-circulation time of the primary circulation pump to detect the presence of flow in the heating circuit. (1.6.1)
+# Update in Home Asistant disabled as is installation parameter
 r,energymgr,new_attempt_time,statistics,,18,2000,d627,,s,ignore_1;minutes
-w,energymgr,new_attempt_time,statistics,,18,2020,d627,,,minutes
+w,ignored,new_attempt_time,statistics,,18,2020,d627,,,minutes
 b,energymgr,new_attempt_time,statistics,13,18,2010,d627,,m,minutes
 r,energymgr,new_attempt_time_limits,statistics,,18,2001,d627,,,minutes_min_max
 
 # Post-circulation time. (1.6.2)
+# Update in Home Asistant disabled as is installation parameter
 r,energymgr,pump_overrun,statistics,,18,2000,d727,,,ignore_1;minutes
-w,energymgr,pump_overrun,statistics,,18,2020,d727,,,minutes
+w,ignored,pump_overrun,statistics,,18,2020,d727,,,minutes
 b,energymgr,pump_overrun,statistics,13,18,2010,d727,,m,minutes
 r,energymgr,pump_overrun_limits,statistics,,18,2001,d727,,,minutes_min_max
 
@@ -159,8 +163,9 @@ w,energymgr,pump_operation,Pump Operation Mode,,18,2020,c32a,,,low_high_modulati
 b,energymgr,pump_operation,Pump Operation Mode,13,18,2010,c32a,,m,low_high_modulating
 
 # Antifreeze circulator speed (1.6.4)
+# Update in Home Asistant disabled as is installation parameter
 r,energymgr,antifreeze_circulator_speed,Antifreeze HP circulator Control,,18,2001,c58f,,,low_med_high
-w,energymgr,antifreeze_circulator_speed,Antifreeze HP circulator Control,,18,2020,c58f,,,low_med_high
+w,ignored,antifreeze_circulator_speed,Antifreeze HP circulator Control,,18,2020,c58f,,,low_med_high
 b,energymgr,antifreeze_circulator_speed,Antifreeze HP circulator Control,13,18,2010,c58f,,m,low_med_high
 
 ############################################################################################
@@ -209,21 +214,21 @@ w,ignored,pump_antiblock,Pump Antiblock,,18,2020,1823,,,onoff
 b,energymgr,pump_antiblock,Pump Antiblock,13,18,2010,1823,,m,onoff
 
 # Quiet Mode activation (1.12.2)
-r,energymgr,silent_mode,silent mode,,18,2001,0320,,,onoff
-w,energymgr,silent_mode,silent mode,,18,2020,0320,,,onoff
-b,energymgr,silent_mode,silent mode,13,18,2010,0320,,m,onoff
+r,energymgr,quiet_mode,silent mode,,18,2001,0320,,,onoff
+w,energymgr,quiet_mode,silent mode,,18,2020,0320,,,onoff
+b,energymgr,quiet_mode,silent mode,13,18,2010,0320,,m,onoff
 
 # Quiet mode start time (1.12.3)
-r,energymgr,silent_mode_start_time,start time,,18,2000,692b,,,ignore_1;hhmm
-w,energymgr,silent_mode_start_time,start time,,18,2020,692b,,,hhmm
-b,energymgr,silent_mode_start_time,start time,13,18,2010,692b,,m,ignore_1;hhmm
-r,energymgr,silent_mode_start_time_limits,start time,,18,2001,692b,,,hhmm_min_max
+r,energymgr,quiet_mode_start_time,start time,,18,2000,692b,,,ignore_1;hhmm
+w,energymgr,quiet_mode_start_time,start time,,18,2020,692b,,,hhmm
+b,energymgr,quiet_mode_start_time,start time,13,18,2010,692b,,m,ignore_1;hhmm
+r,energymgr,quiet_mode_start_time_limits,start time,,18,2001,692b,,,hhmm_min_max
 
 # Quiet mode end time (1.12.4)
-r,energymgr,silent_mode_end_time,end time,,18,2000,6a2b,,,ignore_1;hhmm
-w,energymgr,silent_mode_end_time,end time,,18,2020,6a2b,,,hhmm
-b,energymgr,silent_mode_end_time,end time,13,18,2010,6a2b,,m,ignore_1;hhmm
-r,energymgr,silent_mode_end_time_limits,end time,,18,2001,6a2b,,,hhmm_min_max
+r,energymgr,quiet_mode_end_time,end time,,18,2000,6a2b,,,ignore_1;hhmm
+w,energymgr,quiet_mode_end_time,end time,,18,2020,6a2b,,,hhmm
+b,energymgr,quiet_mode_end_time,end time,13,18,2010,6a2b,,m,ignore_1;hhmm
+r,energymgr,quiet_mode_end_time_limits,end time,,18,2001,6a2b,,,hhmm_min_max
 
 # Exogel kit activation (1.12.9)
 # Update in Home Asistant disabled as is installation parameter

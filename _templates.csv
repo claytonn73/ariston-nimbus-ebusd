@@ -19,47 +19,54 @@ fulldate,HDA,,,date
 date,HDA:3,,,date
 hhmmss,VTI,,,hhmmss
 hhmm,VTM,,,hhmm
-hhmm_min_max,hhmm:setting;hhmm:minimum;hhmm:maximum,,,
+hhmm_min_max,ignore_2;hhmm:minimum;hhmm:maximum,,,
 
 minutes,U1L,,min
-minutes_min_max,minutes:setting;minutes:minimum;minutes:maximum,,,
+#change the min_max template to ignore the setting value as this is contained elsewhere
+minutes_min_max,ignore_1;minutes:minimum;minutes:maximum,,,
 
 days,U1L,,days
-days_min_max,days:setting;days:minimum;days:maximum,,,
+days_min_max,ignore_1;days:minimum;days:maximum,,,
 
 longminutes,U2L,,min
-longminutes_min_max,longminutes:setting;longminutes:minimum;longminutes:maximum,,,
+#change the min_max template to ignore the setting value as this is contained elsewhere
+longminutes_min_max,ignore_2;longminutes:minimum;longminutes:maximum,,,
 
 # U2L hours are used for hour based readings which are an incrementing number of hours
 hours,U2L,,h,hours
-hours_min_max,hours:setting;hours:minimum;hours:maximum,,,
+hours_min_max,ignore_2;hours:minimum;hours:maximum,,,
 
 # U1L hours are used for hour based parameters which are read/write
 hrs,U1L,,hrs,hrs
-hrs_min_max,hrs:setting;hrs:minimum;hrs:maximum,,,
+#change the min_max template to ignore the setting value as this is contained elsewhere
+hrs_min_max,ignore_1;hrs:minimum;hrs:maximum,,,
 
 seconds,U2L,,s,seconds
-seconds_min_max,seconds:setting;seconds:minimum;seconds:maximum,,,
+seconds_min_max,ignore_2;seconds:minimum;seconds:maximum,,,
 
 slope,U2L,100,gradient
-slope_min_max,slope:setting;slope:minimum;slope:maximum,,,
+slope_min_max,ignore_2;slope:minimum;slope:maximum,,,
 
 kwshort,U1L,10,kw,power
-kwshort_min_max,kwshort:setting;kwshort:minimum;kwshort:maximum,,,
+kwshort_min_max,ignore_1;kwshort:minimum;kwshort:maximum,,,
 
 percent,U1L,,%,percentage
-percent_min_max,percent:setting;percent:minimum;percent:maximum,,,
+#change the min_max template to ignore the setting value as this is contained elsewhere
+percent_min_max,ignore_1;percent:minimum;percent:maximum,,,
 
 integral:setting,U2L,,,minutes*C
-integral_min_max,integral:setting;integral:minimum;integral:maximum,,,
+integral_min_max,ignore_2;integral:minimum;integral:maximum,,,
 
 # the 2001 queries indicate temperature is S2L given the 0080 and ff7f limits
 temperature,S2L,10,°C,temperature
-temperature_min_max,temperature:setting;temperature:minimum;temperature:maximum,,,
+#change the min_max template to ignore the setting value as this is contained elsewhere
+temperature_min_max,ignore_2;temperature:minimum;temperature:maximum,,,
+#temperature_min_max,temperature:setting;temperature:minimum;temperature:maximum,,,
 
 pressure:reading,U2L,10,bar,pressure
+
 frequency,U1L,,Hz,frequency
-frequency_min_max,frequency:setting;frequency:minimum;frequency:maximum,,,
+frequency_min_max,ignore_1;frequency:minimum;frequency:maximum,,,
 
 count,U2L,,count
 
@@ -72,7 +79,7 @@ kw,S2L,,kW,power
 amps,U2L,,A,current
 
 rpm,U2L,,rpm,
-rpm_min_max,rpm:setting;rpm:minimum;rpm:maximum,,,
+rpm_min_max,ignore_2;rpm:minimum;rpm:maximum,,,
 
 version:counter,U1L,,
 

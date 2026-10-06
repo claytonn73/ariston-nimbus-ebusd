@@ -44,8 +44,9 @@ w,ignored,reset_integral,statistics,,18,2020,708c,,,integral
 r,heating,reset_integral_limits,statistics,,18,2001,708c,,,integral_min_max
 
 # Text for HP disabling (1.5.3)
+# Update in Home Asistant disabled as not relevant in my system
 r,heating,external_temperature_disable_threshold,External Temperature to Disable heating,,18,2000,7226,,,ignore_1;temperature:setting
-w,heating,external_temperature_disable_threshold,External Temperature to Disable heating,,18,2020,7226,,,temperature:setting
+w,ignored,external_temperature_disable_threshold,External Temperature to Disable heating,,18,2020,7226,,,temperature:setting
 r,heating,external_temperature_disable_threshold_limits,External Temperature to Disable heating,,18,2001,7226,,,temperature_min_max
 
 # Boost Time (1.7.1) - seems to be only relevant if 4.2.1 and/or 5.2.1 are set to perhaps 0 or 1 (Devices ON/OFF?)
@@ -73,7 +74,7 @@ w,ignored,floor_drying_temp,Floor Drying Temperature,,18,2020,7c2b,,,temperature
 r,heating,floor_drying_temp_limits,Floor Drying Temperature,,18,2001,7c2b,,,temperature_min_max
 
 # Floor drying total Remaining Days (1.12.7)
-r,heating,floor_drying_days_remaining,,,18,2001,c846,,,days_min_max
+r,heating,floor_drying_days_remaining,,,18,2001,c846,,,days
 
 # CH flow set T (1.16.2)
 r,heating,lwt_setpoint,Flow Setpoint,,fe,2000,6047
