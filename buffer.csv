@@ -51,7 +51,7 @@ r,buffer,sg_ready_buffer_setpoint,Buffer Reduced Temperature Limits,,fe,2000,682
 b,buffer,sg_ready_buffer_setpoint,Buffer Reduced Temperature Limits,,fe,200f,682e,,,temperature:setting
 w,buffer,sg_ready_buffer_setpoint,Buffer Reduced Temperature Limits,,fe,2020,682e,,,temperature:setting
 r,buffer,sg_ready_buffer_setpoint_limits,Buffer Reduced Temperature Limits,,fe,2001,682e
-b,buffer,sg_ready_buffer_setpoint_limits,statistics,13,fe,200e,682e,,,temperature_min_max
+b,buffer,sg_ready_buffer_setpoint_limits,Buffer Reduced Temperature Limits,13,fe,200e,682e,,,temperature_min_max
 
 # Offset PV integration setpoint (20.0.6)
 # 0°C[0 - 20]°C
@@ -123,14 +123,14 @@ b,buffer,buffer_reduced_temperature_bcast,Buffer Reduced Temperature Limits,13,f
 ############################################################################################
 
 # Buffer integration scheme (20.4.0)
-r,buffer,buffer_integration_scheme,unknown,,fe,2001,d28d
-b,buffer,buffer_integration_scheme,unknown,13,fe,200e,d28d,,,buffer_integration
-w,buffer,buffer_integration_scheme,unknown,70,fe,2020,d28d,,,buffer_integration
+r,buffer,buffer_integration_scheme,Buffer Integration Scheme,,fe,2001,d28d
+b,buffer,buffer_integration_scheme,Buffer Integration Scheme,13,fe,200e,d28d,,,buffer_integration
+w,buffer,buffer_integration_scheme,Buffer Integration Scheme,70,fe,2020,d28d,,,buffer_integration
 
 # Buffer solar integration (20.4.1)
-r,buffer,buffer_solar_integration,unknown,,fe,2001,1888
-b,buffer,buffer_solar_integration,unknown,13,fe,200e,1888,,,onoff
-w,buffer,buffer_solar_integration,unknown,70,fe,2020,1888,,,onoff
+r,buffer,buffer_solar_integration,Buffer Solar Integration,,fe,2001,1888
+b,buffer,buffer_solar_integration,Buffer Solar Integration,13,fe,200e,1888,,,onoff
+w,buffer,buffer_solar_integration,Buffer Solar Integration,70,fe,2020,1888,,,onoff
 
 # Buffer offset compensation heating (20.4.2)
 r,buffer,buffer_offset_compensation_heating,Buffer Reduced Temperature Limits,,fe,2000,6824
