@@ -36,6 +36,11 @@ longminutes_min_max,ignore_2;longminutes:minimum;longminutes:maximum,,,
 hours,U2L,,h,hours
 hours_min_max,ignore_2;hours:minimum;hours:maximum,,,
 
+# U2L hours are used for hour based readings which are an incrementing number of hours
+months,U2L,,m,months
+months_min_max,ignore_2;months:minimum;months:maximum,,,
+
+
 # U1L hours are used for hour based parameters which are read/write
 hrs,U1L,,hrs,hrs
 #change the min_max template to ignore the setting value as this is contained elsewhere
@@ -180,6 +185,11 @@ hydraulic_diagnostic:state,UCH,0=nothing;1=hybrid_combi;2=hybrid_system;3=hybrid
 pulse_unit:setting,UCH,0=nothing;1=kWh;2=m3,,
 pulse_value_factor:setting,UCH,0=div1000;1=div100;2=div10;3=1;4=x10;5=x100;6=x1000
 pulse_measuring_type:setting,UCH,0=only_hp;1=hp_plus_electric_heater
+
+boiler_status:state,UCH,1=standby;2=heating;3=heating hot water;4=water tank;5=circulating;23=manual test;24=comfort;31=gas_circuit_deaeration;36=auto_calibration;51=low_water_pressure;52=no_flame
+manual_auto:setting,UCH,0=manual;1=automatic
+boiler_type:setting,UCH,0=mixed_instant;1=ext_tank_ntc;2=ext_tank_thermostat;3=micro_storage;4=stratification_storage;6=storage
+pressure_device:setting,UCH,0=temp_probe;1=pressure_switch;2=pressure_sensor
 
 zone_name,UCH,0=zone_number;1=home;2=living_room;3=sleeping_area;4=bedroom;5=bedroom_2;6=bedroom_3;7=bedroom_4;8=bedroom_5;9=bedroom_6;10=childreans_room;11=childreans_room_2;12=childreans_room_3;13=childreans_room_4;14=cellar;15=attic;16=entrance;17=kitchen;18=sitting_room;19=studio;20=corridor
 # Unlike most values the weather is a BCD value not UCH

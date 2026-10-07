@@ -83,9 +83,12 @@ b,ignored,lwt_setpoint_plus,Flow Setpoint,13,fe,2010,6047,,,temperature:lwt_setp
 
 # CH flow temperature (1.16.3) 
 r1,heating,flow_temperature,CH Flow Temperature,,18,2001,74fd,,,temperature
+
 r,ignored,flow_temperature_2000,CH Flow Temperature,,18,2000,74fd,,,ignore_1;temperature
 #reads max value on system
 r,ignored,ch_flow_temperature,CH Flow Temperature,,18,2001,6310,,,temperature
+
+b,heating,return_temperature,same as the buffer low temperature sensor,13,fe,2010,769e,,,temperature:reading
 
 
 

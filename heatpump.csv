@@ -129,7 +129,8 @@ r,heatpump,safety_thermostat,Safety Thermostat,,1e,2001,0316,,,open_closed
 r,ignored,flowmeter,HP Flowmeter,,1e,2001,6e13,,,flow_rate 
 
 # Performed every 10 minutes by the system but add additional reads temps ignore the individual reads in favour of this.
-r1,heatpump,water_flow,Regular read of flow rate and temps,,1e,2000,761077106e13,,,ignore_1;temperature:flow_temperature;temperature:return_temperature;flow_rate:flow_rate
+# added power_consumption to this to get all CoP and Energy metrics at the same time
+r1,heatpump,water_flow,Regular read of flow rate and temps,,1e,2000,761077106e137c4f,,,ignore_1;temperature:flow_temperature;temperature:return_temperature;flow_rate:flow_rate;watts:power_consumption
 
 # Flow switch (13.9.4)
 r,heatpump,flow_switch,Flow Switch,,1e,2001,0c45,,,open_closed
