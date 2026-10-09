@@ -121,8 +121,8 @@ w,zone3,quick_night_setback,unknown,,fe,2020,0883,,,onoff
 r,zone3,heat_request_mode,Z3 Heating Request Mode,,fe,2000,ce7b
 b,zone3,heat_request_mode,Z3 Heating Request Mode,13,fe,200f,ce7b,,,heat_request_mode
 w,zone3,heat_request_mode,Z3 Heating Request Mode,,fe,2020,ce7b,,,heat_request_mode
-r,ignored,z3_heat_request_mode_panel,unknown,,fe,2001,ce7b
-b,ignored,z3_heat_request_mode_panel,unknown,,fe,200e,ce7b,,,heat_request_mode
+r,zone3,heat_request_mode_panel,unknown,,fe,2001,ce7b
+b,zone3,heat_request_mode_panel,unknown,,fe,200e,ce7b,,,heat_request_mode
 
 ############################################################################################
 # Diagnostics
@@ -130,36 +130,28 @@ b,ignored,z3_heat_request_mode_panel,unknown,,fe,200e,ce7b,,,heat_request_mode
 
 # Room T (4.3.0)
 # More irregular room temperature broadcast but can be read by ebusd
-#r,zone3,room_temp,statistics,,fe,2000,711a
-#b,zone3,room_temp,statistics,70,fe,200f,711a,,,temperature:reading
+r,zone3,room_temp,statistics,,fe,2000,7318
+b,zone3,room_temp,statistics,70,fe,200f,7318,,,temperature:reading
 # Regular 2 minute room temperature broadcast
-#b,zone3,room_temp_bcast,statistics,70,fe,2010,711a,,,temperature:reading
-#r,ignored,room_temp_panel,Z3 Room Temperature Limits,,fe,2001,711a
-#b,ignored,room_temp_panel,Z3 Room Temperature Limits,,fe,200e,711a,,,temperature
+b,zone3,room_temp_bcast,statistics,70,fe,2010,7318,,,temperature:reading
+r,zone3,room_temp_panel,Z3 Room Temperature Limits,,fe,2001,7318
+b,zone3,room_temp_panel,Z3 Room Temperature Limits,,fe,200e,7318,,,temperature
 
 # Room T setpoint (4.3.1)
 r,zone3,room_setpoint,statistics,,fe,2000,6b96
 b,zone3,room_setpoint,statistics,13,fe,200f,6b96,,,temperature:setting
-r,ignored,z3_room_setpoint_panel,Z3 Room Setpoint Limits,,fe,2001,6b96
-b,ignored,z3_room_setpoint_panel,Z3 Room Setpoint Limits,,fe,200e,6b96,,,temperature
+r,zone3,room_setpoint_panel,Z3 Room Setpoint Limits,,fe,2001,6b96
+b,zone3,room_setpoint_panel,Z3 Room Setpoint Limits,,fe,200e,6b96,,,temperature
 
 # Flow temperature (4.3.2) and return temperature (4.3.3) are only visible with the Zone Module
 
 # Heat Request Z3 (4.3.2)  (4.3.4 in manual)
 # From the user panel
-r,ignored,z3_heat_request_panel,Provides Z3 Heat Request,,fe,2001,0391
-b,ignored,z3_heat_request_panel,Provides Z3 Heat Request,,fe,200e,0391,,,onoff
-# Issued every 25 seconds and provides the Z3 Heat Request Information
-#r,ignored,heat_request_long,Provides Z3 Heat Request,,fe,2000,0191029103910491
-
+r,zone3,heat_request_panel,Provides Z3 Heat Request,,fe,2001,0391
+b,zone3,heat_request_panel,Provides Z3 Heat Request,,fe,200e,0391,,,onoff
 # Issued every 5 minutes 
 r,zone3,heat_request,Provides Z3 Heat Request,,fe,2000,0391
 b,zone3,heat_request,Provides Z3 Heat Request,,fe,200f,0391,,,onoff
-# Use the Z3 only response as the rest is not relevant
-# b,zone3,zone_heat_request_1,Provides Z3 Heat Request,,fe,200f,0191,,,onoff:heat_request;ignore_3;onoff:z2_heat_request;ignore_3;onoff:z3_heat_request;ignore_3;onoff:z4_heat_request
-# Issued every 25 seconds and provides the Z3 Room Setpoint Information
-#r,zone3,zone_heat_request_2,Provides Z3 Room Setpoint,13,fe,2000,059106916996
-#b,zone3,zone_heat_request_2,Provides Z3 Room Setpoint,13,fe,200f,0591,,,onoff:z5_heat_request;ignore_3;onoff:z6_heat_request;ignore_3;temperature:room_setpoint
 
 # Pump status (4.3.5) is only visible with the Zone Module
 
@@ -167,12 +159,13 @@ b,zone3,heat_request,Provides Z3 Heat Request,,fe,200f,0391,,,onoff
 r,zone3,humidity,statistics,31,fe,2000,cbc1
 b,zone3,humidity,statistics,13,fe,200f,cbc1,,,percent:reading
 b,zone3,humidity_bcast,statistics,13,fe,2010,cbc1,,,percent:reading
-r,ignored,z3_relative_humidity,unknown,,fe,2001,cbc1
-b,ignored,z3_relative_humidity,unknown,,fe,200e,cbc1,,,percent:reading
+r,zone3,humidity_panel,unknown,,fe,2001,cbc1
+b,zone3,humidity_panel,unknown,,fe,200e,cbc1,,,percent:reading
 
 # Zone Flow temperature setpoint (4.3.4) (4.3.8 in manual)
 r,zone3,flow_setpoint_temperature,Z3 Flow Setpoint Temperature,,fe,2001,6397
 b,zone3,flow_setpoint_temperature,Z3 Flow Setpoint Temperature,,fe,200e,6397,,,temperature:setting
+b,zone3,flow_setpoint_temperature_bcast,Z3 Flow Setpoint Temperature Bcast,,fe,2010,6397,,,temperature:setting
 
 ############################################################################################
 # Cooling
@@ -187,8 +180,8 @@ b,zone3,cooling_fixed_flow_setpoint_limits,statistics,13,fe,200e,7073,,,temperat
 
 # Cooling Temp Range (5.5.1)
 r,zone3,cooling_temp_range,Z2 Heating Temp Range,,fe,2001,0683
-b,zone3,cooling_temp_range,Z2 Heating Temp Range,,fe,200e,0683,,,low_high
-w,zone3,cooling_temp_range,Z2 Heating Temp Range,,fe,2020,0683,,,low_high
+b,zone3,cooling_temp_range,Z2 Heating Temp Range,,fe,200e,0683,,,cool_temp_range
+w,zone3,cooling_temp_range,Z2 Heating Temp Range,,fe,2020,0683,,,cool_temp_range
 
 # Cooling Thermoregulation (5.5.2)
 r,zone3,cooling_therm_type,Z1 Heating Thermoreg Type,,fe,2001,cb7b
