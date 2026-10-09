@@ -267,24 +267,27 @@ b,zone4,slope_adaptation,Z4 Slope Adaptation,,fe,200e,0984,,,onoff
 
 # Z4 Heating controller (4.8.3)
 r,zone4,heating_controller,unknown,,fe,2001,d57c
-b,zone4,heating_controller,unknown,,fe,200e,d57c,,,heating_controller
-w,zone4,heating_controller,unknown,70,fe,2020,d57c,,,heating_controller
+b,zone4,heating_controller,unknown,,fe,200e,d57c,,,controller
+w,zone4,heating_controller,unknown,70,fe,2020,d57c,,,controller
 
 # Z4 Cooling controller (4.8.4)
+r,zone4,cooling_controller,unknown,,fe,2001,d67c
+b,zone4,cooling_controller,unknown,,fe,200e,d67c,,,controller
+w,zone4,cooling_controller,unknown,70,fe,2020,d67c,,,controller
 
 # Humidity Control Threshold (4.8.7)
-#r,ignored,humidity_control_threshold,Cooling Humidity Alarm Limit,,fe,2000,da7b
-#b,ignored,humidity_control_threshold,Cooling Humidity Alarm Limit,13,fe,200f,da7b,,,percent:setting
-#w,ignored,humidity_control_threshold,Cooling Humidity Alarm Limit,70,fe,2020,da7b,,,percent:setting
-#r,ignored,humidity_control_threshold_limits,Cooling Humidity Alarm Limit Limits,,fe,2001,da7b
-#b,ignored,humidity_control_threshold_limits,Cooling Humidity Alarm Limit Limits,13,fe,200e,da7b,,,percent_min_max
+r,zone4,humidity_control_threshold,Cooling Humidity Alarm Limit,,fe,2000,da7c
+b,zone4,humidity_control_threshold,Cooling Humidity Alarm Limit,13,fe,200f,da7c,,,percent:setting
+w,zone4,humidity_control_threshold,Cooling Humidity Alarm Limit,70,fe,2020,da7c,,,percent:setting
+r,zone4,humidity_control_threshold_limits,Cooling Humidity Alarm Limit Limits,,fe,2001,da7c
+b,zone4,humidity_control_threshold_limits,Cooling Humidity Alarm Limit Limits,13,fe,200e,da7c,,,percent_min_max
 
 # Humidity Control Hysteresis (4.8.8)
-#r,ignored,humidity_control_hysterisis,Cooling Humidity Alarm Hysteresis,,fe,2000,db7b
-#b,ignored,humidity_control_hysterisis,Cooling Humidity Alarm Hysteresis,13,fe,200f,db7b,,,ignore_1;percent:setting
-#w,ignored,humidity_control_hysterisis,Cooling Humidity Alarm Hysteresis,70,fe,2020,db7b,,,percent:setting
-#r,ignored,humidity_control_hysterisis_limits,Cooling Humidity Alarm Hysteresis Limits,,fe,2001,db7b
-#b,ignored,humidity_control_hysterisis_hysterisis_limits,Cooling Humidity Alarm Hysteresis Limits,13,fe,200e,db7b,,,percent_min_max
+r,zone4,humidity_control_hysterisis,Cooling Humidity Alarm Hysteresis,,fe,2000,db7c
+b,zone4,humidity_control_hysterisis,Cooling Humidity Alarm Hysteresis,13,fe,200f,db7c,,,ignore_1;percent:setting
+w,zone4,humidity_control_hysterisis,Cooling Humidity Alarm Hysteresis,70,fe,2020,db7c,,,percent:setting
+r,zone4,humidity_control_hysterisis_limits,Cooling Humidity Alarm Hysteresis Limits,,fe,2001,db7c
+b,zone4,humidity_control_hysterisis_hysterisis_limits,Cooling Humidity Alarm Hysteresis Limits,13,fe,200e,db7c,,,percent_min_max
 
 # Humidity Alarm (4.8.9)
 

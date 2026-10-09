@@ -132,7 +132,7 @@ buffer_integration:setting,UCH,0=series;1=parallel,,
 
 auxiliary_output_setting,UCH,0=heat_request;1=external_pump;2=alarm,,
 hydraulic_scheme:setting,UCH,0=not_defined;1=mcd;2=mgm_ii;3=mgm_iii;4=mgz_i;5=mgz_ii;6=mgz_iii,,
-heating_controller:setting,UCH,0=nothing;1=room_thermostat;2=room_sensor,,
+controller:setting,UCH,0=nothing;1=room_thermostat;2=room_sensor,,
 heating_type:setting,UCH,0=floor_heating;1=radiators;2=floor_heatingmainradiators;3=radiatorsmainfloor_heating;4=convection;5=air_heating,,
 thermoregulation:setting,UCH,0=onoff_thermostat;1=fix_flow_t;2=outdoor_t_only,,
 thermoregulation_logic:setting,UCH,0=classic;1=smart,,
