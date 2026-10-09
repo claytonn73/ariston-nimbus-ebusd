@@ -52,6 +52,9 @@ seconds_min_max,ignore_2;seconds:minimum;seconds:maximum,,,
 slope,U2L,100,gradient
 slope_min_max,ignore_2;slope:minimum;slope:maximum,,,
 
+cooling_slope,U2L,,gradient
+cooling_slope_min_max,ignore_2;cooling_slope:minimum;cooling_slope:maximum,,,
+
 kwshort,U1L,10,kw,power
 kwshort_min_max,ignore_1;kwshort:minimum;kwshort:maximum,,,
 

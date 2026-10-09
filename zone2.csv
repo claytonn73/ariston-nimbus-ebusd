@@ -191,9 +191,11 @@ b,zone2,coooling_therm_type,Z1 Heating Thermoreg Type,13,fe,200e,cb7a,,,cool_the
 w,zone2,coooling_therm_type,Z1 Heating Thermoreg Type,13,fe,2020,cb7a,,,cool_thermoreg_types
 
 # Cooling Slope (5.5.3)
-r,zone2,cooling_slope,heat slope,,fe,2000,7672
-b,zone2,cooling_slope,heat slope,13,fe,200f,7672,,,slope
-w,zone2,cooling_slope,heat slope,13,fe,2020,7672,,,slope
+r,zone2,cooling_slope,Cooling slope,,fe,2000,7672
+b,zone2,cooling_slope,Cooling slope,13,fe,200f,7672,,,cooling_slope
+w,zone2,cooling_slope,Cooling slope,13,fe,2020,7672,,,cooling_slope
+r,zone2,cooling_slope_limits,Cooling slope limits,,fe,2001,7672
+b,zone2,cooling_slope_limits,Cooling slope limits,13,fe,200e,7672,,,cooling_slope_min_max
 
 # Cooling Offset (5.5.4)
 r,zone2,cooling_offset,Flow Temp Offset,,fe,2000,7572
