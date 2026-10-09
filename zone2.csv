@@ -170,55 +170,6 @@ b,zone2,flow_setpoint_temperature,Z2 Flow Setpoint Temperature,,fe,200e,6297,,,t
 b,zone2,flow_setpoint_temperature_bcast,Z2 Flow Setpoint Temperature Bcast,,fe,2010,6297,,,temperature:setting
 
 ############################################################################################
-# Cooling
-############################################################################################
-
-# T Set Cool (5.5.0)
-r,zone2,cooling_fixed_flow_setpoint,statistics,,fe,2000,7072
-b,zone2,cooling_fixed_flow_setpoint,statistics,13,fe,200f,7072,,,temperature:setting
-w,zone2,cooling_fixed_flow_setpoint,statistics,70,fe,2020,7072,,,temperature:setting
-r,zone2,cooling_fixed_flow_setpoint_limits,statistics,,fe,2001,7072
-b,zone2,cooling_fixed_flow_setpoint_limits,statistics,13,fe,200e,7072,,,temperature_min_max
-
-# Cooling Temp Range (5.5.1)
-r,zone2,cooling_temp_range,Z2 Heating Temp Range,,fe,2001,0682
-b,zone2,cooling_temp_range,Z2 Heating Temp Range,,fe,200e,0682,,,cool_temp_range
-w,zone2,cooling_temp_range,Z2 Heating Temp Range,,fe,2020,0682,,,cool_temp_range
-
-# Cooling Thermoregulation (5.5.2)
-r,zone2,cooling_therm_type,Z1 Heating Thermoreg Type,,fe,2001,cb7a
-b,zone2,coooling_therm_type,Z1 Heating Thermoreg Type,13,fe,200e,cb7a,,,cool_thermoreg_types
-w,zone2,coooling_therm_type,Z1 Heating Thermoreg Type,13,fe,2020,cb7a,,,cool_thermoreg_types
-
-# Cooling Slope (5.5.3)
-r,zone2,cooling_slope,Cooling slope,,fe,2000,7672
-b,zone2,cooling_slope,Cooling slope,13,fe,200f,7672,,,cooling_slope
-w,zone2,cooling_slope,Cooling slope,13,fe,2020,7672,,,cooling_slope
-r,zone2,cooling_slope_limits,Cooling slope limits,,fe,2001,7672
-b,zone2,cooling_slope_limits,Cooling slope limits,13,fe,200e,7672,,,cooling_slope_min_max
-
-# Cooling Offset (5.5.4)
-r,zone2,cooling_offset,Flow Temp Offset,,fe,2000,7572
-b,zone2,cooling_offset,Flow Temp Offset,13,fe,200f,7572,,,temperature:setting
-w,zone2,cooling_offset,Flow Temp Offset,70,fe,2020,7572,,,temperature:setting
-r,zone2,cooling_offset_limits,Flow Temp Offset Limits,,fe,2001,7572
-b,zone2,cooling_offset_limits,Flow Temp Offset Limits,13,fe,200e,7572,,,temperature_min_max
-
-# Cooling max setpoint (5.5.5)
-r,zone2,cooling_lwt_max,lwt maximum temperature,,fe,2000,7172
-b,zone2,cooling_lwt_max,lwt maximum temperature,,fe,200f,7172,,,temperature:setting
-w,zone2,cooling_lwt_max,lwt maximum temperature,70,fe,2020,7172,,,temperature:setting
-r,zone2,cooling_lwt_max_limits,lwt maximum temperature,,fe,2001,7172
-b,zone2,cooling_lwt_max_limits,lwt maximum temperature,13,fe,200e,7172,,,temperature_min_max
-
-# Cooling min setpoint (5.5.6)
-r,zone2,cooling_lwt_min,lwt minimum temperature,,fe,2000,7372
-b,zone2,cooling_lwt_min,lwt minimum temperature,,fe,200f,7372,,,temperature:setting
-w,zone2,cooling_lwt_min,lwt minimum temperature,70,fe,2020,7372,,,temperature:setting
-r,zone2,cooling_lwt_min_limits,lwt minimum temperature,,fe,2001,7372
-b,zone2,cooling_lwt_min_limits,lwt minimum temperature,13,fe,200e,7372,,,temperature_min_max
-
-############################################################################################
 # Zone Module Settings - only visible with the Zone Module
 ############################################################################################
 
@@ -230,6 +181,55 @@ b,zone2,cooling_lwt_min_limits,lwt minimum temperature,13,fe,200e,7372,,,tempera
 
 # Pump fixed speed (4.4.2)
 # default 1  range [0.2 -1]°C
+
+############################################################################################
+# Cooling
+############################################################################################
+
+# T Set Cool (4.5.0)
+r,zone2,cooling_fixed_flow_setpoint,statistics,,fe,2000,7072
+b,zone2,cooling_fixed_flow_setpoint,statistics,13,fe,200f,7072,,,temperature:setting
+w,zone2,cooling_fixed_flow_setpoint,statistics,70,fe,2020,7072,,,temperature:setting
+r,zone2,cooling_fixed_flow_setpoint_limits,statistics,,fe,2001,7072
+b,zone2,cooling_fixed_flow_setpoint_limits,statistics,13,fe,200e,7072,,,temperature_min_max
+
+# Cooling Temp Range (4.5.1)
+r,zone2,cooling_temp_range,Z2 Heating Temp Range,,fe,2001,0682
+b,zone2,cooling_temp_range,Z2 Heating Temp Range,,fe,200e,0682,,,cool_temp_range
+w,zone2,cooling_temp_range,Z2 Heating Temp Range,,fe,2020,0682,,,cool_temp_range
+
+# Cooling Thermoregulation (4.5.2)
+r,zone2,cooling_therm_type,Z1 Heating Thermoreg Type,,fe,2001,cb7a
+b,zone2,coooling_therm_type,Z1 Heating Thermoreg Type,13,fe,200e,cb7a,,,cool_thermoreg_types
+w,zone2,coooling_therm_type,Z1 Heating Thermoreg Type,13,fe,2020,cb7a,,,cool_thermoreg_types
+
+# Cooling Slope (4.5.3)
+r,zone2,cooling_slope,Cooling slope,,fe,2000,7672
+b,zone2,cooling_slope,Cooling slope,13,fe,200f,7672,,,cooling_slope
+w,zone2,cooling_slope,Cooling slope,13,fe,2020,7672,,,cooling_slope
+r,zone2,cooling_slope_limits,Cooling slope limits,,fe,2001,7672
+b,zone2,cooling_slope_limits,Cooling slope limits,13,fe,200e,7672,,,cooling_slope_min_max
+
+# Cooling Offset (4.5.4)
+r,zone2,cooling_offset,Flow Temp Offset,,fe,2000,7572
+b,zone2,cooling_offset,Flow Temp Offset,13,fe,200f,7572,,,temperature:setting
+w,zone2,cooling_offset,Flow Temp Offset,70,fe,2020,7572,,,temperature:setting
+r,zone2,cooling_offset_limits,Flow Temp Offset Limits,,fe,2001,7572
+b,zone2,cooling_offset_limits,Flow Temp Offset Limits,13,fe,200e,7572,,,temperature_min_max
+
+# Cooling max setpoint (4.5.5)
+r,zone2,cooling_lwt_max,lwt maximum temperature,,fe,2000,7172
+b,zone2,cooling_lwt_max,lwt maximum temperature,,fe,200f,7172,,,temperature:setting
+w,zone2,cooling_lwt_max,lwt maximum temperature,70,fe,2020,7172,,,temperature:setting
+r,zone2,cooling_lwt_max_limits,lwt maximum temperature,,fe,2001,7172
+b,zone2,cooling_lwt_max_limits,lwt maximum temperature,13,fe,200e,7172,,,temperature_min_max
+
+# Cooling min setpoint (4.5.6)
+r,zone2,cooling_lwt_min,lwt minimum temperature,,fe,2000,7372
+b,zone2,cooling_lwt_min,lwt minimum temperature,,fe,200f,7372,,,temperature:setting
+w,zone2,cooling_lwt_min,lwt minimum temperature,70,fe,2020,7372,,,temperature:setting
+r,zone2,cooling_lwt_min_limits,lwt minimum temperature,,fe,2001,7372
+b,zone2,cooling_lwt_min_limits,lwt minimum temperature,13,fe,200e,7372,,,temperature_min_max
 
 ############################################################################################
 # Zone Regulation Parameters

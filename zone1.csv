@@ -154,10 +154,6 @@ r,zone1,room_setpoint,Z1 Room Setpoint,,fe,2000,6996
 b,zone1,room_setpoint,Z1 Room Setpoint,13,fe,200f,6996,,,temperature:setting
 r,zone1,room_setpoint_panel,Z1 Room Setpoint Limits,,fe,2001,6996
 b,zone1,room_setpoint_panel,Z1 Room Setpoint Limits,,fe,200e,6996,,,temperature
-# Issued every 25 seconds and provides the Z1 Room Setpoint Information
-#r,zone1,room_setpoint_bcast,Provides Z1 Room Setpoint,13,fe,2000,059106916996
-#b,zone1,room_setpoint_bcast,Provides Z1 Room Setpoint,13,fe,200f,0591,,,onoff:z5_heat_request;ignore_3;onoff:z6_heat_request;ignore_3;temperature:z1_room_setpoint
-#b,zone1,room_setpoint_bcast,Provides Z1 Room Setpoint,13,fe,200f,0591,,,ignore_1;ignore_3;ignore_1;ignore_3;temperature:z1_room_setpoint
 
 # Flow temperature (4.3.2) and return temperature (4.3.3) are only visible with the Zone Module
 
@@ -190,57 +186,6 @@ b,zone1,flow_setpoint_temperature,Z1 Flow Setpoint Temperature,,fe,200e,6197,,,t
 b,zone1,flow_setpoint_temperature_bcast,Z1 Flow Setpoint Temperature Bcast,,fe,2010,6197,,,temperature:setting
 
 ############################################################################################
-# Cooling
-# Z1 Cooling messages set to ignored as not relevant to my system
-############################################################################################
-
-# T Set Cool (5.5.0)
-r,ignored,cooling_fixed_flow_setpoint,Z1 Cooling Fixed Flow Setpoint,,fe,2000,7071
-b,ignored,cooling_fixed_flow_setpoint,Z1 Cooling Fixed Flow Setpoint,13,fe,200f,7071,,,temperature:setting
-w,ignored,cooling_fixed_flow_setpoint,Z1 Cooling Fixed Flow Setpoint,70,fe,2020,7071,,,temperature:setting
-r,ignored,cooling_fixed_flow_setpoint_limits,Z1 Cooling Fixed Flow Setpoint,,fe,2001,7071
-b,ignored,cooling_fixed_flow_setpoint_limits,Z1 Cooling Fixed Flow Setpoint,13,fe,200e,7071,,,temperature_min_max
-
-# Cooling Temp Range (5.5.1)
-r,ignored,cooling_temp_range,Z1 Heating Temp Range,,fe,2001,0681
-b,ignored,cooling_temp_range,Z1 Heating Temp Range,,fe,200e,0681,,,cool_temp_range
-w,ignored,cooling_temp_range,Z1 Heating Temp Range,,fe,2020,0681,,,cool_temp_range
-
-# Cooling Thermoregulation (5.5.2)
-r,ignored,cooling_therm_type,Z1 Heating Thermoreg Type,,fe,2001,cb79
-b,ignored,coooling_therm_type,Z1 Heating Thermoreg Type,13,fe,200e,cb79,,,cool_thermoreg_types
-w,ignored,coooling_therm_type,Z1 Heating Thermoreg Type,13,fe,2020,cb79,,,cool_thermoreg_types
-
-# Cooling Slope (5.5.3)
-r,ignored,cooling_slope,Cooling slope,,fe,2000,7671
-b,ignored,cooling_slope,Cooling slope,13,fe,200f,7671,,,cooling_slope
-w,ignored,cooling_slope,Cooling slope,13,fe,2020,7671,,,cooling_slope
-r,ignored,cooling_slope_limits,Cooling slope limits,,fe,2001,7671
-b,ignored,cooling_slope_limits,Cooling slope limits,13,fe,200e,7671,,,cooling_slope_min_max
-
-
-# Cooling Offset (5.5.4)
-r,ignored,cooling_offset,Flow Temp Offset,,fe,2000,7571
-b,ignored,cooling_offset,Flow Temp Offset,13,fe,200f,7571,,,temperature:setting
-w,ignored,cooling_offset,Flow Temp Offset,70,fe,2020,7571,,,temperature:setting
-r,ignored,cooling_offset_limits,Flow Temp Offset Limits,,fe,2001,7571
-b,ignored,cooling_offset_limits,Flow Temp Offset Limits,13,fe,200e,7571,,,temperature_min_max
-
-# Cooling max setpoint (5.5.5)
-r,ignored,cooling_lwt_max,lwt maximum temperature,,fe,2000,7171
-b,ignored,cooling_lwt_max,lwt maximum temperature,,fe,200f,7171,,,temperature:setting
-w,ignored,cooling_lwt_max,lwt maximum temperature,70,fe,2020,7171,,,temperature:setting
-r,ignored,cooling_lwt_max_limits,lwt maximum temperature,,fe,2001,7171
-b,ignored,cooling_lwt_max_limits,lwt maximum temperature,13,fe,200e,7171,,,temperature_min_max
-
-# Cooling min setpoint (5.5.6)
-r,ignored,cooling_lwt_min,lwt minimum temperature,,fe,2000,7371
-b,ignored,cooling_lwt_min,lwt minimum temperature,,fe,200f,7371,,,temperature:setting
-w,ignored,cooling_lwt_min,lwt minimum temperature,70,fe,2020,7371,,,temperature:setting
-r,ignored,cooling_lwt_min_limits,lwt minimum temperature,,fe,2001,7371
-b,ignored,cooling_lwt_min_limits,lwt minimum temperature,13,fe,200e,7371,,,temperature_min_max
-
-############################################################################################
 # Zone Module Settings - only visible with the Zone Module
 ############################################################################################
 
@@ -252,6 +197,56 @@ b,ignored,cooling_lwt_min_limits,lwt minimum temperature,13,fe,200e,7371,,,tempe
 
 # Pump fixed speed (4.4.2)
 # default 1  range [0.2 -1]°C
+
+############################################################################################
+# Cooling
+# Z1 Cooling messages set to ignored as not relevant to my system
+############################################################################################
+
+# T Set Cool (4.5.0)
+r,ignored,cooling_fixed_flow_setpoint,Z1 Cooling Fixed Flow Setpoint,,fe,2000,7071
+b,ignored,cooling_fixed_flow_setpoint,Z1 Cooling Fixed Flow Setpoint,13,fe,200f,7071,,,temperature:setting
+w,ignored,cooling_fixed_flow_setpoint,Z1 Cooling Fixed Flow Setpoint,70,fe,2020,7071,,,temperature:setting
+r,ignored,cooling_fixed_flow_setpoint_limits,Z1 Cooling Fixed Flow Setpoint,,fe,2001,7071
+b,ignored,cooling_fixed_flow_setpoint_limits,Z1 Cooling Fixed Flow Setpoint,13,fe,200e,7071,,,temperature_min_max
+
+# Cooling Temp Range (4.5.1)
+r,ignored,cooling_temp_range,Z1 Heating Temp Range,,fe,2001,0681
+b,ignored,cooling_temp_range,Z1 Heating Temp Range,,fe,200e,0681,,,cool_temp_range
+w,ignored,cooling_temp_range,Z1 Heating Temp Range,,fe,2020,0681,,,cool_temp_range
+
+# Cooling Thermoregulation (4.5.2)
+r,ignored,cooling_therm_type,Z1 Heating Thermoreg Type,,fe,2001,cb79
+b,ignored,coooling_therm_type,Z1 Heating Thermoreg Type,13,fe,200e,cb79,,,cool_thermoreg_types
+w,ignored,coooling_therm_type,Z1 Heating Thermoreg Type,13,fe,2020,cb79,,,cool_thermoreg_types
+
+# Cooling Slope (4.5.3)
+r,ignored,cooling_slope,Cooling slope,,fe,2000,7671
+b,ignored,cooling_slope,Cooling slope,13,fe,200f,7671,,,cooling_slope
+w,ignored,cooling_slope,Cooling slope,13,fe,2020,7671,,,cooling_slope
+r,ignored,cooling_slope_limits,Cooling slope limits,,fe,2001,7671
+b,ignored,cooling_slope_limits,Cooling slope limits,13,fe,200e,7671,,,cooling_slope_min_max
+
+# Cooling Offset (4.5.4)
+r,ignored,cooling_offset,Flow Temp Offset,,fe,2000,7571
+b,ignored,cooling_offset,Flow Temp Offset,13,fe,200f,7571,,,temperature:setting
+w,ignored,cooling_offset,Flow Temp Offset,70,fe,2020,7571,,,temperature:setting
+r,ignored,cooling_offset_limits,Flow Temp Offset Limits,,fe,2001,7571
+b,ignored,cooling_offset_limits,Flow Temp Offset Limits,13,fe,200e,7571,,,temperature_min_max
+
+# Cooling max setpoint (4.5.5)
+r,ignored,cooling_lwt_max,lwt maximum temperature,,fe,2000,7171
+b,ignored,cooling_lwt_max,lwt maximum temperature,,fe,200f,7171,,,temperature:setting
+w,ignored,cooling_lwt_max,lwt maximum temperature,70,fe,2020,7171,,,temperature:setting
+r,ignored,cooling_lwt_max_limits,lwt maximum temperature,,fe,2001,7171
+b,ignored,cooling_lwt_max_limits,lwt maximum temperature,13,fe,200e,7171,,,temperature_min_max
+
+# Cooling min setpoint (4.5.6)
+r,ignored,cooling_lwt_min,lwt minimum temperature,,fe,2000,7371
+b,ignored,cooling_lwt_min,lwt minimum temperature,,fe,200f,7371,,,temperature:setting
+w,ignored,cooling_lwt_min,lwt minimum temperature,70,fe,2020,7371,,,temperature:setting
+r,ignored,cooling_lwt_min_limits,lwt minimum temperature,,fe,2001,7371
+b,ignored,cooling_lwt_min_limits,lwt minimum temperature,13,fe,200e,7371,,,temperature_min_max
 
 ############################################################################################
 # Zone Regulation Parameters
@@ -322,6 +317,33 @@ b,ignored,humidity_control_hysterisis_hysterisis_limits,Cooling Humidity Alarm H
 # Humidity Alarm (4.8.9)
 
 ############################################################################################
+# General Zone Module
+############################################################################################
+
+# Hydraulic scheme (7.2.0) - not relevant to my system
+r,ignored,hydraulic_scheme,Hydraulic scheme diagnostic,,18,2000,dc28,,,hydraulic_scheme
+# w,ignored,hydraulic_scheme,Hydraulic scheme diagnostic,,18,2020,dc28,,,hydraulic_scheme
+b,ignored,hydraulic_scheme,Hydraulic scheme diagnostic,13,18,2010,dc28,,m,hydraulic_scheme
+
+# FlowT Offset (7.2.1 )
+
+# Auxiliary output setting (7.2.2)
+
+# External temperature correction (7.2.3)
+
+# Valves overrun time (7.2.4)
+
+# Valves Driving Delta T (7.2.5)
+
+# Valves Kp Heating (7.2.6)
+
+# Mixing zones shifting mode (7.2.7)
+
+# Pumps overrun time (7.2.8)
+
+# HC pump overrun DHW (7.2.9)
+
+############################################################################################
 # Broadcast and other Messages
 ############################################################################################
 
@@ -354,8 +376,7 @@ r,ignored,zone_setpoints5,Broadcast Messages,13,fe,2000,6c966d966e96
 #r,ignored,zone_heat_request_3,Broadcast Messages,13,fe,2000,0291039104910591
 #b,ignored,zone_heat_request_3,Broadcast Messages,13,fe,200f,0291,,,onoff:z2_heat_request;ignore_3;onoff:z3_heat_request;ignore_3;onoff:z4_heat_request;ignore_3;onoff:z5_heat_request
 
-# Hydraulic scheme (7.2.0) - not relevant to my system
-r,ignored,hydraulic_scheme,Hydraulic scheme diagnostic,,18,2000,dc28,,,hydraulic_scheme
-# w,ignored,hydraulic_scheme,Hydraulic scheme diagnostic,,18,2020,dc28,,,hydraulic_scheme
-b,ignored,hydraulic_scheme,Hydraulic scheme diagnostic,13,18,2010,dc28,,m,hydraulic_scheme
-
+# Issued every 25 seconds and provides the Z1 Room Setpoint Information
+#r,zone1,room_setpoint_bcast,Provides Z1 Room Setpoint,13,fe,2000,059106916996
+#b,zone1,room_setpoint_bcast,Provides Z1 Room Setpoint,13,fe,200f,0591,,,onoff:z5_heat_request;ignore_3;onoff:z6_heat_request;ignore_3;temperature:z1_room_setpoint
+#b,zone1,room_setpoint_bcast,Provides Z1 Room Setpoint,13,fe,200f,0591,,,ignore_1;ignore_3;ignore_1;ignore_3;temperature:z1_room_setpoint

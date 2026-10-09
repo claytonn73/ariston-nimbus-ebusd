@@ -28,8 +28,17 @@ b,unknown,unknown_56e9,unknown,,fe,200f,56e9,,,ignore_1;temperature
 r,unknown,unknown_79c0,unknown,,fe,2000,79c0
 b,unknown,unknown_79c0,unknown,,fe,200f,79c0,,,ignore_1;temperature
 
+r,unknown,unknown_switch_d97b,unknown,,fe,2001,d97b
+b,unknown,unknown_switch_d97b,unknown,,fe,200e,d97b,,,onoff
+
 r,unknown,unknown_692a_limits,unknown,,fe,2001,692a
 b,unknown,unknown_692a_limits,unknown,,fe,200e,692a,,,temperature_min_max
+
+r,unknown,unknown_7276_limits,unknown,,fe,2001,7276
+b,unknown,unknown_7276_limits,unknown,,fe,200e,7276,,,temperature_min_max
+
+r,unknown,unknown_7476_limits,unknown,,fe,2001,7476
+b,unknown,unknown_7476_limits,unknown,,fe,200e,7476,,,temperature_min_max
 
 r,unknown,z1_c679_limits,unknown,,fe,2001,c679
 b,unknown,z1_c679_limits,unknown,,fe,200e,c679,,,percent_min_max
@@ -57,8 +66,6 @@ b,unknown,unknown_0e90,unknown,,fe,2020,0e90,,,percent
 r,unknown,unknown_hours_1,unknown 1,,18,2000,51d1,,,ignore_1;hours
 r,unknown,unknown_hours_2,unknown 2,,18,2000,52d1,,,ignore_1;hours
 r,unknown,unknown_hours_3,unknown 3,,18,2000,53d1,,,ignore_1;hours
-
-
 
 r,unknown,unknown_d346,unknown,,fe,2000,d346
 b,unknown,unknown_d346,unknown,,fe,200f,d346,,,percent
@@ -143,7 +150,6 @@ r,unknown,unknown_cb9c_panel,unknown value with limits,,1e,2000,cb9c,,,ignore_1;
 r,unknown,unknown_cb9c_limits,unknown value with limits,,1e,2001,cb9c,,,percent_min_max
 r,unknown,unknown_c0f2_limits,unknown value with limits,,1e,2001,c0f2,,,percent_min_max
 #r,unknown,unknown_c0f2,unknown value ,,1e,2000,c0f2,,,percent
-
 
 r,unknown,unknown_4dfd7547,unknown,,18,2000,4dfd7547,,,ignore_1;hours;temperature
 r,unknown,unknown_46d947d9,unknown,,18,2000,46d947d9,,,ignore_1;hours;hours

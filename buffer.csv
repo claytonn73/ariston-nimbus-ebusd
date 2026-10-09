@@ -39,12 +39,12 @@ b,buffer,buffer_comfort_temperature_limits,Buffer Comfort Temperature Limits,13,
 b,buffer,buffer_comfort_temperature_bcast,Buffer Comfort Temperature Limits,13,fe,2010,692e,,,temperature
 
 # Buffer comfort setpoint cooling (20.0.4)
-#r,buffer,buffer_comfort_temperature_cooling,Buffer Reduced Temperature Limits,,fe,2000,6d8f
-#b,buffer,buffer_comfort_temperature_cooling,Buffer Reduced Temperature Limits,13,fe,200f,6d8f,,,temperature:setting
-#w,buffer,buffer_comfort_temperature_cooling,Buffer Reduced Temperature Limits,70,fe,2020,6d8f,,,temperature:setting
-#r,buffer,buffer_comfort_temperature_cooling_limits,Buffer Reduced Temperature Limits,,fe,2001,6d8f
-#b,buffer,buffer_comfort_temperature_cooling_limits,Buffer Reduced Temperature Limits,13,fe,200e,6d8f,,,temperature_min_max
-#b,buffer,buffer_comfort_temperature_cooling_bcast,Buffer Reduced Temperature Limits,13,fe,2010,6d8f,,,temperature
+r,buffer,buffer_comfort_temperature_cooling,Buffer Reduced Temperature Limits,,fe,2000,752e
+b,buffer,buffer_comfort_temperature_cooling,Buffer Reduced Temperature Limits,13,fe,200f,752e,,,temperature:setting
+w,buffer,buffer_comfort_temperature_cooling,Buffer Reduced Temperature Limits,70,fe,2020,752e,,,temperature:setting
+r,buffer,buffer_comfort_temperature_cooling_limits,Buffer Reduced Temperature Limits,,fe,2001,752e
+b,buffer,buffer_comfort_temperature_cooling_limits,Buffer Reduced Temperature Limits,13,fe,200e,752e,,,temperature_min_max
+b,buffer,buffer_comfort_temperature_cooling_bcast,Buffer Reduced Temperature Limits,13,fe,2010,752e,,,temperature
 
 # SG Ready Buffer setpoint (20.0.5)
 r,buffer,sg_ready_buffer_setpoint,Buffer Reduced Temperature Limits,,fe,2000,682e
@@ -63,7 +63,12 @@ w,buffer,buffer_setpoint_mode,Buffer Setpoint Mode,70,fe,2020,1f23,,,buffer_setp
 b,buffer,buffer_setpoint_mode_bcast,Buffer Setpoint Mode,13,fe,2010,1f23,,,buffer_setpoint_mode
 
 # Buffer hysteresis cooling (20.0.8)
-# 5°C [0 - 20]°C
+r,buffer,buffer_hysterisis_cooling,Buffer Setpoint Mode,,fe,2000,6f8f
+b,buffer,buffer_hysterisis_cooling,Buffer Setpoint Mode,13,fe,200f,6f8f,,,temperature:setting
+w,buffer,buffer_hysterisis_cooling,Buffer Setpoint Mode,70,fe,2020,6f8f,,,temperature:setting
+r,buffer,buffer_hysterisis_cooling_limits,Buffer Setpoint Mode,,fe,2001,6f8f
+b,buffer,buffer_hysterisis_cooling_limits,Buffer Setpoint Mode,13,fe,200e,6f8f,,,temperature_min_max
+
 
 ############################################################################################
 # Buffer Diagnostics
