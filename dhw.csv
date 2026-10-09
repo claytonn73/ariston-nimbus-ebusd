@@ -16,6 +16,7 @@ b,ignored,dhw_status,DHW Status,13,fe,2010,0220,,,onoff
 # The current target temperature based on the current mode (reduced or comfort) and the current time of day.
 r5,dhw,current_target_temp,Current Target Temp,,fe,2000,6147
 b,dhw,current_target_temp,Current Target Temp,13,fe,200f,6147,,,temperature:setting
+b,dhw,current_target_temp_bcast,unknown,13,fe,2010,6147,,,temperature:dhw_current_target_temp;ignore_3;percent:percent_d746
 
 # Defines the activation of the auxiliary heat source for DHW heating - either to assist or only on failure of the heat pump (1.4.0)
 r,dhw,aux_heat_activation,Auxiliary Heat Activation,,18,2001,1588,,,aux_heat_activation
@@ -39,9 +40,10 @@ w,ignored,tank_heater,Tank Electric Heater,,18,2020,d12f,,,tank_heater
 b,dhw,tank_heater,Tank Electric Heater,13,18,2010,d12f,,m,tank_heater
 
 # Defines the DHW calorifier temperature below which both the heat pump and the heating element switch on together (1.4.6)
-# Only used if 1.4.4 (tank electric heater) is set to 3 - need to validate if the AUX output is also activated
+# Only used if 1.4.4 (tank electric heater) is set to 3 - validated that AUX output is not triggered based on this 
+# Disabled in home assistant as not relevant in my system
 r,dhw,high_priority_threshold,Temperature Threshold for High Priority DHW,,18,2000,678c,,,ignore_1;temperature:setting
-w,dhw,high_priority_threshold,Temperature Threshold for High Priority DHW,,18,2020,678c,,,temperature:setting
+w,ignored,high_priority_threshold,Temperature Threshold for High Priority DHW,,18,2020,678c,,,temperature:setting
 r,dhw,high_priority_threshold_limits,Temperature Threshold for High Priority DHW Limits,,18,2001,678c,,,temperature_min_max
 
 # The system excludes the heat pump in domestic hot water mode if the outdoor temperature is below the set value (1.5.4)
