@@ -169,11 +169,14 @@ This particular example uses the config-template-card and big-slider-card but th
 
 ## Home Assistant Template Entities
 
-There are a few template entities that it is interesting to create based on the raw data from ebusd. These include
+There are a few template entities that it is interesting to create based on the raw data from ebusd. These include:
+
     Heatpump Flow Return Temperature Delta
     Heatpump CoP
     Heatpump Energy Produced
+    
 These rely on multiple data values from ebusd and it is helpful for these to be included in the same query from the system so that the values are all from the same point in time. However even if a single query is used the values will not all arrive at precisely the same time. The following trigger template seems to work to avoid calculations being performed on data from different points of time.
+
     - triggers:
       - trigger: state
         entity_id:
@@ -192,6 +195,7 @@ These rely on multiple data values from ebusd and it is helpful for these to be 
             {% set return = states('sensor.heating_ebusd_heatpump_water_flow_return_temperature') | float %}
             {% set correction = 0.4 | float %}
             {{ (flow - return - correction)|round(1) }}
+            
 
 ## System behaviour notes
 
