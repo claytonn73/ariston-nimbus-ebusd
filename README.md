@@ -167,6 +167,36 @@ This particular example uses the config-template-card and big-slider-card but th
       min: ${parseFloat(MinVal)}
       max: ${parseFloat(MaxVal)}
 
+## Home Assistant Template Entities
+
+There are a few template entities that it is interesting to create based on the raw data from ebusd. These include:
+
+    Heatpump Flow Return Temperature Delta
+    Heatpump CoP
+    Heatpump Energy Produced
+    
+These rely on multiple data values from ebusd and it is helpful for these to be included in the same query from the system so that the values are all from the same point in time. However even if a single query is used the values will not all arrive at precisely the same time. The following trigger template seems to work to avoid calculations being performed on data from different points of time.
+
+    - triggers:
+      - trigger: state
+        entity_id:
+          - sensor.heating_ebusd_heatpump_water_flow_flow_temperature
+          - sensor.heating_ebusd_heatpump_water_flow_return_temperature
+        not_to:
+          - unknown
+          - unavailable
+        for: "00:00:03" # 3-second evaluation delay after any state change
+      sensor:
+        - name: "Heatpump flow return delta"
+          unique_id: heatpump_flow_return_delta
+          unit_of_measurement: "°C"
+          state: >
+            {% set flow = states('sensor.heating_ebusd_heatpump_water_flow_flow_temperature') | float %}
+            {% set return = states('sensor.heating_ebusd_heatpump_water_flow_return_temperature') | float %}
+            {% set correction = 0.4 | float %}
+            {{ (flow - return - correction)|round(1) }}
+            
+
 ## System behaviour notes
 
 The automatic winter mode is a useful feature to enable and disable heating based on an external temperature threshold. However it does not use the defined threshold directly to perform the enable/disable of heating. If temperature drops 1C below the defined threshold the heating will be enabled and if the temperature rises 1C above the defined threshold the heating will be disabled. In this way it avoids repetitive enabling and disabling of heating but it does mean that setting the value correctly for the house is important. It is definitely possible to use 0.5C steps for this value. On my system I have set the associated winter mode delay to 0 minutes as with the behaviour above it does not seem sensible to wait for an extended period once the higher or lower threshold is reached.
