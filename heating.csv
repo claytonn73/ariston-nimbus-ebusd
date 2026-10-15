@@ -60,7 +60,7 @@ b,heating,boost_time_limits,CH Boost Time Limits,13,fe,200e,602b,,,seconds_min_m
 # FlowT HP Offset (1.7.2)
 # Update in Home Asistant disabled as related to physical setup of system and no changes required
 r,heating,flowt_hp_offset,Heating LWT Offset,,18,2000,7d2b,,,ignore_1;temperature:setting
-w,ignored,flowt_hp_offset,Heating LWT Offset,,18,2020,7d2b,,,temperature:setting
+w,heating,flowt_hp_offset,Heating LWT Offset,,18,2020,7d2b,,,temperature:setting
 b,heating,flowt_hp_offset,Heating LWT Offset,13,18,2010,7d2b,,m,temperature:setting
 r,heating,flowt_hp_offset_limits,Heating LWT Offset,,18,2001,7d2b,,,temperature_min_max
 
@@ -77,12 +77,13 @@ r,heating,floor_drying_temp_limits,Floor Drying Temperature,,18,2001,7c2b,,,temp
 r,heating,floor_drying_days_remaining,,,18,2001,c846,,,days
 
 # CH flow set T (1.16.2)
-r,heating,lwt_setpoint,Flow Setpoint,,fe,2000,6047
+r1,heating,lwt_setpoint,Flow Setpoint,,fe,2000,6047
 b,heating,lwt_setpoint,Flow Setpoint,13,fe,200f,6047,,,temperature:setting
-b,ignored,lwt_setpoint_plus,Flow Setpoint,13,fe,2010,6047,,,temperature:lwt_setpoint;ignore_3;temperature:z1_flow_setpoint;ignore_3;temperature:z1_room_temp
+b,ignored,lwt_setpoint_plus,Flow Setpoint,13,fe,2010,6047,,,temperature:lwt_setpoint;ignore_3;temperature:z1_flow_setpoint
+#b,ignored,lwt_setpoint_plus,Flow Setpoint,13,fe,2010,6047,,,temperature:lwt_setpoint;ignore_3;temperature:z1_flow_setpoint;ignore_3;temperature:z1_room_temp
 
 # CH flow temperature (1.16.3) 
-r1,heating,flow_temperature,CH Flow Temperature,,18,2001,74fd,,,temperature
+r,heating,flow_temperature,CH Flow Temperature,,18,2001,74fd,,,temperature
 
 r,ignored,flow_temperature_2000,CH Flow Temperature,,18,2000,74fd,,,ignore_1;temperature
 #reads max value on system

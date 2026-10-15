@@ -5,7 +5,7 @@
 #### address 70: master #4   
 ############################################################################################
 
-r,energymgr,config_version,config_version_counter,,18,2000,d140,,,ignore_1;version
+r,energymgr,config_version,config_version_counter,,18,2000,d140,,,ignore_1;version:counter
 
 r,energymgr,last_error_info,last_error,,18,2002,0400,,s,error_code,,,7 first bits,zone,s,BI0:7,,,,,s,IGN:2,,,Date: YY/MM/DD,year,s,UCH,,,,month,s,UCH,,,,day,s,UCH,,,,time,s,HTM,,
 
@@ -241,22 +241,31 @@ b,energymgr,exogel_kit_activation,Exogel Kit Activation,13,18,2010,1f88,,m,onoff
 ############################################################################################
 
 # Heating running hours (h/10) (1.14.1)
-r,energymgr,heatpump_heating_op_hours,Heatpump Heating Operating Hours,,18,2000,55d1,,,ignore_1;hours
+r5,energymgr,heatpump_heating_op_hours,Heatpump Heating Operating Hours,,18,2000,55d1,,,ignore_1;hours
 
 # DHW running hours (h/10) (1.14.2)
-r,energymgr,heatpump_dhw_op_hours,Heatpump DHW Operating Hours,,18,2000,56d1,,,ignore_1;hours
+r5,energymgr,heatpump_dhw_op_hours,Heatpump DHW Operating Hours,,18,2000,56d1,,,ignore_1;hours
+
+# DHW power consumption and energy produced incrementing counter
+r5,energymgr,dhw_power_consumption,DHW power consumption incrementing total,,18,2000,46d947d9,,,ignore_1;energycount
+r5,energymgr,dhw_energy_produced,DHW energy produced incrementing total,,18,2000,52d953d9,,,ignore_1;energycount
+
+# Heating power consumption and energy produced incrementing counter
+r5,energymgr,heating_power_consumption,Heating power consumption incrementing total,,18,2000,48d949d9,,,ignore_1;energycount
+r5,energymgr,heating_energy_produced,Heating energy produced incrementing total,,18,2000,54d955d9,,,ignore_1;energycount
+
 
 ############################################################################################
 # Energy Manager diagnostics
 ############################################################################################
 
 # Energy Manager status (1.16.0)
-# This command is issued when using the panel
-r,ignoed,energymgr_status_3,Energy Manager Status,,18,2001,c94b,,,energymgr_status
 # This command is is issued every 10 seconds so the best way to get the energymgr status
-r,energymgr,energymgr_status,Energy Manager Status,,18,2000,c94bd1404bfd4cfd,,,ignore_1;energymgr_status:status;percent:value_d140;longminutes:value_4bfd;longminutes:value_4cfd
+r,energymgr,energymgr_status,Energy Manager Status,,18,2000,c94bd1404bfd4cfd,,,ignore_1;energymgr_status:status;version:counter;longminutes:value_4bfd;longminutes:value_4cfd
 # This command is issued less frequently so not as good to use for uptodate status
-r,ignored,energymgr_status_2,Energy Manager Status,,18,2000,c94b,,,ignore_1;energymgr_status
+r,ignored,energymgr_status_2000,Energy Manager Status,,18,2000,c94b,,,ignore_1;energymgr_status
+# This command is issued when using the panel
+r,ignoed,energymgr_status_panel,Energy Manager Status,,18,2001,c94b,,,energymgr_status
 
 # Hydraulic scheme diagnostic (1.16.1)
 r,energymgr,hydraulic_scheme_diagnostic,,,18,2001,d4f7,,,hydraulic_diagnostic

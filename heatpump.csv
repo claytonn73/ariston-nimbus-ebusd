@@ -156,7 +156,7 @@ r,heatpump,power_rating,HP Power Rating,,1e,2000,6947,,,ignore_1;kw
 r,ignored,power_rating_2001,HP Power Rating,,1e,2001,6947,,,kw
 
 # HP actual compressor frequency (13.10.1)
-r5,heatpump,compressor_frequency,Compressor Frequency,,1e,2001,cb46,,,frequency
+r1,heatpump,compressor_frequency,Compressor Frequency,,1e,2001,cb46,,,frequency
 
 # HP set compressor modulation (13.10.2)
 r,heatpump,compressor_modulation,Compressor Modulation,,1e,2001,c446,,,percent

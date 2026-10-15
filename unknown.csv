@@ -70,6 +70,9 @@ r,unknown,unknown_hours_3,unknown 3,,18,2000,53d1,,,ignore_1;hours
 r,unknown,unknown_d346,unknown,,fe,2000,d346
 b,unknown,unknown_d346,unknown,,fe,200f,d346,,,percent
 
+r,unknown,unknown_c7f8,unknown,,fe,2001,c7f8
+b,unknown,unknown_c7f8,unknown,,fe,200e,c7f8,,,percent
+
 r,unknown,unknown_c5f8,,,fe,2000,c5f8c6f8c3f8
 b,unknown,unknown_c5f8,,,fe,200f,c5f8,,,percent:z3_c5f8;ignore_3;percent:z4_c6f8;ignore_3;percent:z1_c3f8
 
@@ -86,7 +89,7 @@ b,unknown,broadcast_6a96,unknown,13,fe,2010,6a96,,,temperature:temp_6a96;ignore_
 b,unknown,broadcast_6d96,unknown,13,fe,2010,6d96,,,temperature:temp_6d96;ignore_3;temperature:temp_c694;ignore_3;temperature:temp_6e96
 b,unknown,broadcast_c194,unknown,13,fe,2010,c194,,,percent:percent_c194;ignore_3;temperature:z1_room_setpoint;ignore_3;percent:percent_c294
 b,unknown,broadcast_c494,unknown,13,fe,2010,c494,,,energymgr_status:energymgr_status;ignore_3;temperature:temp_6c96;ignore_3;percent:percent_c594
-b,unknown,broadcast_c94b,unknown,13,fe,2010,c94b,,,percent:percent_c94b;ignore_3;onoff:onoff_011f;ignore_3;onoff:onoff_021f;ignore_3;onoff:onoff_031f
+b,unknown,broadcast_c94b,unknown,13,fe,2010,c94b,,,energymgr_status:energymgr_status;ignore_3;onoff:onoff_011f;ignore_3;onoff:onoff_021f;ignore_3;onoff:onoff_031f
 #b,unknown,broadcast_cdc1,unknown,13,fe,2010,cdc1,,,percent:percent_cdc1;ignore_3;percent:percent_cec1
 b,unknown,broadcast_d346,unknown,13,fe,2010,d346,,,percent:percent_d346;ignore_3;percent:percent_cf9c;ignore_3;percent:percent_d995;ignore_3;percent:percent_da95
 b,unknown,broadcast_d99c,unknown,13,fe,2010,d99c,,,percent:percent_d99c;ignore_3;percent:percent_ccf7;ignore_3;percent:percent_649f
@@ -152,16 +155,12 @@ r,unknown,unknown_c0f2_limits,unknown value with limits,,1e,2001,c0f2,,,percent_
 #r,unknown,unknown_c0f2,unknown value ,,1e,2000,c0f2,,,percent
 
 r,unknown,unknown_4dfd7547,unknown,,18,2000,4dfd7547,,,ignore_1;hours;temperature
-r,unknown,unknown_46d947d9,unknown,,18,2000,46d947d9,,,ignore_1;hours;hours
-r,unknown,unknown_48d949d9,unknown,,18,2000,48d949d9,,,ignore_1;hours;hours
 r,unknown,unknown_4ada4bda,unknown,,18,2000,4ada4bda,,,ignore_1;hours;hours
 r,unknown,unknown_4cda4dda,unknown,,18,2000,4cda4dda,,,ignore_1;hours;hours
 r,unknown,unknown_4eda4fda,unknown,,18,2000,4eda4fda,,,ignore_1;hours;hours
 r,unknown,unknown_50da51da,unknown,,18,2000,50da51da,,,ignore_1;hours;hours
-r,unknown,unknown_52d953d9,unknown,,18,2000,52d953d9,,,ignore_1;hours;hours
-r,unknown,unknown_54d955d9,unknown,,18,2000,54d955d9,,,ignore_1;hours;hours
-r,unknown,unknown_56d957d9,unknown,,18,2000,56d957d9,,,ignore_1;hours;hours
-r,unknown,unknown_5cd95dd9,unknown,,18,2000,5cd95dd9,,,ignore_1;hours;hours
+r5,broadcast,unknown_56d957d9,unknown,,18,2000,56d957d9,,,ignore_1;energycount;hours
+r5,broadcast,unknown_5cd95dd9,unknown,,18,2000,5cd95dd9,,,ignore_1;energycount;hours
 r,unknown,unknown_40d841d8,unknown,,1e,2000,40d841d8,,,ignore_1;hours;hours
 
 r,unknown,unknown_1521d58dcc2ad32a,unknown,,18,2000,1521d58dcc2ad32a,,,ignore_1;percent;percent;percent;percent

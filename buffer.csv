@@ -92,6 +92,7 @@ b,buffer,temperature_sensor_bcast,buffer high temperature sensor,13,fe,2010,759e
 r,buffer,buffer_status,unknown,,fe,2000,ccf7
 b,buffer,buffer_status,unknown,,fe,200f,ccf7,,,ignore_1;buffer_status
 r,buffer,buffer_status_panel,unknown,,fe,2001,ccf7
+b,buffer,buffer_status_panel,unknown,,fe,200e,ccf7,,,buffer_status
 
 ############################################################################################
 # Statistics

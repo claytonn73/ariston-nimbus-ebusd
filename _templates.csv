@@ -55,7 +55,7 @@ slope_min_max,ignore_2;slope:minimum;slope:maximum,,,
 cooling_slope,U2L,,gradient
 cooling_slope_min_max,ignore_2;cooling_slope:minimum;cooling_slope:maximum,,,
 
-kwshort,U1L,10,kw,power
+kwshort,U1L,10,kW,power
 kwshort_min_max,ignore_1;kwshort:minimum;kwshort:maximum,,,
 
 percent,U1L,,%,percentage
@@ -72,6 +72,9 @@ temperature_min_max,ignore_2;temperature:minimum;temperature:maximum,,,
 #temperature_min_max,temperature:setting;temperature:minimum;temperature:maximum,,,
 
 pressure:reading,U2L,10,bar,pressure
+
+# conversion from a wattsecond type counter to kWh
+energycount:reading,U2L,360,kWh
 
 frequency,U1L,,Hz,frequency
 frequency_min_max,ignore_1;frequency:minimum;frequency:maximum,,,
