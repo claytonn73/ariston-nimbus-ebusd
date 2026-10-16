@@ -247,12 +247,12 @@ r5,energymgr,heatpump_heating_op_hours,Heatpump Heating Operating Hours,,18,2000
 r5,energymgr,heatpump_dhw_op_hours,Heatpump DHW Operating Hours,,18,2000,56d1,,,ignore_1;hours
 
 # DHW power consumption and energy produced incrementing counter
-r5,energymgr,dhw_power_consumption,DHW power consumption incrementing total,,18,2000,46d947d9,,,ignore_1;energycount
-r5,energymgr,dhw_energy_produced,DHW energy produced incrementing total,,18,2000,52d953d9,,,ignore_1;energycount
+r5,energymgr,dhw_energy_produced,Heating power consumption incrementing total,,18,2000,48d949d9,,,ignore_1;energycount
+r5,energymgr,dhw_power_consumption,Heating energy produced incrementing total,,18,2000,54d955d9,,,ignore_1;energycount
 
 # Heating power consumption and energy produced incrementing counter
-r5,energymgr,heating_power_consumption,Heating power consumption incrementing total,,18,2000,48d949d9,,,ignore_1;energycount
-r5,energymgr,heating_energy_produced,Heating energy produced incrementing total,,18,2000,54d955d9,,,ignore_1;energycount
+r5,energymgr,heating_energy_produced,DHW power consumption incrementing total,,18,2000,46d947d9,,,ignore_1;energycount
+r5,energymgr,heating_power_consumption,DHW energy produced incrementing total,,18,2000,52d953d9,,,ignore_1;energycount
 
 
 ############################################################################################
