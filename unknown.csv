@@ -7,7 +7,7 @@ r,unknown,unknown_d4f7,,,18,2000,d4f7,,,ignore_1;percent
 r,unknown,unknown_4dfd,unknown,,18,2000,4dfd,,,ignore_1;longminutes
 r,unknown,unknown_658e,,,18,2001,658e,,,temperature_min_max
 r,unknown,unknown_7547,unknown,,18,2000,7547,,,ignore_1;temperature
-r,unknown,unknown_c0f2,,,18,2000,c0f2,,,percent:percent_c0f2
+r,unknown,unknown_c0f2,,,1e,2000,c0f2,,,percent:percent_c0f2
 
 r,unknown,unknown_switch_1403,,,18,2001,1403,,,onoff
 r,unknown,unknown_switch_1503,,,18,2001,1503,,,onoff
@@ -63,6 +63,9 @@ b,unknown,unknown_0c90,unknown,,fe,2020,0c90,,,percent
 b,unknown,unknown_0d90,unknown,,fe,2020,0d90,,,percent
 b,unknown,unknown_0e90,unknown,,fe,2020,0e90,,,percent
 
+r,unknown,unknown_c74b,unknown 1,,18,2000,c74b,,,ignore_1;percent
+r,unknown,unknown_dc27,unknown 1,,18,2000,dc27,,,ignore_1;percent
+
 r,unknown,unknown_hours_1,unknown 1,,18,2000,51d1,,,ignore_1;hours
 r,unknown,unknown_hours_2,unknown 2,,18,2000,52d1,,,ignore_1;hours
 r,unknown,unknown_hours_3,unknown 3,,18,2000,53d1,,,ignore_1;hours
@@ -76,10 +79,10 @@ b,unknown,unknown_c7f8,unknown,,fe,200e,c7f8,,,percent
 r,unknown,unknown_c5f8,,,fe,2000,c5f8c6f8c3f8
 b,unknown,unknown_c5f8,,,fe,200f,c5f8,,,percent:z3_c5f8;ignore_3;percent:z4_c6f8;ignore_3;percent:z1_c3f8
 
-b,unknown,broadcast_cff9,unknown,13,fe,2010,cff9,,,percent:value_cff9;ignore_3;percent:value_ddf2
-b,unknown,broadcast_489d,unknown,13,fe,2010,489d,,,temperature:temp_489d
+b,unknown,broadcast_cff9,unknown,7f,fe,2010,cff9,,,percent:value_cff9;ignore_3;percent:value_ddf2
+b,unknown,broadcast_489d,unknown,70,fe,2010,489d,,,temperature:temp_489d
 b,unknown,broadcast_d394,unknown,13,fe,2010,d394,,,percent:percent_d394;ignore_3;percent:percent_d494;ignore_3;percent:percent_d594;ignore_3;percent:percent_d694
-b,unknown,broadcast_d3f9,unknown,13,fe,2010,d3f9,,,percent:percent_d3f9
+b,unknown,broadcast_d3f9,unknown,7f,fe,2010,d3f9,,,percent:percent_d3f9
 b,unknown,broadcast_6297,unknown,13,fe,2010,6297,,,temperature:temperature_6297
 
 b,unknown,broadcast_041f,unknown,13,fe,2010,041f,,,percent:percent_041f;ignore_3;percent:percent_051f;ignore_3;percent:percent_061f
@@ -162,6 +165,9 @@ r,unknown,unknown_50da51da,unknown,,18,2000,50da51da,,,ignore_1;hours;hours
 r5,broadcast,unknown_56d957d9,unknown,,18,2000,56d957d9,,,ignore_1;energycount;hours
 r5,broadcast,unknown_5cd95dd9,unknown,,18,2000,5cd95dd9,,,ignore_1;energycount;hours
 r,unknown,unknown_40d841d8,unknown,,1e,2000,40d841d8,,,ignore_1;hours;hours
+r,unknown,unknown_d58dcc2ad32a,unknown,,18,2000,d58dcc2ad32a,,,ignore_1;percent:value_d58d;percent:value_cc2a;percent:value_d32a
+
+#r,unknown,unknown_761077106e13,unknown,,1e,2000,761077106e13,,,ignore_1;temperature:flow_temperature;temperature:return_temperature;flow_rate:flow_rate
 
 r,unknown,unknown_1521d58dcc2ad32a,unknown,,18,2000,1521d58dcc2ad32a,,,ignore_1;percent;percent;percent;percent
 r,unknown,unknown_d1404bfd4cfd4dfd,unknown,,18,2000,d1404bfd4cfd4dfd,,,ignore_1;version;longminutes;longminutes;longminutes
