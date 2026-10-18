@@ -235,6 +235,16 @@ The DHW dashboard with the parameter settings is shown below
 
 <img width="1742" height="1087" alt="image" src="https://github.com/user-attachments/assets/bce5150f-7a1f-475b-a29c-b977f073be59" />
 
+The heating dashboard with system state and history is shown below
+
+<img width="1725" height="1130" alt="image" src="https://github.com/user-attachments/assets/ae582efe-14c0-4d82-a9fe-0721238b5509" />
+
+The heating dashboard with the parameter settings is shown below
+
+<img width="1732" height="976" alt="image" src="https://github.com/user-attachments/assets/e7db6bc9-3665-4ef2-b422-9d20858d35d1" />
+
+<img width="858" height="708" alt="image" src="https://github.com/user-attachments/assets/0e7c573f-ce3d-4d5f-909b-cd19d7cff796" />
+
 ## System behaviour notes
 
 ### Heatpump Status and Behaviour
