@@ -243,7 +243,7 @@ The heating dashboard with the parameter settings is shown below
 
 <img width="1732" height="976" alt="image" src="https://github.com/user-attachments/assets/e7db6bc9-3665-4ef2-b422-9d20858d35d1" />
 
-<img width="858" height="708" alt="image" src="https://github.com/user-attachments/assets/0e7c573f-ce3d-4d5f-909b-cd19d7cff796" />
+<img width="512" height="425" alt="image" src="https://github.com/user-attachments/assets/0e7c573f-ce3d-4d5f-909b-cd19d7cff796" />
 
 ## System behaviour notes
 
