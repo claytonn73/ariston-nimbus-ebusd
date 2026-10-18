@@ -226,6 +226,16 @@ These rely on multiple data values from ebusd and it is helpful for these to be 
 
 ## System behaviour notes
 
+### Heatpump Status and Behaviour
+
+This section contains some notes of the system heating behaviour over time and the information shown in the heatpump status 
+
+When external temperatures are high enough that the heatpump is active but not running continually then the following behaviour is seen on the system
+
+<img width="581" height="587" alt="image" src="https://github.com/user-attachments/assets/4d41ca18-ed68-4cd5-812a-c4aa39d09890" />
+
+A period of heating of 10 minutes or more is followed by a 3 minute period in "timeguard" state where the heatpump is not running but water is circulating. The heatpump then may go into "standby" mode for a period of time while water continues to circulate before restarting the heating cycle. At higher temperatures the standby period becomes longer reducing the cycles per hour but worst case there are approximately 4 cycles per hour.
+
 ### Automatic Winter Mode
 
 The automatic winter mode is a useful feature to enable and disable heating based on an external temperature threshold. However it does not use the defined threshold directly to perform the enable/disable of heating. If temperature drops 1C below the defined threshold the heating will be enabled and if the temperature rises 1C above the defined threshold the heating will be disabled. In this way it avoids repetitive enabling and disabling of heating but it does mean that setting the value correctly for the house is important. It is definitely possible to use 0.5C steps for this value. On my system I have set the associated winter mode delay to 0 minutes as with the behaviour above it does not seem sensible to wait for an extended period once the higher or lower threshold is reached. The settings used are as follows
