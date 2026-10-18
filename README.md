@@ -194,7 +194,7 @@ This particular example uses the config-template-card and big-slider-card but th
       min: ${parseFloat(MinVal)}
       max: ${parseFloat(MaxVal)}
 
-## Home Assistant Template Entities
+### Home Assistant Template Entities
 
 There are a few template entities that it is interesting to create based on the raw data from ebusd. These include:
 
@@ -222,7 +222,18 @@ These rely on multiple data values from ebusd and it is helpful for these to be 
             {% set return = states('sensor.heating_ebusd_heatpump_water_flow_return_temperature') | float %}
             {% set correction = 0.4 | float %}
             {{ (flow - return - correction)|round(1) }}
-            
+
+### Home Assistant Dashboards
+
+As there are limited parameters available in the website/app and it is inconvenient to have to use the Sensys HD interface I have created a number of Home Assistant panels for display and potential modification of the relevant parameters on the system. Once things are setup these are unlikely to change unless something changes in the configuration but I have found them useful so far.
+
+The DHW dashboard with system state and history is shown below
+
+<img width="1737" height="711" alt="image" src="https://github.com/user-attachments/assets/27181a92-36d8-4a17-8e86-b65c7445a587" />
+
+The DHW dashboard with the parameter settings is shown below
+
+<img width="1742" height="1087" alt="image" src="https://github.com/user-attachments/assets/bce5150f-7a1f-475b-a29c-b977f073be59" />
 
 ## System behaviour notes
 
