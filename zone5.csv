@@ -7,7 +7,7 @@
 
 
 r,zone5,name,Zone 5  Name Setting,,fe,2001,d47d
-b,zone5,name,Zone 5  Name Setting,,fe,200e,d47d,,,zone_name
+b,zone5,name,Zone 5  Name Setting,13,fe,200e,d47d,,,zone_name
 
 ############################################################################################
 # Setpoint
@@ -52,7 +52,7 @@ b,zone5,winter_mode_temp,statistics,13,fe,200f,7975,,,temperature:setting
 r,zone5,winter_mode_temp_limits,statistics,,fe,2001,7975
 b,zone5,winter_mode_temp_limits,statistics,13,fe,200e,7975,,,temperature_min_max
 
-#b,zone5,winter_mode_bcast,statistics,13,fe,2020,7971,,,temperature:winter_mode_temp;ignore_2;longminutes:winter_mode_delay;ignore_2;onoff:winter_mode_active
+b,zone5,winter_mode_bcast,statistics,13,fe,2020,7975,,,temperature:winter_mode_temp
 
 # Time for the auto summer/winter switching delay (4.1.2)
 r,zone5,winter_mode_delay,statistics,,fe,2000,7a75
@@ -98,7 +98,7 @@ b,zone5,room_influence_proportion_limits,Z5 Heating Room Temp Influence,13,fe,20
 
 # LWT Maximum settings and limits (4.2.5)
 r,zone5,lwt_max,lwt maximum temperature,,fe,2000,6075
-b,zone5,lwt_max,lwt maximum temperature,,fe,200f,6075,,,temperature:setting
+b,zone5,lwt_max,lwt maximum temperature,13,fe,200f,6075,,,temperature:setting
 w,zone5,lwt_max,lwt maximum temperature,70,fe,2020,6075,,,temperature:setting
 r,zone5,lwt_max_limits,lwt maximum temperature,,fe,2001,6075
 b,zone5,lwt_max_limits,lwt maximum temperature,13,fe,200e,6075,,,temperature_min_max
@@ -107,7 +107,7 @@ b,zone5,lwt_info_bcast,unknown,13,fe,2020,6075,,,temperature:z5_lwt_max;ignore_2
 
 # LWT Minimum settings and limits (4.2.6)
 r,zone5,lwt_min,lwt minimum temperature,,fe,2000,6175
-b,zone5,lwt_min,lwt minimum temperature,,fe,200f,6175,,,temperature:setting
+b,zone5,lwt_min,lwt minimum temperature,13,fe,200f,6175,,,temperature:setting
 w,zone5,lwt_min,lwt minimum temperature,70,fe,2020,6175,,,temperature:setting
 r,zone5,lwt_min_limits,lwt minimum temperature,,fe,2001,6175
 b,zone5,lwt_min_limits,lwt minimum temperature,13,fe,200e,6175,,,temperature_min_max
@@ -122,9 +122,9 @@ w,zone5,quick_night_setback,unknown,70,fe,2020,0885,,,onoff
 # Heat request mode (4.2.9)
 r,zone5,heat_request_mode,Z5 Heating Request Mode,,fe,2000,ce7d
 b,zone5,heat_request_mode,Z5 Heating Request Mode,13,fe,200f,ce7d,,,heat_request_mode
-w,zone5,heat_request_mode,Z5 Heating Request Mode,,fe,2020,ce7d,,,heat_request_mode
+w,zone5,heat_request_mode,Z5 Heating Request Mode,70,fe,2020,ce7d,,,heat_request_mode
 r,zone5,heat_request_mode_panel,unknown,,fe,2001,ce7d
-b,zone5,heat_request_mode_panel,unknown,,fe,200e,ce7d,,,heat_request_mode
+b,zone5,heat_request_mode_panel,unknown,13,fe,200e,ce7d,,,heat_request_mode
 
 ############################################################################################
 # Diagnostics
@@ -137,23 +137,23 @@ b,zone5,room_temp,statistics,70,fe,200f,7518,,,temperature:reading
 # Regular 2 minute room temperature broadcast
 b,zone5,room_temp_bcast,statistics,70,fe,2010,7518,,,temperature:reading
 r,zone5,room_temp_panel,Z5 Room Temperature Limits,,fe,2001,7518
-b,zone5,room_temp_panel,Z5 Room Temperature Limits,,fe,200e,7518,,,temperature
+b,zone5,room_temp_panel,Z5 Room Temperature Limits,13,fe,200e,7518,,,temperature
 
 # Room T setpoint (4.3.1)
 r,zone5,room_setpoint,statistics,,fe,2000,6d96
 b,zone5,room_setpoint,statistics,13,fe,200f,6d96,,,temperature:setting
 r,zone5,room_setpoint_panel,Z5 Room Setpoint Limits,,fe,2001,6d96
-b,zone5,room_setpoint_panel,Z5 Room Setpoint Limits,,fe,200e,6d96,,,temperature
+b,zone5,room_setpoint_panel,Z5 Room Setpoint Limits,13,fe,200e,6d96,,,temperature
 
 # Flow temperature (4.3.2) and return temperature (4.3.3) are only visible with the Zone Module
 
 # Heat Request Z5 (4.3.2)  (4.3.4 in manual)
 # From the user panel
 r,zone5,heat_request_panel,Provides Z5 Heat Request,,fe,2001,0591
-b,zone5,heat_request_panel,Provides Z5 Heat Request,,fe,200e,0591,,,onoff
+b,zone5,heat_request_panel,Provides Z5 Heat Request,13,fe,200e,0591,,,onoff
 # Issued every 5 minutes 
 r,zone5,heat_request,Provides Z5 Heat Request,,fe,2000,0591
-b,zone5,heat_request,Provides Z5 Heat Request,,fe,200f,0591,,,onoff
+b,zone5,heat_request,Provides Z5 Heat Request,13,fe,200f,0591,,,onoff
 b,zone5,heat_request_bcast,Heat Request Bcast,13,fe,2010,0591,,,onoff:z5_heat_request;ignore_3;onoff:z6_heat_request
 
 # Pump status (4.3.5) is only visible with the Zone Module
@@ -163,12 +163,12 @@ r,zone5,humidity,statistics,31,fe,2000,cdc1
 b,zone5,humidity,statistics,13,fe,200f,cdc1,,,percent:reading
 b,zone5,humidity_bcast,statistics,13,fe,2010,cdc1,,,percent:reading
 r,zone5,humidity_panel,unknown,,fe,2001,cdc1
-b,zone5,humidity_panel,unknown,,fe,200e,cdc1,,,percent:reading
+b,zone5,humidity_panel,unknown,13,fe,200e,cdc1,,,percent:reading
 
 # Zone Flow temperature setpoint (4.3.4) (4.3.8 in manual)
 r,zone5,flow_setpoint_temperature,Z5 Flow Setpoint Temperature,,fe,2001,6597
-b,zone5,flow_setpoint_temperature,Z5 Flow Setpoint Temperature,,fe,200e,6597,,,temperature:setting
-b,zone5,flow_setpoint_temperature_bcast,Z5 Flow Setpoint Temperature Bcast,,fe,2010,6597,,,temperature:setting
+b,zone5,flow_setpoint_temperature,Z5 Flow Setpoint Temperature,13,fe,200e,6597,,,temperature:setting
+b,zone5,flow_setpoint_temperature_bcast,Z5 Flow Setpoint Temperature Bcast,13,fe,2010,6597,,,temperature:setting
 
 ############################################################################################
 # Zone Module Settings - only visible with the Zone Module
@@ -195,21 +195,23 @@ r,zone5,cooling_fixed_flow_setpoint_limits,statistics,,fe,2001,7075
 b,zone5,cooling_fixed_flow_setpoint_limits,statistics,13,fe,200e,7075,,,temperature_min_max
 
 # Cooling Temp Range (4.5.1)
-r,zone5,cooling_temp_range,Z2 Heating Temp Range,,fe,2001,0685
-b,zone5,cooling_temp_range,Z2 Heating Temp Range,,fe,200e,0685,,,cool_temp_range
-w,zone5,cooling_temp_range,Z2 Heating Temp Range,,fe,2020,0685,,,cool_temp_range
+r,zone5,cooling_temp_range,Z2 Cooling Temp Range,,fe,2001,0685
+b,zone5,cooling_temp_range,Z2 Cooling Temp Range,13,fe,200e,0685,,,cool_temp_range
+w,zone5,cooling_temp_range,Z2 Cooling Temp Range,70,fe,2020,0685,,,cool_temp_range
 
 # Cooling Thermoregulation (4.5.2)
 r,zone5,cooling_therm_type,Z1 Heating Thermoreg Type,,fe,2001,cb7d
-b,zone5,coooling_therm_type,Z1 Heating Thermoreg Type,13,fe,200e,cb7d,,,cool_thermoreg_types
-w,zone5,coooling_therm_type,Z1 Heating Thermoreg Type,13,fe,2020,cb7d,,,cool_thermoreg_types
+b,zone5,cooling_therm_type,Z1 Heating Thermoreg Type,13,fe,200e,cb7d,,,cool_thermoreg_types
+w,zone5,cooling_therm_type,Z1 Heating Thermoreg Type,13,fe,2020,cb7d,,,cool_thermoreg_types
 
 # Cooling Slope (4.5.3)
 r,zone5,cooling_slope,Cooling slope,,fe,2000,7675
 b,zone5,cooling_slope,Cooling slope,13,fe,200f,7675,,,cooling_slope
-w,zone5,cooling_slope,Cooling slope,13,fe,2020,7675,,,cooling_slope
+w,zone5,cooling_slope,Cooling slope,70,fe,2020,7675,,,cooling_slope
 r,zone5,cooling_slope_limits,Cooling slope limits,,fe,2001,7675
 b,zone5,cooling_slope_limits,Cooling slope limits,13,fe,200e,7675,,,cooling_slope_min_max
+
+b,zone5,cooling_slope_bcast,Cooling slope,13,fe,2020,7675,,,cooling_slope
 
 # Cooling Offset (4.5.4)
 r,zone5,cooling_offset,Flow Temp Offset,,fe,2000,7575
@@ -220,14 +222,14 @@ b,zone5,cooling_offset_limits,Flow Temp Offset Limits,13,fe,200e,7575,,,temperat
 
 # Cooling max setpoint (4.5.5)
 r,zone5,cooling_lwt_max,lwt maximum temperature,,fe,2000,7175
-b,zone5,cooling_lwt_max,lwt maximum temperature,,fe,200f,7175,,,temperature:setting
+b,zone5,cooling_lwt_max,lwt maximum temperature,13,fe,200f,7175,,,temperature:setting
 w,zone5,cooling_lwt_max,lwt maximum temperature,70,fe,2020,7175,,,temperature:setting
 r,zone5,cooling_lwt_max_limits,lwt maximum temperature,,fe,2001,7175
 b,zone5,cooling_lwt_max_limits,lwt maximum temperature,13,fe,200e,7175,,,temperature_min_max
 
 # Cooling min setpoint (4.5.6)
 r,zone5,cooling_lwt_min,lwt minimum temperature,,fe,2000,7375
-b,zone5,cooling_lwt_min,lwt minimum temperature,,fe,200f,7375,,,temperature:setting
+b,zone5,cooling_lwt_min,lwt minimum temperature,13,fe,200f,7375,,,temperature:setting
 w,zone5,cooling_lwt_min,lwt minimum temperature,70,fe,2020,7375,,,temperature:setting
 r,zone5,cooling_lwt_min_limits,lwt minimum temperature,,fe,2001,7375
 b,zone5,cooling_lwt_min_limits,lwt minimum temperature,13,fe,200e,7375,,,temperature_min_max
@@ -238,30 +240,30 @@ b,zone5,cooling_lwt_min_limits,lwt minimum temperature,13,fe,200e,7375,,,tempera
 
 # Heating Type (4.7.0)
 r,zone5,heating_type,Z5 Heating Type,,fe,2001,d07d
-w,zone5,heating_type,Z5 Heating Type,,fe,2020,d07d,,,heating_type
-b,zone5,heating_type,Z5 Heating Type,,fe,200e,d07d,,,heating_type
+w,zone5,heating_type,Z5 Heating Type,70,fe,2020,d07d,,,heating_type
+b,zone5,heating_type,Z5 Heating Type,13,fe,200e,d07d,,,heating_type
 
 # Room Influence (4.7.1)
 r,zone5,room_influence,Z5 Room Influence,,fe,2001,d37d
-w,zone5,room_influence,Z5 Room Influence,,fe,2020,d37d,,,room_influence
-b,zone5,room_influence,Z5 Room Influence,,fe,200e,d37d,,,room_influence
+w,zone5,room_influence,Z5 Room Influence,70,fe,2020,d37d,,,room_influence
+b,zone5,room_influence,Z5 Room Influence,13,fe,200e,d37d,,,room_influence
 
 # Building Isolation Level (4.7.2)
 r,zone5,building_isolation_level,Z5 Building Isolation Level,,fe,2001,d17d
-w,zone5,building_isolation_level,Z5 Building Isolation Level,,fe,2020,d17d,,,building_isolation_level
-b,zone5,building_isolation_level,Z5 Building Isolation Level,,fe,200e,d17d,,,building_isolation_level
+w,zone5,building_isolation_level,Z5 Building Isolation Level,70,fe,2020,d17d,,,building_isolation_level
+b,zone5,building_isolation_level,Z5 Building Isolation Level,13,fe,200e,d17d,,,building_isolation_level
 
 # Building Size (4.7.3) 
 r,zone5,building_size,Z5 Building Size,,fe,2001,d27d
-w,zone5,building_size,Z5 Building Size,,fe,2020,d27d,,,building_size
-b,zone5,building_size,Z5 Building Size,,fe,200e,d27d,,,building_size
+w,zone5,building_size,Z5 Building Size,70,fe,2020,d27d,,,building_size
+b,zone5,building_size,Z5 Building Size,13,fe,200e,d27d,,,building_size
 
 # Climatic Zone (4.7.4) - Likely common with zone 1
 
 # Auto Slope Adaptation (4.7.5)
 r,zone5,slope_adaptation,Z5 Slope Adaptation,,fe,2001,0985
-w,zone5,slope_adaptation,Z5 Slope Adaptation,,fe,2020,0985,,,onoff
-b,zone5,slope_adaptation,Z5 Slope Adaptation,,fe,200e,0985,,,onoff
+w,zone5,slope_adaptation,Z5 Slope Adaptation,70,fe,2020,0985,,,onoff
+b,zone5,slope_adaptation,Z5 Slope Adaptation,13,fe,200e,0985,,,onoff
 
 ############################################################################################
 # Advanced Settings
@@ -269,12 +271,12 @@ b,zone5,slope_adaptation,Z5 Slope Adaptation,,fe,200e,0985,,,onoff
 
 # Z5 Heating controller (4.8.3)
 r,zone5,heating_controller,unknown,,fe,2001,d57d
-b,zone5,heating_controller,unknown,,fe,200e,d57d,,,controller
+b,zone5,heating_controller,unknown,13,fe,200e,d57d,,,controller
 w,zone5,heating_controller,unknown,70,fe,2020,d57d,,,controller
 
 # Z5 Cooling controller (4.8.4)
 r,zone5,cooling_controller,unknown,,fe,2001,d67d
-b,zone5,cooling_controller,unknown,,fe,200e,d67d,,,controller
+b,zone5,cooling_controller,unknown,13,fe,200e,d67d,,,controller
 w,zone5,cooling_controller,unknown,70,fe,2020,d67d,,,controller
 
 # Humidity Control Threshold (4.8.7)

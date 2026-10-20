@@ -10,12 +10,12 @@ r,heatpump,config_version,config_version_counter,,1e,2000,d140,,,ignore_1;versio
 ############################################################################################
 
 # TDM Flow Sensor Type (13.1.0)
-# Update in Home Asistant disabled as is installation parameter
+# Update in Home Assistant disabled as is installation parameter
 r,heatpump,tdm_flow_sensor_type,Flow Sensor Type,,1e,2001,df2a,,,flow_sensor
 w,ignored,tdm_flow_sensor_type,Flow Sensor Type,,1e,2020,df2a,,,flow_sensor
 
 # HP Electric Heater Config (13.2.1)
-# Update in Home Asistant disabled as not relevant in my system
+# Update in Home Assistant disabled as not relevant in my system
 r,heatpump,electric_heater,Electric Heater 1,,1e,2001,1c23,,,onoff
 w,ignored,electric_heater,Electric Heater 1,,1e,2020,1c23,,,onoff
 
@@ -74,8 +74,8 @@ r,ignored,heatpump_defrost_hours,Heatpump Defrost Hours,,1e,2000,47d1,,,ignore_1
 
 # Heatpump temperatures not needed as consolidated reads are performed
 # Read every 8 minutes by the system but also read more frequently by ebus
-r5,heatpump,read_temp,Regular read of heatpump temps,,1e,2000,791071177217,,,ignore_1;temperature:evaporator_temperature;temperature:condenser_outlet_temperature;temperature:suction_temperature
-r,ignored,read_temp_2,Broadcast Messages,,1e,2000,7610771079107117,,,ignore_1;temperature:hp_water_flow_temperature;temperature:hp_water_return_temperature;temperature:hp_evaporator_temperature;temperature:hp_condensor_outlet_temperature
+r5,heatpump,read_temp,Regular read of heatpump temps,,1e,2000,791071177217,,,ignore_1;temperature:hp_evaporator_temperature;temperature:condenser_outlet_temperature;temperature:suction_temperature
+r,ignored,read_temp_2,Broadcast Messages,,1e,2000,7610771079107117,,,ignore_1;temperature:hp_water_flow_temperature;temperature:hp_water_return_temperature;temperature:hp_evaporator_temperature;temperature:hp_condenser_outlet_temperature
 # Not sure they are read by the system but seems to have been at some point
 r,ignored,read_temp_3,Regular read of heatpump temps,,1e,2000,781079107417,,,ignore_1;temperature:outside_air_temperature;temperature:hp_evaporator_temperature;temperature:teo_temperature
 r,ignored,read_temp_4,Broadcast Messages,,1e,2000,72177317ca466247,,,ignore_1;temperature:hp_suction_temperature;temperature:hp_discharge_temperature;heatpump_status:status;temperature:temp_6247
@@ -146,7 +146,7 @@ r,ignored,evaporator_pressure,evaporator pressure,,1e,2001,6c4f,,,pressure
 r,ignored,condenser_pressure,condenser pressure,,1e,2001,6d4f,,,pressure
 
 # Consolidated reads used in favour of individual temperature readings 
-r5,heatpump,pressure_info,Reads of evaporator and condenser pressue,,1e,2000,6c4f6d4f,,,ignore_1;pressure:evaporator_pressure;pressure:condensor_pressure
+r5,heatpump,pressure_info,Reads of evaporator and condenser pressure,,1e,2000,6c4f6d4f,,,ignore_1;pressure:evaporator_pressure;pressure:condenser_pressure
 
 ############################################################################################
 # HP diagnostics - Output 1
@@ -168,14 +168,14 @@ r,heatpump,electric_heater_status,Electric Heater Status,,1e,2001,1c45,,,onoff
 # Measured rpm fan 1 (13.10.5)
 r1,heatpump,fan1_speed,Fan 1 Speed,,1e,2001,6e4f,,,rpm
 
-# Measured rpm fan 1 (13.10.6)
+# Measured rpm fan 2 (13.10.6)
 r,ignored,fan2_speed,Fan 2 Speed,,1e,2001,6f4f,,,rpm
 
 # Expansion valve (13.10.7)
 r,ignored,expansion_valve,Expansion Valve State in Steps,,1e,2001,704f,,,expansion_valve
 
 # Issued every 8 minutes by the system so use this for power consumption and expansion valve
-r1,heatpump,power_consumption,Expansion valve and Power comsumption,,1e,2000,704f7c4f,,,ignore_1;expansion_valve:expansion_valve;watts:power_consumption
+r1,heatpump,power_consumption,Expansion valve and Power consumption,,1e,2000,704f7c4f,,,ignore_1;expansion_valve:expansion_valve;watts:power_consumption
 # Alternative individual reads for power consumption and expansion valve
 r,ignored,power_consumption,Power Consumption,,1e,2001,7c4f,,,watts
 
@@ -184,7 +184,7 @@ r,ignored,expansion_valve_2,Expansion Valve 2 State in Steps,,1e,2001,714f,,,exp
 # Enable second expansion valve if present on system
 
 ############################################################################################
-# HP diagnostics - Output 1
+# HP diagnostics - Output 2
 ############################################################################################
 
 # Compressor on/off (13.11.0)
@@ -216,7 +216,7 @@ r,ignored,heatpump_query,Regular Reads,,1e,2000,7c4fcb46,,,ignore_1;watts:power_
 r5,heatpump,heatpump_query_error,Error Query,,1e,2000,7417c54b,,,ignore_1;temperature:teo_temperature;error_code:last_error_info
 
 # Issued every 8 minutes so use it for discharge_temp and compressor_frequency
-r1,heatpump,operating_info,Operating Information,,1e,2000,7317ca46cb46,,,ignore_1;temperature:discharge_temp;heatpump_status:heatpump_status;frequency:compressor_frequency
+r1,heatpump,operating_info,Operating Information,,1e,2000,7317ca46cb46,,,ignore_1;temperature:hp_discharge_temperature;heatpump_status:heatpump_status;frequency:compressor_frequency
 
 # Doesnt seem to be issued any more
 r,ignored,power_consumption_2,Power Consumption,,1e,2000,63477c4f,,,ignore_1;temperature:temp_6347;watts:power

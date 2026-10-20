@@ -48,8 +48,8 @@ b,buffer,buffer_comfort_temperature_cooling_bcast,Buffer Reduced Temperature Lim
 
 # SG Ready Buffer setpoint (20.0.5)
 r,buffer,sg_ready_buffer_setpoint,Buffer Reduced Temperature Limits,,fe,2000,682e
-b,buffer,sg_ready_buffer_setpoint,Buffer Reduced Temperature Limits,,fe,200f,682e,,,temperature:setting
-w,buffer,sg_ready_buffer_setpoint,Buffer Reduced Temperature Limits,,fe,2020,682e,,,temperature:setting
+b,buffer,sg_ready_buffer_setpoint,Buffer Reduced Temperature Limits,13,fe,200f,682e,,,temperature:setting
+w,buffer,sg_ready_buffer_setpoint,Buffer Reduced Temperature Limits,70,fe,2020,682e,,,temperature:setting
 r,buffer,sg_ready_buffer_setpoint_limits,Buffer Reduced Temperature Limits,,fe,2001,682e
 b,buffer,sg_ready_buffer_setpoint_limits,Buffer Reduced Temperature Limits,13,fe,200e,682e,,,temperature_min_max
 
@@ -90,9 +90,9 @@ b,buffer,temperature_sensor_bcast,buffer high temperature sensor,13,fe,2010,759e
 
 # Buffer status (20.1.4)
 r,buffer,buffer_status,unknown,,fe,2000,ccf7
-b,buffer,buffer_status,unknown,,fe,200f,ccf7,,,ignore_1;buffer_status
+b,buffer,buffer_status,unknown,13,fe,200f,ccf7,,,ignore_1;buffer_status
 r,buffer,buffer_status_panel,unknown,,fe,2001,ccf7
-b,buffer,buffer_status_panel,unknown,,fe,200e,ccf7,,,buffer_status
+b,buffer,buffer_status_panel,unknown,13,fe,200e,ccf7,,,buffer_status
 
 ############################################################################################
 # Statistics

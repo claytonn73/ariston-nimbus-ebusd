@@ -19,42 +19,42 @@ r,unknown,unknown_switch_1a11,,,18,2001,1a11,,,onoff
 r,unknown,unknown_switch_1b11,,,18,2001,1b11,,,onoff
 
 r,unknown,unknown_4078,unknown,,fe,2000,4078
-b,unknown,unknown_4078,unknown,,fe,200f,4078,,,ignore_1;percent
+b,unknown,unknown_4078,unknown,13,fe,200f,4078,,,ignore_1;percent
 r,unknown,unknown_4ffd,unknown,,fe,2000,4ffd
-b,unknown,unknown_4ffd,unknown,,fe,200f,4ffd,,,ignore_1;temperature
+b,unknown,unknown_4ffd,unknown,13,fe,200f,4ffd,,,ignore_1;temperature
 r,unknown,unknown_56e9,unknown,,fe,2000,56e9
-b,unknown,unknown_56e9,unknown,,fe,200f,56e9,,,ignore_1;temperature
+b,unknown,unknown_56e9,unknown,13,fe,200f,56e9,,,ignore_1;temperature
 
 r,unknown,unknown_79c0,unknown,,fe,2000,79c0
-b,unknown,unknown_79c0,unknown,,fe,200f,79c0,,,ignore_1;temperature
+b,unknown,unknown_79c0,unknown,13,fe,200f,79c0,,,ignore_1;temperature
 
 r,unknown,unknown_switch_d97b,unknown,,fe,2001,d97b
-b,unknown,unknown_switch_d97b,unknown,,fe,200e,d97b,,,onoff
+b,unknown,unknown_switch_d97b,unknown,13,fe,200e,d97b,,,onoff
 
 r,unknown,unknown_692a_limits,unknown,,fe,2001,692a
-b,unknown,unknown_692a_limits,unknown,,fe,200e,692a,,,temperature_min_max
+b,unknown,unknown_692a_limits,unknown,13,fe,200e,692a,,,temperature_min_max
 
 r,unknown,unknown_7276_limits,unknown,,fe,2001,7276
-b,unknown,unknown_7276_limits,unknown,,fe,200e,7276,,,temperature_min_max
+b,unknown,unknown_7276_limits,unknown,13,fe,200e,7276,,,temperature_min_max
 
 r,unknown,unknown_7476_limits,unknown,,fe,2001,7476
-b,unknown,unknown_7476_limits,unknown,,fe,200e,7476,,,temperature_min_max
+b,unknown,unknown_7476_limits,unknown,13,fe,200e,7476,,,temperature_min_max
 
 r,unknown,z1_c679_limits,unknown,,fe,2001,c679
-b,unknown,z1_c679_limits,unknown,,fe,200e,c679,,,percent_min_max
+b,unknown,z1_c679_limits,unknown,13,fe,200e,c679,,,percent_min_max
 r,unknown,z2_c67a_limits,unknown,,fe,2001,c67a
-b,unknown,z2_c67a_limits,unknown,,fe,200e,c67a,,,percent_min_max
+b,unknown,z2_c67a_limits,unknown,13,fe,200e,c67a,,,percent_min_max
 r,unknown,z3_c67b_limits,unknown,,fe,2001,c67b
-b,unknown,z3_c67b_limits,unknown,,fe,200e,c67b,,,percent_min_max
+b,unknown,z3_c67b_limits,unknown,13,fe,200e,c67b,,,percent_min_max
 r,unknown,z4_c67c_limits,unknown,,fe,2001,c67c
-b,unknown,z4_c67c_limits,unknown,,fe,200e,c67c,,,percent_min_max
+b,unknown,z4_c67c_limits,unknown,13,fe,200e,c67c,,,percent_min_max
 r,unknown,z5_c67d_limits,unknown,,fe,2001,c67d
-b,unknown,z5_c67d_limits,unknown,,fe,200e,c67d,,,percent_min_max
+b,unknown,z5_c67d_limits,unknown,13,fe,200e,c67d,,,percent_min_max
 r,unknown,z6_c67e_limits,unknown,,fe,2001,c67e
-b,unknown,z6_c67e_limits,unknown,,fe,200e,c67e,,,percent_min_max
+b,unknown,z6_c67e_limits,unknown,13,fe,200e,c67e,,,percent_min_max
 
 r,unknown,unknown_0990,unknown,,fe,2000,0990
-b,unknown,unknown_0990,unknown,,fe,200f,0990,,,percent
+b,unknown,unknown_0990,unknown,13,fe,200f,0990,,,percent
 w,unknown,unknown_0990,unknown,,fe,2010,0990,,,percent
 b,unknown,unknown_0990_bcast,unknown,,fe,2020,0990,,,percent
 b,unknown,unknown_0a90,unknown,,fe,2020,0a90,,,percent
@@ -63,27 +63,26 @@ b,unknown,unknown_0c90,unknown,,fe,2020,0c90,,,percent
 b,unknown,unknown_0d90,unknown,,fe,2020,0d90,,,percent
 b,unknown,unknown_0e90,unknown,,fe,2020,0e90,,,percent
 
-r,unknown,unknown_c74b,unknown 1,,18,2000,c74b,,,ignore_1;percent
-r,unknown,unknown_dc27,unknown 1,,18,2000,dc27,,,ignore_1;percent
+#r,unknown,unknown_c74b,unknown 1,,18,2000,c74b,,,ignore_1;percent
+#r,unknown,unknown_dc27,unknown 1,,18,2000,dc27,,,ignore_1;percent
 
 r,unknown,unknown_hours_1,unknown 1,,18,2000,51d1,,,ignore_1;hours
 r,unknown,unknown_hours_2,unknown 2,,18,2000,52d1,,,ignore_1;hours
 r,unknown,unknown_hours_3,unknown 3,,18,2000,53d1,,,ignore_1;hours
 
 r,unknown,unknown_d346,unknown,,fe,2000,d346
-b,unknown,unknown_d346,unknown,,fe,200f,d346,,,percent
+b,unknown,unknown_d346,unknown,13,fe,200f,d346,,,percent
 
 r,unknown,unknown_c7f8,unknown,,fe,2001,c7f8
-b,unknown,unknown_c7f8,unknown,,fe,200e,c7f8,,,percent
+b,unknown,unknown_c7f8,unknown,13,fe,200e,c7f8,,,percent
 
 r,unknown,unknown_c5f8,,,fe,2000,c5f8c6f8c3f8
-b,unknown,unknown_c5f8,,,fe,200f,c5f8,,,percent:z3_c5f8;ignore_3;percent:z4_c6f8;ignore_3;percent:z1_c3f8
+b,unknown,unknown_c5f8,,13,fe,200f,c5f8,,,percent:z3_c5f8;ignore_3;percent:z4_c6f8;ignore_3;percent:z1_c3f8
 
 b,unknown,broadcast_cff9,unknown,7f,fe,2010,cff9,,,percent:value_cff9;ignore_3;percent:value_ddf2
 b,unknown,broadcast_489d,unknown,70,fe,2010,489d,,,temperature:temp_489d
 b,unknown,broadcast_d394,unknown,13,fe,2010,d394,,,percent:percent_d394;ignore_3;percent:percent_d494;ignore_3;percent:percent_d594;ignore_3;percent:percent_d694
 b,unknown,broadcast_d3f9,unknown,7f,fe,2010,d3f9,,,percent:percent_d3f9
-b,unknown,broadcast_6297,unknown,13,fe,2010,6297,,,temperature:temperature_6297
 
 b,unknown,broadcast_041f,unknown,13,fe,2010,041f,,,percent:percent_041f;ignore_3;percent:percent_051f;ignore_3;percent:percent_061f
 
@@ -122,8 +121,8 @@ b,unknown,broadcast_7176,unknown,13,fe,2020,7176,,,temperature:temp_7176;ignore_
 b,unknown,broadcast_7274,unknown,13,fe,2020,7274,,,temperature:temp_7274;ignore_2;temperature:temp_7374;ignore_2;temperature:temp_7474
 b,unknown,broadcast_7375,unknown,13,fe,2020,7375,,,temperature:temp_7375;ignore_2;temperature:temp_7475;ignore_2;temperature:temp_7575
 b,unknown,broadcast_7476,unknown,13,fe,2020,7476,,,temperature:temp_7476;ignore_2;temperature:temp_7576;ignore_2;temperature:temp_7676
-b,unknown,broadcast_7675,unknown,13,fe,2020,7675,,,temperature:temp_7675;ignore_2;low_high:z6_temp_range;ignore_2;temperature:temp_7076
-b,unknown,broadcast_7975,unknown,13,fe,2020,7975,,,temperature:temp_7975;ignore_2;temperature:temp_7a75;ignore_2;percent:percent_0786
+#b,unknown,broadcast_7675,unknown,13,fe,2020,7675,,,temperature:temp_7675;ignore_2;low_high:z6_temp_range;ignore_2;temperature:temp_7076
+#b,unknown,broadcast_7975,unknown,13,fe,2020,7975,,,temperature:temp_7975;ignore_2;temperature:temp_7a75;ignore_2;percent:percent_0786
 b,unknown,broadcast_c07e,unknown,13,fe,2020,c07e,,,percent:percent_c07e;ignore_2;percent:percent_c27e;ignore_2;percent:percent_c97e;ignore_2;percent:percent_8601
 b,unknown,broadcast_c97d,unknown,13,fe,2020,c97d,,,percent:percent_c97d;ignore_2;percent:percent_0085;ignore_2;temperature:temerature_6076
 b,unknown,broadcast_ce7e,unknown,13,fe,2020,ce7e,,,percent:percent_ce7e;ignore_2;percent:percent_0281;ignore_2;percent:percent_0282;ignore_2;percent:percent_0283

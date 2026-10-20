@@ -13,6 +13,10 @@ ignore_2,IGN:2,,,,
 ignore_3,IGN:3,,,,
 ignore_4,IGN:4,,,,
 
+hex2,HEX:2,,,
+hex1,HEX:1,,,
+bcd,BCD,,,
+
 # Dates and times 
 
 fulldate,HDA,,,date
@@ -40,7 +44,6 @@ hours_min_max,ignore_2;hours:minimum;hours:maximum,,,
 months,U2L,,m,months
 months_min_max,ignore_2;months:minimum;months:maximum,,,
 
-
 # U1L hours are used for hour based parameters which are read/write
 hrs,U1L,,hrs,hrs
 #change the min_max template to ignore the setting value as this is contained elsewhere
@@ -55,9 +58,6 @@ slope_min_max,ignore_2;slope:minimum;slope:maximum,,,
 cooling_slope,U2L,,gradient
 cooling_slope_min_max,ignore_2;cooling_slope:minimum;cooling_slope:maximum,,,
 
-kwshort,U1L,10,kW,power
-kwshort_min_max,ignore_1;kwshort:minimum;kwshort:maximum,,,
-
 percent,U1L,,%,percentage
 #change the min_max template to ignore the setting value as this is contained elsewhere
 percent_min_max,ignore_1;percent:minimum;percent:maximum,,,
@@ -67,14 +67,11 @@ integral_min_max,ignore_2;integral:minimum;integral:maximum,,,
 
 # the 2001 queries indicate temperature is S2L given the 0080 and ff7f limits
 temperature,S2L,10,°C,temperature
-#change the min_max template to ignore the setting value as this is contained elsewhere
 temperature_min_max,ignore_2;temperature:minimum;temperature:maximum,,,
-#temperature_min_max,temperature:setting;temperature:minimum;temperature:maximum,,,
+
+deltat,S2L,10,°C,deltat
 
 pressure:reading,U2L,10,bar,pressure
-
-# conversion from a wattsecond type counter to kWh
-energycount:reading,U2L,360,kWh
 
 frequency,U1L,,Hz,frequency
 frequency_min_max,ignore_1;frequency:minimum;frequency:maximum,,,
@@ -89,6 +86,13 @@ watts,U2L,,W,power
 kw,S2L,,kW,power
 amps,U2L,,A,current
 
+kwshort,U1L,10,kW,power
+kwshort_min_max,ignore_1;kwshort:minimum;kwshort:maximum,,,
+
+# conversion from a wattsecond type counter to kWh
+energycount:reading,U2L,360,kWh
+
+
 rpm,U2L,,rpm,
 rpm_min_max,ignore_2;rpm:minimum;rpm:maximum,,,
 
@@ -96,23 +100,16 @@ version:counter,U1L,,
 
 flow_rate:reading,U2L,10,L/min,flow rate
 
-deltat,S2L,10,°C,deltat
-
 expansion_valve:state,S2L,,steps
 
-hex2,HEX:2,,,
-hex1,HEX:1,,,
-bcd,BCD,,,
-
-onoff:setting,UCH,0=off;1=on,onoff,,
+onoff:setting,UCH,0=off;1=on,onoff,
 open_closed:state,UCH,0=open;1=closed,,
 notactive_active:state,UCH,0=not_active;1=active,,
-absent_present:state,UCH,0=absent;1=present,,
+absent_present:state,UCH,0=absent;1=present,,   
 low_high:setting,UCH,0=low;1=high,,
 
-
 heat_mode:setting,UCH,0=green;1=standard,,
-hydraulic_scheme:setting,UCH,0=nothing;1=boiler;2=boiler_buffer
+boiler_hydraulic:setting,UCH,0=nothing;1=boiler;2=boiler_buffer
 holiday_status:setting,UCH,0=home;3=away,,
 hybrid_mode:setting,UCH,0=auto;1=boiler_only;2=hp_only,,
 hybrid_logic:setting,UCH,0=max_saving;1=max_eco,,
@@ -153,7 +150,6 @@ hv_input_2:setting,UCH,1=absent;2=dlsg;3=sg2;4=external_switch_off_signal;5=phot
 
 aux_input:setting,UCH,0=nothing;1=humidistat_sensor;2=heatcool_by_external_control;3=room_thermostat_hc3;4=safety_thermostat;5=photovoltaic_integration,,
 
-blocking_type:setting,UCH,0=nothing;1=soft_lockout;2=hard_lockout;3=hybrid_lockout,,
 
 system_flow_temp_selection:setting,UCH,0=hp_water_flow_temp;1=system_flow_temp,,
 
@@ -178,7 +174,6 @@ building_size:setting,UCH,0=small;1=average;2=large
 control_mode:setting,UCH,0=disabled;1=time_based;2=always_active,,
 dhw_mode:setting,UCH,0=standard;1=green;2=hc_hp;3=hc_hp_40,,
 
-
 valve_dhw_heat:state,UCH,0=dhw;1=heating,,
 valve_heat_cool:state,UCH,0=heating;1=cooling,,
 
@@ -198,5 +193,6 @@ boiler_type:setting,UCH,0=mixed_instant;1=ext_tank_ntc;2=ext_tank_thermostat;3=m
 pressure_device:setting,UCH,0=temp_probe;1=pressure_switch;2=pressure_sensor
 
 zone_name,UCH,0=zone_number;1=home;2=living_room;3=sleeping_area;4=bedroom;5=bedroom_2;6=bedroom_3;7=bedroom_4;8=bedroom_5;9=bedroom_6;10=childreans_room;11=childreans_room_2;12=childreans_room_3;13=childreans_room_4;14=cellar;15=attic;16=entrance;17=kitchen;18=sitting_room;19=studio;20=corridor
+
 # Unlike most values the weather is a BCD value not UCH
 weather:state,BCD,1=sunny;2=light_clouds;3=cloudy;4=rain;5=heavy_rain;6=sleet;7=snow;81=clear_night;82=light_clouds_night;83=cloudy_night;84=rain_night;85=heavy_rain_night;86=sleet_night;87=snow_night,
