@@ -74,7 +74,7 @@ r,ignored,heatpump_defrost_hours,Heatpump Defrost Hours,,1e,2000,47d1,,,ignore_1
 
 # Heatpump temperatures not needed as consolidated reads are performed
 # Read every 8 minutes by the system but also read more frequently by ebus
-r5,heatpump,read_temp,Regular read of heatpump temps,,1e,2000,791071177217,,,ignore_1;temperature:hp_evaporator_temperature;temperature:condenser_outlet_temperature;temperature:suction_temperature
+r5,heatpump,read_temp,Regular read of heatpump temps,,1e,2000,791071177217,,,ignore_1;temperature:hp_evaporator_temperature;temperature:hp_condenser_outlet_temperature;temperature:hp_suction_temperature
 r,ignored,read_temp_2,Broadcast Messages,,1e,2000,7610771079107117,,,ignore_1;temperature:hp_water_flow_temperature;temperature:hp_water_return_temperature;temperature:hp_evaporator_temperature;temperature:hp_condenser_outlet_temperature
 # Not sure they are read by the system but seems to have been at some point
 r,ignored,read_temp_3,Regular read of heatpump temps,,1e,2000,781079107417,,,ignore_1;temperature:outside_air_temperature;temperature:hp_evaporator_temperature;temperature:teo_temperature

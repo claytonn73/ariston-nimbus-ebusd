@@ -4,7 +4,7 @@
 #### address 18: slave #12                                                              ####
 ############################################################################################
 
-# Heating Status from Summer/Winter mode election
+# Heating Status from Summer/Winter mode selection
 r,heating,status,Heating Status,,fe,2001,0120
 b,heating,status,Heating Status,13,fe,200e,0120,,,onoff
 w,heating,status,Heating Status,70,fe,2020,0120,,,onoff
@@ -58,7 +58,6 @@ r,heating,boost_time_limits,CH Boost Time Limits,,fe,2001,602b
 b,heating,boost_time_limits,CH Boost Time Limits,13,fe,200e,602b,,,seconds_min_max
 
 # FlowT HP Offset (1.7.2)
-# Update in Home Assistant disabled as related to physical setup of system and no changes required
 r,heating,flowt_hp_offset,Heating LWT Offset,,18,2000,7d2b,,,ignore_1;temperature:setting
 w,heating,flowt_hp_offset,Heating LWT Offset,,18,2020,7d2b,,,temperature:setting
 b,heating,flowt_hp_offset,Heating LWT Offset,13,18,2010,7d2b,,m,temperature:setting
@@ -74,7 +73,7 @@ w,ignored,floor_drying_temp,Floor Drying Temperature,,18,2020,7c2b,,,temperature
 r,heating,floor_drying_temp_limits,Floor Drying Temperature,,18,2001,7c2b,,,temperature_min_max
 
 # Floor drying total Remaining Days (1.12.7)
-r,heating,floor_drying_days_remaining,,,18,2001,c846,,,days
+r,heating,floor_drying_days_remaining,Floor Drying Days Remaining,,18,2001,c846,,,days
 
 # CH flow set T (1.16.2)
 r1,heating,lwt_setpoint,Flow Setpoint,,fe,2000,6047
@@ -89,7 +88,7 @@ r,ignored,flow_temperature_2000,CH Flow Temperature,,18,2000,74fd,,,ignore_1;tem
 #reads max value on system
 r,ignored,ch_flow_temperature,CH Flow Temperature,,18,2001,6310,,,temperature
 
-b,heating,return_temperature,same as the buffer low temperature sensor,13,fe,2010,769e,,,temperature:reading
+b,heating,return_temperature,CH Return Temperature,13,fe,2010,769e,,,temperature:reading
 
 
 
