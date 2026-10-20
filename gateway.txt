@@ -1,0 +1,25 @@
+This file contains the output of ebusctl commands to provide a snapshot of the state of the gateway.csv messages
+
+ebusctl grab result all | grep gateway
+7ffe2010097617c10000c19a0300 = 5: gateway internet_weather
+70842000020488 / 020101 = 1: gateway internet_weather_switch
+7ffe2010097617d10000c19a0300 = 609: gateway internet_weather
+31842000020488 / 020101 = 40: gateway internet_weather_switch
+31842001020921 / 03010001 = 2: gateway wifi_switch
+31842001021421 / 03010001 = 2: gateway ntp_switch
+3184200102c3f0 / 035a00ff = 266: gateway wifi_signal
+3184200102c4f0 / 030200ff = 2: gateway activation_state
+3184200102c89c / 030000ff = 2: gateway software_update
+3184200102cc4b / 030800ff = 2: gateway wifi_status
+3184200102d140 / 030400ff = 2: gateway config_version
+
+ebusctl find -v -a -d -c gateway
+gateway activation_state = state=activated
+gateway config_version = counter=4
+gateway internet_weather = temperature=20.9;state=cloudy
+gateway internet_weather_switch = setting=on
+gateway ntp_switch = setting=on
+gateway software_update = state=initializing
+gateway wifi_signal = percent=90
+gateway wifi_status = state=cloud_connected
+gateway wifi_switch = setting=on
