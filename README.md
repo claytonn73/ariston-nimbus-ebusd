@@ -14,6 +14,10 @@ Write definitions are available for many messages but in order to avoid providin
 
 A perform-reads python script is provided to enable forced reads of the entire configuration or individual circuits.
 
+## Hardware and software configuration
+
+I am using the ESERA EBC 100 eBus coupler USB ( https://esera.de/Produkte/12001/EBC-100-eBus-Koppler-USB ) attached to a Raspberry Pi Zero 2. This system is only running ebusd and is then communicating over Ethernet to another Raspberry Pi running MQTT and Home Assistant.
+
 ## Query Commands and Modes
 
 There are two main query commands issued by the system. The 2000 query response has a format where the first byte is ignored and then the response to the query is provided. The 2001 query does not have an ignored byte but it provides the value and then a minimum and maximum range for the value. Sometimes this is a specific system limit and other times it is simply the maximum range of allowed by the numeric type. Examples of the 2000 and 2001 direct queries are shown below
