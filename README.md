@@ -16,7 +16,15 @@ A perform-reads python script is provided to enable forced reads of the entire c
 
 ## Hardware and software configuration
 
-I am using the ESERA EBC 100 eBus coupler USB ( https://esera.de/Produkte/12001/EBC-100-eBus-Koppler-USB ) attached to a Raspberry Pi Zero 2. This system is only running ebusd and is then communicating over Ethernet to another Raspberry Pi running MQTT and Home Assistant.
+I am using the ESERA EBC 100 eBus coupler USB ( https://esera.de/Produkte/12001/EBC-100-eBus-Koppler-USB ) attached to a Raspberry Pi Zero 2. This system is only running ebusd and is then communicating over Ethernet to a Raspberry Pi 5 running MQTT and Home Assistant.
+
+The ebusd options used are as follows
+
+EBUSD_OPTS="--configpath <<ebusd directory>> -d /dev/serial/by-id/usb-ESERA_GmbH_eBus_Coupler_12001_AL9ELVUS-if00-port0 --enablehex --port 8888 --mqtthost 192.168.1.100 --mqttport 1883 --mqttjson --mqttint <<ebusd directory>>/mqtt-hassio.cfg --loglevel=error"
+
+MQTT is installed on the Raspberry Pi 5 as a docker container using docker-compose
+
+The Home Assistant MQTT integration is installed with discovery enabled
 
 ## Query Commands and Modes
 
