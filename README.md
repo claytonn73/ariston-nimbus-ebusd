@@ -310,6 +310,10 @@ The functionality for the Eddi to activate the heatpump is setup using the "Aux 
     ebusd dhw pv_delta_temperature - 10
 
 This will increase the target DHW temperature by 10C when the Eddi determines that enough solar energy is being exported for this to be worthwhile.
+
+### Power Consumption and Energy Produced
+
+The heatpump produced an incrementing value for the heatpump power consumption associated with DHW and heating and the associated estimated energy produced for these. This can be used in Home Assistant as a Utility Meter input to provide hourly and daily statistics. It can also be used to create a heating and DHW CoP statistics based on these although on my system these seem to be somewhat optimistic.
     
 ## Disclaimer
-All information posted is merely for educational and informational purposes. It is not intended as a substitute for professional advice. Should you decide to act upon any information on this website, you do so at your own risk. While the information on this website has been verified to the best of our abilities, I cannot guarantee that there are no mistakes or errors. You may use this library with the understanding that doing so is AT YOUR OWN RISK. No warranty, express or implied, is made with regards to the fitness or safety of this code for any purpose. If you use this library to query or change settings of your products you understand that it is possible to cause damages I reserve the right to change this policy at any given time.
+All information posted is merely for educational and informational purposes. It is not intended as a substitute for professional advice. Should you decide to act upon any information on this website, you do so at your own risk. While the information on this website has been verified to the best of our abilities, I cannot guarantee that there are no mistakes or errors. You may use this library with the understanding that doing so is AT YOUR OWN RISK. No warranty, express or implied, is made with regards to the fitness or safety of this code for any purpose. If you use this library to query or change settings of your products you understand that it is possible to cause damages.
