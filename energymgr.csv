@@ -124,10 +124,10 @@ b,energymgr,protech_anode,Protech Anode - not present,13,18,2010,0d23,,m,onoff
 ############################################################################################
 
 # External temperature correction (1.5.5)
-r,energymgr,ext_temp_correct,External Temperature Correction,,fe,2000,7426
+r9,energymgr,ext_temp_correct,External Temperature Correction,,fe,2000,7426
 b,energymgr,ext_temp_correct,External Temperature Correction,13,fe,200f,7426,,,temperature:setting
 w,energymgr,ext_temp_correct,External Temperature Correction,70,fe,2020,7426,,,temperature:setting
-r,energymgr,ext_temp_correct_limits,External Temperature Correction,,fe,2001,7426
+r9,energymgr,ext_temp_correct_limits,External Temperature Correction,,fe,2001,7426
 b,energymgr,ext_temp_correct_limits,External Temperature Correction,13,fe,200e,7426,,,temperature_min_max
 b,ignored,ext_temp_correct_bcast,External Temperature Correction,13,fe,2010,7426,,,temperature:setting
 
@@ -138,33 +138,33 @@ b,ignored,ext_temp_correct_bcast,External Temperature Correction,13,fe,2010,7426
 
 # Defines the pre-circulation time of the primary circulation pump to detect the presence of flow in the heating circuit. (1.6.0)
 # Update in Home Assistant disabled as is installation parameter
-r,energymgr,pump_prerun,statistics,,18,2000,d527,,,ignore_1;minutes
+r9,energymgr,pump_prerun,statistics,,18,2000,d527,,,ignore_1;minutes
 w,ignored,pump_prerun,statistics,,18,2020,d527,,,minutes
 b,energymgr,pump_prerun,statistics,13,18,2010,d527,,m,minutes
-r,energymgr,pump_prerun_limits,statistics,,18,2001,d527,,,minutes_min_max
+r9,energymgr,pump_prerun_limits,statistics,,18,2001,d527,,,minutes_min_max
 
 # Defines the pre-circulation time of the primary circulation pump to detect the presence of flow in the heating circuit. (1.6.1)
 # Update in Home Assistant disabled as is installation parameter
-r,energymgr,new_attempt_time,statistics,,18,2000,d627,,s,ignore_1;minutes
+r9,energymgr,new_attempt_time,statistics,,18,2000,d627,,s,ignore_1;minutes
 w,ignored,new_attempt_time,statistics,,18,2020,d627,,,minutes
 b,energymgr,new_attempt_time,statistics,13,18,2010,d627,,m,minutes
-r,energymgr,new_attempt_time_limits,statistics,,18,2001,d627,,,minutes_min_max
+r9,energymgr,new_attempt_time_limits,statistics,,18,2001,d627,,,minutes_min_max
 
 # Post-circulation time. (1.6.2)
 # Update in Home Assistant disabled as is installation parameter
-r,energymgr,pump_overrun,statistics,,18,2000,d727,,,ignore_1;minutes
+r9,energymgr,pump_overrun,statistics,,18,2000,d727,,,ignore_1;minutes
 w,ignored,pump_overrun,statistics,,18,2020,d727,,,minutes
 b,energymgr,pump_overrun,statistics,13,18,2010,d727,,m,minutes
-r,energymgr,pump_overrun_limits,statistics,,18,2001,d727,,,minutes_min_max
+r9,energymgr,pump_overrun_limits,statistics,,18,2001,d727,,,minutes_min_max
 
 # Pump Speed Control (1.6.3)
-r,energymgr,pump_operation,Pump Operation Mode,,18,2001,c32a,,,low_high_modulating
+r9,energymgr,pump_operation,Pump Operation Mode,,18,2001,c32a,,,low_high_modulating
 w,energymgr,pump_operation,Pump Operation Mode,,18,2020,c32a,,,low_high_modulating
 b,energymgr,pump_operation,Pump Operation Mode,13,18,2010,c32a,,m,low_high_modulating
 
 # Antifreeze circulator speed (1.6.4)
 # Update in Home Assistant disabled as is installation parameter
-r,energymgr,antifreeze_circulator_speed,Antifreeze HP circulator Control,,18,2001,c58f,,,low_med_high
+r9,energymgr,antifreeze_circulator_speed,Antifreeze HP circulator Control,,18,2001,c58f,,,low_med_high
 w,ignored,antifreeze_circulator_speed,Antifreeze HP circulator Control,,18,2020,c58f,,,low_med_high
 b,energymgr,antifreeze_circulator_speed,Antifreeze HP circulator Control,13,18,2010,c58f,,m,low_med_high
 
@@ -240,6 +240,9 @@ b,energymgr,exogel_kit_activation,Exogel Kit Activation,13,18,2010,1f88,,m,onoff
 #Menu - ENERGY MANAGER STATISTICS
 ############################################################################################
 
+# Consolidated read for operation hours
+r,ignored,heatpump_op_hours,Heatpump Operating Hours,,18,2000,54d155d156d1,,,ignore_1;hours:cooling;hours:heating;hours:dhw
+
 # Heating running hours (h/10) (1.14.1)
 r5,energymgr,heatpump_heating_op_hours,Heatpump Heating Operating Hours,,18,2000,55d1,,,ignore_1;hours
 
@@ -249,13 +252,16 @@ r5,energymgr,heatpump_dhw_op_hours,Heatpump DHW Operating Hours,,18,2000,56d1,,,
 # Cooling running hours (h/10) (1.14.6)
 r,energymgr,heatpump_cooling_op_hours,Heatpump Cooling Operating Hours,,18,2000,54d1,,,ignore_1;hours
 
+# Consolidated read for power and energy
+r,ignored,power_and_energy,DHW and Heating Power and Energy,,18,2000,46d948d952d954d9,,,ignore_1;energycount:dhw_energy_produced;energycount:heating_energy_produced;energycount:dhw_power_consumption;energycount:heating_power_consumption
+
 # DHW power consumption and energy produced incrementing counter
-r5,energymgr,dhw_energy_produced,Heating power consumption incrementing total,,18,2000,48d949d9,,,ignore_1;energycount
-r5,energymgr,dhw_power_consumption,Heating energy produced incrementing total,,18,2000,54d955d9,,,ignore_1;energycount
+r5,energymgr,dhw_energy_produced,Heating energy produced incrementing total,,18,2000,48d949d9,,,ignore_1;energycount
+r5,energymgr,dhw_power_consumption,Heating power consumption incrementing total,,18,2000,54d955d9,,,ignore_1;energycount
 
 # Heating power consumption and energy produced incrementing counter
-r5,energymgr,heating_energy_produced,DHW power consumption incrementing total,,18,2000,46d947d9,,,ignore_1;energycount
-r5,energymgr,heating_power_consumption,DHW energy produced incrementing total,,18,2000,52d953d9,,,ignore_1;energycount
+r5,energymgr,heating_energy_produced,DHW energy produced incrementing total,,18,2000,46d947d9,,,ignore_1;energycount
+r5,energymgr,heating_power_consumption,DHW power consumption incrementing total,,18,2000,52d953d9,,,ignore_1;energycount
 
 
 ############################################################################################

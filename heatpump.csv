@@ -179,6 +179,7 @@ r,ignored,expansion_valve,Expansion Valve State in Steps,,1e,2001,704f,,,expansi
 
 # Issued every 8 minutes by the system so use this for power consumption and expansion valve
 r1,heatpump,power_consumption,Expansion valve and Power consumption,,1e,2000,704f7c4f,,,ignore_1;expansion_valve:expansion_valve;watts:power_consumption
+
 # Alternative individual reads for power consumption and expansion valve
 r,ignored,power_consumption,Power Consumption,,1e,2001,7c4f,,,watts
 
@@ -226,16 +227,3 @@ r1,heatpump,operating_info,Operating Information,,1e,2000,7317ca46cb46,,,ignore_
 
 # Doesnt seem to be issued any more
 r,ignored,power_consumption_2,Power Consumption,,1e,2000,63477c4f,,,ignore_1;temperature:temp_6347;watts:power
-
-
-
-
-
-
-
-
-
-
-
-
-
