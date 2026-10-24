@@ -11,9 +11,9 @@ r,unknown,unknown_switch_1403,,,18,2001,1403,,,onoff
 r,unknown,unknown_switch_1503,,,18,2001,1503,,,onoff
 r,unknown,unknown_switch_1603,,,18,2001,1603,,,onoff
 r,unknown,unknown_switch_1703,,,18,2001,1703,,,onoff
-r,unknown,unknown_switch_c328,,,18,2001,c328,,,onoff
+r,unknown,unknown_boiler_pressure_monitoring_c328,,,18,2001,c328,,,onoff
 r,unknown,unknown_switch_d48d,,,18,2001,d48d,,,onoff
-r,unknown,unknown_switch_1a11,,,18,2001,1a11,,,onoff
+r,unknown,unknown_heatpump_safety_thermostat_1a11,,,18,2001,1a11,,,onoff
 r,unknown,unknown_switch_1b11,,,18,2001,1b11,,,onoff
 
 r,unknown,unknown_4078,unknown,,fe,2000,4078
@@ -70,6 +70,7 @@ b,unknown,unknown_c7f8,unknown,13,fe,200e,c7f8,,,percent
 
 r,unknown,unknown_c5f8,,,fe,2000,c5f8c6f8c3f8
 b,unknown,unknown_c5f8,,13,fe,200f,c5f8,,,percent:z3_c5f8;ignore_3;percent:z4_c6f8;ignore_3;percent:z1_c3f8
+b,unknown,broadcast_c4f8,unknown,13,fe,2010,c4f8,,,percent:z2_c4f8;ignore_3;percent:z3_c5f8;ignore_3;percent:z4_c6f8;;percent:z1_c3f8
 
 b,unknown,broadcast_cff9,unknown,7f,fe,2010,cff9,,,percent:value_cff9;ignore_3;percent:value_ddf2
 b,unknown,broadcast_489d,unknown,70,fe,2010,489d,,,temperature:temp_489d
@@ -101,6 +102,8 @@ b,unknown,broadcast_6c75,unknown,13,fe,2020,6c75,,,temperature:temp_6c75;ignore_
 
 #b,unknown,broadcast_7975,unknown,13,fe,2020,7975,,,temperature:temp_7975;ignore_2;temperature:temp_7a75;ignore_2;percent:percent_0786
 b,unknown,broadcast_c97d,unknown,13,fe,2020,c97d,,,percent:percent_c97d;ignore_2;percent:percent_0085;ignore_2;temperature:temerature_6076
+
+b,unknown,broadcast_c48b,unknown,13,fe,2020,c48b,,,percent:percent_c48b;ignore_2;percent:percent_c58b;ignore_2;percent:percent_c58b
 
 b,unknown,broadcast_7271,unknown,13,fe,2020,7271,,,temperature:temp_7271;ignore_2;temperature:z1_cooling_lwt_min;ignore_2;temperature:temp_7471
 b,unknown,broadcast_4ffd,unknown,13,fe,2020,4ffd,,,temperature:temp_4ffd;ignore_2;longminutes:temp_50fd;ignore_2;percent:percent_z5_c7f8;ignore_2;percent:percent_z6_c8f8
