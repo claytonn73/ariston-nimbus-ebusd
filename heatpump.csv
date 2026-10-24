@@ -152,21 +152,24 @@ r5,heatpump,pressure_info,Reads of evaporator and condenser pressure,,1e,2000,6c
 # HP diagnostics - Output 1
 ############################################################################################
 
+# Consolidated read of states
+r1,heatpump,read_states,Consolidated Read of States,,1e,2000,cb461c456e4f,,,ignore_1;frequency:compressor_frequency;onoff:electric_heater_state;rpm:fan1_speed
+
 # Inverter Capacity (13.10.0)
 r,heatpump,power_rating,HP Power Rating,,1e,2000,6947,,,ignore_1;kw
 r,ignored,power_rating_2001,HP Power Rating,,1e,2001,6947,,,kw
 
 # HP actual compressor frequency (13.10.1)
-r1,heatpump,compressor_frequency,Compressor Frequency,,1e,2001,cb46,,,frequency
+r,ignored,compressor_frequency,Compressor Frequency,,1e,2001,cb46,,,frequency
 
 # HP set compressor modulation (13.10.2)
 r,heatpump,compressor_modulation,Compressor Modulation,,1e,2001,c446,,,percent
 
 # Electric Heater 1 (13.10.3)
-r,heatpump,electric_heater_status,Electric Heater Status,,1e,2001,1c45,,,onoff
+r,ignored,electric_heater_status,Electric Heater Status,,1e,2001,1c45,,,onoff
 
 # Measured rpm fan 1 (13.10.5)
-r1,heatpump,fan1_speed,Fan 1 Speed,,1e,2001,6e4f,,,rpm
+r,ignored,fan1_speed,Fan 1 Speed,,1e,2001,6e4f,,,rpm
 
 # Measured rpm fan 2 (13.10.6)
 r,ignored,fan2_speed,Fan 2 Speed,,1e,2001,6f4f,,,rpm
@@ -187,24 +190,27 @@ r,ignored,expansion_valve_2,Expansion Valve 2 State in Steps,,1e,2001,714f,,,exp
 # HP diagnostics - Output 2
 ############################################################################################
 
+# Consolidated read of states
+r1,heatpump,read_info,Consolidated Read of States,,1e,2000,11451245144513451645,,,ignore_1;onoff:compressor_state;onoff:preheater_state;onoff:fan1_state;valve_heat_cool:fourway_valve_state;onoff:base_pan_heater_state
+
 # Compressor on/off (13.11.0)
-r5,heatpump,compressor_state,Compressor State,,1e,2001,1145,,,onoff
+r,ignored,compressor_state,Compressor State,,1e,2001,1145,,,onoff
 
 # Compressor preheating (13.11.1)
-r5,heatpump,preheater_state,Preheater State,,1e,2001,1245,,,onoff
+r,ignored,preheater_state,Preheater State,,1e,2001,1245,,,onoff
 
 # Current fan 1 status (13.11.2)
-r5,heatpump,fan1_state,Fan 1 State,,1e,2001,1445,,,onoff
+r,ignored,fan1_state,Fan 1 State,,1e,2001,1445,,,onoff
 
 # Current fan 2 status (13.11.3)
 r,ignored,fan2_state,Fan 2 State,,1e,2001,1545,,,onoff
 # Enable if second fan is present on system
 
 # 4way valve heat / cool (13.11.4)
-r5,heatpump,fourway_valve_state,4way Valve State heat/cool,,1e,2001,1345,,,valve_heat_cool
+r,ignored,fourway_valve_state,4way Valve State heat/cool,,1e,2001,1345,,,valve_heat_cool
 
 # Base panel heater status (13.11.5)
-r5,heatpump,base_pan_heater_state,Pan Heater State,,1e,2001,1645,,,onoff
+r,ignored,base_pan_heater_state,Pan Heater State,,1e,2001,1645,,,onoff
 
 ############################################################################################
 # Other messages

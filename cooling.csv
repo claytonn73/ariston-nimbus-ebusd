@@ -35,6 +35,3 @@ r,cooling,humidity_control_hysterisis_limits,Cooling Humidity Control Hysteresis
 
 b,cooling,temperatures,Cooling Temperatures,,fe,2020,6a75,,,temperature:z1_cool_temp;ignore_2;temperature:z2_cool_temp;ignore_2;temperature:z3_cool_temp;ignore_2;temperature:cooling_setpoint_temp
 b,cooling,slope,Cooling Slopes,,fe,2020,7577,,,ignore_4;slope:z1;ignore_2;slope:z2;ignore_2;slope:z3
-
-# Cooling running hours (h/10) (1.14.6)
-r,cooling,heatpump_operation_hours,Heatpump Cooling Operating Hours,,18,2000,54d1,,,ignore_1;hours
