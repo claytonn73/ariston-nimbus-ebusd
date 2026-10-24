@@ -14,6 +14,18 @@ Write definitions are available for many messages but in order to avoid providin
 
 A perform-reads python script is provided to enable forced reads of the entire configuration or individual circuits.
 
+## Hardware and software configuration
+
+I am using the ESERA EBC 100 eBus coupler USB ( https://esera.de/Produkte/12001/EBC-100-eBus-Koppler-USB ) attached to a Raspberry Pi Zero 2. This system is only running ebusd and is then communicating over Ethernet to a Raspberry Pi 5 running MQTT and Home Assistant.
+
+The ebusd options used are as follows
+
+EBUSD_OPTS="--configpath <<ebusd directory>> -d /dev/serial/by-id/usb-ESERA_GmbH_eBus_Coupler_12001_AL9ELVUS-if00-port0 --enablehex --port 8888 --mqtthost 192.168.1.100 --mqttport 1883 --mqttjson --mqttint <<ebusd directory>>/mqtt-hassio.cfg --loglevel=error"
+
+MQTT is installed on the Raspberry Pi 5 as a docker container using docker-compose
+
+The Home Assistant MQTT integration is installed with discovery enabled
+
 ## Query Commands and Modes
 
 There are two main query commands issued by the system. The 2000 query response has a format where the first byte is ignored and then the response to the query is provided. The 2001 query does not have an ignored byte but it provides the value and then a minimum and maximum range for the value. Sometimes this is a specific system limit and other times it is simply the maximum range of allowed by the numeric type. Examples of the 2000 and 2001 direct queries are shown below
