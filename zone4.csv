@@ -74,6 +74,7 @@ w,zone4,heat_temp_range,Z4 Heating Temp Range,70,fe,2020,0084,,,low_high
 r,zone4,heat_therm_type,Z4 Heating Thermoreg Type,,fe,2001,c07c
 b,zone4,heat_therm_type,Z4 Heating Thermoreg Type,13,fe,200e,c07c,,,heat_thermoreg_types
 w,zone4,heat_therm_type,Z4 Heating Thermoreg Type,70,fe,2020,c07c,,,heat_thermoreg_types
+b,zone4,heat_therm_type_bcast,Z4 Heating Thermoreg Type,13,fe,2020,c07c,,,heat_thermoreg_types
 
 # Z4 Slope (4.2.2)
 r,zone4,slope,heat slope,,fe,2000,6a74
@@ -107,6 +108,7 @@ b,zone4,lwt_max_limits,lwt maximum temperature,13,fe,200e,6074,,,temperature_min
 r,zone4,lwt_min,lwt minimum temperature,,fe,2000,6174
 b,zone4,lwt_min,lwt minimum temperature,13,fe,200f,6174,,,temperature:setting
 w,zone4,lwt_min,lwt minimum temperature,70,fe,2020,6174,,,temperature:setting
+b,zone4,lwt_min_bcast,lwt minimum temperature,13,fe,2020,6174,,,temperature:setting
 r,zone4,lwt_min_limits,lwt minimum temperature,,fe,2001,6174
 b,zone4,lwt_min_limits,lwt minimum temperature,13,fe,200e,6174,,,temperature_min_max
 
@@ -195,6 +197,7 @@ b,zone4,cooling_fixed_flow_setpoint_limits,statistics,13,fe,200e,7074,,,temperat
 r,zone4,cooling_temp_range,Z2 Cooling Temp Range,,fe,2001,0684
 b,zone4,cooling_temp_range,Z2 Cooling Temp Range,13,fe,200e,0684,,,cool_temp_range
 w,zone4,cooling_temp_range,Z2 Cooling Temp Range,70,fe,2020,0684,,,cool_temp_range
+b,zone4,cooling_temp_range_bcast,Z2 Cooling Temp Range,13,fe,2020,0684,,,cool_temp_range
 
 # Cooling Thermoregulation (4.5.2)
 r,zone4,cooling_therm_type,Z1 Heating Thermoreg Type,,fe,2001,cb7c
@@ -213,6 +216,7 @@ b,zone4,cooling_slope_limits,Cooling slope limits,13,fe,200e,7674,,,cooling_slop
 r,zone4,cooling_offset,Flow Temp Offset,,fe,2000,7574
 b,zone4,cooling_offset,Flow Temp Offset,13,fe,200f,7574,,,temperature:setting
 w,zone4,cooling_offset,Flow Temp Offset,70,fe,2020,7574,,,temperature:setting
+b,zone4,cooling_offset_bcast,Flow Temp Offset,13,fe,2020,7574,,,temperature:setting
 r,zone4,cooling_offset_limits,Flow Temp Offset Limits,,fe,2001,7574
 b,zone4,cooling_offset_limits,Flow Temp Offset Limits,13,fe,200e,7574,,,temperature_min_max
 
@@ -223,12 +227,25 @@ w,zone4,cooling_lwt_max,lwt maximum temperature,70,fe,2020,7174,,,temperature:se
 r,zone4,cooling_lwt_max_limits,lwt maximum temperature,,fe,2001,7174
 b,zone4,cooling_lwt_max_limits,lwt maximum temperature,13,fe,200e,7174,,,temperature_min_max
 
+r,zone4,cooling_lwt_max_custom,lwt maximum temperature,,fe,2000,7274
+b,zone4,cooling_lwt_max_custom,lwt maximum temperature,13,fe,200f,7274,,,temperature:setting
+w,zone4,cooling_lwt_max_custom,lwt maximum temperature,70,fe,2020,7274,,,temperature:setting
+r,zone4,cooling_lwt_max_custom_limits,lwt maximum temperature,,fe,2001,7274
+b,zone4,cooling_lwt_max_custom_limits,lwt maximum temperature,13,fe,200e,7274,,,temperature_min_max
+
 # Cooling min setpoint (4.5.6)
 r,zone4,cooling_lwt_min,lwt minimum temperature,,fe,2000,7374
 b,zone4,cooling_lwt_min,lwt minimum temperature,13,fe,200f,7374,,,temperature:setting
 w,zone4,cooling_lwt_min,lwt minimum temperature,70,fe,2020,7374,,,temperature:setting
 r,zone4,cooling_lwt_min_limits,lwt minimum temperature,,fe,2001,7374
 b,zone4,cooling_lwt_min_limits,lwt minimum temperature,13,fe,200e,7374,,,temperature_min_max
+
+r,zone4,cooling_lwt_min_custom,lwt minimum temperature,,fe,2000,7474
+b,zone4,cooling_lwt_min_custom,lwt minimum temperature,13,fe,200f,7474,,,temperature:setting
+w,zone4,cooling_lwt_min_custom,lwt minimum temperature,70,fe,2020,7474,,,temperature:setting
+r,zone4,cooling_lwt_min_custom_limits,lwt minimum temperature,,fe,2001,7474
+b,zone4,cooling_lwt_min_custom_limits,lwt minimum temperature,13,fe,200e,7474,,,temperature_min_max
+b,zone4,cooling_lwt_min_custom_bcast,lwt minimum temperature,13,fe,2020,7274,,,temperature:setting
 
 ############################################################################################
 # Zone Regulation Parameters
@@ -253,6 +270,7 @@ b,zone4,building_isolation_level,Z4 Building Isolation Level,13,fe,200e,d17c,,,b
 r,zone4,building_size,Z4 Building Size,,fe,2001,d27c
 w,zone4,building_size,Z4 Building Size,70,fe,2020,d27c,,,building_size
 b,zone4,building_size,Z4 Building Size,13,fe,200e,d27c,,,building_size
+b,zone4,building_size_bcast,Z4 Building Size,13,fe,2020,d27c,,,building_size
 
 # Climatic Zone (4.7.4) - Likely common with zone 1
 
@@ -290,5 +308,3 @@ r,zone4,humidity_control_hysterisis_limits,Cooling Humidity Alarm Hysteresis Lim
 b,zone4,humidity_control_hysterisis_hysterisis_limits,Cooling Humidity Alarm Hysteresis Limits,13,fe,200e,db7c,,,percent_min_max
 
 # Humidity Alarm (4.8.9)
-
-

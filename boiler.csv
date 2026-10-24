@@ -34,6 +34,7 @@ w,boiler,maintenance_months,Month to next maintenance,,3c,2020,c627,,,months
 
 #Boiler direct ask
 r,boiler,boiler_pressure,Boiler circuit pressure,,3c,2000,7547,,,ignore_1;pressure
+r,boiler,boiler_pressure_18,Boiler circuit pressure,,18,2000,7547,,,ignore_1;pressure
 
 # LWT_temp read by other broadcasted message, commenting this line to avoid ebusd error for duplicate ID
 # r,boiler,LWT_temp,heating temperature,,3c,2000,6810,,,ignore_1;temperature

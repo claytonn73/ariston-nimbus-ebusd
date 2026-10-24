@@ -246,6 +246,9 @@ r5,energymgr,heatpump_heating_op_hours,Heatpump Heating Operating Hours,,18,2000
 # DHW running hours (h/10) (1.14.2)
 r5,energymgr,heatpump_dhw_op_hours,Heatpump DHW Operating Hours,,18,2000,56d1,,,ignore_1;hours
 
+# Cooling running hours (h/10) (1.14.6)
+r,energymgr,heatpump_cooling_op_hours,Heatpump Cooling Operating Hours,,18,2000,54d1,,,ignore_1;hours
+
 # DHW power consumption and energy produced incrementing counter
 r5,energymgr,dhw_energy_produced,Heating power consumption incrementing total,,18,2000,48d949d9,,,ignore_1;energycount
 r5,energymgr,dhw_power_consumption,Heating energy produced incrementing total,,18,2000,54d955d9,,,ignore_1;energycount
@@ -263,12 +266,15 @@ r5,energymgr,heating_power_consumption,DHW energy produced incrementing total,,1
 # This command is is issued every 10 seconds so the best way to get the energymgr status
 r,energymgr,energymgr_status,Energy Manager Status,,18,2000,c94bd1404bfd4cfd,,,ignore_1;energymgr_status:status;version:counter;longminutes:value_4bfd;longminutes:value_4cfd
 # This command is issued less frequently so not as good to use for uptodate status
-r,ignored,energymgr_status_2000,Energy Manager Status,,18,2000,c94b,,,ignore_1;energymgr_status
+r,ignored,energymgr_status,Energy Manager Status,,18,2000,c94b,,,ignore_1;energymgr_status
+b,ignored,energymgr_status,Energy Manager Statuse,13,fe,2010,c94b,,,energymgr_status
 # This command is issued when using the panel
 r,ignoed,energymgr_status_panel,Energy Manager Status,,18,2001,c94b,,,energymgr_status
 
+
 # Hydraulic scheme diagnostic (1.16.1)
-r,energymgr,hydraulic_scheme_diagnostic,,,18,2001,d4f7,,,hydraulic_diagnostic
+r,energymgr,hydraulic_scheme_diagnostic_panel,,,18,2001,d4f7,,,hydraulic_diagnostic
+r,energymgr,hydraulic_scheme_diagnostic,,,18,2000,d4f7,,,hydraulic_diagnostic
 
 #Current Status of Room Thermostat 1 (1.17.0)
 r,energymgr,room_thermostat_1,,,18,2001,011f,,,onoff

@@ -24,6 +24,7 @@ b,zone6,comfort_temp_limits,Z6 Day Temp Limits,13,fe,200e,6276,,,temperature_min
 r,zone6,reduced_temp,Z6 Night Temp,,fe,2000,6376
 b,zone6,reduced_temp,Z6 Night Temp,13,fe,200f,6376,,,temperature:setting
 w,zone6,reduced_temp,Z6 Night Temp,70,fe,2020,6376,,,temperature:setting
+b,zone6,reduced_temp_bcast,Z6 Night Temp,13,fe,2020,6376,,,temperature:setting
 r,zone6,reduced_temp_limits,Z6 Night Temp Limits,,fe,2001,6376
 b,zone6,reduced_temp_limits,statistics,13,fe,200e,6376,,,temperature_min_max
 
@@ -51,6 +52,7 @@ w,zone6,winter_mode_temp,statistics,70,fe,2020,7976,,,temperature:setting
 b,zone6,winter_mode_temp,statistics,13,fe,200f,7976,,,temperature:setting
 r,zone6,winter_mode_temp_limits,statistics,,fe,2001,7976
 b,zone6,winter_mode_temp_limits,statistics,13,fe,200e,7976,,,temperature_min_max
+b,zone6,winter_mode_temp_bcast,statistics,13,fe,2020,7976,,,temperature:setting
 
 #b,zone6,winter_mode_bcast,statistics,13,fe,2020,7971,,,temperature:winter_mode_temp;ignore_2;longminutes:winter_mode_delay;ignore_2;onoff:winter_mode_active
 
@@ -74,6 +76,7 @@ w,zone6,heat_temp_range,Z6 Heating Temp Range,70,fe,2020,0086,,,low_high
 r,zone6,heat_therm_type,Z6 Heating Thermoreg Type,,fe,2001,c07e
 b,zone6,heat_therm_type,Z6 Heating Thermoreg Type,13,fe,200e,c07e,,,heat_thermoreg_types
 w,zone6,heat_therm_type,Z6 Heating Thermoreg Type,70,fe,2020,c07e,,,heat_thermoreg_types
+b,zone6,heat_therm_type_bcast,Z6 Heating Thermoreg Type,13,fe,2020,c07e,,,heat_thermoreg_types
 
 # Z6 Slope (4.2.2)
 r,zone6,slope,heat slope,,fe,2000,6a76
@@ -81,6 +84,7 @@ b,zone6,slope,heat slope,13,fe,200f,6a76,,,slope
 w,zone6,slope,heat slope,70,fe,2020,6a76,,,slope
 r,zone6,slope_limits,heat slope,,fe,2001,6a76
 b,zone6,slope_limits,heat slope,13,fe,200e,6a76,,,slope_min_max
+b,zone6,slope_bcast,heat slope,13,fe,2020,6a76,,,slope
 
 # Paral shift (4.2.3)
 r,zone6,offset,Flow Temp Offset,,fe,2000,6476
@@ -113,16 +117,18 @@ b,zone6,lwt_min_limits,lwt minimum temperature,13,fe,200e,6176,,,temperature_min
 # Thermoregulation logic (4.2.7) - seems to be single switch on zone1
 
 # Quick night setback (4.2.8)
-r,zone6,quick_night_setback,unknown,,fe,2001,0886
-b,zone6,quick_night_setback,unknown,13,fe,200e,0886,,,onoff
-w,zone6,quick_night_setback,unknown,70,fe,2020,0886,,,onoff
+r,zone6,quick_night_setback,Quick Night Setback,,fe,2001,0886
+b,zone6,quick_night_setback,Quick Night Setback,13,fe,200e,0886,,,onoff
+w,zone6,quick_night_setback,Quick Night Setback,70,fe,2020,0886,,,onoff
+b,zone6,quick_night_setback_bcast,Quick Night Setback,13,fe,2020,0886,,,onoff
 
 # Heat request mode (4.2.9)
 r,zone6,heat_request_mode,Z6 Heating Request Mode,,fe,2000,ce7e
 b,zone6,heat_request_mode,Z6 Heating Request Mode,13,fe,200f,ce7e,,,heat_request_mode
 w,zone6,heat_request_mode,Z6 Heating Request Mode,70,fe,2020,ce7e,,,heat_request_mode
-r,zone6,heat_request_mode_panel,unknown,,fe,2001,ce7e
-b,zone6,heat_request_mode_panel,unknown,13,fe,200e,ce7e,,,heat_request_mode
+r,zone6,heat_request_mode_panel,Z6 Heating Request Mode,,fe,2001,ce7e
+b,zone6,heat_request_mode_panel,Z6 Heating Request Mode,13,fe,200e,ce7e,,,heat_request_mode
+b,zone6,heat_request_mode_bcast,Z6 Heating Request Mode,13,fe,2020,ce7e,,,heat_request_mode
 
 ############################################################################################
 # Diagnostics
@@ -221,6 +227,13 @@ b,zone6,cooling_lwt_max,lwt maximum temperature,13,fe,200f,7176,,,temperature:se
 w,zone6,cooling_lwt_max,lwt maximum temperature,70,fe,2020,7176,,,temperature:setting
 r,zone6,cooling_lwt_max_limits,lwt maximum temperature,,fe,2001,7176
 b,zone6,cooling_lwt_max_limits,lwt maximum temperature,13,fe,200e,7176,,,temperature_min_max
+b,zone6,cooling_lwt_max_bcast,lwt maximum temperature,13,fe,2020,7176,,,temperature:setting
+
+r,zone6,cooling_lwt_max_custom,lwt maximum temperature,,fe,2000,7276
+b,zone6,cooling_lwt_max_custom,lwt maximum temperature,13,fe,200f,7276,,,temperature:setting
+w,zone6,cooling_lwt_max_custom,lwt maximum temperature,70,fe,2020,7276,,,temperature:setting
+r,zone6,cooling_lwt_max_custom_limits,lwt maximum temperature,,fe,2001,7276
+b,zone6,cooling_lwt_max_custom_limits,lwt maximum temperature,13,fe,200e,7276,,,temperature_min_max
 
 # Cooling min setpoint (4.5.6)
 r,zone6,cooling_lwt_min,lwt minimum temperature,,fe,2000,7376
@@ -228,6 +241,12 @@ b,zone6,cooling_lwt_min,lwt minimum temperature,13,fe,200f,7376,,,temperature:se
 w,zone6,cooling_lwt_min,lwt minimum temperature,70,fe,2020,7376,,,temperature:setting
 r,zone6,cooling_lwt_min_limits,lwt minimum temperature,,fe,2001,7376
 b,zone6,cooling_lwt_min_limits,lwt minimum temperature,13,fe,200e,7376,,,temperature_min_max
+
+r,zone6,cooling_lwt_min_custom,lwt minimum temperature,,fe,2000,7476
+b,zone6,cooling_lwt_min_custom,lwt minimum temperature,13,fe,200f,7476,,,temperature:setting
+w,zone6,cooling_lwt_min_custom,lwt minimum temperature,70,fe,2020,7476,,,temperature:setting
+r,zone6,cooling_lwt_min_custom_limits,lwt minimum temperature,,fe,2001,7476
+b,zone6,cooling_lwt_min_custom_limits,lwt minimum temperature,13,fe,200e,7476,,,temperature_min_max
 
 ############################################################################################
 # Zone Regulation Parameters
@@ -237,6 +256,7 @@ b,zone6,cooling_lwt_min_limits,lwt minimum temperature,13,fe,200e,7376,,,tempera
 r,zone6,heating_type,Z6 Heating Type,,fe,2001,d07e
 w,zone6,heating_type,Z6 Heating Type,70,fe,2020,d07e,,,heating_type
 b,zone6,heating_type,Z6 Heating Type,13,fe,200e,d07e,,,heating_type
+b,zone6,heating_type_bcast,Z6 Heating Type,13,fe,2020,d07e,,,heating_type
 
 # Room Influence (4.7.1)
 r,zone6,room_influence,Z6 Room Influence,,fe,2001,d37e
@@ -259,6 +279,7 @@ b,zone6,building_size,Z6 Building Size,13,fe,200e,d27e,,,building_size
 r,zone6,slope_adaptation,Z6 Slope Adaptation,,fe,2001,0986
 w,zone6,slope_adaptation,Z6 Slope Adaptation,70,fe,2020,0986,,,onoff
 b,zone6,slope_adaptation,Z6 Slope Adaptation,13,fe,200e,0986,,,onoff
+b,zone6,slope_adaptation_bcast,Z6 Slope Adaptation,13,fe,2020,0986,,,onoff
 
 ############################################################################################
 # Advanced Settings
@@ -268,6 +289,7 @@ b,zone6,slope_adaptation,Z6 Slope Adaptation,13,fe,200e,0986,,,onoff
 r,zone6,heating_controller,unknown,,fe,2001,d57e
 b,zone6,heating_controller,unknown,13,fe,200e,d57e,,,controller
 w,zone6,heating_controller,unknown,70,fe,2020,d57e,,,controller
+b,zone6,heating_controller_bcast,unknown,13,fe,2020,d57e,,,controller
 
 # Z6 Cooling controller (4.8.4)
 r,zone6,cooling_controller,unknown,,fe,2001,d67e
@@ -280,6 +302,7 @@ b,zone6,humidity_control_threshold,Cooling Humidity Alarm Limit,13,fe,200f,da7e,
 w,zone6,humidity_control_threshold,Cooling Humidity Alarm Limit,70,fe,2020,da7e,,,percent:setting
 r,zone6,humidity_control_threshold_limits,Cooling Humidity Alarm Limit Limits,,fe,2001,da7e
 b,zone6,humidity_control_threshold_limits,Cooling Humidity Alarm Limit Limits,13,fe,200e,da7e,,,percent_min_max
+b,zone6,humidity_control_threshold_bcast,Cooling Humidity Alarm Limit,13,fe,2020,da7e,,,percent:setting
 
 # Humidity Control Hysteresis (4.8.8)
 r,zone6,humidity_control_hysterisis,Cooling Humidity Alarm Hysteresis,,fe,2000,db7e
@@ -289,5 +312,4 @@ r,zone6,humidity_control_hysterisis_limits,Cooling Humidity Alarm Hysteresis Lim
 b,zone6,humidity_control_hysterisis_hysterisis_limits,Cooling Humidity Alarm Hysteresis Limits,13,fe,200e,db7e,,,percent_min_max
 
 # Humidity Alarm (4.8.9)
-
 

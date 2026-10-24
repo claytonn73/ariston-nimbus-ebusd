@@ -129,16 +129,17 @@ b,zone2,heat_request_mode_panel,unknown,13,fe,200e,ce7a,,,heat_request_mode
 
 # Room T (5.3.0) - room temperature information not available on my system
 # More irregular room temperature broadcast but can be read by ebusd
-r,zone2,room_temp,statistics,,fe,2000,7218
-b,zone2,room_temp,statistics,70,fe,200f,7218,,,temperature:reading
+r,zone2,room_temp,Z2 Room Temperature ,,fe,2000,7218
+b,zone2,room_temp,Z2 Room Temperature ,70,fe,200f,7218,,,temperature:reading
 # Regular 2 minute room temperature broadcast
-b,zone2,room_temp_bcast,statistics,70,fe,2010,7218,,,temperature:reading
+b,zone2,room_temp_bcast,Z2 Room Temperature ,70,fe,2010,7218,,,temperature:reading
 r,zone2,room_temp_panel,Z2 Room Temperature Limits,,fe,2001,7218
 b,zone2,room_temp_panel,Z2 Room Temperature Limits,13,fe,200e,7218,,,temperature
 
 # Room T setpoint (5.3.1)
-r,zone2,room_setpoint,statistics,,fe,2000,6a96
-b,zone2,room_setpoint,statistics,13,fe,200f,6a96,,,temperature:setting
+r,zone2,room_setpoint,Z2 Room Setpoint ,,fe,2000,6a96
+b,zone2,room_setpoint,Z2 Room Setpoint ,13,fe,200f,6a96,,,temperature:setting
+b,zone2,room_setpoint_bcast,Z2 Room Setpoint ,13,fe,2010,6a96,,,temperature:setting
 r,zone2,room_setpoint_panel,Z2 Room Setpoint Limits,,fe,2001,6a96
 b,zone2,room_setpoint_panel,Z2 Room Setpoint Limits,13,fe,200e,6a96,,,temperature
 
@@ -192,6 +193,7 @@ b,zone2,flow_setpoint_temperature_bcast,Z2 Flow Setpoint Temperature Bcast,13,fe
 r,zone2,cooling_fixed_flow_setpoint,statistics,,fe,2000,7072
 b,zone2,cooling_fixed_flow_setpoint,statistics,13,fe,200f,7072,,,temperature:setting
 w,zone2,cooling_fixed_flow_setpoint,statistics,70,fe,2020,7072,,,temperature:setting
+b,zone2,cooling_fixed_flow_setpoint_bcast,statistics,13,fe,2020,7072,,,temperature:setting
 r,zone2,cooling_fixed_flow_setpoint_limits,statistics,,fe,2001,7072
 b,zone2,cooling_fixed_flow_setpoint_limits,statistics,13,fe,200e,7072,,,temperature_min_max
 
@@ -226,12 +228,24 @@ w,zone2,cooling_lwt_max,lwt maximum temperature,70,fe,2020,7172,,,temperature:se
 r,zone2,cooling_lwt_max_limits,lwt maximum temperature,,fe,2001,7172
 b,zone2,cooling_lwt_max_limits,lwt maximum temperature,13,fe,200e,7172,,,temperature_min_max
 
+r,zone2,cooling_lwt_max_custom,lwt maximum temperature,,fe,2000,7272
+b,zone2,cooling_lwt_max_custom,lwt maximum temperature,13,fe,200f,7272,,,temperature:setting
+w,zone2,cooling_lwt_max_custom,lwt maximum temperature,70,fe,2020,7272,,,temperature:setting
+r,zone2,cooling_lwt_max_custom_limits,lwt maximum temperature,,fe,2001,7272
+b,zone2,cooling_lwt_max_custom_limits,lwt maximum temperature,13,fe,200e,7272,,,temperature_min_max
+
 # Cooling min setpoint (5.5.6)
 r,zone2,cooling_lwt_min,lwt minimum temperature,,fe,2000,7372
 b,zone2,cooling_lwt_min,lwt minimum temperature,13,fe,200f,7372,,,temperature:setting
 w,zone2,cooling_lwt_min,lwt minimum temperature,70,fe,2020,7372,,,temperature:setting
 r,zone2,cooling_lwt_min_limits,lwt minimum temperature,,fe,2001,7372
 b,zone2,cooling_lwt_min_limits,lwt minimum temperature,13,fe,200e,7372,,,temperature_min_max
+
+r,zone2,cooling_lwt_min_custom,lwt minimum temperature,,fe,2000,7472
+b,zone2,cooling_lwt_min_custom,lwt minimum temperature,13,fe,200f,7472,,,temperature:setting
+w,zone2,cooling_lwt_min_custom,lwt minimum temperature,70,fe,2020,7472,,,temperature:setting
+r,zone2,cooling_lwt_min_custom_limits,lwt minimum temperature,,fe,2001,7472
+b,zone2,cooling_lwt_min_custom_limits,lwt minimum temperature,13,fe,200e,7472,,,temperature_min_max
 
 ############################################################################################
 # Zone Regulation Parameters
@@ -293,3 +307,4 @@ r,zone2,humidity_control_hysterisis_limits,Cooling Humidity Alarm Hysteresis Lim
 b,zone2,humidity_control_hysterisis_hysterisis_limits,Cooling Humidity Alarm Hysteresis Limits,13,fe,200e,db7a,,,percent_min_max
 
 # Humidity Alarm (5.8.9)
+

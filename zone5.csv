@@ -8,6 +8,7 @@
 
 r,zone5,name,Zone 5  Name Setting,,fe,2001,d47d
 b,zone5,name,Zone 5  Name Setting,13,fe,200e,d47d,,,zone_name
+b,zone5,name_bcast,Zone 5 Name Setting,13,fe,2020,d47d,,,zone_name
 
 ############################################################################################
 # Setpoint
@@ -31,6 +32,7 @@ b,zone5,reduced_temp_limits,statistics,13,fe,200e,6375,,,temperature_min_max
 r,zone5,fixed_flow_setpoint,statistics,,fe,2000,6575
 b,zone5,fixed_flow_setpoint,statistics,13,fe,200f,6575,,,temperature:setting
 w,zone5,fixed_flow_setpoint,statistics,70,fe,2020,6575,,,temperature:setting
+b,zone5,fixed_flow_setpoint_bcast,statistics,13,fe,2020,6575,,,temperature:setting
 r,zone5,fixed_flow_setpoint_limits,statistics,,fe,2001,6575
 b,zone5,fixed_flow_setpoint_limits,statistics,13,fe,200e,6575,,,temperature_min_max
 
@@ -142,6 +144,7 @@ b,zone5,room_temp_panel,Z5 Room Temperature Limits,13,fe,200e,7518,,,temperature
 # Room T setpoint (4.3.1)
 r,zone5,room_setpoint,statistics,,fe,2000,6d96
 b,zone5,room_setpoint,statistics,13,fe,200f,6d96,,,temperature:setting
+b,zone5,room_setpoint_bcast,statistics,13,fe,2010,6d96,,,temperature:setting
 r,zone5,room_setpoint_panel,Z5 Room Setpoint Limits,,fe,2001,6d96
 b,zone5,room_setpoint_panel,Z5 Room Setpoint Limits,13,fe,200e,6d96,,,temperature
 
@@ -193,6 +196,7 @@ b,zone5,cooling_fixed_flow_setpoint,statistics,13,fe,200f,7075,,,temperature:set
 w,zone5,cooling_fixed_flow_setpoint,statistics,70,fe,2020,7075,,,temperature:setting
 r,zone5,cooling_fixed_flow_setpoint_limits,statistics,,fe,2001,7075
 b,zone5,cooling_fixed_flow_setpoint_limits,statistics,13,fe,200e,7075,,,temperature_min_max
+b,zone5,cooling_fixed_flow_setpoint_bcast,statistics,13,fe,2020,7075,,,temperature:setting
 
 # Cooling Temp Range (4.5.1)
 r,zone5,cooling_temp_range,Z2 Cooling Temp Range,,fe,2001,0685
@@ -210,7 +214,6 @@ b,zone5,cooling_slope,Cooling slope,13,fe,200f,7675,,,cooling_slope
 w,zone5,cooling_slope,Cooling slope,70,fe,2020,7675,,,cooling_slope
 r,zone5,cooling_slope_limits,Cooling slope limits,,fe,2001,7675
 b,zone5,cooling_slope_limits,Cooling slope limits,13,fe,200e,7675,,,cooling_slope_min_max
-
 b,zone5,cooling_slope_bcast,Cooling slope,13,fe,2020,7675,,,cooling_slope
 
 # Cooling Offset (4.5.4)
@@ -227,12 +230,25 @@ w,zone5,cooling_lwt_max,lwt maximum temperature,70,fe,2020,7175,,,temperature:se
 r,zone5,cooling_lwt_max_limits,lwt maximum temperature,,fe,2001,7175
 b,zone5,cooling_lwt_max_limits,lwt maximum temperature,13,fe,200e,7175,,,temperature_min_max
 
+r,zone5,cooling_lwt_max_custom,lwt maximum temperature,,fe,2000,7275
+b,zone5,cooling_lwt_max_custom,lwt maximum temperature,13,fe,200f,7275,,,temperature:setting
+w,zone5,cooling_lwt_max_custom,lwt maximum temperature,70,fe,2020,7275,,,temperature:setting
+r,zone5,cooling_lwt_max_custom_limits,lwt maximum temperature,,fe,2001,7275
+b,zone5,cooling_lwt_max_custom_limits,lwt maximum temperature,13,fe,200e,7275,,,temperature_min_max
+
 # Cooling min setpoint (4.5.6)
 r,zone5,cooling_lwt_min,lwt minimum temperature,,fe,2000,7375
 b,zone5,cooling_lwt_min,lwt minimum temperature,13,fe,200f,7375,,,temperature:setting
 w,zone5,cooling_lwt_min,lwt minimum temperature,70,fe,2020,7375,,,temperature:setting
+b,zone5,cooling_lwt_min_bcast,lwt minimum temperature,13,fe,2020,7375,,,temperature:setting
 r,zone5,cooling_lwt_min_limits,lwt minimum temperature,,fe,2001,7375
 b,zone5,cooling_lwt_min_limits,lwt minimum temperature,13,fe,200e,7375,,,temperature_min_max
+
+r,zone5,cooling_lwt_min_custom,lwt minimum temperature,,fe,2000,7475
+b,zone5,cooling_lwt_min_custom,lwt minimum temperature,13,fe,200f,7475,,,temperature:setting
+w,zone5,cooling_lwt_min_custom,lwt minimum temperature,70,fe,2020,7475,,,temperature:setting
+r,zone5,cooling_lwt_min_custom_limits,lwt minimum temperature,,fe,2001,7475
+b,zone5,cooling_lwt_min_custom_limits,lwt minimum temperature,13,fe,200e,7475,,,temperature_min_max
 
 ############################################################################################
 # Zone Regulation Parameters
@@ -252,6 +268,7 @@ b,zone5,room_influence,Z5 Room Influence,13,fe,200e,d37d,,,room_influence
 r,zone5,building_isolation_level,Z5 Building Isolation Level,,fe,2001,d17d
 w,zone5,building_isolation_level,Z5 Building Isolation Level,70,fe,2020,d17d,,,building_isolation_level
 b,zone5,building_isolation_level,Z5 Building Isolation Level,13,fe,200e,d17d,,,building_isolation_level
+b,zone5,building_isolation_level_bcast,Z5 Building Isolation Level,13,fe,2020,d17d,,,building_isolation_level
 
 # Building Size (4.7.3) 
 r,zone5,building_size,Z5 Building Size,,fe,2001,d27d
@@ -294,5 +311,3 @@ r,zone5,humidity_control_hysterisis_limits,Cooling Humidity Alarm Hysteresis Lim
 b,zone5,humidity_control_hysterisis_hysterisis_limits,Cooling Humidity Alarm Hysteresis Limits,13,fe,200e,db7d,,,percent_min_max
 
 # Humidity Alarm (4.8.9)
-
-

@@ -13,17 +13,17 @@ b,zone1,name,Z1 Name Setting,13,fe,200e,d479,,,zone_name
 ############################################################################################
 
 # Comfort temperature and limits used with a two setpoint schedule (4.0.0)
-r,zone1,comfort_temp,Z1 Comfort Temp,,fe,2000,6271
+r9,zone1,comfort_temp,Z1 Comfort Temp,,fe,2000,6271
 b,zone1,comfort_temp,Z1 Comfort Temp,13,fe,200f,6271,,,temperature:setting
 w,zone1,comfort_temp,Z1 Comfort Temp,70,fe,2020,6271,,,temperature:setting
-r,zone1,comfort_temp_limits,Z1 Comfort Temp Limits,,fe,2001,6271
+r9,zone1,comfort_temp_limits,Z1 Comfort Temp Limits,,fe,2001,6271
 b,zone1,comfort_temp_limits,Z1 Comfort Temp Limits,13,fe,200e,6271,,,temperature_min_max
 
 # Reduced temperature and limits used with a two setpoint schedule (4.0.1)
-r,zone1,reduced_temp,Z1 Reduced Temp,,fe,2000,6371
+r9,zone1,reduced_temp,Z1 Reduced Temp,,fe,2000,6371
 b,zone1,reduced_temp,Z1 Reduced Temp,13,fe,200f,6371,,,temperature:setting
 w,zone1,reduced_temp,Z1 Reduced Temp,70,fe,2020,6371,,,temperature:setting
-r,zone1,reduced_temp_limits,Z1 Reduced Temp Limits,,fe,2001,6371
+r9,zone1,reduced_temp_limits,Z1 Reduced Temp Limits,,fe,2001,6371
 b,zone1,reduced_temp_limits,Z1 Reduced Temp Limits,13,fe,200e,6371,,,temperature_min_max
 
 # LWT Fixed Flow setpoint and limits - only used with fixed flow temperature (4.0.2)
@@ -34,10 +34,10 @@ r,zone1,fixed_flow_setpoint_limits,Z1 Fixed Flow Setpoint Limits,,fe,2001,6571
 b,zone1,fixed_flow_setpoint_limits,Z1 Fixed Flow Setpoint Limits,13,fe,200e,6571,,,temperature_min_max
 
 # Frost Temperature and limits (4.0.3) - frost temp value is used by all zones
-r,zone1,frost_temp,Z1 Frost Temp,,fe,2000,6426
+r9,zone1,frost_temp,Z1 Frost Temp,,fe,2000,6426
 b,zone1,frost_temp,Z1 Frost Temp,13,fe,200f,6426,,,temperature:setting
 w,zone1,frost_temp,Z1 Frost Temp,70,fe,2020,6426,,,temperature:setting
-r,zone1,frost_temp_limits,Z1 Frost Temp Limits,,fe,2001,6426
+r9,zone1,frost_temp_limits,Z1 Frost Temp Limits,,fe,2001,6426
 b,zone1,frost_temp_limits,Z1 Frost Temp Limits,13,fe,200e,6426,,,temperature_min_max
 
 ############################################################################################
@@ -45,22 +45,22 @@ b,zone1,frost_temp_limits,Z1 Frost Temp Limits,13,fe,200e,6426,,,temperature_min
 ############################################################################################
 
 # Automatic winter mode activation (4.1.0)
-r,zone1,winter_mode,Winter mode state,,fe,2001,0781
+r9,zone1,winter_mode,Winter mode state,,fe,2001,0781
 w,zone1,winter_mode,Winter mode state,70,fe,2020,0781,,,onoff
 b,zone1,winter_mode,Winter mode state,13,fe,200e,0781,,,onoff
 
 # Threshold for the auto summer/winter switching temperature (4.1.1)
-r,zone1,winter_mode_temp,Winter Mode Temperature,,fe,2000,7971
+r9,zone1,winter_mode_temp,Winter Mode Temperature,,fe,2000,7971
 w,zone1,winter_mode_temp,Winter Mode Temperature,70,fe,2020,7971,,,temperature:setting
 b,zone1,winter_mode_temp,Winter Mode Temperature,13,fe,200f,7971,,,temperature:setting
-r,zone1,winter_mode_temp_limits,Winter Mode Temperature Limits,,fe,2001,7971
+r9,zone1,winter_mode_temp_limits,Winter Mode Temperature Limits,,fe,2001,7971
 b,zone1,winter_mode_temp_limits,Winter Mode Temperature Limits,13,fe,200e,7971,,,temperature_min_max
 
 # Time for the auto summer/winter switching delay (4.1.2)
-r,zone1,winter_mode_delay,Winter Mode Delay,,fe,2000,7a71
+r9,zone1,winter_mode_delay,Winter Mode Delay,,fe,2000,7a71
 w,zone1,winter_mode_delay,Winter Mode Delay,70,fe,2020,7a71,,,longminutes:setting
 b,zone1,winter_mode_delay,Winter Mode Delay,13,fe,200f,7a71,,,longminutes:setting
-r,zone1,winter_mode_delay_limits,Winter Mode Delay Limits,,fe,2001,7a71
+r9,zone1,winter_mode_delay_limits,Winter Mode Delay Limits,,fe,2001,7a71
 b,zone1,winter_mode_delay_limits,Winter Mode Delay Limits,13,fe,200e,7a71,,,longminutes_min_max
 
 # Regular broadcast of winter mode settings
@@ -72,65 +72,65 @@ b,zone1,winter_mode_bcast,Winter Mode Broadcast Info,13,fe,2020,7971,,,temperatu
 
 # Zone 1 water flow temperature range (4.2.0)
 # Update in Home Assistant disabled as is installation parameter
-r,zone1,heat_temp_range,Z1 Heating Temp Range,,fe,2001,0081
+r9,zone1,heat_temp_range,Z1 Heating Temp Range,,fe,2001,0081
 b,zone1,heat_temp_range,Z1 Heating Temp Range,13,fe,200e,0081,,,low_high
 w,ignored,heat_temp_range,Z1 Heating Temp Range,70,fe,2020,0081,,,low_high
 
 # Zone 1 thermoregulation type (4.2.1)
-r,zone1,heat_therm_type,Z1 Heating Thermoreg Type,,fe,2001,c079
+r9,zone1,heat_therm_type,Z1 Heating Thermoreg Type,,fe,2001,c079
 b,zone1,heat_therm_type,Z1 Heating Thermoreg Type,13,fe,200e,c079,,,heat_thermoreg_types
 w,zone1,heat_therm_type,Z1 Heating Thermoreg Type,70,fe,2020,c079,,,heat_thermoreg_types
 
 # Z1 Slope (4.2.2)
-r,zone1,slope,Z1 heat slope,,fe,2000,6a71
+r9,zone1,slope,Z1 heat slope,,fe,2000,6a71
 b,zone1,slope,Z1 heat slope,13,fe,200f,6a71,,,slope
 w,zone1,slope,Z1 heat slope,70,fe,2020,6a71,,,slope
-r,zone1,slope_limits,Z1 heat slope,,fe,2001,6a71
+r9,zone1,slope_limits,Z1 heat slope,,fe,2001,6a71
 b,zone1,slope_limits,Z1 heat slope,13,fe,200e,6a71,,,slope_min_max
 
 # Paral shift (4.2.3)
-r,zone1,offset,Flow Temp Offset,,fe,2000,6471
+r9,zone1,offset,Flow Temp Offset,,fe,2000,6471
 b,zone1,offset,Flow Temp Offset,13,fe,200f,6471,,,temperature:setting
 w,zone1,offset,Flow Temp Offset,70,fe,2020,6471,,,temperature:setting
-r,zone1,offset_limits,Flow Temp Offset Limits,,fe,2001,6471
+r9,zone1,offset_limits,Flow Temp Offset Limits,,fe,2001,6471
 b,zone1,offset_limits,Flow Temp Offset Limits,13,fe,200e,6471,,,temperature_min_max
 
 # Room Influence Proportional (4.2.4)
-r,zone1,room_influence_proportion,Z1 Heating Room Temp Influence,,fe,2000,c279
+r9,zone1,room_influence_proportion,Z1 Heating Room Temp Influence,,fe,2000,c279
 w,zone1,room_influence_proportion,Z1 Heating Room Temp Influence,70,fe,2020,c279,,,percent:setting
 b,zone1,room_influence_proportion,Z1 Heating Room Temp Influence,13,fe,200f,c279,,,percent:setting
-r,zone1,room_influence_proportion_limits,Z1 Heating Room Temp Influence,,fe,2001,c279
+r9,zone1,room_influence_proportion_limits,Z1 Heating Room Temp Influence,,fe,2001,c279
 b,zone1,room_influence_proportion_limits,Z1 Heating Room Temp Influence,13,fe,200e,c279,,,percent_min_max
 
 # LWT Maximum settings and limits (4.2.5)
-r,zone1,lwt_max,lwt maximum temperature,,fe,2000,6071
+r9,zone1,lwt_max,lwt maximum temperature,,fe,2000,6071
 b,zone1,lwt_max,lwt maximum temperature,13,fe,200f,6071,,,temperature:setting
 w,zone1,lwt_max,lwt maximum temperature,70,fe,2020,6071,,,temperature:setting
-r,zone1,lwt_max_limits,lwt maximum temperature,,fe,2001,6071
+r9,zone1,lwt_max_limits,lwt maximum temperature,,fe,2001,6071
 b,zone1,lwt_max_limits,lwt maximum temperature,13,fe,200e,6071,,,temperature_min_max
 
 # LWT Minimum settings and limits (4.2.6)
-r,zone1,lwt_min,lwt minimum temperature,,fe,2000,6171
+r9,zone1,lwt_min,lwt minimum temperature,,fe,2000,6171
 b,zone1,lwt_min,lwt minimum temperature,13,fe,200f,6171,,,temperature:setting
 w,zone1,lwt_min,lwt minimum temperature,70,fe,2020,6171,,,temperature:setting
-r,zone1,lwt_min_limits,lwt minimum temperature,,fe,2001,6171
+r9,zone1,lwt_min_limits,lwt minimum temperature,,fe,2001,6171
 b,zone1,lwt_min_limits,lwt minimum temperature,13,fe,200e,6171,,,temperature_min_max
 
 b,zone1,lwt_settings,Settings Broadcast,13,fe,2020,6071,,,temperature:lwt_max;ignore_2;temperature:lwt_min;ignore_2;temperature:lwt_offset
 
 # Thermoregulation logic (4.2.7)  - seems to be single switch on zone1
 # Update in Home Assistant disabled as not using smart mode
-r,zone1,thermo_logic,Z1 Thermoregulation Logic,,fe,2001,db89
+r9,zone1,thermo_logic,Z1 Thermoregulation Logic,,fe,2001,db89
 b,zone1,thermo_logic,Z1 Thermoregulation Logic,13,fe,200e,db89,,,thermoregulation_logic
 w,ignored,thermo_logic,Z1 Thermoregulation Logic,70,fe,2020,db89,,,thermoregulation_logic
 
 # Quick night setback (4.2.8)
-r,zone1,quick_night_setback,Z1 Quick Night Setback,,fe,2001,0881
+r9,zone1,quick_night_setback,Z1 Quick Night Setback,,fe,2001,0881
 b,zone1,quick_night_setback,Z1 Quick Night Setback,13,fe,200e,0881,,,onoff
 w,zone1,quick_night_setback,Z1 Quick Night Setback,70,fe,2020,0881,,,onoff
 
 # Heat request mode (4.2.9)
-r,zone1,heat_request_mode,Z1 Heating Request Mode,,fe,2000,ce79
+r9,zone1,heat_request_mode,Z1 Heating Request Mode,,fe,2000,ce79
 b,zone1,heat_request_mode,Z1 Heating Request Mode,13,fe,200f,ce79,,,heat_request_mode
 w,zone1,heat_request_mode,Z1 Heating Request Mode,70,fe,2020,ce79,,,heat_request_mode
 r,zone1,heat_request_mode_panel,Z1 Heating Request Mode,,fe,2001,ce79
@@ -151,7 +151,7 @@ r,zone1,room_temp_panel,Z1 Room Temperature Limits,,fe,2001,7118
 b,zone1,room_temp_panel,Z1 Room Temperature Limits,13,fe,200e,7118,,,temperature
 
 # Room T setpoint (4.3.1)
-r,zone1,room_setpoint,Z1 Room Setpoint,,fe,2000,6996
+r9,zone1,room_setpoint,Z1 Room Setpoint,,fe,2000,6996
 b,zone1,room_setpoint,Z1 Room Setpoint,13,fe,200f,6996,,,temperature:setting
 r,zone1,room_setpoint_panel,Z1 Room Setpoint Limits,,fe,2001,6996
 b,zone1,room_setpoint_panel,Z1 Room Setpoint Limits,13,fe,200e,6996,,,temperature
@@ -182,7 +182,7 @@ r,zone1,humidity_panel,Z1 Humidity,,fe,2001,c9c1
 b,zone1,humidity_panel,Z1 Humidity,13,fe,200e,c9c1,,,percent:reading
 
 # Zone Flow temperature setpoint (4.3.8)
-r,zone1,flow_setpoint_temperature,Z1 Flow Setpoint Temperature,,fe,2001,6197
+r5,zone1,flow_setpoint_temperature,Z1 Flow Setpoint Temperature,,fe,2001,6197
 b,zone1,flow_setpoint_temperature,Z1 Flow Setpoint Temperature,13,fe,200e,6197,,,temperature:setting
 b,zone1,flow_setpoint_temperature_bcast,Z1 Flow Setpoint Temperature Bcast,13,fe,2010,6197,,,temperature:setting
 
@@ -215,6 +215,7 @@ b,ignored,cooling_fixed_flow_setpoint_limits,Z1 Cooling Fixed Flow Setpoint,13,f
 r,ignored,cooling_temp_range,Z1 Cooling Temp Range,,fe,2001,0681
 b,ignored,cooling_temp_range,Z1 Cooling Temp Range,13,fe,200e,0681,,,cool_temp_range
 w,ignored,cooling_temp_range,Z1 Cooling Temp Range,70,fe,2020,0681,,,cool_temp_range
+b,ignored,cooling_temp_range_bcast,Z1 Cooling Temp Range,13,fe,2020,0681,,,cool_temp_range
 
 # Cooling Thermoregulation (4.5.2)
 r,ignored,cooling_therm_type,Z1 Heating Thermoreg Type,,fe,2001,cb79
@@ -242,12 +243,24 @@ w,ignored,cooling_lwt_max,lwt maximum temperature,70,fe,2020,7171,,,temperature:
 r,ignored,cooling_lwt_max_limits,lwt maximum temperature,,fe,2001,7171
 b,ignored,cooling_lwt_max_limits,lwt maximum temperature,13,fe,200e,7171,,,temperature_min_max
 
+r,ignored,cooling_lwt_max_custom,lwt maximum temperature,,fe,2000,7271
+b,ignored,cooling_lwt_max_custom,lwt maximum temperature,13,fe,200f,7271,,,temperature:setting
+w,ignored,cooling_lwt_max_custom,lwt maximum temperature,70,fe,2020,7271,,,temperature:setting
+r,ignored,cooling_lwt_max_custom_limits,lwt maximum temperature,,fe,2001,7271
+b,ignored,cooling_lwt_max_custom_limits,lwt maximum temperature,13,fe,200e,7271,,,temperature_min_max
+
 # Cooling min setpoint (4.5.6)
 r,ignored,cooling_lwt_min,lwt minimum temperature,,fe,2000,7371
 b,ignored,cooling_lwt_min,lwt minimum temperature,13,fe,200f,7371,,,temperature:setting
 w,ignored,cooling_lwt_min,lwt minimum temperature,70,fe,2020,7371,,,temperature:setting
 r,ignored,cooling_lwt_min_limits,lwt minimum temperature,,fe,2001,7371
 b,ignored,cooling_lwt_min_limits,lwt minimum temperature,13,fe,200e,7371,,,temperature_min_max
+
+r,ignored,cooling_lwt_min_custom,lwt minimum temperature,,fe,2000,7471
+b,ignored,cooling_lwt_min_custom,lwt minimum temperature,13,fe,200f,7471,,,temperature:setting
+w,ignored,cooling_lwt_min_custom,lwt minimum temperature,70,fe,2020,7471,,,temperature:setting
+r,ignored,cooling_lwt_min_custom_limits,lwt minimum temperature,,fe,2001,7471
+b,ignored,cooling_lwt_min_custom_limits,lwt minimum temperature,13,fe,200e,7471,,,temperature_min_max
 
 ############################################################################################
 # Zone Regulation Parameters
@@ -292,7 +305,7 @@ b,ignored,slope_adaptation,Z1 Slope Adaptation,13,fe,200e,0981,,,onoff
 
 # Z1 Heating controller (4.8.3)
 # Update in Home Assistant disabled as is installation parameter 
-r,zone1,heating_controller,unknown,,fe,2001,d579
+r9,zone1,heating_controller,unknown,,fe,2001,d579
 b,zone1,heating_controller,unknown,13,fe,200e,d579,,,controller
 w,ignored,heating_controller,unknown,70,fe,2020,d579,,,controller
 

@@ -31,6 +31,7 @@ b,zone3,reduced_temp_limits,statistics,13,fe,200e,6373,,,temperature_min_max
 r,zone3,fixed_flow_setpoint,statistics,,fe,2000,6573
 b,zone3,fixed_flow_setpoint,statistics,13,fe,200f,6573,,,temperature:setting
 w,zone3,fixed_flow_setpoint,statistics,70,fe,2020,6573,,,temperature:setting
+b,zone3,fixed_flow_setpoint_bcast,statistics,13,fe,2020,6573,,,temperature:setting
 r,zone3,fixed_flow_setpoint_limits,statistics,,fe,2001,6573
 b,zone3,fixed_flow_setpoint_limits,statistics,13,fe,200e,6573,,,temperature_min_max
 
@@ -100,6 +101,7 @@ b,zone3,room_influence_proportion_limits,Z3 Heating Room Temp Influence,13,fe,20
 r,zone3,lwt_max,lwt maximum temperature,,fe,2000,6073
 b,zone3,lwt_max,lwt maximum temperature,13,fe,200f,6073,,,temperature:setting
 w,zone3,lwt_max,lwt maximum temperature,70,fe,2020,6073,,,temperature:setting
+b,zone3,lwt_max_bcast,lwt maximum temperature,13,fe,2020,6073,,,temperature:setting
 r,zone3,lwt_max_limits,lwt maximum temperature,,fe,2001,6073
 b,zone3,lwt_max_limits,lwt maximum temperature,13,fe,200e,6073,,,temperature_min_max
 
@@ -222,12 +224,24 @@ w,zone3,cooling_lwt_max,lwt maximum temperature,70,fe,2020,7173,,,temperature:se
 r,zone3,cooling_lwt_max_limits,lwt maximum temperature,,fe,2001,7173
 b,zone3,cooling_lwt_max_limits,lwt maximum temperature,13,fe,200e,7173,,,temperature_min_max
 
+r,zone3,cooling_lwt_max_custom,lwt maximum temperature,,fe,2000,7273
+b,zone3,cooling_lwt_max_custom,lwt maximum temperature,13,fe,200f,7273,,,temperature:setting
+w,zone3,cooling_lwt_max_custom,lwt maximum temperature,70,fe,2020,7273,,,temperature:setting
+r,zone3,cooling_lwt_max_custom_limits,lwt maximum temperature,,fe,2001,7273
+b,zone3,cooling_lwt_max_custom_limits,lwt maximum temperature,13,fe,200e,7273,,,temperature_min_max
+
 # Cooling min setpoint (6.5.6)
 r,zone3,cooling_lwt_min,lwt minimum temperature,,fe,2000,7373
 b,zone3,cooling_lwt_min,lwt minimum temperature,13,fe,200f,7373,,,temperature:setting
 w,zone3,cooling_lwt_min,lwt minimum temperature,70,fe,2020,7373,,,temperature:setting
 r,zone3,cooling_lwt_min_limits,lwt minimum temperature,,fe,2001,7373
 b,zone3,cooling_lwt_min_limits,lwt minimum temperature,13,fe,200e,7373,,,temperature_min_max
+
+r,zone3,cooling_lwt_min_custom,lwt minimum temperature,,fe,2000,7473
+b,zone3,cooling_lwt_min_custom,lwt minimum temperature,13,fe,200f,7473,,,temperature:setting
+w,zone3,cooling_lwt_min_custom,lwt minimum temperature,70,fe,2020,7473,,,temperature:setting
+r,zone3,cooling_lwt_min_custom_limits,lwt minimum temperature,,fe,2001,7473
+b,zone3,cooling_lwt_min_custom_limits,lwt minimum temperature,13,fe,200e,7473,,,temperature_min_max
 
 ############################################################################################
 # Zone Regulation Parameters
@@ -289,5 +303,3 @@ r,zone3,humidity_control_hysterisis_limits,Cooling Humidity Alarm Hysteresis Lim
 b,zone3,humidity_control_hysterisis_hysterisis_limits,Cooling Humidity Alarm Hysteresis Limits,13,fe,200e,db7b,,,percent_min_max
 
 # Humidity Alarm (6.8.9)
-
-
